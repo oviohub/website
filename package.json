@@ -1,0 +1,37 @@
+{
+  "name": "ovio-site-gatsby",
+  "description": "Ovio website",
+  "version": "0.1.0",
+  "private": true,
+  "author": "Mamadou Ouologuem <mamadou.ouologuem02@gmail.com>",
+  "keywords": [ "" ],
+  "scripts": {
+    "build": "gatsby build",
+    "develop": "gatsby develop",
+    "format": "prettier --write src/**/*.{js,jsx}",
+    "start": "npm run develop",
+    "serve": "gatsby serve",
+    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\""
+  },
+  "dependencies": {
+    "gatsby": "^2.13.15",
+    "gatsby-image": "^2.2.5",
+    "gatsby-plugin-manifest": "^2.2.2",
+    "gatsby-plugin-react-helmet": "^3.1.1",
+    "gatsby-source-filesystem": "^2.1.4",
+    "prop-types": "^15.7.2",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6",
+    "react-helmet": "^5.2.1",
+    "react-router-dom": "^5.0.1",
+    "styled-components": "^4.3.2"
+  },
+  "devDependencies": {
+    "eslint": "^6.0.1",
+    "eslint-config-airbnb": "^17.1.1",
+    "eslint-plugin-import": "^2.18.0",
+    "eslint-plugin-jsx-a11y": "^6.2.3",
+    "eslint-plugin-react": "^7.14.2",
+    "prettier": "^1.18.2"
+  }
+}
