@@ -11,14 +11,17 @@ const routes = {
 };
 
 function getPageUrl(routeId) {
+  if (!routes[routeId]) return undefined;
   return routes[routeId].url;
 }
 
 function getPageSeo(routeId) {
+  if (!routes[routeId]) return undefined;
   return routes[routeId].seo;
 }
 
 function getPageTitle(routeId) {
+  if (!routes[routeId]) return undefined;
   return routes[routeId].seo.title;
 }
 

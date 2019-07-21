@@ -1,0 +1,53 @@
+/* Roboto font */
+@font-face {
+  font-family: "Roboto";
+  font-display: swap;
+  src: url("./fontFamily/roboto/RobotoRegular.ttf") format("truetype");
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: "Roboto";
+  font-display: swap;
+  src: url("./fontFamily/roboto/RobotoMedium.ttf") format("truetype");
+  font-weight: 500;
+}
+
+@font-face {
+  font-family: "Roboto";
+  font-display: swap;
+  src: url("./fontFamily/roboto/RobotoBold.ttf") format("truetype");
+  font-weight: bold;
+}
+
+/* Montserrat font */
+
+@font-face {
+  font-family: "Montserrat";
+  font-display: swap;
+  src: url("./fontFamily/montserrat/MontserratRegular.otf") format("opentype");
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: "Montserrat";
+  font-display: swap;
+  src: url("./fontFamily/montserrat/MontserratMedium.otf") format("opentype");
+  font-weight: 500;
+}
+
+@font-face {
+  font-family: "Montserrat";
+  font-display: swap;
+  src: url("./fontFamily/montserrat/MontserratBold.otf") format("opentype");
+  font-weight: bold;
+}
+
+/* Caveat Brush font */
+
+@font-face {
+  font-family: "Caveat Brush";
+  font-display: swap;
+  src: url("./fontFamily/CaveatBrush/CaveatBrushRegular.ttf") format("truetype");
+  font-weight: normal;
+}
