@@ -56,7 +56,6 @@ export const Title2 = styled(Typography).attrs({ variant: 'h2', color: 'secondar
     font-family: Caveat Brush !important;
     font-size: ${fontSizes.xl};
     line-height: 70px;
-    text-align: center;
     margin: ${spacing(4)};
   }
 `;
