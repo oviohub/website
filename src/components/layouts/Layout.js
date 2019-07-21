@@ -11,7 +11,7 @@ import { colors } from '../styledComponents';
 const theme = createMuiTheme({
   palette: {
     primary: { main: `${colors.white}` },
-    secondary: { main: `${colors.orange}` },
+    secondary: { main: `${colors.darkGray}` },
   },
 });
 

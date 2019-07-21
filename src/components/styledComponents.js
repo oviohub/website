@@ -9,9 +9,12 @@ export const mobileThresholdPixels = `${mobileThreshold}px`;
 export const menuHeightOffset = 71; // 30 + 41 --- 30 for marginTop + 41 menuBar height
 export const theme = createMuiTheme();
 
+export const spacing = factor => `${theme.spacing(factor)}px`;
+
 export const margins = {
   xs: '7px',
   m: '30px',
+  l: '50px',
 };
 
 export const fontSizes = {
@@ -23,6 +26,7 @@ export const fontSizes = {
 export const colors = {
   white: '#FFFFFF',
   orange: '#FF9339',
+  darkGray: '#4A4A4A',
 };
 
 // Typography
@@ -46,6 +50,17 @@ export const SubTitle1 = styled(Typography).attrs({ variant: 'subtitle1', color:
     text-align: center;
   }
 `;
+
+export const Title2 = styled(Typography).attrs({ variant: 'h2', color: 'secondary' })`
+  &&& {
+    font-family: Caveat Brush !important;
+    font-size: ${fontSizes.xl};
+    line-height: 70px;
+    text-align: center;
+    margin: ${spacing(4)};
+  }
+`;
+
 
 // Inputs
 export const Button = muiStyled(MuiButton)(props => ({

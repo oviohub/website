@@ -2,8 +2,8 @@ import React from 'react';
 import { Grid } from '@material-ui/core';
 import { styled } from '@material-ui/styles';
 
-import { menuHeightOffset, Title1, SubTitle1, Button, Arrow } from './styledComponents';
-import headerImage from '../assets/headerImage.jpg';
+import { menuHeightOffset, Title1, SubTitle1, Button, Arrow } from '../styledComponents';
+import headerImage from '../../assets/homePage/headerImage.jpg';
 
 const HeaderContainer = styled(Grid)({
   height: `${680 - menuHeightOffset}px`,
@@ -11,7 +11,7 @@ const HeaderContainer = styled(Grid)({
 
 const ImageContainer = styled('div')({
   position: 'absolute',
-  width: '100vw',
+  width: 'calc(100vw - 16px)',
   left: '0px',
   top: '0px',
   zIndex: '-1',
