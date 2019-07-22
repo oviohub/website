@@ -5,6 +5,8 @@ import MenuBar from '../components/MenuBar';
 import Header from '../components/home/Header';
 import MapSection from '../components/home/MapSection';
 import GetInvolved from '../components/home/GetInvolved';
+import LineSeparator from '../components/home/LineSeparator';
+import Footer from '../components/Footer';
 
 const IndexPage = () => (
   <Layout routeSlug="HomePage">
@@ -12,6 +14,8 @@ const IndexPage = () => (
     <Header />
     <MapSection />
     <GetInvolved />
+    <LineSeparator />
+    <Footer />
   </Layout>
 );
 

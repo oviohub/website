@@ -109,3 +109,9 @@ export const Arrow = muiStyled('div')({
   borderWidth: '0px 0px 4px 4px',
   transform: 'rotate(315deg)',
 });
+
+export const ThickLine = muiStyled('div')(props => ({
+  width: props.width || '100%',
+  height: props.height || spacing(1.5),
+  backgroundColor: colors.orange,
+}));

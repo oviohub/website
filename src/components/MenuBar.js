@@ -3,18 +3,10 @@ import { Link as DefaultLink } from 'gatsby';
 import { Grid, Typography } from '@material-ui/core';
 import { styled, makeStyles } from '@material-ui/styles';
 
+import menuItems from '../services/MenuItems';
 import logo from '../assets/logo/logo.white.png';
 import { getPageUrl } from '../Routes';
 import { margins, colors, ButtonV2 as Button } from './styledComponents';
-
-const menuList = [
-  { label: 'About', link: getPageUrl('HomePage') },
-  { label: 'Model', link: getPageUrl('HomePage') },
-  { label: 'Featured', link: getPageUrl('HomePage') },
-  { label: 'Impact', link: getPageUrl('HomePage') },
-  { label: 'Contact', link: getPageUrl('HomePage') },
-  { label: 'Press', link: getPageUrl('HomePage') },
-];
 
 const SubGrid = styled(Grid)({
   flex: '1',
@@ -56,7 +48,7 @@ const MenuBar = () => {
         </Link>
       </SubGrid>
       <SubGrid container item justify="flex-end">
-        {menuList.map(item => (
+        {menuItems.map(item => (
           <Link key={item.label} to={item.link}>
             <Button>{item.label}</Button>
           </Link>
