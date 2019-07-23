@@ -8,6 +8,14 @@ const routes = {
       description: '',
     },
   },
+  AboutPage: {
+    url: '/about/',
+    component: 'src/pages/AboutPage.js',
+    seo: {
+      title: 'About',
+      description: '',
+    },
+  },
 };
 
 function getPageUrl(routeId) {
