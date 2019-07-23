@@ -1,7 +1,7 @@
 import { getPageUrl } from '../Routes';
 
 const menuItems = [
-  { label: 'About', link: getPageUrl('HomePage') },
+  { label: 'About', link: getPageUrl('AboutPage') },
   { label: 'Model', link: getPageUrl('HomePage') },
   { label: 'Featured', link: getPageUrl('HomePage') },
   { label: 'Impact', link: getPageUrl('HomePage') },

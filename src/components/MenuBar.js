@@ -1,19 +1,30 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { Link } from 'gatsby';
 import { Grid, Typography, Button, Icon } from '@material-ui/core';
 import { makeStyles } from '@material-ui/styles';
 
 import menuItems from '../services/MenuItems';
-import logo from '../assets/logo/logo.white.png';
+import logoWhite from '../assets/logo/logo.white.svg';
+import logoOrange from '../assets/logo/logo.orange.svg';
 import { getPageUrl } from '../Routes';
-import { spacing, margins, useStylesBase } from './styledComponents';
+import { spacing, contentWidthPixels, colors, useStylesBase } from './styledComponents';
 
 const useStyles = makeStyles({
-  grid: { marginTop: `${margins.m}` },
-  SubGrid: {
-    zIndex: '2',
-  },
+  grid: props => ({
+    padding: !props.homeversion ? `${spacing(2)} 0px` : `${spacing(4)} 0px 0px`,
+    position: !props.homeversion && 'fixed',
+    background: !props.homeversion && colors.white,
+    left: !props.homeversion && '0px',
+    zIndex: '3',
+  }),
+  gridFixedWidth: props => ({
+    width: !props.homeversion && contentWidthPixels,
+  }),
+  leftSubGrid: { paddingLeft: spacing(2) },
   link: {
+    display: 'flex',
+    alignItems: 'center',
     color: 'inherit',
     textDecoration: 'none',
   },
@@ -23,33 +34,48 @@ const useStyles = makeStyles({
     textAlign: 'center',
     marginTop: spacing(1),
     width: 'fit-content',
+    opacity: 1,
   },
 });
 
-const MenuBar = () => {
+const MenuBar = ({ homeversion }) => {
   const baseClasses = useStylesBase();
-  const classes = useStyles();
+  const classes = useStyles({ homeversion });
+  const logo = homeversion ? logoWhite : logoOrange;
   return (
-    <Grid container className={classes.grid}>
-      <Grid className={classes.SubGrid} item xs={6}>
-        <Link className={classes.link} to={getPageUrl('HomePage')}>
-          <Grid container direction="column" justify="flex-start">
-            <Icon component="img" className={baseClasses.muiIconLogo} src={logo} alt="Ovio" />
-            <Typography className={classes.logoCaution} variant="caption" color="textSecondary">
-              Online Volunteering in the Open
-            </Typography>
-          </Grid>
-        </Link>
-      </Grid>
-      <Grid className={classes.SubGrid} container item justify="flex-end" xs={6}>
-        {menuItems.map(item => (
-          <Link className={classes.link} key={item.label} to={item.link}>
-            <Button className={baseClasses.muiButtonAppBarVersion}>{item.label}</Button>
+    <Grid container className={classes.grid} justify="center">
+      <Grid container className={classes.gridFixedWidth}>
+        <Grid className={classes.leftSubGrid} item xs={6}>
+          <Link className={classes.link} to={getPageUrl('HomePage')}>
+            <Grid container direction="column" alignItems="flex-start">
+              <img component="img" className={baseClasses.muiIconLogo} src={logo} alt="Ovio" />
+              <Typography
+                className={classes.logoCaution}
+                variant="caption"
+                color={homeversion ? 'primary' : 'textSecondary'}
+              >
+                Online Volunteering in the Open
+              </Typography>
+            </Grid>
           </Link>
-        ))}
+        </Grid>
+        <Grid container item justify="flex-end" xs={6}>
+          {menuItems.map(item => (
+            <Link className={classes.link} key={item.label} to={item.link}>
+              <Button className={baseClasses.muiButtonAppBarVersion} color="secondary">{item.label}</Button>
+            </Link>
+          ))}
+        </Grid>
       </Grid>
     </Grid>
   );
 };
 
+MenuBar.propTypes = {
+  homeversion: PropTypes.bool,
+};
+
+MenuBar.defaultProps = {
+  homeversion: false,
+};
 export default MenuBar;

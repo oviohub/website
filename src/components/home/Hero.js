@@ -11,7 +11,7 @@ const useStyles = makeStyles({
   mainContainer: { height: `${imageHeight - menuHeightOffset}px` },
   imageContainer: {
     position: 'absolute',
-    width: 'calc(100vw - 16px)', // 16px == <body> element padding
+    width: 'calc(100vw - 15px)', // 15px == scroll bar size
     left: '0px',
     top: '0px',
     zIndex: '-1',

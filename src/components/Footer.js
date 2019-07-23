@@ -1,10 +1,11 @@
 import React from 'react';
 import { Grid, Typography, Icon } from '@material-ui/core';
+import { makeStyles } from '@material-ui/styles';
 
 import menuItems from '../services/MenuItems';
 import { getPageUrl } from '../Routes';
 import { useStylesBase } from './styledComponents';
-import logo from '../assets/logo/logo.orange.png';
+import logo from '../assets/logo/logo.orange.svg';
 import iconFacebook from '../assets/icons/icon.facebook.jpg';
 import iconLinkedIn from '../assets/icons/icon.linkedIn.jpg';
 import iconTwitter from '../assets/icons/icon.twitter.jpg';
@@ -25,11 +26,11 @@ const socialMedias = [
 ];
 
 const Footer = () => {
-  const baseClasses = useStylesBase();
+  const { muiGridBlockContainer, muiIconLogo, muiTypographyOverlineLight } = useStylesBase();
   return (
-    <Grid container justify="flex-end">
+    <Grid className={muiGridBlockContainer} container justify="flex-end">
       <Grid item container sm={6} direction="column">
-        <Icon className={baseClasses.muiIconLogo} component="img" src={logo} alt="Ovio" />
+        <Icon className={muiIconLogo} component="img" src={logo} alt="Ovio" />
         <Grid>
           {socialMedias.map(item => (
             <Icon component="img" key={item.image.alt} src={item.image.src} alt={item.image.alt} />
@@ -41,8 +42,8 @@ const Footer = () => {
         {menuItems.filter(item => item.label !== 'About').map(item => (
           <Grid container direction="column" item key={item.label} style={{ width: 'auto' }}>
             <Typography variant="overline">{item.label}</Typography>
-            <Typography variant="overline" className={baseClasses.muiTypographyOverlineLight}>{item.label}</Typography>
-            <Typography variant="overline" className={baseClasses.muiTypographyOverlineLight}>{item.label}</Typography>
+            <Typography variant="overline" className={muiTypographyOverlineLight}>{item.label}</Typography>
+            <Typography variant="overline" className={muiTypographyOverlineLight}>{item.label}</Typography>
           </Grid>
         ))}
       </Grid>
