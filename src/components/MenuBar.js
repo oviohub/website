@@ -1,59 +1,53 @@
 import React from 'react';
-import { Link as DefaultLink } from 'gatsby';
-import { Grid, Typography } from '@material-ui/core';
-import { styled, makeStyles } from '@material-ui/styles';
+import { Link } from 'gatsby';
+import { Grid, Typography, Button, Icon } from '@material-ui/core';
+import { makeStyles } from '@material-ui/styles';
 
 import menuItems from '../services/MenuItems';
 import logo from '../assets/logo/logo.white.png';
 import { getPageUrl } from '../Routes';
-import { margins, colors, ButtonV2 as Button } from './styledComponents';
-
-const SubGrid = styled(Grid)({
-  flex: '1',
-  zIndex: '2',
-});
-
-const Link = styled(DefaultLink)({
-  color: 'inherit',
-  textDecoration: 'none',
-});
-
-const LogoContainer = styled(Grid)({ width: 'fit-content' });
-
-const Logo = styled('img')({ width: 'fit-content' });
-
-const LogoCaution = styled(Typography)({
-  fontFamily: 'Roboto',
-  fontSize: '8.3px',
-  lineHeight: '10px',
-  textAlign: 'center',
-  marginTop: `${margins.xs}`,
-  color: `${colors.orange}`,
-});
+import { spacing, margins, useStylesBase } from './styledComponents';
 
 const useStyles = makeStyles({
   grid: { marginTop: `${margins.m}` },
+  SubGrid: {
+    zIndex: '2',
+  },
+  link: {
+    color: 'inherit',
+    textDecoration: 'none',
+  },
+  logoCaution: {
+    fontSize: '8.3px',
+    lineHeight: '10px',
+    textAlign: 'center',
+    marginTop: spacing(1),
+    width: 'fit-content',
+  },
 });
 
 const MenuBar = () => {
+  const baseClasses = useStylesBase();
   const classes = useStyles();
   return (
     <Grid container className={classes.grid}>
-      <SubGrid item>
-        <Link to={getPageUrl('HomePage')}>
-          <LogoContainer container direction="column">
-            <Logo src={logo} alt="Ovio" />
-            <LogoCaution>Online Volunteering in the Open</LogoCaution>
-          </LogoContainer>
+      <Grid className={classes.SubGrid} item xs={6}>
+        <Link className={classes.link} to={getPageUrl('HomePage')}>
+          <Grid container direction="column" justify="flex-start">
+            <Icon component="img" className={baseClasses.muiIconLogo} src={logo} alt="Ovio" />
+            <Typography className={classes.logoCaution} variant="caption" color="textSecondary">
+              Online Volunteering in the Open
+            </Typography>
+          </Grid>
         </Link>
-      </SubGrid>
-      <SubGrid container item justify="flex-end">
+      </Grid>
+      <Grid className={classes.SubGrid} container item justify="flex-end" xs={6}>
         {menuItems.map(item => (
-          <Link key={item.label} to={item.link}>
-            <Button>{item.label}</Button>
+          <Link className={classes.link} key={item.label} to={item.link}>
+            <Button className={baseClasses.muiButtonAppBarVersion}>{item.label}</Button>
           </Link>
         ))}
-      </SubGrid>
+      </Grid>
     </Grid>
   );
 };

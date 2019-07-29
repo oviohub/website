@@ -1,8 +1,8 @@
 import React from 'react';
-import { Grid, Typography } from '@material-ui/core';
-import { styled } from '@material-ui/styles';
+import { Grid, Typography, Button } from '@material-ui/core';
+import { makeStyles } from '@material-ui/styles';
 
-import { spacing, Title2, Button } from '../styledComponents';
+import { spacing, useStylesBase } from '../styledComponents';
 import cardImage1 from '../../assets/homePage/CardImage_Volunteers.jpg';
 import cardImage2 from '../../assets/homePage/CardImage_SocialImpact.jpg';
 import cardImage3 from '../../assets/homePage/CardImage_Companies.jpg';
@@ -27,66 +27,51 @@ const cards = [
   },
 ];
 
-const Container = styled(Grid)({ marginTop: spacing(6) });
-
-const Content = styled(Grid)({ marginLeft: spacing(10) });
-
-const CardsContainer = styled(Grid)({});
-
-const CardContainer = styled(Grid)({
-  height: '520px',
-  width: '330px',
-  padding: spacing(3),
-  '&:hover': {
-    border: '1px solid #DCDCDC',
-    boxShadow: '0 30px 60px 0 rgba(0,0,0,0.05)',
+const useStyles = makeStyles({
+  cardContainer: {
+    height: '520px',
+    width: '330px',
+    padding: spacing(3),
+    '&:hover': {
+      border: '1px solid #DCDCDC',
+      boxShadow: '0 30px 60px 0 rgba(0,0,0,0.05)',
+    },
+  },
+  image: { marginTop: spacing(2) },
+  cardParagraph: {
+    marginBottom: spacing(2),
+    minHeight: '130px',
+  },
+  buttonContainer: {
+    position: 'relative',
+    bottom: '-4px',
   },
 });
 
-const Img = styled('img')({ marginTop: spacing(2) });
-
-const CardTitle = styled(Typography)({
-  fontFamily: 'Montserrat',
-  fontSize: '18px',
-  fontWeight: 'bold',
-  lineHeight: '22px',
-  margin: `${spacing(4)} 0px ${spacing(2)}`,
-});
-
-const CardParagraph = styled(Typography)({
-  fontFamily: 'Montserrat',
-  fontSize: '16px',
-  lineHeight: '26px',
-  marginBottom: spacing(2),
-  minHeight: '130px',
-});
-
-const ButtonContainer = styled(Grid)({
-  position: 'relative',
-  bottom: '-4px',
-});
-
-const renderCard = card => (
-  <CardContainer item key={card.title}>
-    <Img src={card.image.src} alt={card.image.alt} />
-    <CardTitle color="secondary">{card.title}</CardTitle>
-    <CardParagraph color="secondary">{card.paragraph}</CardParagraph>
-    <ButtonContainer><Button>Learn More</Button></ButtonContainer>
-  </CardContainer>
-);
-
-const GetInvolved = () => (
-  <Container container>
-    <Content>
-      <Title2>
-        Interested in Collaborating?
-        <br />
-        Get Involved!
-      </Title2>
-      <CardsContainer container>{cards.map(card => renderCard(card))}</CardsContainer>
-
-    </Content>
-  </Container>
-);
+const GetInvolved = () => {
+  const baseClasses = useStylesBase();
+  const classes = useStyles();
+  return (
+    <Grid className={baseClasses.muiGridBlockContainer} container>
+      <Grid className={baseClasses.muiGridContent}>
+        <Typography variant="h2">
+          Interested in Collaborating?
+          <br />
+          Get Involved!
+        </Typography>
+        <Grid container>
+          {cards.map(card => (
+            <Grid className={classes.cardContainer} item key={card.title}>
+              <img className={classes.image} src={card.image.src} alt={card.image.alt} />
+              <Typography variant="h4">{card.title}</Typography>
+              <Typography className={classes.cardParagraph} variant="body1">{card.paragraph}</Typography>
+              <Grid className={classes.buttonContainer}><Button>Learn More</Button></Grid>
+            </Grid>
+          ))}
+        </Grid>
+      </Grid>
+    </Grid>
+  );
+};
 
 export default GetInvolved;

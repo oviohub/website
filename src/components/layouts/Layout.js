@@ -1,29 +1,19 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { styled, ThemeProvider } from '@material-ui/styles';
-import { Container, createMuiTheme } from '@material-ui/core';
+import { ThemeProvider } from '@material-ui/styles';
+import { Container } from '@material-ui/core';
 
 import { getPageTitle } from '../../Routes';
 import './layout.css';
 import SEO from '../Seo';
-import { colors } from '../styledComponents';
-
-const theme = createMuiTheme({
-  palette: {
-    primary: { main: `${colors.white}` },
-    secondary: { main: `${colors.darkGray}` },
-  },
-});
-
-const MainContainer = styled(Container)({
-});
+import { defaultTheme } from '../styledComponents';
 
 const Layout = ({ routeSlug, children }) => (
-  <ThemeProvider theme={theme}>
-    <MainContainer>
+  <ThemeProvider theme={defaultTheme}>
+    <Container>
       <SEO title={getPageTitle(routeSlug)} />
       <main>{children}</main>
-    </MainContainer>
+    </Container>
   </ThemeProvider>
 );
 

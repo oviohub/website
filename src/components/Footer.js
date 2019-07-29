@@ -1,15 +1,13 @@
 import React from 'react';
-import { Grid, Typography } from '@material-ui/core';
-import { styled } from '@material-ui/styles';
+import { Grid, Typography, Icon } from '@material-ui/core';
 
 import menuItems from '../services/MenuItems';
 import { getPageUrl } from '../Routes';
-import { spacing, fontSizes } from './styledComponents';
+import { useStylesBase } from './styledComponents';
 import logo from '../assets/logo/logo.orange.png';
 import iconFacebook from '../assets/icons/icon.facebook.jpg';
 import iconLinkedIn from '../assets/icons/icon.linkedIn.jpg';
 import iconTwitter from '../assets/icons/icon.twitter.jpg';
-
 
 const socialMedias = [
   {
@@ -26,56 +24,30 @@ const socialMedias = [
   },
 ];
 
-const Content = styled(Grid)({ flex: '1' });
-
-const SocialMediasContainer = styled(Grid)({});
-
-const Logo = styled('img')({ width: 'fit-content' });
-
-const Icon = styled('img')({ margin: `${spacing(4)} ${spacing(3)} ${spacing(4)} 0px` });
-
-const CopyrightSpan = styled(Typography)({
-  fontFamily: 'Roboto',
-  fontSize: fontSizes.s,
-  lineHeight: '14px',
-  opacity: '0.5',
-});
-
-const MenuPrimaryLink = styled(Typography)({
-  fontFamily: 'Roboto',
-  fontSize: fontSizes.s,
-  fontWeight: 'bold',
-  lineHeight: '16px',
-  margin: `0px ${spacing(8)} ${spacing(4)} 0px`,
-});
-
-const MenuSecondaryLink = styled(MenuPrimaryLink)({
-  opacity: '0.5',
-  lineHeight: '14px',
-  margin: `0px ${spacing(7)} ${spacing(4)} 0px`,
-});
-
-const Footer = () => (
-  <Grid container justify="flex-end">
-    <Content item container direction="column">
-      <Logo src={logo} alt="Ovio" />
-      <SocialMediasContainer>
-        {socialMedias.map(item => <Icon src={item.image.src} alt={item.image.alt} />)}
-      </SocialMediasContainer>
-      <CopyrightSpan color="secondary" component="span">
-        © 2019 Ovio Inc - All Rights Reserved - Theme
-      </CopyrightSpan>
-    </Content>
-    <Content item container>
-      {menuItems.filter(item => item.label !== 'About').map(item => (
-        <div>
-          <MenuPrimaryLink color="secondary">{item.label}</MenuPrimaryLink>
-          <MenuSecondaryLink color="secondary">{item.label}</MenuSecondaryLink>
-          <MenuSecondaryLink color="secondary">{item.label}</MenuSecondaryLink>
-        </div>
-      ))}
-    </Content>
-  </Grid>
-);
+const Footer = () => {
+  const baseClasses = useStylesBase();
+  return (
+    <Grid container justify="flex-end">
+      <Grid item container sm={6} direction="column">
+        <Icon className={baseClasses.muiIconLogo} component="img" src={logo} alt="Ovio" />
+        <Grid>
+          {socialMedias.map(item => (
+            <Icon component="img" key={item.image.alt} src={item.image.src} alt={item.image.alt} />
+          ))}
+        </Grid>
+        <Typography variant="caption">© 2019 Ovio Inc - All Rights Reserved</Typography>
+      </Grid>
+      <Grid item container sm={6}>
+        {menuItems.filter(item => item.label !== 'About').map(item => (
+          <Grid container direction="column" item key={item.label} style={{ width: 'auto' }}>
+            <Typography variant="overline">{item.label}</Typography>
+            <Typography variant="overline" className={baseClasses.muiTypographyOverlineLight}>{item.label}</Typography>
+            <Typography variant="overline" className={baseClasses.muiTypographyOverlineLight}>{item.label}</Typography>
+          </Grid>
+        ))}
+      </Grid>
+    </Grid>
+  );
+};
 
 export default Footer;

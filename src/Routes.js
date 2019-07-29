@@ -11,18 +11,15 @@ const routes = {
 };
 
 function getPageUrl(routeId) {
-  if (!routes[routeId]) return undefined;
-  return routes[routeId].url;
+  return routes[routeId] && routes[routeId].url;
 }
 
 function getPageSeo(routeId) {
-  if (!routes[routeId]) return undefined;
-  return routes[routeId].seo;
+  return routes[routeId] && routes[routeId].seo;
 }
 
 function getPageTitle(routeId) {
-  if (!routes[routeId]) return undefined;
-  return routes[routeId].seo.title;
+  return routes[routeId] && routes[routeId].seo.title;
 }
 
 module.exports = { routes, getPageUrl, getPageSeo, getPageTitle };
