@@ -60,22 +60,27 @@ function SEO({ description, lang, meta, title }) {
           name: 'twitter:description',
           content: metaDescription,
         },
+        {
+          name: 'viewport',
+          content: 'minimum-scale=1, initial-scale=1, width=device-width, shrink-to-fit=no',
+        },
       ].concat(meta)}
     />
   );
 }
 
-SEO.defaultProps = {
-  lang: 'en',
-  meta: [],
-  description: '',
-};
 
 SEO.propTypes = {
   description: PropTypes.string,
   lang: PropTypes.string,
   meta: PropTypes.arrayOf(PropTypes.object),
   title: PropTypes.string.isRequired,
+};
+
+SEO.defaultProps = {
+  lang: 'en',
+  meta: [],
+  description: '',
 };
 
 export default SEO;

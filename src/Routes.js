@@ -11,15 +11,15 @@ const routes = {
 };
 
 function getPageUrl(routeId) {
-  return routes[routeId].url;
+  return routes[routeId] && routes[routeId].url;
 }
 
 function getPageSeo(routeId) {
-  return routes[routeId].seo;
+  return routes[routeId] && routes[routeId].seo;
 }
 
 function getPageTitle(routeId) {
-  return routes[routeId].seo.title;
+  return routes[routeId] && routes[routeId].seo.title;
 }
 
 module.exports = { routes, getPageUrl, getPageSeo, getPageTitle };
