@@ -1,14 +1,13 @@
 import React from 'react';
 import { Grid, Typography, Icon } from '@material-ui/core';
-import { makeStyles } from '@material-ui/styles';
 
 import menuItems from '../services/MenuItems';
 import { getPageUrl } from '../Routes';
 import { useStylesBase } from './styledComponents';
 import logo from '../assets/logo/logo.orange.svg';
-import iconFacebook from '../assets/icons/icon.facebook.jpg';
-import iconLinkedIn from '../assets/icons/icon.linkedIn.jpg';
-import iconTwitter from '../assets/icons/icon.twitter.jpg';
+import iconFacebook from '../assets/icons/icon.facebook.orange.svg';
+import iconLinkedIn from '../assets/icons/icon.linkedin.orange.svg';
+import iconTwitter from '../assets/icons/icon.twitter.orange.svg';
 
 const socialMedias = [
   {
