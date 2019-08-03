@@ -26,7 +26,7 @@ const cardList = [
 
 const useStyles = makeStyles({
   mainContainer: {
-    padding: `${menuHeightOffset}px 0px ${spacing(10)}`,
+    padding: `${menuHeightOffset}px 0px 0px`,
   },
   headerContainer: {
     height: '360px',

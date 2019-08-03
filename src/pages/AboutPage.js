@@ -4,6 +4,7 @@ import Layout from '../components/layouts/Layout';
 import MenuBar from '../components/MenuBar';
 import Intro from '../components/about/Intro';
 import WhatMakesUsUnique from '../components/about/WhatMakesUsUnique';
+import OurValuesBlock from '../components/about/OurValuesBlock';
 import Footer from '../components/Footer';
 
 const IndexPage = () => (
@@ -11,6 +12,7 @@ const IndexPage = () => (
     <MenuBar fixed />
     <Intro />
     <WhatMakesUsUnique />
+    <OurValuesBlock />
     <Footer />
   </Layout>
 );
