@@ -50,15 +50,9 @@ const teamMembers = [
 
 const imagesWidth = 371;
 const useStyles = makeStyles({
-  backgroundImg: {
-    zIndex: -1,
-  },
-  subContainer: {
-    width: `${imagesWidth}px`,
-  },
-  cardContainer: {
-    width: 'fit-content',
-  },
+  backgroundImg: { zIndex: -1 },
+  subContainer: { width: `${imagesWidth}px` },
+  cardContainer: { width: 'fit-content' },
   cardTextContainer: {
     padding: `0px ${spacing(2)}`,
     marginTop: '-68px',
@@ -67,9 +61,7 @@ const useStyles = makeStyles({
     fontSize: fontSizing(3),
     marginBottom: spacing(1),
   },
-  textContainer: {
-    marginTop: spacing(4),
-  },
+  textContainer: { marginTop: spacing(6) },
   icon: {
     margin: '0px',
     fontSize: '1.9rem',

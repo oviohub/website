@@ -109,15 +109,6 @@ export const defaultTheme = createMuiTheme({
         lineHeight: '14px',
         opacity: '0.5',
       },
-      overline: {
-        color: colors.darkBlue,
-        fontFamily: 'Roboto',
-        fontSize: fontSizing(2),
-        fontWeight: 'bold',
-        lineHeight: '16px',
-        margin: `0px ${spacing(8)} ${spacing(4)} 0px`,
-        textTransform: 'none',
-      },
     },
     MuiButton: {
       root: {
@@ -182,13 +173,9 @@ export const useStylesBase = makeStyles({
     marginLeft: spacing(10),
   },
   muiIconLogo: {
+    width: '110px',
     margin: '0px',
     height: '24px',
-  },
-  muiTypographyOverlineLight: {
-    opacity: '0.5',
-    lineHeight: '14px',
-    margin: `0px ${spacing(7)} ${spacing(4)} 0px`,
   },
   muiGridBackground: {
     position: 'absolute',
@@ -207,9 +194,3 @@ export const Arrow = styled('div')({
   borderWidth: '0px 0px 4px 4px',
   transform: 'rotate(315deg)',
 });
-
-export const ThickLine = styled('div')(props => ({
-  width: props.width || '100%',
-  height: props.height || spacing(1.5),
-  backgroundColor: colors.orange,
-}));

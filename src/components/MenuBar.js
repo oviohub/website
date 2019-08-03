@@ -4,7 +4,7 @@ import { Link } from 'gatsby';
 import { Grid, Typography, Button } from '@material-ui/core';
 import { makeStyles } from '@material-ui/styles';
 
-import menuItems from '../services/MenuItems';
+import { menuItems } from '../services/MenuItems';
 import logoWhite from '../assets/logo/logo.white.svg';
 import logoOrange from '../assets/logo/logo.orange.svg';
 import { getPageUrl } from '../Routes';
