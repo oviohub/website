@@ -14,7 +14,6 @@ export const colors = {
   grey: '#BDBDBD',
   lightGrey: '#FAFAFA',
   white: '#FFFFFF',
-  darkGray: '#4A4A4A',
 };
 
 export const margins = {
@@ -36,10 +35,10 @@ export const fontSizing = factor => `${factor * 7}px`; // 7px for the smaller fo
 export const defaultTheme = createMuiTheme({
   palette: {
     primary: { main: `${colors.white}` },
-    secondary: { main: `${colors.darkGray}` },
+    secondary: { main: `${colors.darkBlue}` },
     error: { main: `${colors.orange}` },
     text: {
-      primary: colors.darkGray,
+      primary: colors.darkBlue,
       secondary: colors.orange,
     },
   },
@@ -65,47 +64,53 @@ export const defaultTheme = createMuiTheme({
         textAlign: 'center',
       },
       h2: {
-        color: colors.darkGray,
+        color: colors.darkBlue,
         fontFamily: 'Caveat Brush',
         fontSize: fontSizing(9),
         lineHeight: '70px',
         margin: spacing(4),
       },
       subtitle2: {
-        color: colors.darkGray,
+        color: colors.darkBlue,
         fontFamily: 'Montserrat',
         fontSize: fontSizing(3),
         lineHeight: '34px',
         height: 'fit-content',
       },
       h3: {
-        color: colors.darkGray,
+        color: colors.darkBlue,
         fontFamily: 'Caveat Brush',
         fontSize: fontSizing(9),
         lineHeight: '45px',
       },
       h4: {
-        color: colors.darkGray,
+        color: colors.darkBlue,
         fontFamily: 'Montserrat',
         fontSize: fontSizing(2.6), // to be close to 18px
         fontWeight: 'bold',
         lineHeight: '22px',
       },
       body1: {
-        color: colors.darkGray,
+        color: colors.darkBlue,
         fontFamily: 'Montserrat',
         fontSize: fontSizing(3),
         lineHeight: '26px',
       },
+      body2: {
+        color: colors.darkBlue,
+        fontFamily: 'Montserrat',
+        fontSize: fontSizing(2.3), // to be close to 16px
+        lineHeight: '26px',
+      },
       caption: {
-        color: colors.darkGray,
+        color: colors.darkBlue,
         fontFamily: 'Roboto',
         fontSize: fontSizing(2),
         lineHeight: '14px',
         opacity: '0.5',
       },
       overline: {
-        color: colors.darkGray,
+        color: colors.darkBlue,
         fontFamily: 'Roboto',
         fontSize: fontSizing(2),
         fontWeight: 'bold',
@@ -171,7 +176,7 @@ export const useStylesBase = makeStyles({
     },
   },
   muiGridBlockContainer: {
-    marginTop: spacing(6),
+    margin: `${spacing(12)} 0px`,
   },
   muiGridContent: {
     marginLeft: spacing(10),
