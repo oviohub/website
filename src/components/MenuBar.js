@@ -4,7 +4,7 @@ import { Link } from 'gatsby';
 import { Grid, Typography, Button } from '@material-ui/core';
 import { makeStyles } from '@material-ui/styles';
 
-import { menuItems } from '../services/MenuItems';
+import { menuItems } from '../services/menuItems';
 import logoWhite from '../assets/logo/logo.white.svg';
 import logoOrange from '../assets/logo/logo.orange.svg';
 import { getPageUrl } from '../Routes';
@@ -36,6 +36,25 @@ const useStyles = makeStyles({
     width: 'fit-content',
     opacity: 1,
   },
+  button: props => ({
+    backgroundColor: 'transparent',
+    fontFamily: 'Roboto',
+    fontWeight: 'normal',
+    lineHeight: '16px',
+    textTransform: 'none',
+    height: '30px',
+    border: '2px solid transparent',
+    borderRadius: '7px',
+    boxShadow: 'none',
+    minWidth: '61px',
+    padding: `0px ${spacing(1)}`,
+    margin: `0px ${spacing(1)}`,
+    '&:hover': {
+      color: colors.darkBlue,
+      borderColor: props.homeversion ? colors.white : colors.orange,
+      backgroundColor: props.homeversion ? colors.white : colors.orange,
+    },
+  }),
 });
 
 const MenuBar = ({ homeversion }) => {
@@ -62,7 +81,7 @@ const MenuBar = ({ homeversion }) => {
         <Grid container item justify="flex-end" xs={6}>
           {menuItems.map(item => (
             <Link className={classes.link} key={item.label} to={item.link}>
-              <Button className={baseClasses.muiButtonAppBarVersion} color="secondary">{item.label}</Button>
+              <Button className={classes.button} color={homeversion ? 'primary' : 'secondary'}>{item.label}</Button>
             </Link>
           ))}
         </Grid>

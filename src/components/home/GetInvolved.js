@@ -1,29 +1,35 @@
 import React from 'react';
+import { Link } from 'gatsby';
 import { Grid, Typography, Button } from '@material-ui/core';
 import { makeStyles } from '@material-ui/styles';
 
+import { getPageUrl } from '../../Routes';
 import { spacing, useStylesBase, fontSizing } from '../styledComponents';
-import cardImage1 from '../../assets/homePage/CardImage_Volunteers.jpg';
-import cardImage2 from '../../assets/homePage/CardImage_SocialImpact.jpg';
-import cardImage3 from '../../assets/homePage/CardImage_Companies.jpg';
+
+import volunteersIcon from '../../assets/icons/icon.volunteers.png';
+import socialImpactIcon from '../../assets/icons/icon.socialImpact.png';
+import companiesIcon from '../../assets/icons/icon.companies.png';
 
 const cards = [
   {
-    image: { src: cardImage1, alt: 'Volunteers' },
+    image: volunteersIcon,
     title: 'Volunteers',
     paragraph: 'Access a catalog of open-source projects and find opportunities that match your interests and skills.',
+    link: getPageUrl('HomePage'),
   },
   {
-    image: { src: cardImage2, alt: 'Social impact organizations' },
+    image: socialImpactIcon,
     title: 'Social impact organizations',
-    // eslint-disable-next-line max-len
-    paragraph: 'As a social impact organization, you have the opportunity to showcase your Tech for Good projects and engage more qualified contributors.',
+    paragraph: `As a social impact organization, you have the opportunity to showcase your Tech for Good projects
+      and engage more qualified contributors.`,
+    link: getPageUrl('HomePage'),
   },
   {
-    image: { src: cardImage3, alt: 'Companies' },
+    image: companiesIcon,
     title: 'Companies',
-    // eslint-disable-next-line max-len
-    paragraph: 'Attract and meaningfully engage employees with Explore. Use our platform to build a purpose-driven culture and scale your skill-based volunteering program.',
+    paragraph: `Attract and meaningfully engage employees with Explore. Use our platform to build a purpose-driven
+      culture and scale your skill-based volunteering program.`,
+    link: getPageUrl('HomePage'),
   },
 ];
 
@@ -38,9 +44,7 @@ const useStyles = makeStyles({
     },
   },
   image: { marginTop: spacing(2) },
-  cardTitle: {
-    margin: `${spacing(4)} 0px ${spacing(2)}`,
-  },
+  cardTitle: { margin: `${spacing(4)} 0px ${spacing(2)}` },
   cardParagraph: {
     fontSize: fontSizing(2.3), // to be close to 16px
     marginBottom: spacing(2),
@@ -53,26 +57,28 @@ const useStyles = makeStyles({
 });
 
 const GetInvolved = () => {
-  const baseClasses = useStylesBase();
+  const { muiGridBlockContainer } = useStylesBase();
   const { cardContainer, image, cardTitle, cardParagraph, buttonContainer } = useStyles();
   return (
-    <Grid className={baseClasses.muiGridBlockContainer} container>
-      <Grid className={baseClasses.muiGridContent}>
-        <Typography variant="h2">
-          Interested in Collaborating?
-          <br />
-          Get Involved!
-        </Typography>
-        <Grid container>
-          {cards.map(card => (
-            <Grid className={cardContainer} item key={card.title}>
-              <img className={image} src={card.image.src} alt={card.image.alt} />
-              <Typography className={cardTitle} variant="h4">{card.title}</Typography>
-              <Typography className={cardParagraph} variant="body1">{card.paragraph}</Typography>
-              <Grid className={buttonContainer}><Button>Learn More</Button></Grid>
+    <Grid className={muiGridBlockContainer} container>
+      <Typography variant="h2">
+        Interested in Collaborating?
+        <br />
+        Get Involved!
+      </Typography>
+      <Grid container>
+        {cards.map(card => (
+          <Grid className={cardContainer} item key={card.title}>
+            <img className={image} src={card.image} alt={card.title} />
+            <Typography className={cardTitle} variant="h4">{card.title}</Typography>
+            <Typography className={cardParagraph} variant="body1">{card.paragraph}</Typography>
+            <Grid className={buttonContainer}>
+              <Link to={card.link} style={{ textDecoration: 'none' }}>
+                <Button>Learn More</Button>
+              </Link>
             </Grid>
-          ))}
-        </Grid>
+          </Grid>
+        ))}
       </Grid>
     </Grid>
   );
