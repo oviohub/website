@@ -145,32 +145,12 @@ export const useStylesBase = makeStyles({
     backgroundColor: 'transparent',
     border: `2px solid ${colors.white}`,
     '&:hover': {
-      backgroundColor: `${colors.orange}f0`,
-    },
-  },
-  muiButtonAppBarVersion: {
-    backgroundColor: 'transparent',
-    fontFamily: 'Roboto',
-    fontWeight: 'normal',
-    lineHeight: '16px',
-    textTransform: 'none',
-    height: '30px',
-    border: '2px solid transparent',
-    borderRadius: '7px',
-    boxShadow: 'none',
-    minWidth: '61px',
-    padding: `0px ${spacing(1)}`,
-    margin: `0px ${spacing(1)}`,
-    '&:hover': {
-      borderColor: colors.orange,
-      backgroundColor: `${colors.orange}`,
+      color: colors.darkBlue,
+      backgroundColor: colors.white,
     },
   },
   muiGridBlockContainer: {
     margin: `${spacing(12)} 0px`,
-  },
-  muiGridContent: {
-    marginLeft: spacing(10),
   },
   muiIconLogo: {
     width: '110px',
@@ -195,7 +175,7 @@ export const Arrow = styled('div')({
   transform: 'rotate(315deg)',
 });
 
-export const ThickLine = muiStyled('div')(props => ({
+export const ThickLine = styled('div')(props => ({
   width: props.width || '100%',
   height: props.height || spacing(1.5),
   backgroundColor: colors.orange,
