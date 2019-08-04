@@ -3,12 +3,12 @@ import { Link } from 'gatsby';
 import { Grid, Typography, Button } from '@material-ui/core';
 import { makeStyles } from '@material-ui/styles';
 
-import { getPageUrl } from '../../Routes';
-import { spacing, useStylesBase, fontSizing } from '../styledComponents';
+import { getPageUrl } from '../Routes';
+import { spacing, useStylesBase, fontSizing } from './styledComponents';
 
-import volunteersIcon from '../../assets/icons/icon.volunteers.png';
-import socialImpactIcon from '../../assets/icons/icon.socialImpact.png';
-import companiesIcon from '../../assets/icons/icon.companies.png';
+import volunteersIcon from '../assets/icons/icon.volunteers.png';
+import socialImpactIcon from '../assets/icons/icon.socialImpact.png';
+import companiesIcon from '../assets/icons/icon.companies.png';
 
 const cards = [
   {

@@ -5,6 +5,7 @@ import { Grid, Typography, Button } from '@material-ui/core';
 import { makeStyles } from '@material-ui/styles';
 
 import { menuItems } from '../services/menuItems';
+import DropMenu from './ui-library/DropMenu';
 import logoWhite from '../assets/logo/logo.white.svg';
 import logoOrange from '../assets/logo/logo.orange.svg';
 import { getPageUrl } from '../Routes';
@@ -78,11 +79,21 @@ const MenuBar = ({ homeVersion }) => {
           </Link>
         </Grid>
         <Grid container item justify="flex-end" xs={6}>
-          {menuItems.map(({ label, link }) => (
-            <Link className={links} key={label} to={link}>
-              <Button className={button} color={homeVersion ? 'primary' : 'secondary'}>{label}</Button>
-            </Link>
-          ))}
+          {menuItems.map(({ label, link, subMenu }) => (
+            (label === 'Model') ? (
+              <DropMenu
+                key={label}
+                buttonLabel={label}
+                buttonLink={link}
+                color={homeVersion ? 'primary' : 'secondary'}
+                menuItems={subMenu}
+                classes={{ links, button }}
+              />
+            ) : (
+              <Link className={links} key={label} to={link}>
+                <Button className={button} color={homeVersion ? 'primary' : 'secondary'}>{label}</Button>
+              </Link>
+            )))}
         </Grid>
       </Grid>
     </Grid>
