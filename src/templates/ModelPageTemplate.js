@@ -42,6 +42,7 @@ ModelPageTemplate.propTypes = {
         markImage: PropTypes.shape({
           publicURL: PropTypes.string.isRequired,
         }).isRequired,
+        isMarkOnLeft: PropTypes.bool,
         items: PropTypes.arrayOf(PropTypes.shape({
           title: PropTypes.string.isRequired,
           paragraph: PropTypes.string.isRequired,
@@ -67,13 +68,14 @@ ModelPageTemplate.propTypes = {
           publicURL: PropTypes.string.isRequired,
         }).isRequired,
         processItems: PropTypes.arrayOf(PropTypes.shape({
+          title: PropTypes.string,
           text: PropTypes.string.isRequired,
           image: PropTypes.shape({
             publicURL: PropTypes.string.isRequired,
           }).isRequired,
           button: PropTypes.shape({
             text: PropTypes.string.isRequired,
-            withGitHubIcon: PropTypes.bool.isRequired,
+            withGitHubIcon: PropTypes.bool,
             link: PropTypes.string.isRequired,
           }),
         })).isRequired,
@@ -99,6 +101,7 @@ export const modelPage = graphql`
       block1intro {
         title
         markImage { publicURL }
+        isMarkOnLeft
         items {
           title
           paragraph
@@ -116,6 +119,7 @@ export const modelPage = graphql`
         subtitle
         markImage { publicURL }
         processItems {
+          title
           text
           image { publicURL }
           button {

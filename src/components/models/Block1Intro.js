@@ -39,17 +39,28 @@ const useStyles = makeStyles({
     width: 'inherit',
     boxShadow: '0px 40px 80px rgba(0, 0, 0, 0.15)',
   },
-  markImg: {
+  markImg: ({ isMarkOnLeft }) => ({
     position: 'absolute',
-    right: '0px',
-  },
+    right: isMarkOnLeft ? 'unset' : '0px',
+    left: isMarkOnLeft ? 'unset' : '0px',
+  }),
 });
 
-const Block1Intro = ({ title, markImage, items }) => {
-  const { muiGridBlockContainer, container, blockContainer, itemContainer, textContainer, title3, image, markImg } = useStyles();
+const Block1Intro = ({ title, markImage: { publicURL: markImageUrl }, isMarkOnLeft, items }) => {
+  const {
+    // eslint-disable-next-line no-shadow
+    muiGridBlockContainer,
+    container,
+    blockContainer,
+    itemContainer,
+    textContainer,
+    title3,
+    image,
+    markImg,
+  } = useStyles({ isMarkOnLeft });
   return (
     <Grid className={container} container justify="center">
-      <img className={markImg} src={markImage && markImage.publicURL} alt="Ovio - Volunteers" />
+      <img className={markImg} src={markImageUrl} alt="Ovio - Volunteers" />
       <Grid className={`${muiGridBlockContainer} ${blockContainer}`} container>
         {title && <Typography variant="h2">{title}</Typography>}
         <Grid container>
@@ -81,6 +92,7 @@ Block1Intro.propTypes = {
   markImage: PropTypes.shape({
     publicURL: PropTypes.string.isRequired,
   }).isRequired,
+  isMarkOnLeft: PropTypes.bool,
   items: PropTypes.arrayOf(PropTypes.shape({
     title: PropTypes.string.isRequired,
     paragraph: PropTypes.string.isRequired,
