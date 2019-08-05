@@ -1,3 +1,5 @@
+const modelPage = require('./json/modelPage.json');
+
 /* eslint-disable max-len */
 const routes = {
   HomePage: {
@@ -16,6 +18,13 @@ const routes = {
     seo: { title: 'Our Model', description: '' },
   },
 };
+
+modelPage.forEach((page) => {
+  routes[page.slug] = {
+    url: page.path,
+    seo: page.seo,
+  };
+});
 
 function getPageUrl(routeId) {
   return routes[routeId] && routes[routeId].url;

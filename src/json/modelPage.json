@@ -1,0 +1,111 @@
+[
+  {
+    "slug": "VolunteersPage",
+    "path": "/volunteers",
+    "hero": {
+      "title": "Volunteers",
+      "subtitle": "More Flexibility, More Gains, More Impact.",
+      "subSubtitle": "Connect to impactful projects changing the world in a myriad of ways. \nUse your technical experience and do good at the same time. You will develop new technical and leadership skills while significantly helping social impact projects.",
+      "backgroundImage": "images/modelPage/volunteers.hero.png"
+    },
+    "block1intro": {
+      "title": "Our software allows you to focus on what's most important: doing good.",
+      "markImage": "images/modelPage/volunteers.intro.mark.png",
+      "items": [
+        {
+          "title": "Ease of Use",
+          "paragraph": "We have designed a seamless approach to make researching and starting projects a straightforward and rewarding experience. \nAs a volunteer, you’re able to give your time and skills on your own schedule.",
+          "image": "images/modelPage/volunteers.intro.1.png"
+        },
+        {
+          "title": "Centralization",
+          "paragraph": "We care about quality over quantity, ensuring you are perfectly matched to projects and social organizations that fits not only your skills but your interests. \nConsider Ovio as a   shop for skill-based volunteering from a 10-minutes code review to long-term involvement.",
+          "image": "images/modelPage/volunteers.intro.2.png"
+        },
+        {
+          "title": "Personalization",
+          "paragraph": "Over time, our software gets to know you and will continuously improve finding the best match for you. \nYou’ll be able to volunteers alongside other talented developers from around the world.",
+          "image": "images/modelPage/volunteers.intro.3.png"
+        }
+      ]
+    },
+    "block2feedbacks": [
+      {
+        "author": "Sylvia Thornton",
+        "position": "Apple Inc.",
+        "text": "“This is the testimonal text, this is the testimonal text, this is the testimonal text long long long long long version.”",
+        "photo": "images/modelPage/volunteers.feedbacks.sylviaThornton.png"
+      },
+      {
+        "author": "Harriett Burke",
+        "position": "Apple Inc.",
+        "text": "“This is the testimonal text, this is the testimonal text, this is the testimonal text long long long long long version.”",
+        "photo": "images/modelPage/volunteers.feedbacks.harriettBurke.png"
+      },
+      {
+        "author": "Effie Hudson",
+        "position": "Apple Inc.",
+        "text": "“This is the testimonal text, this is the testimonal text, this is the testimonal text long long long long long version.”",
+        "photo": "images/modelPage/volunteers.feedbacks.effieHudson.png"
+      },
+      {
+        "author": "Harriett Burke",
+        "position": "Apple Inc.",
+        "text": "“This is the testimonal text, this is the testimonal text, this is the testimonal text long long long long long version.”",
+        "photo": "images/modelPage/volunteers.feedbacks.harriettBurke.png"
+      },
+      {
+        "author": "Effie Hudson",
+        "position": "Apple Inc.",
+        "text": "“This is the testimonal text, this is the testimonal text, this is the testimonal text long long long long long version.”",
+        "photo": "images/modelPage/volunteers.feedbacks.effieHudson.png"
+      },
+      {
+        "author": "Sylvia Thornton",
+        "position": "Apple Inc.",
+        "text": "“This is the testimonal text, this is the testimonal text, this is the testimonal text long long long long long version.”",
+        "photo": "images/modelPage/volunteers.feedbacks.sylviaThornton.png"
+      },
+      {
+        "author": "Effie Hudson",
+        "position": "Apple Inc.",
+        "text": "“This is the testimonal text, this is the testimonal text, this is the testimonal text long long long long long version.”",
+        "photo": "images/modelPage/volunteers.feedbacks.effieHudson.png"
+      },
+      {
+        "author": "Sylvia Thornton",
+        "position": "Apple Inc.",
+        "text": "“This is the testimonal text, this is the testimonal text, this is the testimonal text long long long long long version.”",
+        "photo": "images/modelPage/volunteers.feedbacks.sylviaThornton.png"
+      }
+    ],
+    "block3howto": {
+      "title": "How to sign up?",
+      "subtitle": "Sound like Ovio is a place for you to give back?",
+      "markImage": "images/modelPage/volunteers.howto.mark.png",
+      "processItems": [
+        {
+          "text": "Logging in with GitHub to Explore now and access 200+ open source projects.",
+          "button": {
+            "text": "Log in with GitHub",
+            "withGitHubIcon": true,
+            "link": "https://github.com/"
+          },
+          "image": "images/modelPage/volunteers.howTo.login.png"
+        },
+        {
+          "text": "Fill out your profile to get matched to more projects. ",
+          "image": "images/modelPage/volunteers.howTo.fillProfil.png"
+        },
+        {
+          "text": "Ovio proactively will be looking for the best opportunities to have an impact with your amazing skills.",
+          "image": "images/modelPage/volunteers.howTo.matching.png"
+        }
+      ]
+    },
+    "seo": {
+      "title": "",
+      "description": ""
+    }
+  }
+]
