@@ -125,11 +125,13 @@ export const defaultTheme = createMuiTheme({
         textTransform: 'none',
         border: `2px solid ${colors.orange}`,
         borderRadius: '20px',
-        boxShadow: 'inset 0 2px 4px 0 rgba(0,0,0,0.1)',
         '&:hover': {
           color: colors.white,
           backgroundColor: `${colors.orange}f0`,
         },
+      },
+      text: {
+        padding: `6px ${spacing(4)}`,
       },
     },
     MuiIcon: {
@@ -140,7 +142,7 @@ export const defaultTheme = createMuiTheme({
   },
 });
 
-export const useStylesBase = makeStyles({
+export const baseStyles = {
   muiButtonTransparent: {
     backgroundColor: 'transparent',
     border: `2px solid ${colors.white}`,
@@ -163,7 +165,9 @@ export const useStylesBase = makeStyles({
     width: 'inherit',
     height: 'inherit',
   },
-});
+};
+
+export const useStylesBase = makeStyles({ ...baseStyles });
 
 // Shapes
 export const Arrow = styled('div')({
@@ -174,3 +178,12 @@ export const Arrow = styled('div')({
   borderWidth: '0px 0px 4px 4px',
   transform: 'rotate(315deg)',
 });
+
+export const Dot = styled('div')(props => ({
+  width: '10px',
+  height: '10px',
+  borderRadius: '50%',
+  cursor: 'pointer',
+  backgroundColor: props.orange ? colors.orange : `${colors.grey}A8`,
+  margin: '5px',
+}));

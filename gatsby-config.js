@@ -5,6 +5,14 @@ module.exports = {
     author: 'Ovio',
   },
   plugins: [
+    {
+      resolve: 'gatsby-source-filesystem',
+      options: {
+        path: `${__dirname}/src/json`,
+        name: 'json-pages',
+      },
+    },
+    'gatsby-transformer-json',
     'gatsby-plugin-react-helmet',
     {
       resolve: 'gatsby-plugin-manifest',

@@ -46,7 +46,6 @@ const useStyles = makeStyles({
   image: { marginTop: spacing(2) },
   cardTitle: { margin: `${spacing(4)} 0px ${spacing(2)}` },
   cardParagraph: {
-    fontSize: fontSizing(2.3), // to be close to 16px
     marginBottom: spacing(2),
     minHeight: '130px',
   },
@@ -71,7 +70,7 @@ const GetInvolved = () => {
           <Grid className={cardContainer} item key={card.title}>
             <img className={image} src={card.image} alt={card.title} />
             <Typography className={cardTitle} variant="h4">{card.title}</Typography>
-            <Typography className={cardParagraph} variant="body1">{card.paragraph}</Typography>
+            <Typography className={cardParagraph} variant="body2">{card.paragraph}</Typography>
             <Grid className={buttonContainer}>
               <Link to={card.link} style={{ textDecoration: 'none' }}>
                 <Button>Learn More</Button>
