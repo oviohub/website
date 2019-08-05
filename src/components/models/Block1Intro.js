@@ -37,15 +37,18 @@ const useStyles = makeStyles({
     width: 'inherit',
     boxShadow: '0px 40px 80px rgba(0, 0, 0, 0.15)',
   },
-  markImg: {
+  markImg: props => ({
     position: 'absolute',
-    right: '0px',
-  },
+    right: props.isMarkOnLeft ? 'unset' : '0px',
+    left: !props.isMarkOnLeft ? 'unset' : '0px',
+  }),
 });
 
-const Block1Intro = ({ title, markImage, items }) => {
+const Block1Intro = ({ title, markImage, isMarkOnLeft, items }) => {
   const { muiGridBlockContainer } = useStylesBase();
-  const { container, blockContainer, itemContainer, textContainer, title3, image, markImg } = useStyles();
+  const { container, blockContainer, itemContainer, textContainer, title3, image, markImg } = useStyles({
+    isMarkOnLeft,
+  });
   return (
     <Grid className={container} container justify="center">
       <img className={markImg} src={markImage && markImage.publicURL} alt="Ovio - Volunteers" />
@@ -80,6 +83,7 @@ Block1Intro.propTypes = {
   markImage: PropTypes.shape({
     publicURL: PropTypes.string.isRequired,
   }).isRequired,
+  isMarkOnLeft: PropTypes.bool,
   items: PropTypes.arrayOf(PropTypes.shape({
     title: PropTypes.string.isRequired,
     paragraph: PropTypes.string.isRequired,

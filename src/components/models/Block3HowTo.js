@@ -14,6 +14,9 @@ const useStyles = makeStyles({
     marginLeft: spacing(4),
     textDecoration: 'none',
   },
+  image: {
+    objectFit: 'contain',
+  },
   icon: { marginRight: spacing(2) },
   markImg: {
     position: 'absolute',
@@ -24,7 +27,7 @@ const useStyles = makeStyles({
 
 const Block3HowTo = ({ title, subtitle, markImage, processItems }) => {
   const { muiGridBlockContainer } = useStylesBase();
-  const { itemContainer, textContainer, body2, buttonLink, icon, markImg } = useStyles();
+  const { itemContainer, textContainer, body2, buttonLink, image, icon, markImg } = useStyles();
   return (
     <Grid className={muiGridBlockContainer}>
       <img className={markImg} src={markImage && markImage.publicURL} alt="Ovio - Volunteers - The process" />
@@ -33,9 +36,9 @@ const Block3HowTo = ({ title, subtitle, markImage, processItems }) => {
       <Grid>
         {processItems.map((item, index) => (
           <Grid className={itemContainer} key={item.text} container>
-            <img src={item.image && item.image.publicURL} alt={item.text} />
+            <img className={image} src={item.image && item.image.publicURL} alt={item.text} />
             <Grid className={textContainer} item xs={4}>
-              <Typography component="p" variant="h2" color="textSecondary">{index + 1}</Typography>
+              <Typography component="p" variant="h2" color="textSecondary">{item.title || index + 1}</Typography>
               <Typography className={body2} variant="body2">{item.text}</Typography>
               {item.button && (
                 <a href={item.button.link} className={buttonLink} target="_blank" rel="noreferrer noopener">
@@ -60,13 +63,14 @@ Block3HowTo.propTypes = {
     publicURL: PropTypes.string.isRequired,
   }).isRequired,
   processItems: PropTypes.arrayOf(PropTypes.shape({
+    title: PropTypes.string,
     text: PropTypes.string.isRequired,
     image: PropTypes.shape({
       publicURL: PropTypes.string.isRequired,
     }).isRequired,
     button: PropTypes.shape({
       text: PropTypes.string.isRequired,
-      withGitHubIcon: PropTypes.bool.isRequired,
+      withGitHubIcon: PropTypes.bool,
       link: PropTypes.string.isRequired,
     }),
   })).isRequired,
