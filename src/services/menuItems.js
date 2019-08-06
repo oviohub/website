@@ -36,7 +36,7 @@ const completeMenu = [
   },
   {
     label: 'Contact',
-    link: getPageUrl('HomePage'),
+    link: getPageUrl('ContactUsPage'),
     subMenu: [
       { label: 'hello@oviohub.com', href: 'mailto:hello@oviohub.com' },
       { label: '+1 650 283-9210' },
