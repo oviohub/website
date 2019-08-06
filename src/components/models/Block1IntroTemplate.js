@@ -7,23 +7,23 @@ import { contentWidthPixels, fontSizing, spacing, colors, useStylesBase } from '
 import { toFormattedText } from '../../services/formatting';
 
 const useStyles = makeStyles({
-  container: {
+  container: props => ({
     width: 'calc(100vw - 8px)',
     left: 'calc(-1 * (100vw - 100%) / 2)',
     position: 'relative',
-    background: colors.lightGrey,
-    border: '1px solid #DCDCDC',
+    background: props.secondVersion ? colors.white : colors.lightGrey,
+    border: props.secondVersion ? '0px' : '1px solid #DCDCDC',
     boxSizing: 'border-box',
-  },
+  }),
   blockContainer: {
     width: contentWidthPixels,
     zIndex: 1,
   },
-  itemContainer: { margin: `${spacing(5)} 0px` },
-  textContainer: {
-    padding: '0px 8%',
+  itemContainer: props => ({ margin: props.secondVersion ? `${spacing(10)} 0px` : `${spacing(5)} 0px` }),
+  textContainer: props => ({
+    padding: props.secondVersion ? '0px 0px 0px 8%' : '0px 8%',
     margin: 'auto 0px',
-  },
+  }),
   title3: {
     fontFamily: 'Montserrat',
     fontStyle: 'normal',
@@ -33,10 +33,11 @@ const useStyles = makeStyles({
     textTransform: 'uppercase',
     margin: `0px 0px ${spacing(4)} 0px`,
   },
-  image: {
-    width: 'inherit',
-    boxShadow: '0px 40px 80px rgba(0, 0, 0, 0.15)',
-  },
+  image: props => ({
+    width: props.secondVersion ? 'auto' : 'inherit',
+    objectFit: props.secondVersion ? 'none' : 'unset',
+    boxShadow: props.secondVersion ? '0px' : '0px 40px 80px rgba(0, 0, 0, 0.15)',
+  }),
   markImg: props => ({
     position: 'absolute',
     right: props.isMarkOnLeft ? 'unset' : '0px',
@@ -44,14 +45,14 @@ const useStyles = makeStyles({
   }),
 });
 
-const Block1Intro = ({ title, markImage, isMarkOnLeft, items }) => {
+const Block1IntroTemplate = ({ title, markImage, isMarkOnLeft, items, secondVersion }) => {
   const { muiGridBlockContainer } = useStylesBase();
   const { container, blockContainer, itemContainer, textContainer, title3, image, markImg } = useStyles({
-    isMarkOnLeft,
+    isMarkOnLeft, secondVersion,
   });
   return (
     <Grid className={container} container justify="center">
-      <img className={markImg} src={markImage && markImage.publicURL} alt="Ovio - Volunteers" />
+      {markImage && <img className={markImg} src={markImage && markImage.publicURL} alt="Ovio - Volunteers" />}
       <Grid className={`${muiGridBlockContainer} ${blockContainer}`} container>
         {title && <Typography variant="h2">{title}</Typography>}
         <Grid container>
@@ -67,7 +68,7 @@ const Block1Intro = ({ title, markImage, isMarkOnLeft, items }) => {
                 <Typography className={title3} variant="h3" color="textSecondary">{item.title}</Typography>
                 <Typography variant="body2">{toFormattedText(item.paragraph)}</Typography>
               </Grid>
-              <Grid container item xs={5} justify={index % 2 ? 'flex-end' : 'flex-start'}>
+              <Grid container item xs={5} justify="center">
                 <img className={image} src={item.image.publicURL} alt={item.title} />
               </Grid>
             </Grid>
@@ -78,11 +79,11 @@ const Block1Intro = ({ title, markImage, isMarkOnLeft, items }) => {
   );
 };
 
-Block1Intro.propTypes = {
+Block1IntroTemplate.propTypes = {
   title: PropTypes.string,
   markImage: PropTypes.shape({
     publicURL: PropTypes.string.isRequired,
-  }).isRequired,
+  }),
   isMarkOnLeft: PropTypes.bool,
   items: PropTypes.arrayOf(PropTypes.shape({
     title: PropTypes.string.isRequired,
@@ -91,10 +92,14 @@ Block1Intro.propTypes = {
       publicURL: PropTypes.string.isRequired,
     }).isRequired,
   })).isRequired,
+  secondVersion: PropTypes.bool,
 };
 
-Block1Intro.defaultProps = {
+Block1IntroTemplate.defaultProps = {
   title: undefined,
+  markImage: undefined,
+  isMarkOnLeft: false,
+  secondVersion: false,
 };
 
-export default Block1Intro;
+export default Block1IntroTemplate;

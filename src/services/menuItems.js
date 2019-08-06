@@ -14,7 +14,7 @@ const completeMenu = [
     link: getPageUrl('HomePage'),
     subMenu: [
       { label: 'Social impact organizations', link: getPageUrl('SocialImpactPage') },
-      { label: 'Companies', link: getPageUrl('HomePage') },
+      { label: 'Companies', link: getPageUrl('CompaniesPage') },
       { label: 'Volunteers', link: getPageUrl('VolunteersPage') },
     ],
   },

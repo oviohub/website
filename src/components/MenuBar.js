@@ -50,7 +50,7 @@ const useStyles = makeStyles({
     padding: `0px ${spacing(1)}`,
     margin: `0px ${spacing(1)}`,
     '&:hover': {
-      color: colors.darkBlue,
+      color: props.homeversion ? colors.darkBlue : colors.white,
       borderColor: props.homeversion ? colors.white : colors.orange,
       backgroundColor: props.homeversion ? colors.white : colors.orange,
     },

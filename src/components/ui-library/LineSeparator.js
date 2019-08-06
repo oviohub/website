@@ -26,7 +26,7 @@ const LineSeparator = () => {
   return (
     <Grid container justify="flex-end" className={`${muiGridBlockContainer} ${container} ${container}`}>
       <Grid className={lineContainer}>
-        <div className={thickLine} width="250px" />
+        <div className={thickLine} />
       </Grid>
     </Grid>
   );
