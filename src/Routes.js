@@ -12,10 +12,10 @@ const routes = {
     component: 'src/pagesComponents/AboutPage.js',
     seo: { title: 'About', description: '' },
   },
-  WhatWeDoPage: {
-    url: '/what-we-do/',
-    component: 'src/pagesComponents/WhatWeDoPage.js',
-    seo: { title: 'What we do', description: '' },
+  ModelPage: {
+    url: '/our-model/',
+    component: 'src/pagesComponents/ModelPage.js',
+    seo: { title: 'Our Model', description: '' },
   },
   CompaniesPage: {
     url: '/companies/',
@@ -25,7 +25,7 @@ const routes = {
   ContactUsPage: {
     url: '/contact-us/',
     component: 'src/pagesComponents/ContactUsPage.js',
-    seo: { title: 'Companies', description: '' },
+    seo: { title: 'Contact Us', description: '' },
   },
 };
 

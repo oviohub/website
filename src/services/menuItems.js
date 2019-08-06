@@ -11,17 +11,20 @@ const completeMenu = [
   },
   {
     label: 'Model',
-    link: getPageUrl('HomePage'),
+    link: getPageUrl('ModelPage'),
     subMenu: [
-      { label: 'Social impact organizations', link: getPageUrl('SocialImpactPage') },
+      {
+        label: 'Social impact organizations',
+        link: getPageUrl('SocialImpactPage'),
+      },
       { label: 'Companies', link: getPageUrl('CompaniesPage') },
       { label: 'Volunteers', link: getPageUrl('VolunteersPage') },
     ],
   },
-  {
-    label: 'Featured',
-    link: getPageUrl('HomePage'),
-  },
+  // {
+  //   label: 'Featured',
+  //   link: getPageUrl('HomePage'),
+  // },
   {
     label: 'Impact',
     link: getPageUrl('HomePage'),
@@ -48,6 +51,14 @@ const completeMenu = [
   },
 ];
 
-export const menuItems = completeMenu.filter(item => item.label !== 'Ressources');
+export const menuItems = completeMenu.filter(
+  item => item.label !== 'Ressources',
+);
 
-export const footerMenu = completeMenu.filter(item => !['Featured', 'Impact', 'Blog'].includes(item.label));
+export const footerMenu = completeMenu.filter(
+  item => ![
+      // 'Featured',
+      'Impact',
+      'Blog',
+    ].includes(item.label),
+);

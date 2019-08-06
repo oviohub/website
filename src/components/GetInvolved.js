@@ -14,22 +14,23 @@ const cards = [
   {
     image: volunteersIcon,
     title: 'Volunteers',
-    paragraph: 'Access a catalog of open-source projects and find opportunities that match your interests and skills.',
-    link: getPageUrl('HomePage'),
+    paragraph:
+      'Access a catalog of open-source projects and find opportunities that match your interests and skills.',
+    link: getPageUrl('VolunteersPage'),
   },
   {
     image: socialImpactIcon,
     title: 'Social impact organizations',
     paragraph: `As a social impact organization, you have the opportunity to showcase your Tech for Good projects
       and engage more qualified contributors.`,
-    link: getPageUrl('HomePage'),
+    link: getPageUrl('SocialImpactPage'),
   },
   {
     image: companiesIcon,
     title: 'Companies',
     paragraph: `Attract and meaningfully engage employees with Explore. Use our platform to build a purpose-driven
       culture and scale your skill-based volunteering program.`,
-    link: getPageUrl('HomePage'),
+    link: getPageUrl('CompaniesPage'),
   },
 ];
 
@@ -57,7 +58,13 @@ const useStyles = makeStyles({
 
 const GetInvolved = () => {
   const { muiGridBlockContainer } = useStylesBase();
-  const { cardContainer, image, cardTitle, cardParagraph, buttonContainer } = useStyles();
+  const {
+    cardContainer,
+    image,
+    cardTitle,
+    cardParagraph,
+    buttonContainer,
+  } = useStyles();
   return (
     <Grid className={muiGridBlockContainer} container>
       <Typography variant="h2">
@@ -69,8 +76,12 @@ const GetInvolved = () => {
         {cards.map(card => (
           <Grid className={cardContainer} item key={card.title}>
             <img className={image} src={card.image} alt={card.title} />
-            <Typography className={cardTitle} variant="h4">{card.title}</Typography>
-            <Typography className={cardParagraph} variant="body2">{card.paragraph}</Typography>
+            <Typography className={cardTitle} variant="h4">
+              {card.title}
+            </Typography>
+            <Typography className={cardParagraph} variant="body2">
+              {card.paragraph}
+            </Typography>
             <Grid className={buttonContainer}>
               <Link to={card.link} style={{ textDecoration: 'none' }}>
                 <Button>Learn More</Button>

@@ -21,7 +21,9 @@ const MapSection = () => {
   const { title2, image } = useStyles();
   return (
     <Grid className={muiGridBlockContainer} container>
-      <Typography className={title2} variant="h2" color="secondary">Need a title here</Typography>
+      <Typography className={title2} variant="h2" color="secondary">
+        Global Reach
+      </Typography>
       <img className={image} src={map} alt="Ovio" />
     </Grid>
   );
