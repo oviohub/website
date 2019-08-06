@@ -11,14 +11,16 @@ const useStyles = makeStyles({
   muiGridBlockContainer,
   itemContainer: { margin: `${spacing(10)} 0px ${spacing(10)}` },
   textContainer: { marginLeft: spacing(4) },
+  subtitle2: props => ({
+    paddingTop: props.withoutTitle && spacing(20),
+    width: props.withoutTitle && '50%',
+  }),
   body2: { margin: `0px 0px ${spacing(4)} ${spacing(4)}` },
   buttonLink: {
     marginLeft: spacing(4),
     textDecoration: 'none',
   },
-  image: {
-    objectFit: 'contain',
-  },
+  image: { objectFit: 'contain' },
   icon: { marginRight: spacing(2) },
   markImg: {
     position: 'absolute',
@@ -27,13 +29,15 @@ const useStyles = makeStyles({
   },
 });
 
-const Block3HowTo = ({ title: blockTitle, subtitle, markImage, processItems }) => {
+const Block3HowToTemplate = ({ title: blockTitle, subtitle, markImage, processItems }) => {
   // eslint-disable-next-line no-shadow
-  const { muiGridBlockContainer, itemContainer, textContainer, body2, buttonLink, image, icon, markImg } = useStyles();
+  const { muiGridBlockContainer, itemContainer, textContainer, body2, buttonLink, image, icon, markImg } = useStyles({
+    withoutTitle: !blockTitle,
+  });
   return (
     <Grid className={muiGridBlockContainer}>
-      <img className={markImg} src={markImage && markImage.publicURL} alt="Ovio - Volunteers - The process" />
-      <Typography variant="h2">{blockTitle}</Typography>
+      <img className={markImg} src={markImage && markImage.publicURL} alt={blockTitle} />
+      {blockTitle && <Typography variant="h2">{blockTitle}</Typography>}
       <Typography variant="subtitle2">{subtitle}</Typography>
       <Grid>
         {processItems.map(({ title, text, button, image: { publicURL: imageURL } }, index) => {
@@ -61,8 +65,8 @@ const Block3HowTo = ({ title: blockTitle, subtitle, markImage, processItems }) =
   );
 };
 
-Block3HowTo.propTypes = {
-  title: PropTypes.string.isRequired,
+Block3HowToTemplate.propTypes = {
+  title: PropTypes.string,
   subtitle: PropTypes.string.isRequired,
   markImage: PropTypes.shape({
     publicURL: PropTypes.string.isRequired,
@@ -81,4 +85,4 @@ Block3HowTo.propTypes = {
   })).isRequired,
 };
 
-export default Block3HowTo;
+export default Block3HowToTemplate;

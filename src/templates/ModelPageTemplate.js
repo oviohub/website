@@ -5,9 +5,9 @@ import { graphql } from 'gatsby';
 import Layout from '../components/layouts/Layout';
 import MenuBar from '../components/MenuBar';
 import Hero from '../components/Hero';
-import Block1Intro from '../components/models/Block1Intro';
-import Block2Feedback from '../components/models/Block2Feedback';
-import Block3HowTo from '../components/models/Block3HowTo';
+import Block1IntroTemplate from '../components/models/Block1IntroTemplate';
+import Block2FeedbackTemplate from '../components/models/Block2FeedbackTemplate';
+import Block3HowToTemplate from '../components/models/Block3HowToTemplate';
 import LineSeparator from '../components/ui-library/LineSeparator';
 import Footer from '../components/Footer';
 
@@ -15,9 +15,9 @@ const ModelPageTemplate = ({ data: { modelPageJson: page } }) => (
   <Layout routeSlug={page.slug}>
     <MenuBar />
     <Hero {...page.hero} backgroundImage={page.hero.backgroundImage && page.hero.backgroundImage.publicURL} />
-    <Block1Intro {...page.block1intro} />
-    <Block2Feedback comments={page.block2feedback} />
-    <Block3HowTo {...page.block3howto} />
+    <Block1IntroTemplate {...page.block1intro} />
+    <Block2FeedbackTemplate comments={page.block2feedback} />
+    <Block3HowToTemplate {...page.block3howto} />
     <LineSeparator />
     <Footer />
   </Layout>
