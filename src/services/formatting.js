@@ -9,7 +9,8 @@ import React from 'react';
 export function toFormattedText(text) {
   const splitedText = text.split('\n');
   return splitedText.map((line, index) => (
-    <span key={line}>
+    // eslint-disable-next-line react/no-array-index-key
+    <span key={`${line}${index}`}>
       {line}
       {splitedText.length - 1 !== index && <br />}
     </span>

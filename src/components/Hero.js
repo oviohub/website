@@ -28,7 +28,7 @@ const Hero = ({ title, subtitle, subSubtitle, backgroundImage }) => {
         <Grid className={heroContainer} container item justify="center" alignItems="center">
           <Grid container item direction="column" justify="center" alignItems="center" xs={8}>
             <Typography variant="h1">{title}</Typography>
-            <Typography variant="subtitle1">{subtitle}</Typography>
+            <Typography variant="subtitle1">{toFormattedText(subtitle)}</Typography>
             {subSubtitle && (
               <Typography className={subsubtitle1} variant="body2" color="primary">
                 {toFormattedText(subSubtitle)}
