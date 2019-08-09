@@ -12,7 +12,7 @@ import Footer from '../components/Footer';
 
 const IndexPage = () => (
   <Layout routeSlug="AboutPage">
-    <MenuBar fixed />
+    <MenuBar />
     <Intro />
     <WhatMakesUsUnique />
     <OurValuesBlock />

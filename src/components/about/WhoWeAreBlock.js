@@ -37,7 +37,7 @@ const teamMembers = [
   {
     name: 'Ben Peters',
     position: 'Director of Engineering',
-    linkedInUrl: 'https://www.linkedin.com/company/oviohub/',
+    linkedInUrl: 'https://www.linkedin.com/in/ben-peters-19463329/',
     aboutMe: `Ben is a data scientist and software engineer with experience working on web engineering and design,
     embedded systems, platform architecture, and machine learning. \n\nHe studied Physics, Mechanical Engineering
     (with a focus on adaptive control theory), and Computer Science at Dartmouth College and has spent the past 9 years

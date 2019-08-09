@@ -2,7 +2,7 @@ import React from 'react';
 import { Grid, Typography } from '@material-ui/core';
 import { makeStyles } from '@material-ui/styles';
 
-import { spacing, fontSizing, useStylesBase } from '../styledComponents';
+import { contentWidthPixels, spacing, fontSizing, useStylesBase } from '../styledComponents';
 
 import image1 from '../../assets/aboutPage/makesUsUnique.block1.jpg';
 import image2 from '../../assets/aboutPage/makesUsUnique.block2.jpg';
@@ -18,16 +18,15 @@ const useStyles = makeStyles({
   cardsContainer: {
     display: 'flex',
     position: 'relative',
-    width: 'calc(100vw - 8px)',
-    left: 'calc(-1 * (100vw - 100%) / 2)', // to centered the div
+    width: contentWidthPixels,
     marginTop: spacing(11),
   },
   cardContainer: props => ({
     backgroundImage: `url(${props.backgroundImage})`,
     backgroundRepeat: 'no-repeat',
     backgroundSize: 'cover',
-    width: `calc(100vw / ${cardList.length})`,
-    height: `calc(100vw / ${cardList.length})`,
+    width: `calc(${contentWidthPixels} / ${cardList.length})`,
+    height: `calc(${contentWidthPixels} / ${cardList.length})`,
   }),
   cardTitle: { fontSize: fontSizing(6) },
   cardParagraph: {

@@ -12,16 +12,15 @@ import { spacing, contentWidthPixels, colors, useStylesBase } from './styledComp
 
 const useStyles = makeStyles({
   grid: props => ({
-    padding: !props.homeversion ? `${spacing(2)} 0px` : `${spacing(4)} 0px 0px`,
-    position: !props.homeversion && 'fixed',
-    background: !props.homeversion && colors.white,
-    left: !props.homeversion && '0px',
+    padding: !props.homeVersion ? `${spacing(2)} 0px` : `${spacing(4)} 0px 0px`,
+    position: !props.homeVersion && 'fixed',
+    background: !props.homeVersion && colors.white,
+    left: !props.homeVersion && '0px',
     zIndex: '3',
   }),
   gridFixedWidth: props => ({
-    width: !props.homeversion && contentWidthPixels,
+    width: !props.homeVersion && contentWidthPixels,
   }),
-  leftSubGrid: { paddingLeft: spacing(2) },
   link: {
     display: 'flex',
     alignItems: 'center',
@@ -38,21 +37,21 @@ const useStyles = makeStyles({
   },
 });
 
-const MenuBar = ({ homeversion }) => {
-  const baseClasses = useStylesBase();
-  const classes = useStyles({ homeversion });
-  const logo = homeversion ? logoWhite : logoOrange;
+const MenuBar = ({ homeVersion }) => {
+  const { muiIconLogo, muiButtonAppBarVersion } = useStylesBase();
+  const { grid, gridFixedWidth, link, logoCaution } = useStyles({ homeVersion });
+  const logo = homeVersion ? logoWhite : logoOrange;
   return (
-    <Grid container className={classes.grid} justify="center">
-      <Grid container className={classes.gridFixedWidth}>
-        <Grid className={classes.leftSubGrid} item xs={6}>
-          <Link className={classes.link} to={getPageUrl('HomePage')}>
+    <Grid container className={grid} justify="center">
+      <Grid container item className={gridFixedWidth}>
+        <Grid item xs={6}>
+          <Link className={link} to={getPageUrl('HomePage')}>
             <Grid container direction="column" alignItems="flex-start">
-              <img component="img" className={baseClasses.muiIconLogo} src={logo} alt="Ovio" />
+              <img className={muiIconLogo} src={logo} alt="Ovio" />
               <Typography
-                className={classes.logoCaution}
+                className={logoCaution}
                 variant="caption"
-                color={homeversion ? 'primary' : 'textSecondary'}
+                color={homeVersion ? 'primary' : 'textSecondary'}
               >
                 Online Volunteering in the Open
               </Typography>
@@ -61,8 +60,8 @@ const MenuBar = ({ homeversion }) => {
         </Grid>
         <Grid container item justify="flex-end" xs={6}>
           {menuItems.map(item => (
-            <Link className={classes.link} key={item.label} to={item.link}>
-              <Button className={baseClasses.muiButtonAppBarVersion} color="secondary">{item.label}</Button>
+            <Link className={link} key={item.label} to={item.link}>
+              <Button className={muiButtonAppBarVersion} color="secondary">{item.label}</Button>
             </Link>
           ))}
         </Grid>
@@ -72,10 +71,11 @@ const MenuBar = ({ homeversion }) => {
 };
 
 MenuBar.propTypes = {
-  homeversion: PropTypes.bool,
+  homeVersion: PropTypes.bool,
 };
 
 MenuBar.defaultProps = {
-  homeversion: false,
+  homeVersion: false,
 };
+
 export default MenuBar;

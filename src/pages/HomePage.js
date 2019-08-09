@@ -10,7 +10,7 @@ import Footer from '../components/Footer';
 
 const IndexPage = () => (
   <Layout routeSlug="HomePage">
-    <MenuBar homeversion />
+    <MenuBar homeVersion />
     <Hero />
     <MapSection />
     <GetInvolved />

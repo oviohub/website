@@ -1,7 +1,7 @@
 import { createMuiTheme } from '@material-ui/core';
 import { styled, makeStyles } from '@material-ui/styles';
 
-export const contentWidth = 1280;
+export const contentWidth = 1216;
 export const contentWidthPixels = `${contentWidth}px`;
 export const mobileThreshold = 800;
 export const mobileThresholdPixels = `${mobileThreshold}px`;

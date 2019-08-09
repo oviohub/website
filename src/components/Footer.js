@@ -12,15 +12,15 @@ import iconTwitter from '../assets/icons/icon.twitter.orange.svg';
 
 const socialMedias = [
   {
-    image: { src: iconFacebook, alt: 'Link to Facebook' },
+    image: { imgSrc: iconFacebook, imgAlt: 'Link to Facebook' },
     link: 'https://www.facebook.com/oviohub',
   },
   {
-    image: { src: iconLinkedIn, alt: 'Link to LinkedIn' },
+    image: { imgSrc: iconLinkedIn, imgAlt: 'Link to LinkedIn' },
     link: 'https://www.linkedin.com/company/oviohub/',
   },
   {
-    image: { src: iconTwitter, alt: 'Link to Twitter' },
+    image: { imgSrc: iconTwitter, imgAlt: 'Link to Twitter' },
     link: 'https://twitter.com/OvioHub',
   },
 ];
@@ -44,33 +44,33 @@ const Footer = () => {
   return (
     <Grid className={muiGridBlockContainer} container justify="flex-end">
       <Grid item container xs={6} direction="column">
-        <img className={muiIconLogo} component="img" src={logo} alt="Ovio" />
+        <img className={muiIconLogo} src={logo} alt="Ovio" />
         <Grid>
-          {socialMedias.map(item => (
-            <a key={item.link} href={item.link} target="_blank" rel="noreferrer noopener">
-              <Icon component="img" className={lightIcon} src={item.image.src} alt={item.image.alt} />
+          {socialMedias.map(({ link, image: { imgSrc, imgAlt } }) => (
+            <a key={link} href={link} target="_blank" rel="noreferrer noopener">
+              <Icon component="img" className={lightIcon} src={imgSrc} alt={imgAlt} />
             </a>
           ))}
         </Grid>
         <Typography variant="caption">© 2019 Ovio Inc - All Rights Reserved</Typography>
       </Grid>
       <Grid item container xs={6} justify="space-between">
-        {footerMenu.map(item => (
-          <Grid key={item.label} className={itemContainer} container direction="column">
-            <Typography className={itemText} variant="caption">{item.label}</Typography>
-            {item.subMenu.map(subItem => (
-              <React.Fragment key={subItem.label}>
-                {subItem.link && (
-                  <Link to={subItem.link} className={links}>
-                    <Typography variant="caption">{subItem.label}</Typography>
+        {footerMenu.map(({ label, subMenu }) => (
+          <Grid key={label} className={itemContainer} container direction="column">
+            <Typography className={itemText} variant="caption">{label}</Typography>
+            {subMenu.map(({ label: subLabel, link, href }) => (
+              <React.Fragment key={subLabel}>
+                {link && (
+                  <Link to={link} className={links}>
+                    <Typography variant="caption">{subLabel}</Typography>
                   </Link>
                 )}
-                {subItem.href ? (
-                  <a href={subItem.href} className={links} target="_blank" rel="noreferrer noopener">
-                    <Typography variant="caption">{subItem.label}</Typography>
+                {href ? (
+                  <a href={href} className={links} target="_blank" rel="noreferrer noopener">
+                    <Typography variant="caption">{subLabel}</Typography>
                   </a>
                 )
-                  : !subItem.link && <Typography variant="caption">{subItem.label}</Typography>
+                  : !link && <Typography variant="caption">{subLabel}</Typography>
                 }
               </React.Fragment>
             ))}
