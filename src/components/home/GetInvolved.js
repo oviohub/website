@@ -2,7 +2,7 @@ import React from 'react';
 import { Grid, Typography, Button } from '@material-ui/core';
 import { makeStyles } from '@material-ui/styles';
 
-import { spacing, useStylesBase } from '../styledComponents';
+import { spacing, useStylesBase, fontSizing } from '../styledComponents';
 import cardImage1 from '../../assets/homePage/CardImage_Volunteers.jpg';
 import cardImage2 from '../../assets/homePage/CardImage_SocialImpact.jpg';
 import cardImage3 from '../../assets/homePage/CardImage_Companies.jpg';
@@ -38,7 +38,11 @@ const useStyles = makeStyles({
     },
   },
   image: { marginTop: spacing(2) },
+  cardTitle: {
+    margin: `${spacing(4)} 0px ${spacing(2)}`,
+  },
   cardParagraph: {
+    fontSize: fontSizing(2.3), // to be close to 16px
     marginBottom: spacing(2),
     minHeight: '130px',
   },
@@ -50,7 +54,7 @@ const useStyles = makeStyles({
 
 const GetInvolved = () => {
   const baseClasses = useStylesBase();
-  const classes = useStyles();
+  const { cardContainer, image, cardTitle, cardParagraph, buttonContainer } = useStyles();
   return (
     <Grid className={baseClasses.muiGridBlockContainer} container>
       <Grid className={baseClasses.muiGridContent}>
@@ -61,11 +65,11 @@ const GetInvolved = () => {
         </Typography>
         <Grid container>
           {cards.map(card => (
-            <Grid className={classes.cardContainer} item key={card.title}>
-              <img className={classes.image} src={card.image.src} alt={card.image.alt} />
-              <Typography variant="h4">{card.title}</Typography>
-              <Typography className={classes.cardParagraph} variant="body1">{card.paragraph}</Typography>
-              <Grid className={classes.buttonContainer}><Button>Learn More</Button></Grid>
+            <Grid className={cardContainer} item key={card.title}>
+              <img className={image} src={card.image.src} alt={card.image.alt} />
+              <Typography className={cardTitle} variant="h4">{card.title}</Typography>
+              <Typography className={cardParagraph} variant="body1">{card.paragraph}</Typography>
+              <Grid className={buttonContainer}><Button>Learn More</Button></Grid>
             </Grid>
           ))}
         </Grid>

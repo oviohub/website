@@ -1,16 +1,19 @@
 import { createMuiTheme } from '@material-ui/core';
 import { styled, makeStyles } from '@material-ui/styles';
 
-export const contentWidth = 1280;
+export const contentWidth = 1216;
 export const contentWidthPixels = `${contentWidth}px`;
 export const mobileThreshold = 800;
 export const mobileThresholdPixels = `${mobileThreshold}px`;
-export const menuHeightOffset = 71; // 30 + 41 --- 30 for marginTop + 41 menuBar height
+export const menuHeightOffset = 74;
 
 export const colors = {
+  darkBlue: '#2F4058',
+  orange: '#F47820',
+  lightOrange: '#FFD2B2',
+  grey: '#BDBDBD',
+  lightGrey: '#FAFAFA',
   white: '#FFFFFF',
-  orange: '#FF9339',
-  darkGray: '#4A4A4A',
 };
 
 export const margins = {
@@ -23,6 +26,7 @@ export const fontSizes = {
   s: '14px',
   m: '20px',
   xl: '60px',
+  x2l: '100px',
 };
 
 export const spacing = factor => `${createMuiTheme().spacing(factor)}px`;
@@ -31,10 +35,10 @@ export const fontSizing = factor => `${factor * 7}px`; // 7px for the smaller fo
 export const defaultTheme = createMuiTheme({
   palette: {
     primary: { main: `${colors.white}` },
-    secondary: { main: `${colors.darkGray}` },
+    secondary: { main: `${colors.darkBlue}` },
     error: { main: `${colors.orange}` },
     text: {
-      primary: colors.orange,
+      primary: colors.darkBlue,
       secondary: colors.orange,
     },
   },
@@ -60,41 +64,50 @@ export const defaultTheme = createMuiTheme({
         textAlign: 'center',
       },
       h2: {
-        color: colors.darkGray,
+        color: colors.darkBlue,
         fontFamily: 'Caveat Brush',
         fontSize: fontSizing(9),
         lineHeight: '70px',
         margin: spacing(4),
       },
+      subtitle2: {
+        color: colors.darkBlue,
+        fontFamily: 'Montserrat',
+        fontSize: fontSizing(3),
+        lineHeight: '34px',
+        height: 'fit-content',
+      },
+      h3: {
+        color: colors.darkBlue,
+        fontFamily: 'Caveat Brush',
+        fontSize: fontSizing(9),
+        lineHeight: '45px',
+      },
       h4: {
-        color: colors.darkGray,
+        color: colors.darkBlue,
         fontFamily: 'Montserrat',
         fontSize: fontSizing(2.6), // to be close to 18px
         fontWeight: 'bold',
         lineHeight: '22px',
-        margin: `${spacing(4)} 0px ${spacing(2)}`,
       },
       body1: {
-        color: colors.darkGray,
+        color: colors.darkBlue,
+        fontFamily: 'Montserrat',
+        fontSize: fontSizing(3),
+        lineHeight: '26px',
+      },
+      body2: {
+        color: colors.darkBlue,
         fontFamily: 'Montserrat',
         fontSize: fontSizing(2.3), // to be close to 16px
         lineHeight: '26px',
       },
       caption: {
-        color: colors.darkGray,
+        color: colors.darkBlue,
         fontFamily: 'Roboto',
         fontSize: fontSizing(2),
         lineHeight: '14px',
         opacity: '0.5',
-      },
-      overline: {
-        color: colors.darkGray,
-        fontFamily: 'Roboto',
-        fontSize: fontSizing(2),
-        fontWeight: 'bold',
-        lineHeight: '16px',
-        margin: `0px ${spacing(8)} ${spacing(4)} 0px`,
-        textTransform: 'none',
       },
     },
     MuiButton: {
@@ -114,6 +127,7 @@ export const defaultTheme = createMuiTheme({
         borderRadius: '20px',
         boxShadow: 'inset 0 2px 4px 0 rgba(0,0,0,0.1)',
         '&:hover': {
+          color: colors.white,
           backgroundColor: `${colors.orange}f0`,
         },
       },
@@ -153,19 +167,21 @@ export const useStylesBase = makeStyles({
     },
   },
   muiGridBlockContainer: {
-    marginTop: spacing(6),
+    margin: `${spacing(12)} 0px`,
   },
   muiGridContent: {
     marginLeft: spacing(10),
   },
   muiIconLogo: {
-    width: 'fit-content',
+    width: '110px',
     margin: '0px',
+    height: '24px',
   },
-  muiTypographyOverlineLight: {
-    opacity: '0.5',
-    lineHeight: '14px',
-    margin: `0px ${spacing(7)} ${spacing(4)} 0px`,
+  muiGridBackground: {
+    position: 'absolute',
+    zIndex: -1,
+    width: 'inherit',
+    height: 'inherit',
   },
 });
 
@@ -178,9 +194,3 @@ export const Arrow = styled('div')({
   borderWidth: '0px 0px 4px 4px',
   transform: 'rotate(315deg)',
 });
-
-export const ThickLine = styled('div')(props => ({
-  width: props.width || '100%',
-  height: props.height || spacing(1.5),
-  backgroundColor: colors.orange,
-}));
