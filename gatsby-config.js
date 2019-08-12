@@ -18,5 +18,11 @@ module.exports = {
         icon: 'src/assets/logo/icon-144x144.png',
       },
     },
+    {
+      resolve: 'gatsby-plugin-material-ui',
+      options: {
+        stylesProvider: { injectFirst: true },
+      },
+    },
   ],
 };
