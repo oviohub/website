@@ -2,7 +2,7 @@ import React from 'react';
 import { Grid, Typography } from '@material-ui/core';
 import { makeStyles } from '@material-ui/styles';
 
-import { spacing, menuHeightOffset, useStylesBase } from '../styledComponents';
+import { spacing, menuHeightOffset, stylesBase } from '../styledComponents';
 import ericPitching from '../../assets/aboutPage/ericPitching.jpg';
 import ourVisionBackground from '../../assets/aboutPage/ourVisionBackground.jpg';
 import ourMissionBackground from '../../assets/aboutPage/ourMissionBackground.jpg';
@@ -25,6 +25,7 @@ const cardList = [
 ];
 
 const useStyles = makeStyles({
+  muiGridBackground: stylesBase.muiGridBackground,
   mainContainer: {
     padding: `${menuHeightOffset}px 0px 0px`,
   },
@@ -56,8 +57,7 @@ const useStyles = makeStyles({
 });
 
 const Intro = () => {
-  const { muiGridBackground } = useStylesBase();
-  const { mainContainer, headerContainer, title1, cardContent, cardSubtitle } = useStyles();
+  const { muiGridBackground, mainContainer, headerContainer, title1, cardContent, cardSubtitle } = useStyles();
   return (
     <Grid className={mainContainer} container justify="center">
       <Grid>

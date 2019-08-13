@@ -2,7 +2,7 @@ import React from 'react';
 import { Grid, Typography } from '@material-ui/core';
 import { makeStyles } from '@material-ui/styles';
 
-import { contentWidthPixels, spacing, fontSizing, useStylesBase } from '../styledComponents';
+import { contentWidthPixels, spacing, fontSizing, stylesBase } from '../styledComponents';
 
 import image1 from '../../assets/aboutPage/makesUsUnique.block1.jpg';
 import image2 from '../../assets/aboutPage/makesUsUnique.block2.jpg';
@@ -15,6 +15,7 @@ const cardList = [
 ];
 
 const useStyles = makeStyles({
+  muiGridBlockContainer: stylesBase.muiGridBlockContainer,
   cardsContainer: {
     display: 'flex',
     position: 'relative',
@@ -37,8 +38,7 @@ const useStyles = makeStyles({
 });
 
 const WhatMakesUsUnique = () => {
-  const { muiGridBlockContainer } = useStylesBase();
-  const { cardsContainer, cardTitle, cardParagraph } = useStyles();
+  const { muiGridBlockContainer, cardsContainer, cardTitle, cardParagraph } = useStyles();
   return (
     <Grid className={muiGridBlockContainer} container>
       <Typography variant="h2">What makes us unique?</Typography>

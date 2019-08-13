@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { ThemeProvider } from '@material-ui/styles';
 import { Container } from '@material-ui/core';
+import { ThemeProvider } from '@material-ui/styles';
 
 import { getPageTitle } from '../../Routes';
 import './layout.css';

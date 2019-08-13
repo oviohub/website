@@ -4,7 +4,7 @@ import { Grid, Typography, Button } from '@material-ui/core';
 import { makeStyles } from '@material-ui/styles';
 
 import { getPageUrl } from '../Routes';
-import { spacing, useStylesBase, fontSizing } from './styledComponents';
+import { spacing, stylesBase, fontSizing } from './styledComponents';
 
 import volunteersIcon from '../assets/icons/icon.volunteers.png';
 import socialImpactIcon from '../assets/icons/icon.socialImpact.png';
@@ -34,6 +34,7 @@ const cards = [
 ];
 
 const useStyles = makeStyles({
+  muiGridBlockContainer: stylesBase.muiGridBlockContainer,
   cardContainer: {
     height: '520px',
     width: '330px',
@@ -57,8 +58,7 @@ const useStyles = makeStyles({
 });
 
 const GetInvolved = () => {
-  const { muiGridBlockContainer } = useStylesBase();
-  const { cardContainer, imgComponent, cardTitle, cardParagraph, buttonContainer } = useStyles();
+  const { muiGridBlockContainer, cardContainer, imgComponent, cardTitle, cardParagraph, buttonContainer } = useStyles();
   return (
     <Grid className={muiGridBlockContainer} container>
       <Typography variant="h2">

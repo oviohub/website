@@ -2,7 +2,7 @@ import React from 'react';
 import { Grid, Typography } from '@material-ui/core';
 import { makeStyles } from '@material-ui/styles';
 
-import { spacing, useStylesBase } from '../styledComponents';
+import { spacing, stylesBase } from '../styledComponents';
 
 import orangeMark from '../../assets/aboutPage/ourValues.jpg';
 import itemImg1 from '../../assets/aboutPage/ourValuesItem.1.png';
@@ -39,6 +39,8 @@ const items = [
 ];
 
 const useStyles = makeStyles({
+  muiGridBlockContainer: stylesBase.muiGridBlockContainer,
+  muiGridBackground: stylesBase.muiGridBackground,
   container: { paddingTop: spacing(6) },
   title2: { marginTop: '0px' },
   itemIconContainer: { textAlign: 'center' },
@@ -51,8 +53,16 @@ const useStyles = makeStyles({
 });
 
 const OurValuesBlock = () => {
-  const { muiGridBlockContainer, muiGridBackground } = useStylesBase();
-  const { container, title2, itemIconContainer, itemTextContainer, imageComponent, title4 } = useStyles();
+  const {
+    muiGridBlockContainer,
+    muiGridBackground,
+    container,
+    title2,
+    itemIconContainer,
+    itemTextContainer,
+    image,
+    title4,
+  } = useStyles();
   return (
     <Grid className={`${muiGridBlockContainer} ${container}`} container>
       <Grid item xs={5}>

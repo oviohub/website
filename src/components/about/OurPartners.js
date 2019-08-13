@@ -2,7 +2,7 @@ import React from 'react';
 import { Grid, Typography } from '@material-ui/core';
 import { makeStyles } from '@material-ui/styles';
 
-import { spacing, useStylesBase } from '../styledComponents';
+import { spacing, stylesBase } from '../styledComponents';
 
 import theRefinersLogo from '../../assets/aboutPage/logo.theRefiners.jpg';
 import sophieDureyPhoto from '../../assets/aboutPage/photo.sophieDurey.jpg';
@@ -22,6 +22,7 @@ const partners = [
 ];
 
 const useStyles = makeStyles({
+  muiGridBlockContainer: stylesBase.muiGridBlockContainer,
   partnersContainer: {
     textAlign: 'center',
     marginTop: spacing(10),
@@ -31,8 +32,7 @@ const useStyles = makeStyles({
 });
 
 const OurValuesBlock = () => {
-  const { muiGridBlockContainer } = useStylesBase();
-  const { partnersContainer, partnerContainer, title4 } = useStyles();
+  const { muiGridBlockContainer, partnersContainer, partnerContainer, title4 } = useStyles();
   return (
     <Grid className={muiGridBlockContainer} container>
       <Typography variant="h2">Advisors and Supporting Partners</Typography>

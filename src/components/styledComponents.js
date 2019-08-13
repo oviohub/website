@@ -1,5 +1,5 @@
 import { createMuiTheme } from '@material-ui/core';
-import { styled, makeStyles } from '@material-ui/styles';
+import { styled } from '@material-ui/styles';
 
 export const contentWidth = 1216;
 export const contentWidthPixels = `${contentWidth}px`;
@@ -140,7 +140,7 @@ export const defaultTheme = createMuiTheme({
   },
 });
 
-export const useStylesBase = makeStyles({
+export const stylesBase = {
   muiButtonTransparent: {
     backgroundColor: 'transparent',
     border: `2px solid ${colors.white}`,
@@ -163,7 +163,7 @@ export const useStylesBase = makeStyles({
     width: 'inherit',
     height: 'inherit',
   },
-});
+};
 
 // Shapes
 export const Arrow = styled('div')({
