@@ -10,7 +10,6 @@ const useStyles = makeStyles({
   image: {
     position: 'relative',
     width: 'calc(100vw - 8px)',
-    left: 'calc(-1 * (100vw - 100%) / 2)', // to centered the div
     objectFit: 'cover',
     zIndex: -1,
   },
