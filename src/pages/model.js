@@ -7,7 +7,7 @@ import GetInvolved from '../components/GetInvolved';
 import LineSeparator from '../components/ui-library/LineSeparator';
 import Footer from '../components/Footer';
 
-import heroImage from '../assets/whatWeDoPage/hero.png';
+import heroImage from '../assets/ModelPage/hero.png';
 
 const heroContent = {
   title: 'What we Do',
@@ -16,8 +16,8 @@ const heroContent = {
   backgroundImage: heroImage,
 };
 
-const IndexPage = () => (
-  <Layout routeSlug="WhatWeDoPage">
+const ModelPage = () => (
+  <Layout routeSlug="ModelPage">
     <MenuBar />
     <Hero {...heroContent} />
     <GetInvolved />
@@ -26,4 +26,4 @@ const IndexPage = () => (
   </Layout>
 );
 
-export default IndexPage;
+export default ModelPage;
