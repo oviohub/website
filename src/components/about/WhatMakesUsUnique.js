@@ -15,12 +15,17 @@ const cardList = [
 ];
 
 const { muiGridBlockContainer } = stylesBase;
-const useStyles = makeStyles({
+const useStyles = makeStyles(theme => ({
   muiGridBlockContainer,
   cardsContainer: {
     display: 'flex',
     position: 'relative',
     width: contentWidthPixels,
+    [theme.breakpoints.down('md')]: { width: '100%' },
+    [theme.breakpoints.down('xs')]: {
+      flexDirection: 'column',
+      alignItems: 'center',
+    },
     marginTop: spacing(11),
   },
   cardContainer: ({ backgroundImage }) => ({
@@ -29,14 +34,29 @@ const useStyles = makeStyles({
     backgroundSize: 'cover',
     width: `calc(${contentWidthPixels} / ${cardList.length})`,
     height: `calc(${contentWidthPixels} / ${cardList.length})`,
+    [theme.breakpoints.down('md')]: {
+      width: `calc((100vw - 24px * 2) / ${cardList.length})`,
+      height: `calc((100vw - 24px * 2) / ${cardList.length})`,
+    },
+    [theme.breakpoints.down('xs')]: {
+      width: '280px',
+      height: '280px',
+      margin: spacing(2),
+    },
   }),
-  cardTitle: { fontSize: fontSizing(6) },
+  cardTitle: {
+    fontSize: fontSizing(6),
+    textAlign: 'center',
+    [theme.breakpoints.down('sm')]: {
+      fontSize: fontSizing(4),
+    },
+  },
   cardParagraph: {
     fontSize: fontSizing(2),
     marginTop: spacing(2),
     fontWeight: 'normal',
   },
-});
+}));
 
 const WhatMakesUsUnique = () => {
   // eslint-disable-next-line no-shadow

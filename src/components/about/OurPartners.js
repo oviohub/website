@@ -22,15 +22,18 @@ const partners = [
 ];
 
 const { muiGridBlockContainer } = stylesBase;
-const useStyles = makeStyles({
+const useStyles = makeStyles(theme => ({
   muiGridBlockContainer,
   partnersContainer: {
     textAlign: 'center',
     marginTop: spacing(10),
   },
-  partnerContainer: { margin: `0px ${spacing(11)}` },
+  partnerContainer: {
+    margin: `0px ${spacing(11)}`,
+    [theme.breakpoints.down('sm')]: { marginBottom: spacing(4) },
+  },
   title4: { margin: `${spacing(2)} 0px` },
-});
+}));
 
 const OurValuesBlock = () => {
   // eslint-disable-next-line no-shadow
