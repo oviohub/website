@@ -4,13 +4,15 @@ import { Grid } from '@material-ui/core';
 import { makeStyles } from '@material-ui/styles';
 import { Arrow } from '../styledComponents';
 
-const scrollToRef = ref => window.scrollTo({ top: ref.current.offsetTop, behavior: 'smooth' });
+// 96 === next block margin top
+const scrollToRef = ref => window.scrollTo({ top: ref.current.offsetTop + 96, behavior: 'smooth' });
 
 const useStyles = makeStyles({
   arrowContainer: props => ({
     cursor: 'pointer',
     margin: props.margin,
     scrollBehavior: 'smooth',
+    alignSelf: 'center',
   }),
 });
 

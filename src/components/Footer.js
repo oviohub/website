@@ -3,7 +3,7 @@ import { Link } from 'gatsby';
 import { Grid, Typography, Icon } from '@material-ui/core';
 import { makeStyles } from '@material-ui/styles';
 
-import { footerMenu } from '../services/MenuItems';
+import { footerMenu } from '../services/menuItems';
 import { spacing, useStylesBase } from './styledComponents';
 import logo from '../assets/logo/logo.orange.svg';
 import iconFacebook from '../assets/icons/icon.facebook.orange.svg';
