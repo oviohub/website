@@ -8,7 +8,7 @@ A GitHub repo for Ovio static website.
 
 ### Getting started
 
-This project use **[yarn](https://yarnpkg.com/en/)** package manager with **[gatsbyJs](https://www.gatsbyjs.org/)**, a project builder for **[React](https://reactjs.org/)**.
+This project uses **[yarn](https://yarnpkg.com/en/)** package manager with **[gatsbyJs](https://www.gatsbyjs.org/)**, a project builder for **[React](https://reactjs.org/)**.
 
 ```bash
 yarn
@@ -18,7 +18,7 @@ The website will be available at <http://localhost:8000/>.
 
 ### Deployement
 
-To generate the ```public``` folder, run
+To generate the `public` folder, run
 
 ```bash
 yarn build
@@ -41,12 +41,12 @@ website/
 │   │   ....
 │
 └───src/
-│   │   Routes.js                  <-- contains informations (url, seo params, ...) of website's pages
+│   │   Routes.js                  <-- contains information (url, seo params, ...) about website's pages
 │   │
 |   └───assets/
 │   │   │   ....
 │   │
-|   └───pages/                     <-- needed by gatsby. All files in it will be convert to a page
+|   └───pages/                     <-- needed by gatsby. All files in it will be converted to a page
 │   │   │   ....
 │   │
 |   └───services/                  <-- contains common files or modules for the website
@@ -56,7 +56,7 @@ website/
 │   │   |
 │   |   |   styledComponents.js      <-- contains the default theme, global constants (colors, ...)
 │   |   |
-│   |   └───layouts/               <-- contains the wrapper of all pages, and fonts. Allow to integrate the seo params
+│   |   └───layouts/               <-- contains the wrapper for all pages, and fonts. Allows integration of the SEO params
 │   │   │   │   ....
 │   │   |
 │   |   └───ui-library/            <-- contains customized components
