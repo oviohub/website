@@ -11,8 +11,9 @@ import logoOrange from '../assets/logo/logo.orange.svg';
 import { getPageUrl } from '../Routes';
 import { spacing, contentWidthPixels, colors, stylesBase } from './styledComponents';
 
+const { muiIconLogoObj } = stylesBase;
 const useStyles = makeStyles({
-  muiIconLogo: stylesBase.muiIconLogo,
+  muiIconLogo: muiIconLogoObj,
   grid: ({ homeVersion }) => ({
     padding: !homeVersion ? `${spacing(2)} 0px` : `${spacing(4)} 0px 0px`,
     position: !homeVersion && 'fixed',

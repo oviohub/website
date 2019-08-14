@@ -14,8 +14,9 @@ const cardList = [
   { title: 'Micro-volunteering', subTitle: 'we accelerate change', image: image3 },
 ];
 
+const { muiGridBlockContainerObj } = stylesBase;
 const useStyles = makeStyles({
-  muiGridBlockContainer: stylesBase.muiGridBlockContainer,
+  muiGridBlockContainer: muiGridBlockContainerObj,
   cardsContainer: {
     display: 'flex',
     position: 'relative',

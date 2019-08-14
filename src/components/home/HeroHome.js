@@ -7,8 +7,9 @@ import heroImage from '../../assets/homePage/heroImage.jpg';
 import ScrollArrow from '../ui-library/ScrollArrow';
 
 const imageHeight = 680; // 680px ==  height of the header image in the design
+const { muiButtonTransparentObj } = stylesBase;
 const useStyles = makeStyles({
-  muiButtonTransparent: stylesBase.muiButtonTransparent,
+  muiButtonTransparent: muiButtonTransparentObj,
   mainContainer: { height: `${imageHeight - menuHeightOffset}px` },
   imageContainer: {
     position: 'absolute',

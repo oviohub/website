@@ -5,8 +5,9 @@ import { makeStyles } from '@material-ui/styles';
 import { stylesBase } from '../styledComponents';
 import map from '../../assets/homePage/map.png';
 
+const { muiGridBlockContainerObj } = stylesBase;
 const useStyles = makeStyles({
-  muiGridBlockContainer: stylesBase.muiGridBlockContainer,
+  muiGridBlockContainer: muiGridBlockContainerObj,
   title2: { margin: '100px 0px -250px' },
   image: {
     position: 'relative',

@@ -21,8 +21,9 @@ const partners = [
   },
 ];
 
+const { muiGridBlockContainerObj } = stylesBase;
 const useStyles = makeStyles({
-  muiGridBlockContainer: stylesBase.muiGridBlockContainer,
+  muiGridBlockContainer: muiGridBlockContainerObj,
   partnersContainer: {
     textAlign: 'center',
     marginTop: spacing(10),

@@ -33,8 +33,9 @@ const cards = [
   },
 ];
 
+const { muiGridBlockContainerObj } = stylesBase;
 const useStyles = makeStyles({
-  muiGridBlockContainer: stylesBase.muiGridBlockContainer,
+  muiGridBlockContainer: muiGridBlockContainerObj,
   cardContainer: {
     height: '520px',
     width: '330px',

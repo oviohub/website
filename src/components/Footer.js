@@ -25,8 +25,9 @@ const socialMedias = [
   },
 ];
 
+const { muiGridBlockContainerObj } = stylesBase;
 const useStyles = makeStyles({
-  muiGridBlockContainer: stylesBase.muiGridBlockContainer,
+  muiGridBlockContainer: muiGridBlockContainerObj,
   muiIconLogo: stylesBase.muiIconLogo,
   lightIcon: { opacity: 0.6 },
   itemContainer: {

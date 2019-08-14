@@ -38,9 +38,10 @@ const items = [
   },
 ];
 
+const { muiGridBlockContainerObj, muiGridBackgroundObj } = stylesBase;
 const useStyles = makeStyles({
-  muiGridBlockContainer: stylesBase.muiGridBlockContainer,
-  muiGridBackground: stylesBase.muiGridBackground,
+  muiGridBlockContainer: muiGridBlockContainerObj,
+  muiGridBackground: muiGridBackgroundObj,
   container: { paddingTop: spacing(6) },
   title2: { marginTop: '0px' },
   itemIconContainer: { textAlign: 'center' },

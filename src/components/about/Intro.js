@@ -24,8 +24,9 @@ const cardList = [
   },
 ];
 
+const { muiGridBackgroundObj } = stylesBase;
 const useStyles = makeStyles({
-  muiGridBackground: stylesBase.muiGridBackground,
+  muiGridBackground: muiGridBackgroundObj,
   mainContainer: {
     padding: `${menuHeightOffset}px 0px 0px`,
   },

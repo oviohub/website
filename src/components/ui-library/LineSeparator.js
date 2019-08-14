@@ -4,8 +4,9 @@ import { makeStyles } from '@material-ui/styles';
 import { spacing, stylesBase, colors } from '../styledComponents';
 
 const lineHeight = spacing(1.5);
+const { muiGridBlockContainerObj } = stylesBase;
 const useStyles = makeStyles({
-  muiGridBlockContainer: stylesBase.muiGridBlockContainer,
+  muiGridBlockContainer: muiGridBlockContainerObj,
   container: {
     marginBottom: spacing(12),
     height: lineHeight,

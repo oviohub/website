@@ -49,8 +49,9 @@ const teamMembers = [
 ];
 
 const imagesWidth = 371;
+const { muiGridBlockContainerObj } = stylesBase;
 const useStyles = makeStyles({
-  muiGridBlockContainer: stylesBase.muiGridBlockContainer,
+  muiGridBlockContainer: muiGridBlockContainerObj,
   backgroundImg: stylesBase.backgroundImg,
   subContainer: { width: `${imagesWidth}px` },
   cardContainer: { width: 'fit-content' },
