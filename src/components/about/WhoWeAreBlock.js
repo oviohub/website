@@ -75,24 +75,24 @@ const OurValuesBlock = () => {
     <Grid className={muiGridBlockContainer} container>
       <Typography variant="h2">Who we are</Typography>
       <Grid container>
-        {teamMembers.map(member => (
-          <Grid item xs={4} key={member.name}>
+        {teamMembers.map(({ name, photo, position, linkedInUrl, aboutMe }) => (
+          <Grid item xs={4} key={name}>
             <Grid className={subContainer}>
               <Grid className={cardContainer}>
-                <img className={backgroundImg} src={member.photo} alt={member.name} />
+                <img className={backgroundImg} src={photo} alt={name} />
                 <Grid className={cardTextContainer} container item xs={12} justify="space-between" alignItems="center">
                   <Grid>
-                    <Typography className={title4} variant="h4" color="primary">{member.name}</Typography>
-                    <Typography variant="caption" color="primary">{member.position}</Typography>
+                    <Typography className={title4} variant="h4" color="primary">{name}</Typography>
+                    <Typography variant="caption" color="primary">{position}</Typography>
                   </Grid>
-                  <a href={member.linkedInUrl} target="_blank" rel="noreferrer noopener">
+                  <a href={linkedInUrl} target="_blank" rel="noreferrer noopener">
                     <Icon component="img" className={icon} src={linkedinIcon} alt="linkedIn profil" />
                   </a>
                 </Grid>
               </Grid>
               <Grid className={textContainer}>
                 <Typography variant="body2">
-                  {toFormattedText(member.aboutMe)}
+                  {toFormattedText(aboutMe)}
                 </Typography>
               </Grid>
             </Grid>

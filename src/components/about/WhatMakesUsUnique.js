@@ -21,8 +21,8 @@ const useStyles = makeStyles({
     width: contentWidthPixels,
     marginTop: spacing(11),
   },
-  cardContainer: props => ({
-    backgroundImage: `url(${props.backgroundImage})`,
+  cardContainer: ({ backgroundImage }) => ({
+    backgroundImage: `url(${backgroundImage})`,
     backgroundRepeat: 'no-repeat',
     backgroundSize: 'cover',
     width: `calc(${contentWidthPixels} / ${cardList.length})`,
@@ -46,16 +46,16 @@ const WhatMakesUsUnique = () => {
         By focusing on coding, we transform micro-volunteering opportunities into long term impact.
       </Typography>
       <div className={cardsContainer}>
-        {cardList.map(card => (
+        {cardList.map(({ title, image, subTitle }) => (
           <Grid
-            key={card.title}
+            key={title}
             container
             alignItems="center"
-            className={useStyles({ backgroundImage: card.image }).cardContainer}
+            className={useStyles({ backgroundImage: image }).cardContainer}
           >
             <Grid container direction="column" justify="center" alignItems="center">
-              <Typography className={cardTitle} variant="h3" color="primary">{card.title}</Typography>
-              <Typography className={cardParagraph} variant="h4" color="primary">{card.subTitle}</Typography>
+              <Typography className={cardTitle} variant="h3" color="primary">{title}</Typography>
+              <Typography className={cardParagraph} variant="h4" color="primary">{subTitle}</Typography>
             </Grid>
           </Grid>
         ))}

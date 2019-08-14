@@ -10,7 +10,7 @@ import OurPartners from '../components/about/OurPartners';
 import LineSeparator from '../components/ui-library/LineSeparator';
 import Footer from '../components/Footer';
 
-const IndexPage = () => (
+const AboutPage = () => (
   <Layout routeSlug="AboutPage">
     <MenuBar />
     <Intro />
@@ -23,4 +23,4 @@ const IndexPage = () => (
   </Layout>
 );
 
-export default IndexPage;
+export default AboutPage;

@@ -2,19 +2,18 @@
 const routes = {
   HomePage: {
     url: '/',
-    component: 'src/pages/HomePage.js',
-    seo: {
-      title: 'Home',
-      description: '',
-    },
+    component: 'src/pages/index.js',
+    seo: { title: 'Home', description: '' },
   },
   AboutPage: {
-    url: '/about/',
-    component: 'src/pages/AboutPage.js',
-    seo: {
-      title: 'About',
-      description: '',
-    },
+    url: '/about',
+    component: 'src/pages/about.js',
+    seo: { title: 'About', description: '' },
+  },
+  ModelPage: {
+    url: '/model',
+    component: 'src/pages/model.js',
+    seo: { title: 'Our Model', description: '' },
   },
 };
 

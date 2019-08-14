@@ -40,19 +40,19 @@ const OurValuesBlock = () => {
         Our advisors and supporting partners help make Ovio strong through content expertise and financial support.
       </Typography>
       <Grid className={partnersContainer} container justify="center">
-        {partners.map(partner => (
+        {partners.map(({ link, image, title, subTitle }) => (
           <a
-            key={partner.link}
-            href={partner.link}
+            key={link}
+            href={link}
             target="_blank"
             rel="noreferrer noopener"
             style={{ textDecoration: 'none' }}
           >
             <Grid className={partnerContainer} item>
-              <img src={partner.image} alt={partner.title} />
-              <Typography variant="h4" className={title4}>{partner.title}</Typography>
-              {partner.subTitle
-                && <Typography variant="caption">{partner.subTitle}</Typography>
+              <img src={image} alt={title} />
+              <Typography variant="h4" className={title4}>{title}</Typography>
+              {subTitle
+                && <Typography variant="caption">{subTitle}</Typography>
               }
             </Grid>
           </a>

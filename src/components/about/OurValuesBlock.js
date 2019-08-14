@@ -44,7 +44,7 @@ const useStyles = makeStyles({
   itemIconContainer: { textAlign: 'center' },
   itemTextContainer: { marginBottom: spacing(6) },
   title4: { marginBottom: spacing(1) },
-  image: {
+  imageComponent: {
     left: '0px',
     marginTop: '-250px',
   },
@@ -52,22 +52,22 @@ const useStyles = makeStyles({
 
 const OurValuesBlock = () => {
   const { muiGridBlockContainer, muiGridBackground } = useStylesBase();
-  const { container, title2, itemIconContainer, itemTextContainer, image, title4 } = useStyles();
+  const { container, title2, itemIconContainer, itemTextContainer, imageComponent, title4 } = useStyles();
   return (
     <Grid className={`${muiGridBlockContainer} ${container}`} container>
       <Grid item xs={5}>
-        <img className={`${muiGridBackground} ${image}`} src={orangeMark} alt="Our values" />
+        <img className={`${muiGridBackground} ${imageComponent}`} src={orangeMark} alt="Our values" />
         <Typography variant="h2" className={title2}>Our Values</Typography>
       </Grid>
       <Grid item xs={7}>
-        {items.map(item => (
-          <Grid key={item.title} container>
+        {items.map(({ title, image, content }) => (
+          <Grid key={title} container>
             <Grid item xs={2} className={itemIconContainer}>
-              <img src={item.image} alt={item.title} />
+              <img src={image} alt={title} />
             </Grid>
             <Grid item xs={10} size="2" className={itemTextContainer}>
-              <Typography variant="h4" className={title4}>{item.title}</Typography>
-              <Typography variant="body2">{item.content}</Typography>
+              <Typography variant="h4" className={title4}>{title}</Typography>
+              <Typography variant="body2">{content}</Typography>
             </Grid>
           </Grid>
         ))}
