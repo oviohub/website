@@ -6,26 +6,26 @@
       "title": "Volunteers",
       "subtitle": "More Flexibility, More Gains, More Impact.",
       "subSubtitle": "Connect to impactful projects changing the world in a myriad of ways. \nUse your technical experience and do good at the same time. You will develop new technical and leadership skills while significantly helping social impact projects.",
-      "backgroundImage": "images/modelPage/volunteers.hero.png"
+      "backgroundImage": "images/modelPage/volunteers.hero.jpg"
     },
     "block1intro": {
       "title": "Our software allows you to focus on what's most important: doing good.",
-      "markImage": "images/modelPage/volunteers.intro.mark.png",
+      "markImage": "images/modelPage/volunteers.intro.mark.jpg",
       "items": [
         {
           "title": "Ease of Use",
           "paragraph": "We have designed a seamless approach to make researching and starting projects a straightforward and rewarding experience. \nAs a volunteer, you’re able to give your time and skills on your own schedule.",
-          "image": "images/modelPage/volunteers.intro.1.png"
+          "image": "images/modelPage/volunteers.intro.1.jpg"
         },
         {
           "title": "Centralization",
           "paragraph": "We care about quality over quantity, ensuring you are perfectly matched to projects and social organizations that fits not only your skills but your interests. \nConsider Ovio as a   shop for skill-based volunteering from a 10-minutes code review to long-term involvement.",
-          "image": "images/modelPage/volunteers.intro.2.png"
+          "image": "images/modelPage/volunteers.intro.2.jpg"
         },
         {
           "title": "Personalization",
           "paragraph": "Over time, our software gets to know you and will continuously improve finding the best match for you. \nYou’ll be able to volunteers alongside other talented developers from around the world.",
-          "image": "images/modelPage/volunteers.intro.3.png"
+          "image": "images/modelPage/volunteers.intro.3.jpg"
         }
       ]
     },
@@ -82,7 +82,7 @@
     "block3howto": {
       "title": "How to sign up?",
       "subtitle": "Sound like Ovio is a place for you to give back?",
-      "markImage": "images/modelPage/volunteers.howto.mark.png",
+      "markImage": "images/modelPage/volunteers.howto.mark.jpg",
       "processItems": [
         {
           "text": "Logging in with GitHub to Explore now and access 200+ open source projects.",

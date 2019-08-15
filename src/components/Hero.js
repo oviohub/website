@@ -48,8 +48,4 @@ Hero.propTypes = {
   backgroundImage: PropTypes.string.isRequired,
 };
 
-Hero.defaultProps = {
-  subSubtitle: undefined,
-};
-
 export default Hero;

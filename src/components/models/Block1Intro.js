@@ -89,8 +89,4 @@ Block1Intro.propTypes = {
   })).isRequired,
 };
 
-Block1Intro.defaultProps = {
-  title: undefined,
-};
-
 export default Block1Intro;
