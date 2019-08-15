@@ -7,9 +7,9 @@ import heroImage from '../../assets/homePage/heroImage.jpg';
 import ScrollArrow from '../ui-library/ScrollArrow';
 
 const imageHeight = 680; // 680px ==  height of the header image in the design
-const { muiButtonTransparentObj } = stylesBase;
+const { muiButtonTransparent } = stylesBase;
 const useStyles = makeStyles({
-  muiButtonTransparent: muiButtonTransparentObj,
+  muiButtonTransparent,
   mainContainer: { height: `${imageHeight - menuHeightOffset}px` },
   imageContainer: {
     position: 'absolute',
@@ -33,13 +33,14 @@ const useStyles = makeStyles({
 
 const Hero = () => {
   const {
+    // eslint-disable-next-line no-shadow
+    muiButtonTransparent,
     mainContainer,
     imageContainer,
     image,
     textContainer,
     typography,
     buttonContainer,
-    muiButtonTransparent,
   } = useStyles();
   const scrollRef = React.createRef();
   return (

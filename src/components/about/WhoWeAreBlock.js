@@ -49,9 +49,9 @@ const teamMembers = [
 ];
 
 const imagesWidth = 371;
-const { muiGridBlockContainerObj } = stylesBase;
+const { muiGridBlockContainer } = stylesBase;
 const useStyles = makeStyles({
-  muiGridBlockContainer: muiGridBlockContainerObj,
+  muiGridBlockContainer,
   backgroundImg: stylesBase.backgroundImg,
   subContainer: { width: `${imagesWidth}px` },
   cardContainer: { width: 'fit-content' },
@@ -72,6 +72,7 @@ const useStyles = makeStyles({
 
 const OurValuesBlock = () => {
   const {
+    // eslint-disable-next-line no-shadow
     muiGridBlockContainer,
     backgroundImg,
     subContainer,

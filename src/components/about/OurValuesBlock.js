@@ -38,10 +38,10 @@ const items = [
   },
 ];
 
-const { muiGridBlockContainerObj, muiGridBackgroundObj } = stylesBase;
+const { muiGridBlockContainer, muiGridBackground } = stylesBase;
 const useStyles = makeStyles({
-  muiGridBlockContainer: muiGridBlockContainerObj,
-  muiGridBackground: muiGridBackgroundObj,
+  muiGridBlockContainer,
+  muiGridBackground,
   container: { paddingTop: spacing(6) },
   title2: { marginTop: '0px' },
   itemIconContainer: { textAlign: 'center' },
@@ -55,7 +55,9 @@ const useStyles = makeStyles({
 
 const OurValuesBlock = () => {
   const {
+    // eslint-disable-next-line no-shadow
     muiGridBlockContainer,
+    // eslint-disable-next-line no-shadow
     muiGridBackground,
     container,
     title2,

@@ -14,9 +14,9 @@ const cardList = [
   { title: 'Micro-volunteering', subTitle: 'we accelerate change', image: image3 },
 ];
 
-const { muiGridBlockContainerObj } = stylesBase;
+const { muiGridBlockContainer } = stylesBase;
 const useStyles = makeStyles({
-  muiGridBlockContainer: muiGridBlockContainerObj,
+  muiGridBlockContainer,
   cardsContainer: {
     display: 'flex',
     position: 'relative',
@@ -39,6 +39,7 @@ const useStyles = makeStyles({
 });
 
 const WhatMakesUsUnique = () => {
+  // eslint-disable-next-line no-shadow
   const { muiGridBlockContainer, cardsContainer, cardTitle, cardParagraph } = useStyles();
   return (
     <Grid className={muiGridBlockContainer} container>

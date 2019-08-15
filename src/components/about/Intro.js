@@ -24,9 +24,9 @@ const cardList = [
   },
 ];
 
-const { muiGridBackgroundObj } = stylesBase;
+const { muiGridBackground } = stylesBase;
 const useStyles = makeStyles({
-  muiGridBackground: muiGridBackgroundObj,
+  muiGridBackground,
   mainContainer: {
     padding: `${menuHeightOffset}px 0px 0px`,
   },
@@ -58,6 +58,7 @@ const useStyles = makeStyles({
 });
 
 const Intro = () => {
+  // eslint-disable-next-line no-shadow
   const { muiGridBackground, mainContainer, headerContainer, title1, cardContent, cardSubtitle } = useStyles();
   return (
     <Grid className={mainContainer} container justify="center">

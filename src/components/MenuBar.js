@@ -11,9 +11,9 @@ import logoOrange from '../assets/logo/logo.orange.svg';
 import { getPageUrl } from '../Routes';
 import { spacing, contentWidthPixels, colors, stylesBase } from './styledComponents';
 
-const { muiIconLogoObj } = stylesBase;
+const { muiIconLogo } = stylesBase;
 const useStyles = makeStyles({
-  muiIconLogo: muiIconLogoObj,
+  muiIconLogo,
   grid: ({ homeVersion }) => ({
     padding: !homeVersion ? `${spacing(2)} 0px` : `${spacing(4)} 0px 0px`,
     position: !homeVersion && 'fixed',
@@ -60,6 +60,7 @@ const useStyles = makeStyles({
 });
 
 const MenuBar = ({ homeVersion }) => {
+  // eslint-disable-next-line no-shadow
   const { muiIconLogo, grid, gridFixedWidth, links, logoCaution, button } = useStyles({ homeVersion });
   const logo = homeVersion ? logoWhite : logoOrange;
   return (

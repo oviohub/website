@@ -33,9 +33,9 @@ const cards = [
   },
 ];
 
-const { muiGridBlockContainerObj } = stylesBase;
+const { muiGridBlockContainer } = stylesBase;
 const useStyles = makeStyles({
-  muiGridBlockContainer: muiGridBlockContainerObj,
+  muiGridBlockContainer,
   cardContainer: {
     height: '520px',
     width: '330px',
@@ -59,6 +59,7 @@ const useStyles = makeStyles({
 });
 
 const GetInvolved = () => {
+  // eslint-disable-next-line no-shadow
   const { muiGridBlockContainer, cardContainer, imgComponent, cardTitle, cardParagraph, buttonContainer } = useStyles();
   return (
     <Grid className={muiGridBlockContainer} container>

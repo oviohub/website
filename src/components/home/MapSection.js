@@ -5,9 +5,9 @@ import { makeStyles } from '@material-ui/styles';
 import { stylesBase } from '../styledComponents';
 import map from '../../assets/homePage/map.png';
 
-const { muiGridBlockContainerObj } = stylesBase;
+const { muiGridBlockContainer } = stylesBase;
 const useStyles = makeStyles({
-  muiGridBlockContainer: muiGridBlockContainerObj,
+  muiGridBlockContainer,
   title2: { margin: '100px 0px -250px' },
   image: {
     position: 'relative',
@@ -18,6 +18,7 @@ const useStyles = makeStyles({
 });
 
 const MapSection = () => {
+  // eslint-disable-next-line no-shadow
   const { muiGridBlockContainer, title2, image } = useStyles();
   return (
     <Grid className={muiGridBlockContainer} container>

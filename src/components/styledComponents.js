@@ -141,7 +141,7 @@ export const defaultTheme = createMuiTheme({
 });
 
 export const stylesBase = {
-  muiButtonTransparentObj: {
+  muiButtonTransparent: {
     backgroundColor: 'transparent',
     border: `2px solid ${colors.white}`,
     '&:hover': {
@@ -149,15 +149,15 @@ export const stylesBase = {
       backgroundColor: colors.white,
     },
   },
-  muiGridBlockContainerObj: {
+  muiGridBlockContainer: {
     margin: `${spacing(12)} 0px`,
   },
-  muiIconLogoObj: {
+  muiIconLogo: {
     width: '110px',
     margin: '0px',
     height: '24px',
   },
-  muiGridBackgroundObj: {
+  muiGridBackground: {
     position: 'absolute',
     zIndex: -1,
     width: 'inherit',

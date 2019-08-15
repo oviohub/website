@@ -25,9 +25,9 @@ const socialMedias = [
   },
 ];
 
-const { muiGridBlockContainerObj } = stylesBase;
+const { muiGridBlockContainer } = stylesBase;
 const useStyles = makeStyles({
-  muiGridBlockContainer: muiGridBlockContainerObj,
+  muiGridBlockContainer,
   muiIconLogo: stylesBase.muiIconLogo,
   lightIcon: { opacity: 0.6 },
   itemContainer: {
@@ -42,6 +42,7 @@ const useStyles = makeStyles({
 });
 
 const Footer = () => {
+  // eslint-disable-next-line no-shadow
   const { muiGridBlockContainer, muiIconLogo, lightIcon, itemContainer, itemText, links } = useStyles();
   return (
     <Grid className={muiGridBlockContainer} container justify="flex-end">

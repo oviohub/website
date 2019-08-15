@@ -21,9 +21,9 @@ const partners = [
   },
 ];
 
-const { muiGridBlockContainerObj } = stylesBase;
+const { muiGridBlockContainer } = stylesBase;
 const useStyles = makeStyles({
-  muiGridBlockContainer: muiGridBlockContainerObj,
+  muiGridBlockContainer,
   partnersContainer: {
     textAlign: 'center',
     marginTop: spacing(10),
@@ -33,6 +33,7 @@ const useStyles = makeStyles({
 });
 
 const OurValuesBlock = () => {
+  // eslint-disable-next-line no-shadow
   const { muiGridBlockContainer, partnersContainer, partnerContainer, title4 } = useStyles();
   return (
     <Grid className={muiGridBlockContainer} container>
