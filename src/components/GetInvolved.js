@@ -1,6 +1,8 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { Link } from 'gatsby';
 import { Grid, Typography, Button } from '@material-ui/core';
+import withWidth, { isWidthDown } from '@material-ui/core/withWidth';
 import { makeStyles } from '@material-ui/styles';
 
 import { getPageUrl } from '../Routes';
@@ -58,7 +60,7 @@ const useStyles = makeStyles({
   },
 });
 
-const GetInvolved = () => {
+const GetInvolved = ({ width }) => {
   // eslint-disable-next-line no-shadow
   const { muiGridBlockContainer, cardContainer, imgComponent, cardTitle, cardParagraph, buttonContainer } = useStyles();
   return (
@@ -68,7 +70,7 @@ const GetInvolved = () => {
         <br />
         Get Involved!
       </Typography>
-      <Grid container>
+      <Grid container justify={isWidthDown('sm', width) ? 'center' : 'flex-start'}>
         {cards.map(({ title, image, paragraph, link }) => (
           <Grid className={cardContainer} item key={title}>
             <img className={imgComponent} src={image} alt={title} />
@@ -86,4 +88,8 @@ const GetInvolved = () => {
   );
 };
 
-export default GetInvolved;
+GetInvolved.propTypes = {
+  width: PropTypes.string.isRequired,
+};
+
+export default withWidth()(GetInvolved);

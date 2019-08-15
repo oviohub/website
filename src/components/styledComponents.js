@@ -29,7 +29,8 @@ export const fontSizes = {
   x2l: '100px',
 };
 
-export const spacing = factor => `${createMuiTheme().spacing(factor)}px`;
+const theme = createMuiTheme();
+export const spacing = factor => `${theme.spacing(factor)}px`;
 export const fontSizing = factor => `${factor * 7}px`; // 7px for the smaller font-size in the website
 
 export const defaultTheme = createMuiTheme({
@@ -54,6 +55,10 @@ export const defaultTheme = createMuiTheme({
         lineHeight: '70px',
         textAlign: 'center',
         margin: spacing(4),
+        [theme.breakpoints.down('xs')]: {
+          fontSize: fontSizing(7),
+          margin: `${spacing(4)} 0px`,
+        },
       },
       subtitle1: {
         color: colors.white,
@@ -69,6 +74,7 @@ export const defaultTheme = createMuiTheme({
         fontSize: fontSizing(9),
         lineHeight: '70px',
         margin: spacing(4),
+        [theme.breakpoints.down('xs')]: { margin: `${spacing(4)} 0px` },
       },
       subtitle2: {
         color: colors.darkBlue,

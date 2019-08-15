@@ -20,7 +20,8 @@ import { menuItems } from '../services/menuItems';
 import DropMenu from './ui-library/DropMenu';
 import logoWhite from '../assets/logo/logo.white.svg';
 import logoOrange from '../assets/logo/logo.orange.svg';
-import menuIcon from '../assets/icons/icon.menu.darkBlue.png';
+import menuIconDarkBlue from '../assets/icons/icon.menu.darkBlue.png';
+import menuIconWhite from '../assets/icons/icon.menu.white.png';
 import { getPageUrl } from '../Routes';
 import { spacing, contentWidthPixels, colors, stylesBase } from './styledComponents';
 
@@ -28,20 +29,22 @@ const { muiIconLogo } = stylesBase;
 const useStyles = makeStyles(theme => ({
   muiIconLogo,
   grid: ({ homeVersion }) => ({
-    padding: !homeVersion ? `${spacing(2)} 0px` : `${spacing(4)} 0px 0px`,
+    padding: `${spacing(2)} 0px`,
     position: !homeVersion && 'fixed',
     background: !homeVersion && colors.white,
     left: !homeVersion && '0px',
     zIndex: '3',
+    [theme.breakpoints.down('md')]: homeVersion && {
+      position: 'relative',
+      width: '100vw',
+      left: 'calc(-1 * (100vw - 100%) / 2 )',
+    },
   }),
   gridFixedWidth: ({ homeVersion }) => ({
     width: !homeVersion && contentWidthPixels,
   }),
-  subContainer: {
-    [theme.breakpoints.down('sm')]: {
-      padding: `0px ${spacing(3)}`,
-    },
-  },
+  rightSubContainer: { [theme.breakpoints.down('md')]: { padding: `0px ${spacing(3)}` } },
+  leftSubContainer: { [theme.breakpoints.down('sm')]: { padding: `0px ${spacing(3)}` } },
   links: {
     display: 'flex',
     alignItems: 'center',
@@ -84,7 +87,8 @@ const MenuBar = ({ homeVersion }) => {
     muiIconLogo,
     grid,
     gridFixedWidth,
-    subContainer,
+    rightSubContainer,
+    leftSubContainer,
     button,
     links,
     logoCaution,
@@ -108,7 +112,7 @@ const MenuBar = ({ homeVersion }) => {
   return (
     <Grid container className={grid} justify="center">
       <Grid container item className={gridFixedWidth}>
-        <Grid className={subContainer} item xs={6} container alignItems="center">
+        <Grid className={rightSubContainer} item xs={6} container alignItems="center">
           <Link className={links} to={getPageUrl('HomePage')}>
             <Grid container direction="column" alignItems="flex-start">
               <img className={muiIconLogo} src={homeVersion ? logoWhite : logoOrange} alt="Ovio" />
@@ -123,7 +127,7 @@ const MenuBar = ({ homeVersion }) => {
           </Link>
         </Grid>
 
-        <Grid className={subContainer} container item justify="flex-end" xs={6}>
+        <Grid className={leftSubContainer} container item justify="flex-end" xs={6}>
           <Hidden smDown>
             {menuItems.map(({ label, link, subMenu }, index) => (
               (label === 'Model') ? (
@@ -155,7 +159,7 @@ const MenuBar = ({ homeVersion }) => {
               aria-haspopup="true"
               onClick={handleToggle}
             >
-              <img src={menuIcon} alt="Open menu" />
+              <img src={homeVersion ? menuIconWhite : menuIconDarkBlue} alt="Open menu" />
             </IconButton>
             <Popper open={open} anchorEl={anchorRef.current} transition disablePortal placement="bottom-end">
               {({ TransitionProps }) => (
