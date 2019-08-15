@@ -4,7 +4,7 @@ import { Grid, Typography, Button } from '@material-ui/core';
 import { makeStyles } from '@material-ui/styles';
 
 import { getPageUrl } from '../Routes';
-import { spacing, stylesBase } from './styledComponents';
+import { spacing, fontSizing, stylesBase } from './styledComponents';
 
 import volunteersIcon from '../assets/icons/icon.volunteers.png';
 import socialImpactIcon from '../assets/icons/icon.socialImpact.png';
@@ -48,6 +48,7 @@ const useStyles = makeStyles({
   imgComponent: { marginTop: spacing(2) },
   cardTitle: { margin: `${spacing(4)} 0px ${spacing(2)}` },
   cardParagraph: {
+    fontSize: fontSizing(2.3), // to be close to 16px
     marginBottom: spacing(2),
     minHeight: '130px',
   },

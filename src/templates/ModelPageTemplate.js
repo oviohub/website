@@ -6,7 +6,7 @@ import Layout from '../components/layouts/Layout';
 import MenuBar from '../components/MenuBar';
 import Hero from '../components/Hero';
 import Block1Intro from '../components/models/Block1Intro';
-import Block2Feedbacks from '../components/models/Block2Feedbacks';
+import Block2Feedback from '../components/models/Block2Feedback';
 import Block3HowTo from '../components/models/Block3HowTo';
 import LineSeparator from '../components/ui-library/LineSeparator';
 import Footer from '../components/Footer';
@@ -16,7 +16,7 @@ const ModelPageTemplate = ({ data: { modelPageJson: page } }) => (
     <MenuBar />
     <Hero {...page.hero} backgroundImage={page.hero.backgroundImage && page.hero.backgroundImage.publicURL} />
     <Block1Intro {...page.block1intro} />
-    <Block2Feedbacks comments={page.block2feedbacks} />
+    <Block2Feedback comments={page.block2feedback} />
     <Block3HowTo {...page.block3howto} />
     <LineSeparator />
     <Footer />
@@ -51,7 +51,7 @@ ModelPageTemplate.propTypes = {
         })).isRequired,
       }).isRequired,
 
-      block2feedbacks: PropTypes.arrayOf(PropTypes.shape({
+      block2feedback: PropTypes.arrayOf(PropTypes.shape({
         author: PropTypes.string.isRequired,
         position: PropTypes.string.isRequired,
         text: PropTypes.string.isRequired,
@@ -105,7 +105,7 @@ export const modelPage = graphql`
           image { publicURL }
         }
       },
-      block2feedbacks {
+      block2feedback {
         author
         position
         text

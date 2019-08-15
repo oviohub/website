@@ -29,7 +29,7 @@ const styles = {
   },
 };
 
-class Block2Feedbacks extends React.Component {
+class Block2Feedback extends React.Component {
   constructor(props) {
     super(props);
     const { comments, viewsToShow } = this.props;
@@ -41,9 +41,9 @@ class Block2Feedbacks extends React.Component {
     const { visibleComments } = this.state;
     const items = [];
     const numberOfDot = Math.ceil(comments.length / viewsToShow);
-    for (let indice = 0, currVisibleComments = null, currIndex = 0; indice < numberOfDot; indice += 1) {
-      currIndex = indice * viewsToShow;
-      currVisibleComments = comments.slice(currIndex, currIndex + viewsToShow);
+    for (let index = 0, currIndex = 0; index < numberOfDot; index += 1) {
+      currIndex = index * viewsToShow;
+      const currVisibleComments = comments.slice(currIndex, currIndex + viewsToShow);
       items.push(<Dot
         key={JSON.stringify(currVisibleComments)}
         orange={JSON.stringify(visibleComments) === JSON.stringify(currVisibleComments) ? 1 : 0}
@@ -81,7 +81,7 @@ class Block2Feedbacks extends React.Component {
   }
 }
 
-Block2Feedbacks.propTypes = {
+Block2Feedback.propTypes = {
   comments: PropTypes.arrayOf(PropTypes.shape({
     author: PropTypes.string.isRequired,
     position: PropTypes.string.isRequired,
@@ -101,8 +101,8 @@ Block2Feedbacks.propTypes = {
   }).isRequired,
 };
 
-Block2Feedbacks.defaultProps = {
+Block2Feedback.defaultProps = {
   viewsToShow: 3,
 };
 
-export default withStyles(styles)(Block2Feedbacks);
+export default withStyles(styles)(Block2Feedback);
