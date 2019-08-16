@@ -3,10 +3,12 @@ import PropTypes from 'prop-types';
 
 import { Grid, Typography } from '@material-ui/core';
 import { makeStyles } from '@material-ui/styles';
-import { contentWidthPixels, fontSizing, spacing, colors, useStylesBase } from '../styledComponents';
+import { contentWidthPixels, fontSizing, spacing, colors, stylesBase } from '../styledComponents';
 import { toFormattedText } from '../../services/formatting';
 
+const { muiGridBlockContainer } = stylesBase;
 const useStyles = makeStyles({
+  muiGridBlockContainer,
   container: {
     width: 'calc(100vw - 8px)',
     left: 'calc(-1 * (100vw - 100%) / 2)',
@@ -44,8 +46,7 @@ const useStyles = makeStyles({
 });
 
 const Block1Intro = ({ title, markImage, items }) => {
-  const { muiGridBlockContainer } = useStylesBase();
-  const { container, blockContainer, itemContainer, textContainer, title3, image, markImg } = useStyles();
+  const { muiGridBlockContainer, container, blockContainer, itemContainer, textContainer, title3, image, markImg } = useStyles();
   return (
     <Grid className={container} container justify="center">
       <img className={markImg} src={markImage && markImage.publicURL} alt="Ovio - Volunteers" />

@@ -3,10 +3,12 @@ import PropTypes from 'prop-types';
 
 import { Grid, Typography, Button } from '@material-ui/core';
 import { makeStyles } from '@material-ui/styles';
-import { spacing, useStylesBase } from '../styledComponents';
+import { spacing, stylesBase } from '../styledComponents';
 import iconGithub from '../../assets/icons/icon.github.white.svg';
 
+const { muiGridBlockContainer } = stylesBase;
 const useStyles = makeStyles({
+  muiGridBlockContainer,
   itemContainer: { margin: `${spacing(10)} 0px ${spacing(10)}` },
   textContainer: { marginLeft: spacing(4) },
   body2: { margin: `0px 0px ${spacing(4)} ${spacing(4)}` },
@@ -23,8 +25,7 @@ const useStyles = makeStyles({
 });
 
 const Block3HowTo = ({ title, subtitle, markImage, processItems }) => {
-  const { muiGridBlockContainer } = useStylesBase();
-  const { itemContainer, textContainer, body2, buttonLink, icon, markImg } = useStyles();
+  const { muiGridBlockContainer, itemContainer, textContainer, body2, buttonLink, icon, markImg } = useStyles();
   return (
     <Grid className={muiGridBlockContainer}>
       <img className={markImg} src={markImage && markImage.publicURL} alt="Ovio - Volunteers - The process" />

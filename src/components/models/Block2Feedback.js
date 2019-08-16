@@ -3,10 +3,11 @@ import PropTypes from 'prop-types';
 
 import { Grid, Typography } from '@material-ui/core';
 import { withStyles } from '@material-ui/styles';
-import { baseStyles, spacing, Dot } from '../styledComponents';
+import { stylesBase, spacing, Dot } from '../styledComponents';
 
+const { muiGridBlockContainer } = stylesBase;
 const styles = {
-  ...baseStyles,
+  muiGridBlockContainer,
   card: {
     margin: `0px ${spacing(2)}`,
     padding: spacing(4),
