@@ -63,7 +63,7 @@ const OurValuesBlock = () => {
     title2,
     itemIconContainer,
     itemTextContainer,
-    image,
+    imageComponent,
     title4,
   } = useStyles();
   return (
