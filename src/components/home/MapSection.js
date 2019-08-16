@@ -2,10 +2,12 @@ import React from 'react';
 import { Grid, Typography } from '@material-ui/core';
 import { makeStyles } from '@material-ui/styles';
 
-import { useStylesBase } from '../styledComponents';
+import { stylesBase } from '../styledComponents';
 import map from '../../assets/homePage/map.png';
 
+const { muiGridBlockContainer } = stylesBase;
 const useStyles = makeStyles({
+  muiGridBlockContainer,
   title2: { margin: '100px 0px -250px' },
   image: {
     position: 'relative',
@@ -16,8 +18,8 @@ const useStyles = makeStyles({
 });
 
 const MapSection = () => {
-  const { muiGridBlockContainer } = useStylesBase();
-  const { title2, image } = useStyles();
+  // eslint-disable-next-line no-shadow
+  const { muiGridBlockContainer, title2, image } = useStyles();
   return (
     <Grid className={muiGridBlockContainer} container>
       <Typography className={title2} variant="h2" color="secondary">Need a title here</Typography>

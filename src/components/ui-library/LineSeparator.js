@@ -1,10 +1,12 @@
 import React from 'react';
 import { Grid } from '@material-ui/core';
 import { makeStyles } from '@material-ui/styles';
-import { spacing, useStylesBase, colors } from '../styledComponents';
+import { spacing, stylesBase, colors } from '../styledComponents';
 
 const lineHeight = spacing(1.5);
+const { muiGridBlockContainer } = stylesBase;
 const useStyles = makeStyles({
+  muiGridBlockContainer,
   container: {
     marginBottom: spacing(12),
     height: lineHeight,
@@ -21,10 +23,10 @@ const useStyles = makeStyles({
 });
 
 const LineSeparator = () => {
-  const { muiGridBlockContainer } = useStylesBase();
-  const { container, lineContainer, thickLine } = useStyles();
+  // eslint-disable-next-line no-shadow
+  const { muiGridBlockContainer, container, lineContainer, thickLine } = useStyles();
   return (
-    <Grid container justify="flex-end" className={`${muiGridBlockContainer} ${container} ${container}`}>
+    <Grid container justify="flex-end" className={`${muiGridBlockContainer} ${container}`}>
       <Grid className={lineContainer}>
         <div className={thickLine} width="250px" />
       </Grid>

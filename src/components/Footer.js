@@ -4,7 +4,7 @@ import { Grid, Typography, Icon } from '@material-ui/core';
 import { makeStyles } from '@material-ui/styles';
 
 import { footerMenu } from '../services/menuItems';
-import { spacing, useStylesBase } from './styledComponents';
+import { spacing, stylesBase } from './styledComponents';
 import logo from '../assets/logo/logo.orange.svg';
 import iconFacebook from '../assets/icons/icon.facebook.orange.svg';
 import iconLinkedIn from '../assets/icons/icon.linkedin.orange.svg';
@@ -25,7 +25,10 @@ const socialMedias = [
   },
 ];
 
+const { muiGridBlockContainer } = stylesBase;
 const useStyles = makeStyles({
+  muiGridBlockContainer,
+  muiIconLogo: stylesBase.muiIconLogo,
   lightIcon: { opacity: 0.6 },
   itemContainer: {
     width: 'auto',
@@ -39,8 +42,8 @@ const useStyles = makeStyles({
 });
 
 const Footer = () => {
-  const { muiGridBlockContainer, muiIconLogo } = useStylesBase();
-  const { lightIcon, itemContainer, itemText, links } = useStyles();
+  // eslint-disable-next-line no-shadow
+  const { muiGridBlockContainer, muiIconLogo, lightIcon, itemContainer, itemText, links } = useStyles();
   return (
     <Grid className={muiGridBlockContainer} container justify="flex-end">
       <Grid item container xs={6} direction="column">

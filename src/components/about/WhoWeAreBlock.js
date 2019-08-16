@@ -2,7 +2,7 @@ import React from 'react';
 import { Grid, Typography, Icon } from '@material-ui/core';
 import { makeStyles } from '@material-ui/styles';
 
-import { spacing, fontSizing, useStylesBase } from '../styledComponents';
+import { spacing, fontSizing, stylesBase } from '../styledComponents';
 import { toFormattedText } from '../../services/formatting';
 
 import linkedinIcon from '../../assets/icons/icon.linkedin.orange.svg';
@@ -49,8 +49,10 @@ const teamMembers = [
 ];
 
 const imagesWidth = 371;
+const { muiGridBlockContainer } = stylesBase;
 const useStyles = makeStyles({
-  backgroundImg: { zIndex: -1 },
+  muiGridBlockContainer,
+  backgroundImg: stylesBase.backgroundImg,
   subContainer: { width: `${imagesWidth}px` },
   cardContainer: { width: 'fit-content' },
   cardTextContainer: {
@@ -69,8 +71,17 @@ const useStyles = makeStyles({
 });
 
 const OurValuesBlock = () => {
-  const { muiGridBlockContainer, backgroundImg } = useStylesBase();
-  const { subContainer, cardContainer, cardTextContainer, title4, textContainer, icon } = useStyles();
+  const {
+    // eslint-disable-next-line no-shadow
+    muiGridBlockContainer,
+    backgroundImg,
+    subContainer,
+    cardContainer,
+    cardTextContainer,
+    title4,
+    textContainer,
+    icon,
+  } = useStyles();
   return (
     <Grid className={muiGridBlockContainer} container>
       <Typography variant="h2">Who we are</Typography>

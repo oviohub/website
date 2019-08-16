@@ -2,12 +2,14 @@ import React from 'react';
 import { Grid, Typography, Button } from '@material-ui/core';
 import { makeStyles } from '@material-ui/styles';
 
-import { menuHeightOffset, spacing, useStylesBase } from '../styledComponents';
+import { menuHeightOffset, spacing, stylesBase } from '../styledComponents';
 import heroImage from '../../assets/homePage/heroImage.jpg';
 import ScrollArrow from '../ui-library/ScrollArrow';
 
 const imageHeight = 680; // 680px ==  height of the header image in the design
+const { muiButtonTransparent } = stylesBase;
 const useStyles = makeStyles({
+  muiButtonTransparent,
   mainContainer: { height: `${imageHeight - menuHeightOffset}px` },
   imageContainer: {
     position: 'absolute',
@@ -30,8 +32,16 @@ const useStyles = makeStyles({
 });
 
 const Hero = () => {
-  const { muiButtonTransparent } = useStylesBase();
-  const { mainContainer, imageContainer, image, textContainer, typography, buttonContainer } = useStyles();
+  const {
+    // eslint-disable-next-line no-shadow
+    muiButtonTransparent,
+    mainContainer,
+    imageContainer,
+    image,
+    textContainer,
+    typography,
+    buttonContainer,
+  } = useStyles();
   const scrollRef = React.createRef();
   return (
     <React.Fragment>
