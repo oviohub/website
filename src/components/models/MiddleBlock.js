@@ -3,7 +3,7 @@ import React from 'react';
 import { Grid, Typography } from '@material-ui/core';
 import { makeStyles } from '@material-ui/styles';
 import { fontSizing, contentWidthPixels, stylesBase, colors } from '../styledComponents';
-import backgroundImage from '../../assets/modelPage/companies.middle.png';
+import backgroundImage from '../../assets/modelPage/companies.middle.jpg';
 
 const { muiGridBlockContainer } = stylesBase;
 const useStyles = makeStyles({

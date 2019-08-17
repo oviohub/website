@@ -7,7 +7,7 @@ import GetInvolved from '../components/GetInvolved';
 import LineSeparator from '../components/ui-library/LineSeparator';
 import Footer from '../components/Footer';
 
-import heroImage from '../assets/ModelPage/hero.png';
+import heroImage from '../assets/modelPage/hero.jpg';
 
 const heroContent = {
   title: 'What we Do',

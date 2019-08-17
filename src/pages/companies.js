@@ -11,13 +11,13 @@ import Block3HowToTemplate from '../components/models/Block3HowToTemplate';
 import LineSeparator from '../components/ui-library/LineSeparator';
 import Footer from '../components/Footer';
 
-import heroImage from '../assets/modelPage/companies.hero.png';
+import heroImage from '../assets/modelPage/companies.hero.jpg';
 import introImg1 from '../assets/modelPage/companies.intro.1.png';
 import introImg2 from '../assets/modelPage/companies.intro.2.png';
 import introImg3 from '../assets/modelPage/companies.intro.3.png';
 import introImg4 from '../assets/modelPage/companies.intro.4.png';
 
-import howToMark from '../assets/modelPage/companies.howTo.mark.png';
+import howToMark from '../assets/modelPage/companies.howTo.mark.jpg';
 import howToRequest from '../assets/modelPage/companies.howTo.request.png';
 
 const page = {

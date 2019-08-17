@@ -4,7 +4,7 @@ import { Grid, Typography } from '@material-ui/core';
 import { makeStyles } from '@material-ui/styles';
 import { contentWidthPixels, stylesBase, colors, spacing } from '../styledComponents';
 
-import markImage from '../../assets/modelPage/companies.whyVolunteering.mark.png';
+import markImage from '../../assets/modelPage/companies.whyVolunteering.mark.jpg';
 
 const reasons = [
   'It increases employee engagement and retention rates by providing a better working environment;',
