@@ -6,7 +6,7 @@ import Hero from '../components/Hero';
 import LineSeparator from '../components/ui-library/LineSeparator';
 import Footer from '../components/Footer';
 
-import heroImage from '../assets/contactUsPage/hero.png';
+import heroImage from '../assets/contactUsPage/hero.jpg';
 
 const heroContent = {
   title: 'Contact us',
