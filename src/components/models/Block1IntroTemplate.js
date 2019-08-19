@@ -19,7 +19,6 @@ const useStyles = makeStyles(theme => ({
     boxSizing: 'border-box',
     padding: spacing(2),
     [theme.breakpoints.down('md')]: { width: '100vw' },
-
   }),
   blockContainer: {
     width: contentWidthPixels,
@@ -43,7 +42,7 @@ const useStyles = makeStyles(theme => ({
   },
   image: ({ iconVersion }) => ({
     width: iconVersion ? 'auto' : 'inherit',
-    objectFit: iconVersion ? 'none' : 'unset',
+    objectFit: iconVersion ? 'contain' : 'unset',
     boxShadow: iconVersion ? '0px' : '0px 40px 80px rgba(0, 0, 0, 0.15)',
     [theme.breakpoints.down('xs')]: { width: '80%' },
 

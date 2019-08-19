@@ -14,7 +14,7 @@ const reasons = [
 ];
 
 const { muiGridBlockContainer } = stylesBase;
-const useStyles = makeStyles({
+const useStyles = makeStyles(theme => ({
   muiGridBlockContainer,
   container: {
     width: 'calc(100vw - 8px)',
@@ -22,6 +22,9 @@ const useStyles = makeStyles({
     position: 'relative',
     backgroundImage: `url(${markImage})`,
     backgroundSize: 'cover',
+    backgroundPosition: 'center',
+    padding: spacing(2),
+    [theme.breakpoints.down('md')]: { width: '100vw' },
   },
   blockContainer: {
     width: contentWidthPixels,
@@ -29,14 +32,18 @@ const useStyles = makeStyles({
     zIndex: 1,
   },
   reasonsContainer: { marginTop: spacing(4) },
-  reasonContainer: { margin: `${spacing(7)} ${spacing(4)}` },
+  reasonContainer: {
+    margin: `${spacing(7)} ${spacing(4)}`,
+    [theme.breakpoints.down('xs')]: { margin: `${spacing(4)} 0px` },
+  },
   body2: { fontWeight: '500' },
   thickLine: {
     width: '13px',
     height: '75px',
     backgroundColor: colors.orange,
+    [theme.breakpoints.down('xs')]: { height: '100%' },
   },
-});
+}));
 
 const WhyVolunteering = () => {
   const {
@@ -55,7 +62,7 @@ const WhyVolunteering = () => {
         <Typography variant="h2">Why skill-based volunteering?</Typography>
         <Grid className={reasonsContainer} container justify="center">
           {reasons.map(reason => (
-            <Grid key={reason} className={reasonContainer} container item xs={5}>
+            <Grid key={reason} className={reasonContainer} container item xs={12} sm={10} md={5}>
               <Grid item xs={2} container justify="center" alignItems="center">
                 <div className={thickLine} />
               </Grid>

@@ -1,6 +1,8 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 import { Grid, Typography } from '@material-ui/core';
+import withWidth from '@material-ui/core/withWidth';
 import { makeStyles } from '@material-ui/styles';
 import { stylesBase, spacing } from '../styledComponents';
 import Slider from '../ui-library/Slider';
@@ -69,16 +71,27 @@ const useStyles = makeStyles({
   logoImg: { marginRight: spacing(2) },
 });
 
-const WhoTrustedUs = () => {
+const WhoTrustedUs = ({ width }) => {
   // eslint-disable-next-line no-shadow
   const { muiGridBlockContainer, sliderContainer, card, body2, logoImg } = useStyles();
+  let viewsToShow;
+  switch (width) {
+    case 'xs': case 'sm':
+      viewsToShow = 1;
+      break;
+    case 'md':
+      viewsToShow = 2;
+      break;
+    default:
+      viewsToShow = 3;
+  }
   return (
     <Grid className={muiGridBlockContainer} container>
       <Typography variant="h2">They trusted us</Typography>
       <Grid className={sliderContainer}>
-        <Slider>
+        <Slider viewsToShow={viewsToShow}>
           {companies.map(({ text, logo }) => (
-            <Grid key={text} item xs={4}>
+            <Grid key={text} item xs={12} md={6} lg={4}>
               <Grid className={card}>
                 <Typography className={body2} variant="body2">{text}</Typography>
                 <Grid container alignItems="center" justify="center">
@@ -93,4 +106,8 @@ const WhoTrustedUs = () => {
   );
 };
 
-export default WhoTrustedUs;
+WhoTrustedUs.propTypes = {
+  width: PropTypes.string.isRequired,
+};
+
+export default withWidth()(WhoTrustedUs);

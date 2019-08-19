@@ -38,6 +38,7 @@ const useStyles = makeStyles(theme => ({
     position: 'absolute',
     left: '0px',
     zIndex: -1,
+    [theme.breakpoints.down('xs')]: { paddingTop: '80px' },
   },
 }));
 

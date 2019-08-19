@@ -6,7 +6,7 @@ import { fontSizing, contentWidthPixels, stylesBase, colors } from '../styledCom
 import backgroundImage from '../../assets/modelPage/companies.middle.jpg';
 
 const { muiGridBlockContainer } = stylesBase;
-const useStyles = makeStyles({
+const useStyles = makeStyles(theme => ({
   muiGridBlockContainer,
   container: {
     width: 'calc(100vw - 8px)',
@@ -14,6 +14,7 @@ const useStyles = makeStyles({
     position: 'relative',
     backgroundImage: `url(${backgroundImage})`,
     backgroundSize: 'cover',
+    [theme.breakpoints.down('md')]: { width: '100vw' },
   },
   blockContainer: {
     width: contentWidthPixels,
@@ -24,13 +25,18 @@ const useStyles = makeStyles({
     fontWeight: '600',
     fontSize: fontSizing(6),
     lineHeight: '56px',
+    [theme.breakpoints.down('sm')]: { fontSize: fontSizing(4) },
+    [theme.breakpoints.down('xs')]: {
+      fontSize: fontSizing(3),
+      lineHeight: '36px',
+    },
   },
   thickLine: {
     width: '13px',
     height: '100%',
     backgroundColor: colors.white,
   },
-});
+}));
 
 const MiddleBlock = () => {
   // eslint-disable-next-line no-shadow
