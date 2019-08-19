@@ -42,7 +42,7 @@ const useStyles = makeStyles({
   markImg: ({ isMarkOnLeft }) => ({
     position: 'absolute',
     right: isMarkOnLeft ? 'unset' : '0px',
-    left: isMarkOnLeft ? 'unset' : '0px',
+    left: isMarkOnLeft ? '0px' : 'unset',
   }),
 });
 

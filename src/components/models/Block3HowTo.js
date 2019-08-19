@@ -27,13 +27,13 @@ const useStyles = makeStyles({
   },
 });
 
-const Block3HowTo = ({ title: title2, subtitle, markImage, processItems }) => {
+const Block3HowTo = ({ title: blockTitle, subtitle, markImage, processItems }) => {
   // eslint-disable-next-line no-shadow
   const { muiGridBlockContainer, itemContainer, textContainer, body2, buttonLink, image, icon, markImg } = useStyles();
   return (
     <Grid className={muiGridBlockContainer}>
       <img className={markImg} src={markImage && markImage.publicURL} alt="Ovio - Volunteers - The process" />
-      <Typography variant="h2">{title2}</Typography>
+      <Typography variant="h2">{blockTitle}</Typography>
       <Typography variant="subtitle2">{subtitle}</Typography>
       <Grid>
         {processItems.map(({ title, text, button, image: { publicURL: imageURL } }, index) => {
