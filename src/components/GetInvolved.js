@@ -4,7 +4,7 @@ import { Grid, Typography, Button } from '@material-ui/core';
 import { makeStyles } from '@material-ui/styles';
 
 import { getPageUrl } from '../Routes';
-import { spacing, stylesBase, fontSizing } from './styledComponents';
+import { spacing, fontSizing, stylesBase } from './styledComponents';
 
 import volunteersIcon from '../assets/icons/icon.volunteers.png';
 import socialImpactIcon from '../assets/icons/icon.socialImpact.png';

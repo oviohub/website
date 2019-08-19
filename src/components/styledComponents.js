@@ -125,11 +125,13 @@ export const defaultTheme = createMuiTheme({
         textTransform: 'none',
         border: `2px solid ${colors.orange}`,
         borderRadius: '20px',
-        boxShadow: 'inset 0 2px 4px 0 rgba(0,0,0,0.1)',
         '&:hover': {
           color: colors.white,
           backgroundColor: `${colors.orange}f0`,
         },
+      },
+      text: {
+        padding: `6px ${spacing(4)}`,
       },
     },
     MuiIcon: {
@@ -179,4 +181,13 @@ export const ThickLine = styled('div')(props => ({
   width: props.width || '100%',
   height: props.height || spacing(1.5),
   backgroundColor: colors.orange,
+}));
+
+export const Dot = styled('div')(props => ({
+  width: '10px',
+  height: '10px',
+  borderRadius: '50%',
+  cursor: 'pointer',
+  backgroundColor: props.orange ? colors.orange : `${colors.grey}A8`,
+  margin: '5px',
 }));
