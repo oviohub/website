@@ -9,21 +9,21 @@ import { toFormattedText } from '../../services/formatting';
 const { muiGridBlockContainer } = stylesBase;
 const useStyles = makeStyles({
   muiGridBlockContainer,
-  container: ({ secondVersion }) => ({
+  container: ({ iconVersion }) => ({
     width: 'calc(100vw - 8px)',
     left: 'calc(-1 * (100vw - 100%) / 2)',
     position: 'relative',
-    background: secondVersion ? colors.white : colors.lightGrey,
-    border: secondVersion ? '0px' : '1px solid #DCDCDC',
+    background: iconVersion ? colors.white : colors.lightGrey,
+    border: iconVersion ? '0px' : '1px solid #DCDCDC',
     boxSizing: 'border-box',
   }),
   blockContainer: {
     width: contentWidthPixels,
     zIndex: 1,
   },
-  itemContainer: props => ({ margin: props.secondVersion ? `${spacing(10)} 0px` : `${spacing(5)} 0px` }),
+  itemContainer: props => ({ margin: props.iconVersion ? `${spacing(10)} 0px` : `${spacing(5)} 0px` }),
   textContainer: props => ({
-    padding: props.secondVersion ? '0px 3%' : '0px 8%',
+    padding: props.iconVersion ? '0px 3%' : '0px 8%',
     margin: 'auto 0px',
   }),
   title3: {
@@ -35,10 +35,10 @@ const useStyles = makeStyles({
     textTransform: 'uppercase',
     margin: `0px 0px ${spacing(4)} 0px`,
   },
-  image: ({ secondVersion }) => ({
-    width: secondVersion ? 'auto' : 'inherit',
-    objectFit: secondVersion ? 'none' : 'unset',
-    boxShadow: secondVersion ? '0px' : '0px 40px 80px rgba(0, 0, 0, 0.15)',
+  image: ({ iconVersion }) => ({
+    width: iconVersion ? 'auto' : 'inherit',
+    objectFit: iconVersion ? 'none' : 'unset',
+    boxShadow: iconVersion ? '0px' : '0px 40px 80px rgba(0, 0, 0, 0.15)',
   }),
   markImg: ({ isMarkOnLeft }) => ({
     position: 'absolute',
@@ -47,7 +47,7 @@ const useStyles = makeStyles({
   }),
 });
 
-const Block1IntroTemplate = ({ title, markImage: { publicURL: markImageUrl }, isMarkOnLeft, items, secondVersion }) => {
+const Block1IntroTemplate = ({ title, markImage: { publicURL: markImageUrl }, isMarkOnLeft, items, iconVersion }) => {
   const {
     // eslint-disable-next-line no-shadow
     muiGridBlockContainer,
@@ -58,7 +58,7 @@ const Block1IntroTemplate = ({ title, markImage: { publicURL: markImageUrl }, is
     title3,
     image,
     markImg,
-  } = useStyles({ isMarkOnLeft, secondVersion });
+  } = useStyles({ isMarkOnLeft, iconVersion });
   return (
     <Grid className={container} container justify="center">
       {markImageUrl && <img className={markImg} src={markImageUrl} alt={title} />}
@@ -101,13 +101,13 @@ Block1IntroTemplate.propTypes = {
       publicURL: PropTypes.string.isRequired,
     }).isRequired,
   })).isRequired,
-  secondVersion: PropTypes.bool,
+  iconVersion: PropTypes.bool,
 };
 
 Block1IntroTemplate.defaultProps = {
   markImage: {},
   isMarkOnLeft: false,
-  secondVersion: false,
+  iconVersion: false,
 };
 
 export default Block1IntroTemplate;

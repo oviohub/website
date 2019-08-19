@@ -15,7 +15,7 @@ const useStyles = makeStyles({
     paddingTop: props.withoutTitle && spacing(20),
     width: props.withoutTitle && '50%',
   }),
-  body2: { margin: `0px 0px ${spacing(4)} ${spacing(4)}` },
+  blockBody: { margin: `0px 0px ${spacing(4)} ${spacing(4)}` },
   buttonLink: {
     marginLeft: spacing(4),
     textDecoration: 'none',
@@ -30,10 +30,17 @@ const useStyles = makeStyles({
 });
 
 const Block3HowToTemplate = ({ title: blockTitle, subtitle, markImage, processItems }) => {
-  // eslint-disable-next-line no-shadow
-  const { muiGridBlockContainer, itemContainer, textContainer, body2, buttonLink, image, icon, markImg } = useStyles({
-    withoutTitle: !blockTitle,
-  });
+  const {
+    // eslint-disable-next-line no-shadow
+    muiGridBlockContainer,
+    itemContainer,
+    textContainer,
+    blockBody,
+    buttonLink,
+    image,
+    icon,
+    markImg,
+  } = useStyles({ withoutTitle: !blockTitle });
   return (
     <Grid className={muiGridBlockContainer}>
       <img className={markImg} src={markImage && markImage.publicURL} alt={blockTitle} />
@@ -47,7 +54,7 @@ const Block3HowToTemplate = ({ title: blockTitle, subtitle, markImage, processIt
               <img className={image} src={imageURL} alt={text} />
               <Grid className={textContainer} item xs={4}>
                 <Typography component="p" variant="h2" color="textSecondary">{title || index + 1}</Typography>
-                <Typography className={body2} variant="body2">{text}</Typography>
+                <Typography className={blockBody} variant="body2">{text}</Typography>
                 {btnLink && (
                   <a href={btnLink} className={buttonLink} target="_blank" rel="noreferrer noopener">
                     <Button>
