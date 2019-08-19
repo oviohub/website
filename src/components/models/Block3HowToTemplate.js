@@ -23,6 +23,7 @@ const useStyles = makeStyles(theme => ({
     margin: `0px 0px 0px ${spacing(4)}`,
     marginBottom: withMarginBotton ? spacing(4) : '0px',
   }),
+  itemTitle: ({ containsText }) => ({ marginLeft: containsText ? spacing(4) : '0px' }),
   buttonLink: {
     marginLeft: spacing(4),
     textDecoration: 'none',
@@ -59,6 +60,8 @@ const Block3HowToTemplate = ({ title: blockTitle, subtitle, markImage, processIt
       <Grid>
         {processItems.map(({ title, text, button, image: { publicURL: imageURL } }, index) => {
           const { link: btnLink, withGitHubIcon, text: btnText } = button || {};
+          const xs = title ? 11 : 10;
+          const { itemTitle } = useStyles({ containsText: title });
           return (
             <Grid
               className={itemContainer}
@@ -74,14 +77,16 @@ const Block3HowToTemplate = ({ title: blockTitle, subtitle, markImage, processIt
                 direction={isWidthDown('xs', width) ? 'row' : 'column'}
                 md={4}
                 sm={6}
-                xs={10}
+                xs={12}
               >
-                <Typography component="p" variant="h2" color="textSecondary">{title || index + 1}</Typography>
+                <Typography className={itemTitle} component="p" variant="h2" color="textSecondary">
+                  {title || index + 1}
+                </Typography>
                 <Grid
                   container
                   item
                   alignItems={isWidthDown('xs', width) ? 'center' : 'flex-start'}
-                  xs={isWidthDown('xs', width) ? 10 : false}
+                  xs={isWidthDown('xs', width) ? xs : false}
                 >
                   <Typography className={useStyles({ withMarginBotton: btnLink }).blockBody} variant="body2">
                     {text}
