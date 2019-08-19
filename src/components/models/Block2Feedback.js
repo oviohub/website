@@ -55,6 +55,7 @@ class Block2Feedback extends React.Component {
   }
 
   render() {
+    // eslint-disable-next-line no-shadow
     const { classes: { muiGridBlockContainer, card, body2, photo, caption, controllers } } = this.props;
     const { visibleComments } = this.state;
     const Dots = this.getControllers();
