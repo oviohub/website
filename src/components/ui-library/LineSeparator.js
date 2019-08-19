@@ -1,16 +1,15 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Grid } from '@material-ui/core';
+import withWidth, { isWidthDown } from '@material-ui/core/withWidth';
 import { makeStyles } from '@material-ui/styles';
 import { spacing, stylesBase, colors } from '../styledComponents';
 
-const lineHeight = spacing(1.5);
 const { muiGridBlockContainer } = stylesBase;
 const useStyles = makeStyles(theme => ({
   muiGridBlockContainer,
-  container: ({ withoutMarginTo }) => ({
+  container: ({ withoutMarginTo, lineHeight }) => ({
     marginTop: withoutMarginTo && `calc(-1 * ${lineHeight} / 2)`,
-
     marginBottom: spacing(12),
     [theme.breakpoints.down('sm')]: { marginBottom: spacing(7) },
     height: lineHeight,
@@ -20,20 +19,19 @@ const useStyles = makeStyles(theme => ({
     right: '0px',
     [theme.breakpoints.down('sm')]: { left: '0px' },
   },
-  thickLine: {
+  thickLine: ({ lineHeight }) => ({
     width: '250px',
     height: lineHeight,
     backgroundColor: colors.orange,
-    [theme.breakpoints.down('sm')]: {
-      width: '90vw',
-      height: '3px',
-    },
-  },
+    [theme.breakpoints.down('sm')]: { width: '90vw' },
+  }),
 }));
 
-const LineSeparator = ({ withoutMarginTo }) => {
+const LineSeparator = ({ withoutMarginTo, width }) => {
   // eslint-disable-next-line no-shadow
-  const { muiGridBlockContainer, container, lineContainer, thickLine } = useStyles({ withoutMarginTo });
+  const { muiGridBlockContainer, container, lineContainer, thickLine } = useStyles({
+    withoutMarginTo, lineHeight: isWidthDown('sm', width) ? '3px' : '12px',
+  });
   return (
     <Grid container justify="flex-end" className={`${muiGridBlockContainer} ${container}`}>
       <Grid className={lineContainer}>
@@ -45,6 +43,7 @@ const LineSeparator = ({ withoutMarginTo }) => {
 
 LineSeparator.propTypes = {
   withoutMarginTo: PropTypes.bool,
+  width: PropTypes.string.isRequired,
 };
 
 LineSeparator.defaultProps = {
@@ -52,4 +51,4 @@ LineSeparator.defaultProps = {
 };
 
 
-export default LineSeparator;
+export default withWidth()(LineSeparator);
