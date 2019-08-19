@@ -2,40 +2,50 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import { Grid, Typography, Button } from '@material-ui/core';
+import withWidth, { isWidthDown } from '@material-ui/core/withWidth';
 import { makeStyles } from '@material-ui/styles';
 import { spacing, stylesBase } from '../styledComponents';
 import iconGithub from '../../assets/icons/icon.github.white.svg';
 
 const { muiGridBlockContainer } = stylesBase;
-const useStyles = makeStyles({
+const useStyles = makeStyles(theme => ({
   muiGridBlockContainer,
   itemContainer: { margin: `${spacing(10)} 0px ${spacing(10)}` },
-  textContainer: { marginLeft: spacing(4) },
-  subtitle2: props => ({
-    paddingTop: props.withoutTitle && spacing(20),
-    width: props.withoutTitle && '50%',
+  textContainer: {
+    marginLeft: spacing(4),
+    [theme.breakpoints.down('sm')]: { marginLeft: '0px' },
+  },
+  subtitle2: ({ withoutTitle }) => ({
+    paddingTop: withoutTitle && spacing(20),
+    width: withoutTitle && '50%',
   }),
-  blockBody: { margin: `0px 0px ${spacing(4)} ${spacing(4)}` },
+  blockBody: ({ withMarginBotton }) => ({
+    margin: `0px 0px 0px ${spacing(4)}`,
+    marginBottom: withMarginBotton ? spacing(4) : '0px',
+  }),
   buttonLink: {
     marginLeft: spacing(4),
     textDecoration: 'none',
   },
-  image: { objectFit: 'contain' },
+  image: {
+    objectFit: 'contain',
+    [theme.breakpoints.down('sm')]: { width: '40%' },
+    [theme.breakpoints.down('xs')]: { width: '260px' },
+  },
   icon: { marginRight: spacing(2) },
   markImg: {
     position: 'absolute',
     left: '0px',
     zIndex: -1,
   },
-});
+}));
 
-const Block3HowToTemplate = ({ title: blockTitle, subtitle, markImage, processItems }) => {
+const Block3HowToTemplate = ({ title: blockTitle, subtitle, markImage, processItems, width }) => {
   const {
     // eslint-disable-next-line no-shadow
     muiGridBlockContainer,
     itemContainer,
     textContainer,
-    blockBody,
     buttonLink,
     image,
     icon,
@@ -50,19 +60,41 @@ const Block3HowToTemplate = ({ title: blockTitle, subtitle, markImage, processIt
         {processItems.map(({ title, text, button, image: { publicURL: imageURL } }, index) => {
           const { link: btnLink, withGitHubIcon, text: btnText } = button || {};
           return (
-            <Grid className={itemContainer} key={text} container>
+            <Grid
+              className={itemContainer}
+              key={text}
+              container
+              direction={isWidthDown('xs', width) ? 'column' : 'row'}
+            >
               <img className={image} src={imageURL} alt={text} />
-              <Grid className={textContainer} item xs={4}>
+              <Grid
+                className={textContainer}
+                container
+                item
+                direction={isWidthDown('xs', width) ? 'row' : 'column'}
+                md={4}
+                sm={6}
+                xs={10}
+              >
                 <Typography component="p" variant="h2" color="textSecondary">{title || index + 1}</Typography>
-                <Typography className={blockBody} variant="body2">{text}</Typography>
-                {btnLink && (
-                  <a href={btnLink} className={buttonLink} target="_blank" rel="noreferrer noopener">
-                    <Button>
-                      {withGitHubIcon && <img className={icon} src={iconGithub} alt={btnText} />}
-                      {btnText}
-                    </Button>
-                  </a>
-                )}
+                <Grid
+                  container
+                  item
+                  alignItems={isWidthDown('xs', width) ? 'center' : 'flex-start'}
+                  xs={isWidthDown('xs', width) ? 10 : false}
+                >
+                  <Typography className={useStyles({ withMarginBotton: btnLink }).blockBody} variant="body2">
+                    {text}
+                  </Typography>
+                  {btnLink && (
+                    <a href={btnLink} className={buttonLink} target="_blank" rel="noreferrer noopener">
+                      <Button>
+                        {withGitHubIcon && <img className={icon} src={iconGithub} alt={btnText} />}
+                        {btnText}
+                      </Button>
+                    </a>
+                  )}
+                </Grid>
               </Grid>
             </Grid>
           );
@@ -90,6 +122,7 @@ Block3HowToTemplate.propTypes = {
       link: PropTypes.string.isRequired,
     }),
   })).isRequired,
+  width: PropTypes.string.isRequired,
 };
 
-export default Block3HowToTemplate;
+export default withWidth()(Block3HowToTemplate);

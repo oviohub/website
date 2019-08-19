@@ -125,7 +125,7 @@ export const defaultTheme = createMuiTheme({
         fontWeight: '600',
         letterSpacing: '-0.34px',
         lineHeight: '18px',
-        height: '40px',
+        minHeight: '40px',
         minWidth: '152px',
         textAlign: 'center',
         textTransform: 'none',

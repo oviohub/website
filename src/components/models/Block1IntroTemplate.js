@@ -2,12 +2,13 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import { Grid, Typography } from '@material-ui/core';
+import withWidth, { isWidthDown } from '@material-ui/core/withWidth';
 import { makeStyles } from '@material-ui/styles';
 import { contentWidthPixels, fontSizing, spacing, colors, stylesBase } from '../styledComponents';
 import { toFormattedText } from '../../services/formatting';
 
 const { muiGridBlockContainer } = stylesBase;
-const useStyles = makeStyles({
+const useStyles = makeStyles(theme => ({
   muiGridBlockContainer,
   container: ({ iconVersion }) => ({
     width: 'calc(100vw - 8px)',
@@ -16,6 +17,9 @@ const useStyles = makeStyles({
     background: iconVersion ? colors.white : colors.lightGrey,
     border: iconVersion ? '0px' : '1px solid #DCDCDC',
     boxSizing: 'border-box',
+    padding: spacing(2),
+    [theme.breakpoints.down('md')]: { width: '100vw' },
+
   }),
   blockContainer: {
     width: contentWidthPixels,
@@ -25,6 +29,8 @@ const useStyles = makeStyles({
   textContainer: ({ iconVersion }) => ({
     padding: iconVersion ? '0px 3%' : '0px 8%',
     margin: 'auto 0px',
+    [theme.breakpoints.down('md')]: { padding: '0px 4%' },
+    [theme.breakpoints.down('xs')]: { marginTop: spacing(4) },
   }),
   title3: {
     fontFamily: 'Montserrat',
@@ -39,15 +45,24 @@ const useStyles = makeStyles({
     width: iconVersion ? 'auto' : 'inherit',
     objectFit: iconVersion ? 'none' : 'unset',
     boxShadow: iconVersion ? '0px' : '0px 40px 80px rgba(0, 0, 0, 0.15)',
+    [theme.breakpoints.down('xs')]: { width: '80%' },
+
   }),
   markImg: ({ isMarkOnLeft }) => ({
     position: 'absolute',
     right: isMarkOnLeft ? 'unset' : '0px',
     left: isMarkOnLeft ? '0px' : 'unset',
   }),
-});
+}));
 
-const Block1IntroTemplate = ({ title, markImage: { publicURL: markImageUrl }, isMarkOnLeft, items, iconVersion }) => {
+const Block1IntroTemplate = ({
+  title,
+  markImage: { publicURL: markImageUrl },
+  isMarkOnLeft,
+  items,
+  iconVersion,
+  width,
+}) => {
   const {
     // eslint-disable-next-line no-shadow
     muiGridBlockContainer,
@@ -59,6 +74,7 @@ const Block1IntroTemplate = ({ title, markImage: { publicURL: markImageUrl }, is
     image,
     markImg,
   } = useStyles({ isMarkOnLeft, iconVersion });
+  const itemDirection = isWidthDown('xs', width) ? 'column' : 'row';
   return (
     <Grid className={container} container justify="center">
       {markImageUrl && <img className={markImg} src={markImageUrl} alt={title} />}
@@ -70,14 +86,15 @@ const Block1IntroTemplate = ({ title, markImage: { publicURL: markImageUrl }, is
               key={itemTitle}
               className={itemContainer}
               container
-              direction={index % 2 ? 'row-reverse' : 'row'}
+              direction={index % 2 || isWidthDown('xs', width) ? `${itemDirection}-reverse` : itemDirection}
+              alignItems={isWidthDown('sm', width) ? 'center' : 'flex-start'}
               justify="center"
             >
-              <Grid className={textContainer} item xs={5}>
+              <Grid className={textContainer} item sm={6} md={5}>
                 <Typography className={title3} variant="h3" color="textSecondary">{itemTitle}</Typography>
                 <Typography variant="body2">{toFormattedText(paragraph)}</Typography>
               </Grid>
-              <Grid container item xs={5} justify="center">
+              <Grid container item sm={6} md={5} justify="center">
                 <img className={image} src={imageURL} alt={itemTitle} />
               </Grid>
             </Grid>
@@ -102,6 +119,7 @@ Block1IntroTemplate.propTypes = {
     }).isRequired,
   })).isRequired,
   iconVersion: PropTypes.bool,
+  width: PropTypes.string.isRequired,
 };
 
 Block1IntroTemplate.defaultProps = {
@@ -110,4 +128,4 @@ Block1IntroTemplate.defaultProps = {
   iconVersion: false,
 };
 
-export default Block1IntroTemplate;
+export default withWidth()(Block1IntroTemplate);

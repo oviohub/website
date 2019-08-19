@@ -13,6 +13,7 @@ const useStyles = makeStyles(theme => ({
     height: '500px', // hero height
     backgroundImage: `url(${backgroundImage})`,
     backgroundSize: 'cover',
+    backgroundPosition: 'center',
     [theme.breakpoints.down('md')]: { width: '100vw' },
 
   }),
