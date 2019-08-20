@@ -17,6 +17,11 @@ const routes = {
     component: 'src/pages/model.js',
     seo: { title: 'Our Model', description: '' },
   },
+  CompaniesPage: {
+    url: '/companies',
+    component: 'src/pages/companies.js',
+    seo: { title: 'Companies', description: '' },
+  },
 };
 
 modelPage.forEach((page) => {

@@ -15,21 +15,21 @@ const cards = [
     image: volunteersIcon,
     title: 'Volunteers',
     paragraph: 'Access a catalog of open-source projects and find opportunities that match your interests and skills.',
-    link: getPageUrl('HomePage'),
+    link: getPageUrl('VolunteersPage'),
   },
   {
     image: socialImpactIcon,
     title: 'Social impact organizations',
     paragraph: `As a social impact organization, you have the opportunity to showcase your Tech for Good projects
       and engage more qualified contributors.`,
-    link: getPageUrl('HomePage'),
+    link: getPageUrl('SocialImpactPage'),
   },
   {
     image: companiesIcon,
     title: 'Companies',
     paragraph: `Attract and meaningfully engage employees with Explore. Use our platform to build a purpose-driven
       culture and scale your skill-based volunteering program.`,
-    link: getPageUrl('HomePage'),
+    link: getPageUrl('CompaniesPage'),
   },
 ];
 
