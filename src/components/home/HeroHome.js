@@ -1,15 +1,19 @@
 import React from 'react';
-import { Grid, Typography, Button } from '@material-ui/core';
+import PropTypes from 'prop-types';
+import { Grid, Typography, Button, withWidth } from '@material-ui/core';
 import { makeStyles } from '@material-ui/styles';
 
-import { spacing, stylesBase } from '../styledComponents';
+import { stylesBase, menuHeightOffset } from '../styledComponents';
 import heroImage from '../../assets/homePage/heroImage.jpg';
-import ScrollArrow from '../ui-library/ScrollArrow';
 
-const { muiButtonTransparent, muiGridFullScreen } = stylesBase;
+const { muiButtonWhiteBackground, muiGridFullScreen } = stylesBase;
+const imageHeight = '680px'; // 680px ==  height of the header image in the design
 const useStyles = makeStyles(theme => ({
-  muiButtonTransparent,
+  muiButtonWhiteBackground,
   muiGridFullScreen,
+  mainContainer: {
+    height: `calc(${imageHeight} - ${menuHeightOffset}px)`,
+  },
   imageContainer: {
     position: 'absolute',
     left: '0px',
@@ -18,16 +22,13 @@ const useStyles = makeStyles(theme => ({
   },
   image: {
     width: '100%',
-    height: '680px', // 680px ==  height of the header image in the design
+    height: imageHeight,
     objectFit: 'cover',
     [theme.breakpoints.down('md')]: { objectPosition: 'left' },
   },
   textContainer: {
-    marginLeft: spacing(2),
-    [theme.breakpoints.down('sm')]: {
-      textAlign: 'center',
-      marginLeft: '0px',
-    },
+    marginLeft: '0px',
+    [theme.breakpoints.down('sm')]: { textAlign: 'center' },
   },
   typography: {
     textAlign: 'left',
@@ -40,40 +41,53 @@ const useStyles = makeStyles(theme => ({
   },
 }));
 
-const Hero = () => {
+const Hero = ({ width }) => {
   const {
     // eslint-disable-next-line no-shadow
-    muiButtonTransparent,
+    muiButtonWhiteBackground,
     // eslint-disable-next-line no-shadow
     muiGridFullScreen,
+    mainContainer,
     imageContainer,
     image,
     textContainer,
     typography,
     buttonContainer,
   } = useStyles();
-  const scrollRef = React.createRef();
+
   return (
     <React.Fragment>
-      <Grid container>
+      <Grid container className={mainContainer}>
         <Grid className={`${muiGridFullScreen} ${imageContainer}`}>
           <img className={image} src={heroImage} alt="Ovio" />
         </Grid>
-        <Grid container item className={textContainer} direction="column" lg={6} md={8} xs={12}>
+        <Grid
+          container
+          item
+          className={textContainer}
+          direction="column"
+          justify={width === 'xs' ? 'flex-start' : 'center'}
+          lg={6}
+          md={8}
+          xs={12}
+        >
           <Typography className={typography} variant="h1">Ovio brings Technology in Service of Humanity</Typography>
           <Typography className={typography} variant="subtitle1">
             Technology can, and should, fuel solutions to the greatest
             challenges of our time and be in service to humanity.
           </Typography>
           <Grid className={buttonContainer} item>
-            <Button className={muiButtonTransparent}>Learn More</Button>
+            <Button className={muiButtonWhiteBackground}>Learn More</Button>
           </Grid>
-          <ScrollArrow scrollRef={scrollRef} />
         </Grid>
       </Grid>
-      <div ref={scrollRef} />
+
     </React.Fragment>
   );
 };
 
-export default Hero;
+Hero.propTypes = {
+  width: PropTypes.string.isRequired,
+};
+
+export default withWidth()(Hero);
