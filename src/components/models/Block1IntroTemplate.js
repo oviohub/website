@@ -21,9 +21,9 @@ const useStyles = makeStyles({
     width: contentWidthPixels,
     zIndex: 1,
   },
-  itemContainer: props => ({ margin: props.iconVersion ? `${spacing(10)} 0px` : `${spacing(5)} 0px` }),
-  textContainer: props => ({
-    padding: props.iconVersion ? '0px 3%' : '0px 8%',
+  itemContainer: ({ iconVersion }) => ({ margin: iconVersion ? `${spacing(10)} 0px` : `${spacing(5)} 0px` }),
+  textContainer: ({ iconVersion }) => ({
+    padding: iconVersion ? '0px 3%' : '0px 8%',
     margin: 'auto 0px',
   }),
   title3: {
