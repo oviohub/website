@@ -27,6 +27,11 @@ const routes = {
     component: 'src/pages/contact-us.js',
     seo: { title: 'Contact us', description: '' },
   },
+  ImpactPage: {
+    url: '/impact',
+    component: 'src/pages/impact.js',
+    seo: { title: 'Impact', description: '' },
+  },
 };
 
 modelPage.forEach((page) => {
