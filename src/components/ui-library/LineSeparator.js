@@ -6,24 +6,30 @@ import { spacing, stylesBase, colors } from '../styledComponents';
 
 const lineHeight = spacing(1.5);
 const { muiGridBlockContainer } = stylesBase;
-const useStyles = makeStyles({
+const useStyles = makeStyles(theme => ({
   muiGridBlockContainer,
   container: ({ withoutMarginTo }) => ({
     marginTop: withoutMarginTo && `calc(-1 * ${lineHeight} / 2)`,
 
     marginBottom: spacing(12),
+    [theme.breakpoints.down('sm')]: { marginBottom: spacing(7) },
     height: lineHeight,
   }),
   lineContainer: {
     position: 'absolute',
     right: '0px',
+    [theme.breakpoints.down('sm')]: { left: '0px' },
   },
   thickLine: {
     width: '250px',
     height: lineHeight,
     backgroundColor: colors.orange,
+    [theme.breakpoints.down('sm')]: {
+      width: '90vw',
+      height: '3px',
+    },
   },
-});
+}));
 
 const LineSeparator = ({ withoutMarginTo }) => {
   // eslint-disable-next-line no-shadow

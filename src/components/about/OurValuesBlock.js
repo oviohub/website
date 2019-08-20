@@ -1,5 +1,7 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { Grid, Typography } from '@material-ui/core';
+import withWidth, { isWidthDown } from '@material-ui/core/withWidth';
 import { makeStyles } from '@material-ui/styles';
 
 import { spacing, stylesBase } from '../styledComponents';
@@ -39,21 +41,24 @@ const items = [
 ];
 
 const { muiGridBlockContainer, muiGridBackground } = stylesBase;
-const useStyles = makeStyles({
+const useStyles = makeStyles(theme => ({
   muiGridBlockContainer,
   muiGridBackground,
   container: { paddingTop: spacing(6) },
   title2: { marginTop: '0px' },
-  itemIconContainer: { textAlign: 'center' },
+  itemIconContainer: {
+    textAlign: 'center',
+    [theme.breakpoints.down('sm')]: { marginBottom: spacing(2) },
+  },
   itemTextContainer: { marginBottom: spacing(6) },
   title4: { marginBottom: spacing(1) },
   imageComponent: {
     left: '0px',
-    marginTop: '-250px',
+    marginTop: '-130px',
   },
-});
+}));
 
-const OurValuesBlock = () => {
+const OurValuesBlock = ({ width }) => {
   const {
     // eslint-disable-next-line no-shadow
     muiGridBlockContainer,
@@ -67,15 +72,24 @@ const OurValuesBlock = () => {
     title4,
   } = useStyles();
   return (
-    <Grid className={`${muiGridBlockContainer} ${container}`} container>
-      <Grid item xs={5}>
+    <Grid
+      className={`${muiGridBlockContainer} ${container}`}
+      container
+      direction={isWidthDown('sm', width) ? 'column' : 'row'}
+    >
+      <Grid item xs={12} md={5}>
         <img className={`${muiGridBackground} ${imageComponent}`} src={orangeMark} alt="Our values" />
         <Typography variant="h2" className={title2}>Our Values</Typography>
       </Grid>
-      <Grid item xs={7}>
+      <Grid item xs={12} md={7}>
         {items.map(({ title, image, content }) => (
-          <Grid key={title} container>
-            <Grid item xs={2} className={itemIconContainer}>
+          <Grid
+            key={title}
+            container
+            direction={isWidthDown('sm', width) ? 'column' : 'row'}
+            alignItems={isWidthDown('sm', width) ? 'center' : 'flex-start'}
+          >
+            <Grid item xs={10} md={2} className={itemIconContainer} container>
               <img src={image} alt={title} />
             </Grid>
             <Grid item xs={10} size="2" className={itemTextContainer}>
@@ -89,4 +103,8 @@ const OurValuesBlock = () => {
   );
 };
 
-export default OurValuesBlock;
+OurValuesBlock.propTypes = {
+  width: PropTypes.string.isRequired,
+};
+
+export default withWidth()(OurValuesBlock);

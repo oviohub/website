@@ -153,6 +153,9 @@ export const stylesBase = {
   },
   muiGridBlockContainer: {
     margin: `${spacing(12)} 0px`,
+    [defaultTheme.breakpoints.down('xs')]: {
+      margin: `${spacing(6)} 0px`,
+    },
   },
   muiIconLogo: {
     width: '110px',
