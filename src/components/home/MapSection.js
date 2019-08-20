@@ -17,7 +17,7 @@ const useStyles = makeStyles(theme => ({
     position: 'relative',
     width: '100%',
     objectFit: 'cover',
-    zIndex: '-1',
+    zIndex: -1,
   },
 }));
 
