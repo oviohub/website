@@ -22,6 +22,11 @@ const routes = {
     component: 'src/pages/companies.js',
     seo: { title: 'Companies', description: '' },
   },
+  ContactUsPage: {
+    url: '/contact-us',
+    component: 'src/pages/contact-us.js',
+    seo: { title: 'Contact us', description: '' },
+  },
 };
 
 modelPage.forEach((page) => {
