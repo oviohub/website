@@ -86,7 +86,8 @@ const Footer = ({ width }) => {
         item
         container
         direction="column"
-        xs={isWidthDown('sm', width) ? 12 : 5}
+        xs={12}
+        md={5}
         alignItems={isWidthDown('sm', width) ? 'center' : 'flex-start'}
       >
         <img className={muiIconLogo} src={logo} alt="Ovio" />

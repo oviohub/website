@@ -94,7 +94,7 @@ const MenuBar = ({ homeVersion }) => {
   const anchorRef = React.useRef(null);
 
   function handleToggle() {
-    setOpen(prevOpen => !prevOpen);
+    setOpen(!open);
   }
 
   function handleClose(event) {
