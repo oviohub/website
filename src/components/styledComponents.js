@@ -163,6 +163,18 @@ export const stylesBase = {
       margin: `${spacing(6)} 0px`,
     },
   },
+  muiGridFullScreen: {
+    width: 'calc(100vw - 15px)', // 15px == scrollbar width
+    [defaultTheme.breakpoints.down('md')]: { width: '100vw' },
+  },
+  muiGridFullScreenWithBackground: {
+    width: 'calc(100vw - 8px)',
+    left: 'calc(-1 * (100vw - 100%) / 2)',
+    position: 'relative',
+    backgroundSize: 'cover',
+    backgroundPosition: 'center',
+    [defaultTheme.breakpoints.down('md')]: { width: '100vw' },
+  },
   muiIconLogo: {
     width: '110px',
     margin: '0px',

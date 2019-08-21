@@ -7,18 +7,15 @@ import { makeStyles } from '@material-ui/styles';
 import { contentWidthPixels, fontSizing, spacing, colors, stylesBase } from '../styledComponents';
 import { toFormattedText } from '../../services/formatting';
 
-const { muiGridBlockContainer } = stylesBase;
+const { muiGridBlockContainer, muiGridFullScreenWithBackground } = stylesBase;
 const useStyles = makeStyles(theme => ({
   muiGridBlockContainer,
+  muiGridFullScreenWithBackground,
   container: ({ iconVersion }) => ({
-    width: 'calc(100vw - 8px)',
-    left: 'calc(-1 * (100vw - 100%) / 2)',
-    position: 'relative',
     background: iconVersion ? colors.white : colors.lightGrey,
     border: iconVersion ? '0px' : '1px solid #DCDCDC',
     boxSizing: 'border-box',
     padding: spacing(2),
-    [theme.breakpoints.down('md')]: { width: '100vw' },
   }),
   blockContainer: {
     width: contentWidthPixels,
@@ -65,6 +62,8 @@ const Block1IntroTemplate = ({
   const {
     // eslint-disable-next-line no-shadow
     muiGridBlockContainer,
+    // eslint-disable-next-line no-shadow
+    muiGridFullScreenWithBackground,
     container,
     blockContainer,
     itemContainer,
@@ -74,7 +73,7 @@ const Block1IntroTemplate = ({
     markImg,
   } = useStyles({ isMarkOnLeft, iconVersion });
   return (
-    <Grid className={container} container justify="center">
+    <Grid className={`${muiGridFullScreenWithBackground} ${container}`} container justify="center">
       {markImageUrl && <img className={markImg} src={markImageUrl} alt={title} />}
       <Grid className={`${muiGridBlockContainer} ${blockContainer}`} container>
         {title && <Typography variant="h2">{title}</Typography>}

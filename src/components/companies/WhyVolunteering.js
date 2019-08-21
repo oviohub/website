@@ -13,18 +13,13 @@ const reasons = [
   "It expands corporate philanthropy's reach and multiplies impact.",
 ];
 
-const { muiGridBlockContainer } = stylesBase;
+const { muiGridBlockContainer, muiGridFullScreenWithBackground } = stylesBase;
 const useStyles = makeStyles(theme => ({
   muiGridBlockContainer,
+  muiGridFullScreenWithBackground,
   container: {
-    width: 'calc(100vw - 8px)',
-    left: 'calc(-1 * (100vw - 100%) / 2)',
-    position: 'relative',
     backgroundImage: `url(${markImage})`,
-    backgroundSize: 'cover',
-    backgroundPosition: 'center',
     padding: spacing(2),
-    [theme.breakpoints.down('md')]: { width: '100vw' },
   },
   blockContainer: {
     width: contentWidthPixels,
@@ -49,6 +44,8 @@ const WhyVolunteering = () => {
   const {
     // eslint-disable-next-line no-shadow
     muiGridBlockContainer,
+    // eslint-disable-next-line no-shadow
+    muiGridFullScreenWithBackground,
     container,
     blockContainer,
     reasonsContainer,
@@ -57,7 +54,7 @@ const WhyVolunteering = () => {
     thickLine,
   } = useStyles();
   return (
-    <Grid className={container} container justify="center">
+    <Grid className={`${muiGridFullScreenWithBackground} ${container}`} container justify="center">
       <Grid className={`${muiGridBlockContainer} ${blockContainer}`} container>
         <Typography variant="h2">Why skill-based volunteering?</Typography>
         <Grid className={reasonsContainer} container justify="center">

@@ -24,16 +24,15 @@ const cardList = [
   },
 ];
 
-const { muiGridBackground } = stylesBase;
+const { muiGridBackground, muiGridFullScreen } = stylesBase;
 const useStyles = makeStyles(theme => ({
   muiGridBackground,
+  muiGridFullScreen,
   mainContainer: { padding: `${menuHeightOffset}px 0px 0px` },
   headerContainer: {
     height: '360px',
     backgroundImage: `url(${ericPitching})`,
     backgroundPosition: 'center',
-    width: 'calc(100vw - 15px)', // 15px == scrollbar width
-    [theme.breakpoints.down('md')]: { width: '100vw' },
   },
   title1: { marginTop: spacing(-7) },
   cardContainer: ({ isEven }) => ({
@@ -70,12 +69,21 @@ const useStyles = makeStyles(theme => ({
 }));
 
 const Intro = () => {
-  // eslint-disable-next-line no-shadow
-  const { muiGridBackground, mainContainer, headerContainer, title1, cardContent, cardSubtitle } = useStyles();
+  const {
+    // eslint-disable-next-line no-shadow
+    muiGridBackground,
+    // eslint-disable-next-line no-shadow
+    muiGridFullScreen,
+    mainContainer,
+    headerContainer,
+    title1,
+    cardContent,
+    cardSubtitle,
+  } = useStyles();
   return (
     <Grid className={mainContainer} container justify="center">
       <Grid>
-        <Grid className={headerContainer} container justify="center" alignItems="center">
+        <Grid className={`${muiGridFullScreen} ${headerContainer}`} container justify="center" alignItems="center">
           <Typography variant="h1" className={title1}>About</Typography>
         </Grid>
       </Grid>

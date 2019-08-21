@@ -6,16 +6,15 @@ import { spacing, stylesBase } from '../styledComponents';
 import heroImage from '../../assets/homePage/heroImage.jpg';
 import ScrollArrow from '../ui-library/ScrollArrow';
 
-const { muiButtonTransparent } = stylesBase;
+const { muiButtonTransparent, muiGridFullScreen } = stylesBase;
 const useStyles = makeStyles(theme => ({
   muiButtonTransparent,
+  muiGridFullScreen,
   imageContainer: {
     position: 'absolute',
-    width: 'calc(100vw - 15px)', // 15px == scroll bar size
     left: '0px',
     top: '0px',
     zIndex: '-1',
-    [theme.breakpoints.down('md')]: { width: '100vw' },
   },
   image: {
     width: '100%',
@@ -45,6 +44,8 @@ const Hero = () => {
   const {
     // eslint-disable-next-line no-shadow
     muiButtonTransparent,
+    // eslint-disable-next-line no-shadow
+    muiGridFullScreen,
     imageContainer,
     image,
     textContainer,
@@ -55,7 +56,7 @@ const Hero = () => {
   return (
     <React.Fragment>
       <Grid container>
-        <Grid className={imageContainer}>
+        <Grid className={`${muiGridFullScreen} ${imageContainer}`}>
           <img className={image} src={heroImage} alt="Ovio" />
         </Grid>
         <Grid container item className={textContainer} direction="column" lg={6} md={8} xs={12}>
