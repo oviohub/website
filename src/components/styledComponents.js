@@ -206,26 +206,21 @@ export const stylesBase = {
 };
 
 // Shapes
-export const Arrow = styled('div')({
-  boxSizing: 'border-box',
-  height: '40px',
-  width: '40px',
-  border: `4px solid ${colors.white}`,
-  borderWidth: '0px 0px 4px 4px',
-  transform: 'rotate(315deg)',
-});
-
-export const ThickLine = styled('div')(props => ({
-  width: props.width || '100%',
-  height: props.height || spacing(1.5),
+export const ThickLine = styled('div')(({ width, height }) => ({
+  width: width || '100%',
+  height: height || spacing(1.5),
   backgroundColor: colors.orange,
 }));
 
-export const Dot = styled('div')(props => ({
+export const Dot = styled('div')(({ orange }) => ({
   width: '10px',
   height: '10px',
   borderRadius: '50%',
   cursor: 'pointer',
-  backgroundColor: props.orange ? colors.orange : `${colors.grey}A8`,
+  backgroundColor: orange ? colors.orange : `${colors.grey}A8`,
   margin: '5px',
+}));
+
+export const BoldSpan = styled('span')(({ fontWeight }) => ({
+  fontWeight: fontWeight || 'inherit',
 }));

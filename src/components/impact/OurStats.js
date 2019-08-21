@@ -4,24 +4,23 @@ import { makeStyles } from '@material-ui/styles';
 
 import { spacing, fontSizing, stylesBase } from '../styledComponents';
 
-import markImage from '../../assets/impactPage/mark.jpg';
-import statMark from '../../assets/impactPage/statMark.png';
+import statMark from '../../assets/impactPage/statMark.svg';
 
 const stats = [
   {
     label: 'social impact organizations and',
     count: '145',
-    style: { scale: 0.85, rotation: 90 },
+    style: { scale: 0.8, rotation: 90 },
   },
   {
     label: 'projects are listed on Explore, showcasing',
     count: '250',
-    style: { scale: 0.85, rotation: 0 },
+    style: { scale: 0.8, rotation: 0 },
   },
   {
     label: 'contributors.',
     count: '3,700',
-    style: { scale: 1, rotation: 200 },
+    style: { scale: 0.9, rotation: 200 },
   },
   {
     label: 'organizations, receive regular volunteering support.',
@@ -30,10 +29,9 @@ const stats = [
   },
 ];
 
-const { muiGridBlockContainer, muiGridBackground } = stylesBase;
+const { muiGridBlockContainer } = stylesBase;
 const useStyles = makeStyles({
   muiGridBlockContainer,
-  muiGridBackground,
   subContainer: {
     marginBottom: spacing(4),
   },
@@ -53,34 +51,29 @@ const useStyles = makeStyles({
     transform: `rotate(-${rotation}deg)`,
   }),
   labelContainer: { paddingLeft: spacing(2) },
-  markStyle: {
-    width: 'auto',
-    left: '0px',
-    marginTop: '-350px',
-  },
+  labelText: { fontWeight: 500 },
 });
 
 const OurStats = () => {
   // eslint-disable-next-line no-shadow
-  const { muiGridBlockContainer, muiGridBackground, subContainer, labelContainer, markStyle } = useStyles();
+  const { muiGridBlockContainer, subContainer, labelContainer, labelText } = useStyles();
   return (
     <Grid className={muiGridBlockContainer} container>
-      <img className={`${muiGridBackground} ${markStyle}`} src={markImage} alt="Our values" />
       <Grid item xs={5}>
-        <Typography variant="h2">Ovio initiated over 300 hours of volunteering.</Typography>
+        <Typography variant="h2">Since 2018, Ovio initiated over 500 hours of volunteering.</Typography>
       </Grid>
       <Grid item xs={6}>
         {stats.map(({ label, count, style }) => (
           <Grid key={label} className={subContainer} container alignItems="center">
-            <Grid item xs={2} container justify="center">
+            <Grid item xs={3} container justify="center">
               <Grid className={useStyles(style).countContainer} container alignItems="center" justify="center">
                 <Typography className={useStyles(style).countText} variant="h4" color="textSecondary">
                   {count}
                 </Typography>
               </Grid>
             </Grid>
-            <Grid className={labelContainer} item xs={10}>
-              <Typography>{label}</Typography>
+            <Grid className={labelContainer} item xs={9}>
+              <Typography className={labelText} variant="body2">{label}</Typography>
             </Grid>
           </Grid>
         ))}

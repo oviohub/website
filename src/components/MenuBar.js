@@ -73,7 +73,7 @@ const useStyles = makeStyles(theme => ({
     padding: `0px ${spacing(1)}`,
     margin: `0px ${spacing(last ? 0 : 1)}`,
     '&:hover': {
-      color: colors.darkBlue,
+      color: homeVersion ? colors.darkBlue : colors.white,
       borderColor: homeVersion ? colors.white : colors.orange,
       backgroundColor: homeVersion ? colors.white : colors.orange,
     },

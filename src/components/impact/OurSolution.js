@@ -2,214 +2,123 @@ import React from 'react';
 import { Grid, Typography } from '@material-ui/core';
 import { makeStyles } from '@material-ui/styles';
 
-import { colors, spacing, fontSizing, stylesBase } from '../styledComponents';
-import { toFormattedText } from '../../services/formatting';
+import { fontSizing, colors, stylesBase, spacing } from '../styledComponents';
+import { toFormattedBoldText } from '../../services/formatting';
+import statMark from '../../assets/impactPage/statMark.svg';
+import iconProvide from '../../assets/icons/icon.provide.orange.png';
+import iconOffer from '../../assets/icons/icon.offer.orange.png';
+import iconMaintain from '../../assets/icons/icon.maintain.orange.png';
 
-import img1 from '../../assets/impactPage/poverty.png';
-import img2 from '../../assets/impactPage/hunger.png';
-import img3 from '../../assets/impactPage/health.png';
-import img4 from '../../assets/impactPage/education.png';
-import img5 from '../../assets/impactPage/gender.png';
-import img6 from '../../assets/impactPage/water.png';
-import img7 from '../../assets/impactPage/energy.png';
-import img8 from '../../assets/impactPage/growth.png';
-import img9 from '../../assets/impactPage/infractructure.png';
-import img10 from '../../assets/impactPage/inequalities.png';
-import img11 from '../../assets/impactPage/communities.png';
-import img12 from '../../assets/impactPage/consuption.png';
-import img13 from '../../assets/impactPage/climate.png';
-import img14 from '../../assets/impactPage/belowWater.png';
-import img15 from '../../assets/impactPage/liveOnSand.png';
-import img16 from '../../assets/impactPage/justice.png';
-import img17 from '../../assets/impactPage/partnerships.png';
-
-const cards = [
+const objectifs = [
   {
-    title: 'No Poverty',
-    image: img1,
-    textOnOver: 'Lorem ipsum dolor sit amet, lorem ipsum dolro sit emat Lorem ipsum dolor sit amet, lorem ipsum dolro',
+    iconURL: iconProvide,
+    goal: '<bold>Provide<bold> volunteering support to organizations without forcing them to cut into their budget',
+    metric: '~ $10k',
+    metricDescription: 'amount of $ organizations are saving using Explore compare to outsourcing or hiring talents',
+    markStyle: { scale: 0.85, rotation: 0 },
   },
   {
-    title: 'Zero Hunger',
-    image: img2,
-    textOnOver: 'Lorem ipsum dolor sit amet, lorem ipsum dolro sit emat Lorem ipsum dolor sit amet, lorem ipsum dolro',
+    iconURL: iconOffer,
+    // eslint-disable-next-line max-len
+    goal: "<bold>Offer<bold> a top-quality tech that allows organizations to develop great products and services that fits their beneficent' needs",
+    metric: '~ 5+ years exp',
+    metricDescription: 'quality of the tech through talents years of experience and skills',
+    markStyle: { scale: 0.9, rotation: 90 },
   },
   {
-    title: 'Good Health &\nWell-being',
-    image: img3,
-    textOnOver: 'Lorem ipsum dolor sit amet, lorem ipsum dolro sit emat Lorem ipsum dolor sit amet, lorem ipsum dolro',
-  },
-  {
-    title: 'Quality\nEducation',
-    image: img4,
-    textOnOver: 'Lorem ipsum dolor sit amet, lorem ipsum dolro sit emat Lorem ipsum dolor sit amet, lorem ipsum dolro',
-  },
-  {
-    title: 'Gender\nEquality',
-    image: img5,
-    textOnOver: 'Lorem ipsum dolor sit amet, lorem ipsum dolro sit emat Lorem ipsum dolor sit amet, lorem ipsum dolro',
-  },
-  {
-    title: 'Clean Water\n& Sanitation',
-    image: img6,
-    textOnOver: 'Lorem ipsum dolor sit amet, lorem ipsum dolro sit emat Lorem ipsum dolor sit amet, lorem ipsum dolro',
-  },
-  {
-    title: 'Affordable &\nClean Energy',
-    image: img7,
-    textOnOver: 'Lorem ipsum dolor sit amet, lorem ipsum dolro sit emat Lorem ipsum dolor sit amet, lorem ipsum dolro',
-  },
-  {
-    title: 'Decent Work &\nEconomic Growth',
-    image: img8,
-    textOnOver: 'Lorem ipsum dolor sit amet, lorem ipsum dolro sit emat Lorem ipsum dolor sit amet, lorem ipsum dolro',
-  },
-  {
-    title: 'Industry,\nInnovation &\nInfrastructure',
-    image: img9,
-    textOnOver: 'Lorem ipsum dolor sit amet, lorem ipsum dolro sit emat Lorem ipsum dolor sit amet, lorem ipsum dolro',
-  },
-  {
-    title: 'Reduced\nInequalities',
-    image: img10,
-    textOnOver: 'Lorem ipsum dolor sit amet, lorem ipsum dolro sit emat Lorem ipsum dolor sit amet, lorem ipsum dolro',
-  },
-  {
-    title: 'Sustainable Cities\n& Communities',
-    image: img11,
-    textOnOver: 'Lorem ipsum dolor sit amet, lorem ipsum dolro sit emat Lorem ipsum dolor sit amet, lorem ipsum dolro',
-  },
-  {
-    title: 'Responsible\nConsuption &\nProduction',
-    image: img12,
-    textOnOver: 'Lorem ipsum dolor sit amet, lorem ipsum dolro sit emat Lorem ipsum dolor sit amet, lorem ipsum dolro',
-  },
-  {
-    title: 'Climate Action',
-    image: img13,
-    textOnOver: 'Lorem ipsum dolor sit amet, lorem ipsum dolro sit emat Lorem ipsum dolor sit amet, lorem ipsum dolro',
-  },
-  {
-    title: 'Life Below\nWater',
-    image: img14,
-    textOnOver: 'Lorem ipsum dolor sit amet, lorem ipsum dolro sit emat Lorem ipsum dolor sit amet, lorem ipsum dolro',
-  },
-  {
-    title: 'Life On Land',
-    image: img15,
-    textOnOver: 'Lorem ipsum dolor sit amet, lorem ipsum dolro sit emat Lorem ipsum dolor sit amet, lorem ipsum dolro',
-  },
-  {
-    title: 'Peace, Justice\n& Strong\nInstitutions',
-    image: img16,
-    textOnOver: 'Lorem ipsum dolor sit amet, lorem ipsum dolro sit emat Lorem ipsum dolor sit amet, lorem ipsum dolro',
-  },
-  {
-    title: 'Partmerships\nFor The Goals',
-    image: img17,
-    textOnOver: 'Lorem ipsum dolor sit amet, lorem ipsum dolro sit emat Lorem ipsum dolor sit amet, lorem ipsum dolro',
-  },
-  {
-    title: 'UNKNOW\nTITLE',
-    image: img17,
-    textOnOver: 'Lorem ipsum dolor sit amet, lorem ipsum dolro sit emat Lorem ipsum dolor sit amet, lorem ipsum dolro',
+    iconURL: iconMaintain,
+    goal: '<bold>Maintain<bold> sustainable support that strengthens organizations’\nresources',
+    metric: '~x2',
+    // eslint-disable-next-line max-len
+    metricDescription: 'sustainability of the support by analyzing the retention of volunteers on Explore and their activity',
+    markStyle: { scale: 0.6, rotation: 0 },
   },
 ];
 
 const { muiGridBlockContainer } = stylesBase;
 const useStyles = makeStyles({
   muiGridBlockContainer,
-  thickLine: {
-    width: '13px',
-    height: '80%',
-    backgroundColor: colors.orange,
+  goalContainer: ({ whithoutBorderTop }) => ({
+    padding: `${spacing(4)} 0px`,
+    borderTop: !whithoutBorderTop && `1px solid ${colors.darkBlue}1a`,
+
+  }),
+  title4: {
+    fontStyle: 'italic',
+    lineHeight: '30px',
+    color: colors.orange,
+    marginBottom: spacing(4),
   },
-  subtitle2: {
-    margin: `${spacing(10)} 0px ${spacing(5)}`,
+  boldText: {
+    margin: `${spacing(6)} 0px ${spacing(4)}`,
     fontWeight: 'bold',
-    width: '80%',
   },
-  cardsContainer: { marginLeft: `-${spacing(2)}` },
-  cardContainer: {
-    width: '211px',
-    height: '211px',
-    margin: spacing(2),
-    '&:hover #onHoverDisplay': { display: 'flex' },
-    '&:hover #onHoverHide': { display: 'none' },
+  icon: {
+    width: '65px',
   },
-  cardOnHoverDisplay: {
-    height: '100%',
-    width: '100%',
-    display: 'none',
-    backgroundColor: colors.darkBlue,
-  },
-  cardOnHoverHide: {
-    height: '100%',
-    width: '100%',
-    backgroundColor: colors.orange,
-  },
-  h4: {
-    width: '80%',
-    fontSize: fontSizing(2),
-    lineHeight: '18px',
+  metricContainer: ({ scale, rotation }) => ({
+    backgroundImage: `url(${statMark})`,
+    backgroundSize: 'cover',
+    backgroundRepeat: 'no-repeat',
+    width: `calc(${scale} * 100px)`,
+    height: `calc(${scale} * 100px)`,
+    transform: `rotate(${rotation}deg)`,
+  }),
+  metricStyle: ({ rotation }) => ({
+    fontFamily: 'Caveat Brush',
+    fontSize: fontSizing(5),
+    fontWeight: 'normal',
     textAlign: 'center',
-    marginTop: spacing(4),
-  },
-  imgComponent: { marginBottom: spacing(4) },
-  body2: {
-    fontSize: fontSizing(2),
-    padding: spacing(2),
+    lineHeight: '24px',
+    transform: `rotate(-${rotation}deg)`,
+  }),
+  descriptionContainer: {
+    paddingLeft: spacing(4),
   },
 });
 
 const OurSolution = () => {
-  const {
-    // eslint-disable-next-line no-shadow
-    muiGridBlockContainer,
-    thickLine,
-    subtitle2,
-    cardsContainer,
-    cardContainer,
-    cardOnHoverDisplay,
-    cardOnHoverHide,
-    h4,
-    imgComponent,
-    body2,
-  } = useStyles();
+  // eslint-disable-next-line no-shadow
+  const { muiGridBlockContainer, title4, boldText, icon, descriptionContainer } = useStyles();
   return (
     <Grid className={muiGridBlockContainer} container>
-      <Grid item xs={1} container alignItems="center">
-        <div className={thickLine} />
-      </Grid>
-      <Grid item xs={11} container justify="center" alignItems="center">
-        <Typography variant="body2">
-          Our solution redirects talent volunteering towards useful actions. Talented developers can use their
-          most valuable and powerful skills to support the causes they care about. By enabling organizations
-          accessing such expensive resources, Ovio empowers them to advance their mission. Being able to
-          measure the scope of our actions sounds essential to improve our user-oriented services and inform
-          stakeholders about our positive changes in the world.
-        </Typography>
-      </Grid>
-      <Typography className={subtitle2} variant="subtitle2">
-        Engaging people through skill-based volunteering can take The UN Sustainable Development Goals impact to
-        the next level.
+      <Typography className={title4} variant="h4">
+        Our solution redirects talent volunteering towards useful actions. Talented developers can use their
+        most valuable and powerful skills to support the causes they care about. By enabling organizations
+        accessing such expensive resources, Ovio empowers them to advance their mission. Being able to
+        measure the scope of our actions sounds essential to improve our user-oriented services and inform
+        stakeholders about our positive changes in the world.
       </Typography>
-      <Grid container className={cardsContainer}>
-        {cards.map(({ title, image, textOnOver }) => (
-          <Grid item className={cardContainer} key={title}>
-            <Grid
-              id="onHoverHide"
-              className={cardOnHoverHide}
-              container
-              direction="column"
-              alignItems="center"
-              justify="space-between"
-            >
-              <Typography className={h4} variant="h4" color="primary">{toFormattedText(title)}</Typography>
-              <img className={imgComponent} src={image} alt={title} />
+      <Typography variant="body2">
+        57% of NGOs claimed to have staff limitations, which was the first brake to their digital development.
+        They mostly lack financial resources to hire top quality engineers or have short-term help from volunteers
+        which slows down the completion of complex projects.
+      </Typography>
+      <Grid>
+        <Typography className={boldText} variant="body2">
+          On the strength of these findings, Ovio gives itself 3 years to evaluate its impact:
+        </Typography>
+        {objectifs.map(({ iconURL, goal, metric, metricDescription, markStyle }, index) => (
+          <Grid key={goal} container className={useStyles({ whithoutBorderTop: !index }).goalContainer}>
+            <Grid container item xs={6}>
+              <Grid item xs={2}>
+                <img className={icon} src={iconURL} alt={goal} />
+              </Grid>
+              <Grid item xs={8}>
+                <Typography variant="body2">{toFormattedBoldText(goal)}</Typography>
+              </Grid>
             </Grid>
-            <Grid id="onHoverDisplay" className={cardOnHoverDisplay}>
-              <Typography className={body2} variant="body2" color="primary">{textOnOver}</Typography>
+            <Grid container item xs={6}>
+              <Grid item xs={2} container justify="center" alignItems="center">
+                <Grid className={useStyles(markStyle).metricContainer} container alignItems="center" justify="center">
+                  <Typography className={useStyles(markStyle).metricStyle} variant="h4" color="textSecondary">
+                    {metric}
+                  </Typography>
+                </Grid>
+              </Grid>
+              <Grid className={descriptionContainer} item xs={7} container alignItems="center">
+                <Typography variant="body2" color="textSecondary">{metricDescription}</Typography>
+              </Grid>
             </Grid>
           </Grid>
         ))}
