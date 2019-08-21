@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import { Grid, Typography } from '@material-ui/core';
+import withWidth from '@material-ui/core/withWidth';
 import { makeStyles } from '@material-ui/styles';
 import { stylesBase, spacing } from '../styledComponents';
 import Slider from '../ui-library/Slider';
@@ -28,14 +29,25 @@ const useStyles = makeStyles({
   },
 });
 
-const Block2FeedbackTemplate = ({ comments }) => {
+const Block2FeedbackTemplate = ({ comments, width }) => {
   // eslint-disable-next-line no-shadow
   const { muiGridBlockContainer, card, body2, photo, caption } = useStyles();
+  let viewsToShow;
+  switch (width) {
+    case 'xs': case 'sm':
+      viewsToShow = 1;
+      break;
+    case 'md':
+      viewsToShow = 2;
+      break;
+    default:
+      viewsToShow = 3;
+  }
   return (
     <Grid className={muiGridBlockContainer} container>
-      <Slider>
+      <Slider viewsToShow={viewsToShow}>
         {comments.map(({ author, text, position, photo: { publicURL: photoUrl } }) => (
-          <Grid key={author} item xs={4}>
+          <Grid key={`${author}${text}`} item xs={12} md={6} lg={4}>
             <Grid className={card}>
               <Typography className={body2} variant="body2">{text}</Typography>
               <Grid container alignItems="center">
@@ -62,6 +74,7 @@ Block2FeedbackTemplate.propTypes = {
       publicURL: PropTypes.string.isRequired,
     }).isRequired,
   })).isRequired,
+  width: PropTypes.string.isRequired,
 };
 
-export default Block2FeedbackTemplate;
+export default withWidth()(Block2FeedbackTemplate);
