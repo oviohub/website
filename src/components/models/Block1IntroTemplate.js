@@ -74,7 +74,6 @@ const Block1IntroTemplate = ({
     image,
     markImg,
   } = useStyles({ isMarkOnLeft, iconVersion });
-  const itemDirection = isWidthDown('xs', width) ? 'column' : 'row';
   return (
     <Grid className={container} container justify="center">
       {markImageUrl && <img className={markImg} src={markImageUrl} alt={title} />}
@@ -86,7 +85,7 @@ const Block1IntroTemplate = ({
               key={itemTitle}
               className={itemContainer}
               container
-              direction={index % 2 || isWidthDown('xs', width) ? `${itemDirection}-reverse` : itemDirection}
+              direction={isWidthDown('xs', width) ? 'column-reverse' : `row${index % 2 ? '-reverse' : ''}`}
               alignItems={isWidthDown('sm', width) ? 'center' : 'flex-start'}
               justify="center"
             >
