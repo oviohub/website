@@ -13,15 +13,13 @@ const reasons = [
   "It expands corporate philanthropy's reach and multiplies impact.",
 ];
 
-const { muiGridBlockContainer } = stylesBase;
-const useStyles = makeStyles({
+const { muiGridBlockContainer, muiGridFullScreenWithBackground } = stylesBase;
+const useStyles = makeStyles(theme => ({
   muiGridBlockContainer,
+  muiGridFullScreenWithBackground,
   container: {
-    width: 'calc(100vw - 8px)',
-    left: 'calc(-1 * (100vw - 100%) / 2)',
-    position: 'relative',
     backgroundImage: `url(${markImage})`,
-    backgroundSize: 'cover',
+    padding: spacing(2),
   },
   blockContainer: {
     width: contentWidthPixels,
@@ -29,19 +27,25 @@ const useStyles = makeStyles({
     zIndex: 1,
   },
   reasonsContainer: { marginTop: spacing(4) },
-  reasonContainer: { margin: `${spacing(7)} ${spacing(4)}` },
+  reasonContainer: {
+    margin: `${spacing(7)} ${spacing(4)}`,
+    [theme.breakpoints.down('xs')]: { margin: `${spacing(4)} 0px` },
+  },
   body2: { fontWeight: '500' },
   thickLine: {
     width: '13px',
     height: '75px',
     backgroundColor: colors.orange,
+    [theme.breakpoints.down('xs')]: { height: '100%' },
   },
-});
+}));
 
 const WhyVolunteering = () => {
   const {
     // eslint-disable-next-line no-shadow
     muiGridBlockContainer,
+    // eslint-disable-next-line no-shadow
+    muiGridFullScreenWithBackground,
     container,
     blockContainer,
     reasonsContainer,
@@ -50,12 +54,12 @@ const WhyVolunteering = () => {
     thickLine,
   } = useStyles();
   return (
-    <Grid className={container} container justify="center">
+    <Grid className={`${muiGridFullScreenWithBackground} ${container}`} container justify="center">
       <Grid className={`${muiGridBlockContainer} ${blockContainer}`} container>
         <Typography variant="h2">Why skill-based volunteering?</Typography>
         <Grid className={reasonsContainer} container justify="center">
           {reasons.map(reason => (
-            <Grid key={reason} className={reasonContainer} container item xs={5}>
+            <Grid key={reason} className={reasonContainer} container item xs={12} sm={10} md={5}>
               <Grid item xs={2} container justify="center" alignItems="center">
                 <div className={thickLine} />
               </Grid>

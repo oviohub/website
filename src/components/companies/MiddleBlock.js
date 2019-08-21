@@ -5,15 +5,12 @@ import { makeStyles } from '@material-ui/styles';
 import { fontSizing, contentWidthPixels, stylesBase, colors } from '../styledComponents';
 import backgroundImage from '../../assets/modelPage/companies.middle.jpg';
 
-const { muiGridBlockContainer } = stylesBase;
-const useStyles = makeStyles({
+const { muiGridBlockContainer, muiGridFullScreenWithBackground } = stylesBase;
+const useStyles = makeStyles(theme => ({
   muiGridBlockContainer,
+  muiGridFullScreenWithBackground,
   container: {
-    width: 'calc(100vw - 8px)',
-    left: 'calc(-1 * (100vw - 100%) / 2)',
-    position: 'relative',
     backgroundImage: `url(${backgroundImage})`,
-    backgroundSize: 'cover',
   },
   blockContainer: {
     width: contentWidthPixels,
@@ -24,19 +21,32 @@ const useStyles = makeStyles({
     fontWeight: '600',
     fontSize: fontSizing(6),
     lineHeight: '56px',
+    [theme.breakpoints.down('sm')]: { fontSize: fontSizing(4) },
+    [theme.breakpoints.down('xs')]: {
+      fontSize: fontSizing(3),
+      lineHeight: '36px',
+    },
   },
   thickLine: {
     width: '13px',
     height: '100%',
     backgroundColor: colors.white,
   },
-});
+}));
 
 const MiddleBlock = () => {
-  // eslint-disable-next-line no-shadow
-  const { muiGridBlockContainer, container, blockContainer, body2, thickLine } = useStyles();
+  const {
+    // eslint-disable-next-line no-shadow
+    muiGridBlockContainer,
+    // eslint-disable-next-line no-shadow
+    muiGridFullScreenWithBackground,
+    container,
+    blockContainer,
+    body2,
+    thickLine,
+  } = useStyles();
   return (
-    <Grid className={container} container justify="center">
+    <Grid className={`${muiGridFullScreenWithBackground} ${container}`} container justify="center">
       <Grid className={`${muiGridBlockContainer} ${blockContainer}`} container>
         <Grid container justify="center" item xs={2}>
           <div className={thickLine} />
