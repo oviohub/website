@@ -20,9 +20,10 @@ const useStyles = makeStyles(theme => ({
     paddingTop: withoutTitle && spacing(20),
     width: withoutTitle && '50%',
   }),
-  blockBody: ({ withMarginBotton }) => ({
+  blockBody: ({ withMarginBotton, withSubtitle }) => ({
     margin: `0px 0px 0px ${spacing(4)}`,
     marginBottom: withMarginBotton ? spacing(4) : '0px',
+    fontSize: withSubtitle && '12px',
   }),
   itemTitle: ({ containsText }) => ({
     marginLeft: spacing(4),
@@ -30,6 +31,9 @@ const useStyles = makeStyles(theme => ({
       marginLeft: '0px',
     },
   }),
+  itemSubtitle: {
+    margin: `0px 0px ${spacing(2)} ${spacing(4)}`,
+  },
   buttonLink: {
     marginLeft: spacing(4),
     textDecoration: 'none',
@@ -48,7 +52,7 @@ const useStyles = makeStyles(theme => ({
   },
 }));
 
-const BlockHowToTemplate = ({ title: blockTitle, subtitle, markImage, processItems, width }) => {
+const BlockHowToTemplate = ({ title: blockTitle, subtitle: blockSubtitle, markImage, processItems, width }) => {
   const {
     // eslint-disable-next-line no-shadow
     muiGridBlockContainer,
@@ -58,17 +62,20 @@ const BlockHowToTemplate = ({ title: blockTitle, subtitle, markImage, processIte
     image,
     icon,
     markImg,
+    itemSubtitle,
   } = useStyles({ withoutTitle: !blockTitle });
   return (
     <Grid className={muiGridBlockContainer}>
       <img className={markImg} src={markImage && markImage.publicURL} alt={blockTitle} />
       {blockTitle && <Typography variant="h2">{blockTitle}</Typography>}
-      <Typography variant="subtitle2">{subtitle}</Typography>
+      <Typography variant="subtitle2">{blockSubtitle}</Typography>
       <Grid>
-        {processItems.map(({ title, text, button, image: { publicURL: imageURL } }, index) => {
+        {processItems.map(({ title, subtitle, text, button, image: { publicURL: imageURL } }, index) => {
           const { link: btnLink, withGitHubIcon, text: btnText } = button || {};
           const xs = title ? 11 : 10;
-          const { itemTitle } = useStyles({ containsText: title });
+          const { itemTitle, blockBody } = useStyles({
+            containsText: title, withMarginBotton: btnLink, withSubtitle: subtitle,
+          });
           return (
             <Grid
               className={itemContainer}
@@ -82,8 +89,8 @@ const BlockHowToTemplate = ({ title: blockTitle, subtitle, markImage, processIte
                 container
                 item
                 direction={isWidthDown('xs', width) ? 'row' : 'column'}
-                md={4}
-                sm={6}
+                md={subtitle ? 6 : 4}
+                sm={subtitle ? 7 : 6}
                 xs={12}
               >
                 <Typography className={itemTitle} component="p" variant="h2" color="textSecondary">
@@ -95,9 +102,8 @@ const BlockHowToTemplate = ({ title: blockTitle, subtitle, markImage, processIte
                   alignItems={isWidthDown('xs', width) ? 'center' : 'flex-start'}
                   xs={isWidthDown('xs', width) ? xs : false}
                 >
-                  <Typography className={useStyles({ withMarginBotton: btnLink }).blockBody} variant="body2">
-                    {toFormattedTaggedText(text)}
-                  </Typography>
+                  {subtitle && <Typography className={itemSubtitle} variant="body2">{subtitle}</Typography>}
+                  <Typography className={blockBody} variant="body2">{toFormattedTaggedText(text, '11px')}</Typography>
                   {btnLink && (
                     <a href={btnLink} className={buttonLink} target="_blank" rel="noreferrer noopener">
                       <Button>
@@ -124,6 +130,7 @@ BlockHowToTemplate.propTypes = {
   }).isRequired,
   processItems: PropTypes.arrayOf(PropTypes.shape({
     title: PropTypes.string,
+    subtitle: PropTypes.string,
     text: PropTypes.string.isRequired,
     image: PropTypes.shape({
       publicURL: PropTypes.string.isRequired,

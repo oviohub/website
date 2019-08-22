@@ -22,7 +22,7 @@ import howToRequest from '../assets/modelPage/companies.howTo.request.png';
 
 const page = {
   hero: {
-    title: 'Companies',
+    title: 'Tech Employers',
     subtitle: 'Smarter Strategy, Smarter Engagement, Smarter Purpose',
     subSubtitle: `Are you looking for opportunities to mobilize your team around social impact projects in a smart
       and tailored way?`,
@@ -74,7 +74,9 @@ const page = {
     processItems: [
       {
         title: ' ',
-        text: 'The first step is to request a demo by emailing info@oviohub.com.',
+        subtitle: 'Our offer:',
+        // eslint-disable-next-line max-len
+        text: '<tag>Kick off hackathon<tag> selection of scoped projects for your team\n\n<tag>Ad hoc matching<tag> connect and build relationship with an organization\n\n<tag>Project sponsoring<tag> select a specific organization to concentrate team efforts\n\n<tag>Volunteering tracking<tag> evaluation of employees engagement and impact',
         image: { publicURL: howToRequest },
         button: { text: 'Request a demo', link: 'mailto:info@oviohub.com' },
       },

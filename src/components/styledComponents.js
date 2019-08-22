@@ -248,12 +248,12 @@ export const MetricContainer = styled(Grid)(({ scale, rotation }) => ({
   },
 }));
 
-export const Tag = styled('span')({
+export const Tag = styled('span')(({ fontSize }) => ({
   backgroundColor: colors.lightOrange,
   borderRadius: '40px',
   whiteSpace: 'nowrap',
   padding: `2px ${spacing(1)}`,
-  fontSize: '75%',
+  fontSize,
   fontWeight: 600,
   color: colors.orange,
-});
+}));
