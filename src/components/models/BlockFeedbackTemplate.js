@@ -29,7 +29,7 @@ const useStyles = makeStyles({
   },
 });
 
-const Block2FeedbackTemplate = ({ comments, width }) => {
+const BlockFeedbackTemplate = ({ comments, width }) => {
   // eslint-disable-next-line no-shadow
   const { muiGridBlockContainer, card, body2, photo, caption } = useStyles();
   let viewsToShow;
@@ -65,7 +65,7 @@ const Block2FeedbackTemplate = ({ comments, width }) => {
   );
 };
 
-Block2FeedbackTemplate.propTypes = {
+BlockFeedbackTemplate.propTypes = {
   comments: PropTypes.arrayOf(PropTypes.shape({
     author: PropTypes.string.isRequired,
     position: PropTypes.string.isRequired,
@@ -77,4 +77,4 @@ Block2FeedbackTemplate.propTypes = {
   width: PropTypes.string.isRequired,
 };
 
-export default withWidth()(Block2FeedbackTemplate);
+export default withWidth()(BlockFeedbackTemplate);
