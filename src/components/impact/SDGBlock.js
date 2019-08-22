@@ -134,10 +134,11 @@ const sdgs = [
   },
 ];
 
-const { muiGridBlockContainer, muiGridBackground } = stylesBase;
+const { muiGridBlockContainer, muiGridBackground, muiGridWithOnHoverText } = stylesBase;
 const useStyles = makeStyles({
   muiGridBlockContainer,
   muiGridBackground,
+  muiGridWithOnHoverText,
   subtitle2: {
     marginBottom: spacing(5),
     fontWeight: 'bold',
@@ -151,20 +152,9 @@ const useStyles = makeStyles({
     height: '170px',
     margin: '5px',
     boxShadow: '2px 2px 10px -4px black',
-    '&:hover #onHoverDisplay': { display: 'flex' },
-    '&:hover #onHoverHide': { display: 'none' },
   },
-  cardOnHoverDisplay: {
-    height: '100%',
-    width: '100%',
-    display: 'none',
-    backgroundColor: colors.orange,
-  },
-  cardOnHoverHide: ({ backgroundColor }) => ({
-    height: '100%',
-    width: '100%',
-    backgroundColor,
-  }),
+  cardOnHoverDisplay: { backgroundColor: colors.orange },
+  cardOnHoverHide: ({ backgroundColor }) => ({ backgroundColor }),
   h4: {
     width: '90%',
     fontSize: fontSizing(2),
@@ -193,6 +183,8 @@ const SDGBlock = () => {
     muiGridBlockContainer,
     // eslint-disable-next-line no-shadow
     muiGridBackground,
+    // eslint-disable-next-line no-shadow
+    muiGridWithOnHoverText,
     subtitle2,
     cardsContainer,
     cardContainer,
@@ -211,10 +203,9 @@ const SDGBlock = () => {
       </Typography>
       <Grid container className={cardsContainer}>
         {sdgs.map(({ title, image, textOnOver, color }) => (
-          <Grid item className={cardContainer} key={title}>
+          <Grid item className={`${muiGridWithOnHoverText} ${cardContainer}`} key={title}>
             <Grid
-              id="onHoverHide"
-              className={useStyles({ backgroundColor: color }).cardOnHoverHide}
+              className={`${useStyles({ backgroundColor: color }).cardOnHoverHide} onHoverHide`}
               container
               direction="column"
               alignItems="center"
@@ -223,7 +214,7 @@ const SDGBlock = () => {
               <Typography className={h4} variant="h4" color="primary">{toFormattedText(title)}</Typography>
               <img className={imgComponent} src={image} alt={title} />
             </Grid>
-            <Grid id="onHoverDisplay" className={cardOnHoverDisplay}>
+            <Grid id="" className={`${cardOnHoverDisplay} onHoverDisplay`}>
               <Typography className={body2} variant="body2" color="primary">{textOnOver}</Typography>
             </Grid>
           </Grid>

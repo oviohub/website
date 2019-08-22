@@ -2,32 +2,48 @@ import React from 'react';
 import { Grid, Typography } from '@material-ui/core';
 import { makeStyles } from '@material-ui/styles';
 
-import { fontSizing, colors, stylesBase, spacing } from '../styledComponents';
-import { toFormattedBoldText } from '../../services/formatting';
+import { BoldSpan, fontSizing, colors, stylesBase, spacing } from '../styledComponents';
 import statMark from '../../assets/impactPage/statMark.svg';
 import iconProvide from '../../assets/icons/icon.provide.orange.png';
 import iconOffer from '../../assets/icons/icon.offer.orange.png';
 import iconMaintain from '../../assets/icons/icon.maintain.orange.png';
 
-const objectifs = [
+const objectives = [
   {
     iconURL: iconProvide,
-    goal: '<bold>Provide<bold> volunteering support to organizations without forcing them to cut into their budget',
+    goal: <React.Fragment>
+      <BoldSpan>Provide</BoldSpan>
+      &nbsp;
+      volunteering support to organizations without forcing them to cut into their budget
+      {/* eslint-disable-next-line react/jsx-closing-tag-location */}
+    </React.Fragment>,
     metric: '~ $10k',
     metricDescription: 'amount of $ organizations are saving using Explore compare to outsourcing or hiring talents',
     markStyle: { scale: 0.85, rotation: 0 },
   },
   {
     iconURL: iconOffer,
-    // eslint-disable-next-line max-len
-    goal: "<bold>Offer<bold> a top-quality tech that allows organizations to develop great products and services that fits their beneficent' needs",
+    goal: <React.Fragment>
+      <BoldSpan>Offer</BoldSpan>
+      &nbsp;
+      a top-quality tech that allows organizations to develop great products and services that fits their
+      beneficent&apos; needs
+      {/* eslint-disable-next-line react/jsx-closing-tag-location */}
+    </React.Fragment>,
     metric: '~ 5+ years exp',
     metricDescription: 'quality of the tech through talents years of experience and skills',
     markStyle: { scale: 0.9, rotation: 90 },
   },
   {
     iconURL: iconMaintain,
-    goal: '<bold>Maintain<bold> sustainable support that strengthens organizations’\nresources',
+    goal: <React.Fragment>
+      <BoldSpan>Maintain</BoldSpan>
+      &nbsp;
+      sustainable support that strengthens organizations’
+      <br />
+      resources
+      {/* eslint-disable-next-line react/jsx-closing-tag-location */}
+    </React.Fragment>,
     metric: '~x2',
     // eslint-disable-next-line max-len
     metricDescription: 'sustainability of the support by analyzing the retention of volunteers on Explore and their activity',
@@ -98,14 +114,14 @@ const OurSolution = () => {
         <Typography className={boldText} variant="body2">
           On the strength of these findings, Ovio gives itself 3 years to evaluate its impact:
         </Typography>
-        {objectifs.map(({ iconURL, goal, metric, metricDescription, markStyle }, index) => (
-          <Grid key={goal} container className={useStyles({ whithoutBorderTop: !index }).goalContainer}>
+        {objectives.map(({ iconURL, goal, metric, metricDescription, markStyle }, index) => (
+          <Grid key={metricDescription} container className={useStyles({ whithoutBorderTop: !index }).goalContainer}>
             <Grid container item xs={6}>
               <Grid item xs={2}>
                 <img className={icon} src={iconURL} alt={goal} />
               </Grid>
               <Grid item xs={8}>
-                <Typography variant="body2">{toFormattedBoldText(goal)}</Typography>
+                <Typography variant="body2">{goal}</Typography>
               </Grid>
             </Grid>
             <Grid container item xs={6}>

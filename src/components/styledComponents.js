@@ -203,6 +203,10 @@ export const stylesBase = {
     width: 'inherit',
     height: 'inherit',
   },
+  muiGridWithOnHoverText: {
+    '&:hover .onHoverDisplay': { display: 'flex' },
+    '&:hover .onHoverHide': { display: 'none' },
+  },
 };
 
 // Shapes
@@ -221,6 +225,6 @@ export const Dot = styled('div')(({ orange }) => ({
   margin: '5px',
 }));
 
-export const BoldSpan = styled('span')(({ fontWeight }) => ({
-  fontWeight: fontWeight || 'inherit',
-}));
+export const BoldSpan = styled('span')({
+  fontWeight: 600,
+});
