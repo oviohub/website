@@ -1,5 +1,6 @@
-import { createMuiTheme } from '@material-ui/core';
+import { createMuiTheme, Grid } from '@material-ui/core';
 import { styled } from '@material-ui/styles';
+import metricMark from '../assets/impactPage/metricMark.svg';
 
 export const contentWidth = 1216;
 export const contentWidthPixels = `${contentWidth}px`;
@@ -228,3 +229,16 @@ export const Dot = styled('div')(({ orange }) => ({
 export const BoldSpan = styled('span')({
   fontWeight: 600,
 });
+
+export const MetricContainer = styled(Grid)(({ scale, rotation }) => ({
+  backgroundImage: `url(${metricMark})`,
+  backgroundSize: 'cover',
+  backgroundRepeat: 'no-repeat',
+  width: `calc(${scale} * 100px)`,
+  height: `calc(${scale} * 100px)`,
+  transform: `rotate(${rotation}deg)`,
+  [theme.breakpoints.down('xs')]: {
+    width: `calc(${scale - 0.1} * 100px)`,
+    height: `calc(${scale - 0.1} * 100px)`,
+  },
+}));

@@ -1,5 +1,6 @@
 import React from 'react';
-import { Grid, Typography } from '@material-ui/core';
+import PropTypes from 'prop-types';
+import { Grid, Typography, withWidth } from '@material-ui/core';
 import { makeStyles } from '@material-ui/styles';
 
 import { colors, spacing, fontSizing, stylesBase } from '../styledComponents';
@@ -135,7 +136,7 @@ const sdgs = [
 ];
 
 const { muiGridBlockContainer, muiGridBackground, muiGridWithOnHoverText } = stylesBase;
-const useStyles = makeStyles({
+const useStyles = makeStyles(theme => ({
   muiGridBlockContainer,
   muiGridBackground,
   muiGridWithOnHoverText,
@@ -143,6 +144,7 @@ const useStyles = makeStyles({
     marginBottom: spacing(5),
     fontWeight: 'bold',
     width: '80%',
+    [theme.breakpoints.down('xs')]: { width: '100%' },
   },
   cardsContainer: {
     margin: `0px 0px ${spacing(8)} -${spacing(2)}`,
@@ -152,6 +154,10 @@ const useStyles = makeStyles({
     height: '170px',
     margin: '5px',
     boxShadow: '2px 2px 10px -4px black',
+    [theme.breakpoints.down('xs')]: {
+      width: '140px',
+      height: '140px',
+    },
   },
   cardOnHoverDisplay: { backgroundColor: colors.orange },
   cardOnHoverHide: ({ backgroundColor }) => ({ backgroundColor }),
@@ -161,23 +167,34 @@ const useStyles = makeStyles({
     lineHeight: '18px',
     textAlign: 'center',
     marginTop: '14px',
+    [theme.breakpoints.down('xs')]: {
+      fontSize: '12px',
+      width: '100%',
+    },
   },
-  imgComponent: { marginBottom: spacing(4) },
+  imgComponent: {
+    marginBottom: spacing(4),
+    [theme.breakpoints.down('xs')]: { marginBottom: spacing(2) },
+  },
   body2: {
     fontSize: '13px',
     lineHeight: 'normal',
     textAlign: 'center',
     padding: '6px',
     margin: 'auto',
+    [theme.breakpoints.down('xs')]: {
+      fontSize: '11px',
+      padding: '2px',
+    },
   },
   markStyle: {
     width: 'auto',
     left: '0px',
     marginTop: '-350px',
   },
-});
+}));
 
-const SDGBlock = () => {
+const SDGBlock = ({ width }) => {
   const {
     // eslint-disable-next-line no-shadow
     muiGridBlockContainer,
@@ -201,7 +218,7 @@ const SDGBlock = () => {
         Engaging people through skill-based volunteering can take The UN Sustainable Development Goals impact to
         the next level.
       </Typography>
-      <Grid container className={cardsContainer}>
+      <Grid container className={cardsContainer} justify={width === 'xs' ? 'center' : 'flex-start'}>
         {sdgs.map(({ title, image, textOnOver, color }) => (
           <Grid item className={`${muiGridWithOnHoverText} ${cardContainer}`} key={title}>
             <Grid
@@ -229,4 +246,8 @@ const SDGBlock = () => {
   );
 };
 
-export default SDGBlock;
+SDGBlock.propTypes = {
+  width: PropTypes.string.isRequired,
+};
+
+export default withWidth()(SDGBlock);
