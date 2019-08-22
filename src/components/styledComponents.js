@@ -12,7 +12,7 @@ export const colors = {
   darkBlue: '#2F4058',
   orange: '#F47820',
   lightOrange: '#FFD2B2',
-  grey: '#BDBDBD',
+  grey: '#D8D8D8',
   lightGrey: '#FAFAFA',
   white: '#FFFFFF',
 };
@@ -156,7 +156,7 @@ export const defaultTheme = createMuiTheme({
       root: {
         width: '100%',
         '&:hover': {
-          backgroundColor: `${colors.orange}2f`,
+          backgroundColor: colors.lightOrange,
           borderRadius: '4px',
         },
       },
@@ -222,7 +222,7 @@ export const Dot = styled('div')(({ orange }) => ({
   height: '10px',
   borderRadius: '50%',
   cursor: 'pointer',
-  backgroundColor: orange ? colors.orange : `${colors.grey}A8`,
+  backgroundColor: orange ? colors.orange : colors.grey,
   margin: '5px',
 }));
 

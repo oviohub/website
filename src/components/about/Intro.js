@@ -1,16 +1,19 @@
 import React from 'react';
-import { Grid, Typography, Hidden } from '@material-ui/core';
+import { Link } from 'gatsby';
+import { Grid, Typography, Hidden, Button } from '@material-ui/core';
 import { makeStyles } from '@material-ui/styles';
 
+import { getPageUrl } from '../../Routes';
 import { spacing, menuHeightOffset, colors, stylesBase } from '../styledComponents';
-import ericPitching from '../../assets/aboutPage/ericPitching.jpg';
+import hero from '../../assets/aboutPage/hero.jpg';
 import ourVisionBackground from '../../assets/aboutPage/ourVisionBackground.jpg';
 import ourMissionBackground from '../../assets/aboutPage/ourMissionBackground.jpg';
 
 const cardList = [
   {
     title: 'Our Vision',
-    subTitle: 'Ovio aims to be a catalyst for the Tech for Good ecosystem.',
+    // eslint-disable-next-line max-len
+    subTitle: 'We are building the world’s leading tech for good movement, where every line of code makes a difference.',
     backgroundImage: ourVisionBackground,
     // eslint-disable-next-line max-len
     paragraph: 'We believe that technology should be in service of humanity both in terms of development and inclusion. Our vision is to improve the way technology interacts with social change agents.',
@@ -31,8 +34,10 @@ const useStyles = makeStyles(theme => ({
   mainContainer: { padding: `${menuHeightOffset}px 0px 0px` },
   headerContainer: {
     height: '360px',
-    backgroundImage: `url(${ericPitching})`,
+    backgroundImage: `url(${hero})`,
     backgroundPosition: 'center',
+    backgroundRepeat: 'no-repeat',
+    backgroundSize: 'cover',
   },
   title1: { marginTop: spacing(-7) },
   cardContainer: ({ isEven }) => ({
@@ -66,6 +71,9 @@ const useStyles = makeStyles(theme => ({
       marginBottom: spacing(3),
     },
   },
+  buttonContainer: {
+    marginTop: spacing(10),
+  },
 }));
 
 const Intro = () => {
@@ -79,6 +87,7 @@ const Intro = () => {
     title1,
     cardContent,
     cardSubtitle,
+    buttonContainer,
   } = useStyles();
   return (
     <Grid className={mainContainer} container justify="center">
@@ -102,6 +111,11 @@ const Intro = () => {
             </Grid>
           </Grid>
         ))}
+      </Grid>
+      <Grid className={buttonContainer}>
+        <Link to={getPageUrl('ImpactPage')} style={{ textDecoration: 'none' }}>
+          <Button>Learn more about our impact</Button>
+        </Link>
       </Grid>
     </Grid>
   );
