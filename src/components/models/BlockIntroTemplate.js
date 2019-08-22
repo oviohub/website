@@ -51,7 +51,7 @@ const useStyles = makeStyles(theme => ({
   }),
 }));
 
-const Block1IntroTemplate = ({
+const BlockIntroTemplate = ({
   title,
   markImage: { publicURL: markImageUrl },
   isMarkOnLeft,
@@ -102,7 +102,7 @@ const Block1IntroTemplate = ({
   );
 };
 
-Block1IntroTemplate.propTypes = {
+BlockIntroTemplate.propTypes = {
   title: PropTypes.string,
   markImage: PropTypes.shape({
     publicURL: PropTypes.string,
@@ -119,10 +119,10 @@ Block1IntroTemplate.propTypes = {
   width: PropTypes.string.isRequired,
 };
 
-Block1IntroTemplate.defaultProps = {
+BlockIntroTemplate.defaultProps = {
   markImage: {},
   isMarkOnLeft: false,
   iconVersion: false,
 };
 
-export default withWidth()(Block1IntroTemplate);
+export default withWidth()(BlockIntroTemplate);

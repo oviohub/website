@@ -5,6 +5,7 @@ import { Grid, Typography, Button } from '@material-ui/core';
 import withWidth, { isWidthDown } from '@material-ui/core/withWidth';
 import { makeStyles } from '@material-ui/styles';
 import { spacing, stylesBase } from '../styledComponents';
+import { toFormattedTaggedText } from '../../services/formatting';
 import iconGithub from '../../assets/icons/icon.github.white.svg';
 
 const { muiGridBlockContainer } = stylesBase;
@@ -23,7 +24,12 @@ const useStyles = makeStyles(theme => ({
     margin: `0px 0px 0px ${spacing(4)}`,
     marginBottom: withMarginBotton ? spacing(4) : '0px',
   }),
-  itemTitle: ({ containsText }) => ({ marginLeft: containsText ? spacing(4) : '0px' }),
+  itemTitle: ({ containsText }) => ({
+    marginLeft: spacing(4),
+    [theme.breakpoints.down('xs')]: !containsText && {
+      marginLeft: '0px',
+    },
+  }),
   buttonLink: {
     marginLeft: spacing(4),
     textDecoration: 'none',
@@ -42,7 +48,7 @@ const useStyles = makeStyles(theme => ({
   },
 }));
 
-const Block3HowToTemplate = ({ title: blockTitle, subtitle, markImage, processItems, width }) => {
+const BlockHowToTemplate = ({ title: blockTitle, subtitle, markImage, processItems, width }) => {
   const {
     // eslint-disable-next-line no-shadow
     muiGridBlockContainer,
@@ -90,7 +96,7 @@ const Block3HowToTemplate = ({ title: blockTitle, subtitle, markImage, processIt
                   xs={isWidthDown('xs', width) ? xs : false}
                 >
                   <Typography className={useStyles({ withMarginBotton: btnLink }).blockBody} variant="body2">
-                    {text}
+                    {toFormattedTaggedText(text)}
                   </Typography>
                   {btnLink && (
                     <a href={btnLink} className={buttonLink} target="_blank" rel="noreferrer noopener">
@@ -110,7 +116,7 @@ const Block3HowToTemplate = ({ title: blockTitle, subtitle, markImage, processIt
   );
 };
 
-Block3HowToTemplate.propTypes = {
+BlockHowToTemplate.propTypes = {
   title: PropTypes.string,
   subtitle: PropTypes.string.isRequired,
   markImage: PropTypes.shape({
@@ -131,4 +137,4 @@ Block3HowToTemplate.propTypes = {
   width: PropTypes.string.isRequired,
 };
 
-export default withWidth()(Block3HowToTemplate);
+export default withWidth()(BlockHowToTemplate);

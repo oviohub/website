@@ -3,11 +3,11 @@ import React from 'react';
 import Layout from '../components/layouts/Layout';
 import MenuBar from '../components/MenuBar';
 import Hero from '../components/Hero';
-import Block1IntroTemplate from '../components/models/Block1IntroTemplate';
+import BlockIntroTemplate from '../components/models/BlockIntroTemplate';
 import MiddleBlock from '../components/companies/MiddleBlock';
 import WhyVolunteering from '../components/companies/WhyVolunteering';
 import WhoTrustedUs from '../components/companies/WhoTrustedUs';
-import Block3HowToTemplate from '../components/models/Block3HowToTemplate';
+import BlockHowToTemplate from '../components/models/BlockHowToTemplate';
 import LineSeparator from '../components/ui-library/LineSeparator';
 import Footer from '../components/Footer';
 
@@ -86,12 +86,12 @@ const CompaniesPage = () => (
   <Layout routeSlug="CompaniesPage">
     <MenuBar />
     <Hero {...page.hero} />
-    <Block1IntroTemplate {...page.block1introFirstPart} iconVersion />
+    <BlockIntroTemplate {...page.block1introFirstPart} iconVersion />
     <MiddleBlock />
-    <Block1IntroTemplate {...page.block1introSecondPart} iconVersion />
+    <BlockIntroTemplate {...page.block1introSecondPart} iconVersion />
     <WhyVolunteering />
     <WhoTrustedUs comments={page.block2feedback} />
-    <Block3HowToTemplate {...page.block3howto} />
+    <BlockHowToTemplate {...page.block3howto} />
     <LineSeparator />
     <Footer />
   </Layout>

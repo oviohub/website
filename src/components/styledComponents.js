@@ -209,6 +209,11 @@ export const stylesBase = {
     '&:hover .onHoverDisplay': { display: 'flex' },
     '&:hover .onHoverHide': { display: 'none' },
   },
+  muiGridTagsContainer: {
+    backgroundColor: colors.lightOrange,
+    borderRadius: '40px',
+    boxShadow: 'inset 0 2px 4px 0 rgba(0,0,0,0.1)',
+  },
 };
 
 // Shapes
@@ -243,3 +248,13 @@ export const MetricContainer = styled(Grid)(({ scale, rotation }) => ({
     height: `calc(${scale - 0.1} * 100px)`,
   },
 }));
+
+export const Tag = styled('span')({
+  backgroundColor: colors.lightOrange,
+  borderRadius: '40px',
+  whiteSpace: 'nowrap',
+  padding: `2px ${spacing(1)}`,
+  fontSize: '75%',
+  fontWeight: 600,
+  color: colors.orange,
+});

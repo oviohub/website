@@ -5,19 +5,32 @@ import { graphql } from 'gatsby';
 import Layout from '../components/layouts/Layout';
 import MenuBar from '../components/MenuBar';
 import Hero from '../components/Hero';
-import Block1IntroTemplate from '../components/models/Block1IntroTemplate';
-import Block2FeedbackTemplate from '../components/models/Block2FeedbackTemplate';
-import Block3HowToTemplate from '../components/models/Block3HowToTemplate';
+import BlockIntroTemplate from '../components/models/BlockIntroTemplate';
+import BlockFeedbackTemplate from '../components/models/BlockFeedbackTemplate';
+import BlockStudentBanner from '../components/models/BlockStudentBanner';
+import BlockHowToTemplate from '../components/models/BlockHowToTemplate';
 import LineSeparator from '../components/ui-library/LineSeparator';
 import Footer from '../components/Footer';
 
-const ModelPageTemplate = ({ data: { modelPageJson: page } }) => (
-  <Layout routeSlug={page.slug}>
+const ModelPageTemplate = ({
+  data: {
+    modelPageJson: {
+      slug,
+      hero: { backgroundImage: { publicURL: backgroundImageURL }, ...hero },
+      withStudentBanner,
+      block1intro,
+      block2feedback,
+      block3howto,
+    },
+  },
+}) => (
+  <Layout routeSlug={slug}>
     <MenuBar />
-    <Hero {...page.hero} backgroundImage={page.hero.backgroundImage && page.hero.backgroundImage.publicURL} />
-    <Block1IntroTemplate {...page.block1intro} />
-    <Block2FeedbackTemplate comments={page.block2feedback} />
-    <Block3HowToTemplate {...page.block3howto} />
+    <Hero {...hero} backgroundImage={backgroundImageURL} />
+    <BlockIntroTemplate {...block1intro} />
+    <BlockFeedbackTemplate comments={block2feedback} />
+    {withStudentBanner && <BlockStudentBanner />}
+    <BlockHowToTemplate {...block3howto} />
     <LineSeparator />
     <Footer />
   </Layout>
@@ -36,6 +49,8 @@ ModelPageTemplate.propTypes = {
           publicURL: PropTypes.string.isRequired,
         }).isRequired,
       }).isRequired,
+
+      withStudentBanner: PropTypes.bool,
 
       block1intro: PropTypes.shape({
         title: PropTypes.string,
@@ -98,6 +113,7 @@ export const modelPage = graphql`
         subSubtitle
         backgroundImage { publicURL }
       }
+      withStudentBanner
       block1intro {
         title
         markImage { publicURL }
