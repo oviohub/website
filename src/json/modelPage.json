@@ -8,7 +8,7 @@
       "subSubtitle": "Connect to impactful projects changing the world in a myriad of ways. \nUse your technical experience and do good at the same time. You will develop new technical and leadership skills while significantly helping social impact projects.",
       "backgroundImage": "images/modelPage/volunteers.hero.jpg"
     },
-    "withStudentBanner": true, 
+    "withStudentBanner": true,
     "block1intro": {
       "title": "Our software allows you to focus on what's most important: doing good.",
       "markImage": "images/modelPage/volunteers.intro.mark.png",
@@ -137,6 +137,11 @@
           "title": "Attract volunteers",
           "paragraph": "Access a pool of talented volunteers and engage them on your project. \nThey are vetted to match your projects and issue areas with their skills and interests.",
           "image": "images/modelPage/socialImpact.intro.3.jpg"
+        },
+        {
+          "title": "Maintain Sustainable Solutions",
+          "paragraph": "By focusing on open-source, we can transform micro-volunteering into long-term impact. We know it's a challenge to ensure a continuous and sustainable volunteering effort within your organization. With Explore you can access a large pool of talents that will keep your project up to date one task at the time.",
+          "image": "images/modelPage/socialImpact.intro.4.jpg"
         }
       ]
     },
