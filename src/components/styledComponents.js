@@ -5,7 +5,7 @@ export const contentWidth = 1216;
 export const contentWidthPixels = `${contentWidth}px`;
 export const mobileThreshold = 800;
 export const mobileThresholdPixels = `${mobileThreshold}px`;
-export const menuHeightOffset = 74;
+export const menuHeightOffset = 72;
 
 export const colors = {
   darkBlue: '#2F4058',
@@ -132,8 +132,9 @@ export const defaultTheme = createMuiTheme({
         border: `2px solid ${colors.orange}`,
         borderRadius: '20px',
         '&:hover': {
-          color: colors.white,
-          backgroundColor: `${colors.orange}f0`,
+          color: colors.orange,
+          backgroundColor: 'transparent',
+          borderColor: colors.orange,
         },
       },
       text: {
@@ -145,16 +146,32 @@ export const defaultTheme = createMuiTheme({
         margin: `${spacing(4)} ${spacing(3)} ${spacing(4)} 0px`,
       },
     },
+    MuiIconButton: {
+      root: {
+        padding: '8px 0px 8px 12px',
+      },
+    },
+    MuiMenuItem: {
+      root: {
+        width: '100%',
+        '&:hover': {
+          backgroundColor: `${colors.orange}2f`,
+          borderRadius: '4px',
+        },
+      },
+    },
   },
 });
 
 export const stylesBase = {
-  muiButtonTransparent: {
-    backgroundColor: 'transparent',
+  muiButtonWhiteBackground: {
+    backgroundColor: colors.white,
+    color: colors.orange,
     border: `2px solid ${colors.white}`,
     '&:hover': {
-      color: colors.darkBlue,
-      backgroundColor: colors.white,
+      color: colors.white,
+      backgroundColor: 'transparent',
+      borderColor: colors.white,
     },
   },
   muiGridBlockContainer: {

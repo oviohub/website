@@ -28,10 +28,11 @@ import { spacing, contentWidthPixels, colors, stylesBase } from './styledCompone
 const { muiIconLogo } = stylesBase;
 const useStyles = makeStyles(theme => ({
   muiIconLogo,
-  grid: ({ homeVersion }) => ({
+  mainContainer: ({ homeVersion }) => ({
     padding: `${spacing(2)} 0px`,
     position: !homeVersion && 'fixed',
     background: !homeVersion && colors.white,
+    boxShadow: !homeVersion && '0px -2px 4px 0px black',
     left: !homeVersion && '0px',
     zIndex: '3',
     [theme.breakpoints.down('md')]: homeVersion && {
@@ -52,12 +53,11 @@ const useStyles = makeStyles(theme => ({
     textDecoration: 'none',
   },
   logoCaution: {
-    fontSize: '8.3px',
-    lineHeight: '10px',
-    textAlign: 'center',
-    marginTop: spacing(1),
+    fontFamily: 'Caveat Brush',
+    fontSize: '18px',
+    lineHeight: '22px',
+    marginLeft: spacing(2),
     width: 'fit-content',
-    opacity: 1,
   },
   button: ({ homeVersion, last }) => ({
     backgroundColor: 'transparent',
@@ -85,7 +85,7 @@ const MenuBar = ({ homeVersion }) => {
   const {
     // eslint-disable-next-line no-shadow
     muiIconLogo,
-    grid,
+    mainContainer,
     gridFixedWidth,
     rightSubContainer,
     leftSubContainer,
@@ -105,24 +105,21 @@ const MenuBar = ({ homeVersion }) => {
     if (anchorRef.current && anchorRef.current.contains(event.target)) {
       return;
     }
-
     setOpen(false);
   }
 
   return (
-    <Grid container className={grid} justify="center">
+    <Grid container className={mainContainer} justify="center">
       <Grid container item className={gridFixedWidth}>
         <Grid className={rightSubContainer} item xs={6} container alignItems="center">
           <Link className={links} to={getPageUrl('HomePage')}>
-            <Grid container direction="column" alignItems="flex-start">
+            <Grid container alignItems="flex-start" justify="center">
               <img className={muiIconLogo} src={homeVersion ? logoWhite : logoOrange} alt="Ovio" />
-              <Typography
-                className={logoCaution}
-                variant="caption"
-                color={homeVersion ? 'primary' : 'textSecondary'}
-              >
-                Online Volunteering in the Open
-              </Typography>
+              <Hidden smDown>
+                <Typography className={logoCaution} color={homeVersion ? 'primary' : 'textSecondary'}>
+                  Online Volunteering in the Open
+                </Typography>
+              </Hidden>
             </Grid>
           </Link>
         </Grid>

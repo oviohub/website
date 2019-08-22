@@ -42,6 +42,7 @@ const useStyles = makeStyles({
     height: '520px',
     width: '330px',
     padding: spacing(3),
+    marginRight: spacing(2),
     '&:hover': {
       border: '1px solid #DCDCDC',
       boxShadow: '0 30px 60px 0 rgba(0,0,0,0.05)',
