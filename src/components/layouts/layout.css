@@ -6,13 +6,7 @@ body {
 /* Class definition */
 
 .onHoverDisplay {
-  height: 100%;
-  width: 100%;
   display: none;
-}
-.onHoverHide {
-  height: 100%;
-  width: 100%;
 }
 
 /* Roboto font */

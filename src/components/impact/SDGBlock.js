@@ -153,8 +153,12 @@ const useStyles = makeStyles({
     margin: '5px',
     boxShadow: '2px 2px 10px -4px black',
   },
-  cardOnHoverDisplay: { backgroundColor: colors.orange },
-  cardOnHoverHide: ({ backgroundColor }) => ({ backgroundColor }),
+  cardOnHoverDisplay: {
+    backgroundColor: colors.orange,
+  },
+  cardOnHoverHide: ({ backgroundColor }) => ({
+    backgroundColor,
+  }),
   h4: {
     width: '90%',
     fontSize: fontSizing(2),
@@ -214,7 +218,7 @@ const SDGBlock = () => {
               <Typography className={h4} variant="h4" color="primary">{toFormattedText(title)}</Typography>
               <img className={imgComponent} src={image} alt={title} />
             </Grid>
-            <Grid id="" className={`${cardOnHoverDisplay} onHoverDisplay`}>
+            <Grid className={`${cardOnHoverDisplay} onHoverDisplay`}>
               <Typography className={body2} variant="body2" color="primary">{textOnOver}</Typography>
             </Grid>
           </Grid>

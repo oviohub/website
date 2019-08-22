@@ -204,6 +204,7 @@ export const stylesBase = {
     height: 'inherit',
   },
   muiGridWithOnHoverText: {
+    display: 'flex',
     '&:hover .onHoverDisplay': { display: 'flex' },
     '&:hover .onHoverHide': { display: 'none' },
   },
