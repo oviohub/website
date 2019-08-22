@@ -1,9 +1,10 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { Grid, Typography } from '@material-ui/core';
+import withWidth, { isWidthDown } from '@material-ui/core/withWidth';
 import { makeStyles } from '@material-ui/styles';
 
-import { BoldSpan, fontSizing, colors, stylesBase, spacing } from '../styledComponents';
-import statMark from '../../assets/impactPage/statMark.svg';
+import { BoldSpan, fontSizing, colors, stylesBase, spacing, MetricContainer } from '../styledComponents';
 import iconProvide from '../../assets/icons/icon.provide.orange.png';
 import iconOffer from '../../assets/icons/icon.offer.orange.png';
 import iconMaintain from '../../assets/icons/icon.maintain.orange.png';
@@ -52,34 +53,37 @@ const objectives = [
 ];
 
 const { muiGridBlockContainer } = stylesBase;
-const useStyles = makeStyles({
+const useStyles = makeStyles(theme => ({
   muiGridBlockContainer,
-  goalContainer: ({ whithoutBorderTop }) => ({
+  subContainer: ({ whithoutBorderTop }) => ({
     padding: `${spacing(4)} 0px`,
     borderTop: !whithoutBorderTop && `1px solid ${colors.darkBlue}1a`,
-
   }),
+  goalContainer: {
+    [theme.breakpoints.down('xs')]: { marginBottom: spacing(3) },
+  },
   title4: {
     fontStyle: 'italic',
     lineHeight: '30px',
     color: colors.orange,
     marginBottom: spacing(4),
+    [theme.breakpoints.down('xs')]: {
+      lineHeight: 'normal',
+      fontWeight: 'normal',
+    },
   },
   boldText: {
     margin: `${spacing(6)} 0px ${spacing(4)}`,
     fontWeight: 'bold',
   },
+  iconContainer: {
+    display: 'flex',
+    alignItems: 'center',
+  },
   icon: {
+    margin: 'auto 0px',
     width: '65px',
   },
-  metricContainer: ({ scale, rotation }) => ({
-    backgroundImage: `url(${statMark})`,
-    backgroundSize: 'cover',
-    backgroundRepeat: 'no-repeat',
-    width: `calc(${scale} * 100px)`,
-    height: `calc(${scale} * 100px)`,
-    transform: `rotate(${rotation}deg)`,
-  }),
   metricStyle: ({ rotation }) => ({
     fontFamily: 'Caveat Brush',
     fontSize: fontSizing(5),
@@ -87,15 +91,25 @@ const useStyles = makeStyles({
     textAlign: 'center',
     lineHeight: '24px',
     transform: `rotate(-${rotation}deg)`,
+    [theme.breakpoints.down('xs')]: { fontSize: fontSizing(4) },
   }),
   descriptionContainer: {
-    paddingLeft: spacing(4),
+    paddingLeft: spacing(1),
+    [theme.breakpoints.down('xs')]: { paddingLeft: 0 },
   },
-});
+}));
 
-const OurSolution = () => {
-  // eslint-disable-next-line no-shadow
-  const { muiGridBlockContainer, title4, boldText, icon, descriptionContainer } = useStyles();
+const OurSolution = ({ width }) => {
+  const {
+    // eslint-disable-next-line no-shadow
+    muiGridBlockContainer,
+    goalContainer,
+    title4,
+    boldText,
+    iconContainer,
+    icon,
+    descriptionContainer,
+  } = useStyles();
   return (
     <Grid className={muiGridBlockContainer} container>
       <Typography className={title4} variant="h4">
@@ -115,24 +129,36 @@ const OurSolution = () => {
           On the strength of these findings, Ovio gives itself 3 years to evaluate its impact:
         </Typography>
         {objectives.map(({ iconURL, goal, metric, metricDescription, markStyle }, index) => (
-          <Grid key={metricDescription} container className={useStyles({ whithoutBorderTop: !index }).goalContainer}>
-            <Grid container item xs={6}>
-              <Grid item xs={2}>
+          <Grid
+            key={metricDescription}
+            className={useStyles({ whithoutBorderTop: !index }).subContainer}
+            container
+            direction={isWidthDown('xs', width) ? 'column' : 'row'}
+          >
+            <Grid className={goalContainer} container item xs={12} sm={6}>
+              <Grid className={iconContainer} item xs={3} md={2}>
                 <img className={icon} src={iconURL} alt={goal} />
               </Grid>
-              <Grid item xs={8}>
+              <Grid container alignItems="center" item xs={9} sm={8}>
                 <Typography variant="body2">{goal}</Typography>
               </Grid>
             </Grid>
-            <Grid container item xs={6}>
-              <Grid item xs={2} container justify="center" alignItems="center">
-                <Grid className={useStyles(markStyle).metricContainer} container alignItems="center" justify="center">
+            <Grid container item xs={12} sm={6}>
+              <Grid
+                container
+                justify={isWidthDown('xs', width) ? 'flex-start' : 'center'}
+                alignItems="center"
+                item
+                xs={3}
+                sm={4}
+              >
+                <MetricContainer {...markStyle} container alignItems="center">
                   <Typography className={useStyles(markStyle).metricStyle} variant="h4" color="textSecondary">
                     {metric}
                   </Typography>
-                </Grid>
+                </MetricContainer>
               </Grid>
-              <Grid className={descriptionContainer} item xs={7} container alignItems="center">
+              <Grid className={descriptionContainer} container alignItems="center" item xs={9} sm={8}>
                 <Typography variant="body2" color="textSecondary">{metricDescription}</Typography>
               </Grid>
             </Grid>
@@ -143,4 +169,8 @@ const OurSolution = () => {
   );
 };
 
-export default OurSolution;
+OurSolution.propTypes = {
+  width: PropTypes.string.isRequired,
+};
+
+export default withWidth()(OurSolution);

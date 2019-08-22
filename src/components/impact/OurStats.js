@@ -1,10 +1,10 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { Grid, Typography } from '@material-ui/core';
+import withWidth, { isWidthDown } from '@material-ui/core/withWidth';
 import { makeStyles } from '@material-ui/styles';
 
-import { spacing, fontSizing, stylesBase } from '../styledComponents';
-
-import statMark from '../../assets/impactPage/statMark.svg';
+import { spacing, fontSizing, stylesBase, MetricContainer } from '../styledComponents';
 
 const stats = [
   {
@@ -35,14 +35,6 @@ const useStyles = makeStyles({
   subContainer: {
     marginBottom: spacing(4),
   },
-  countContainer: ({ scale, rotation }) => ({
-    backgroundImage: `url(${statMark})`,
-    backgroundSize: 'cover',
-    backgroundRepeat: 'no-repeat',
-    width: `calc(${scale} * 100px)`,
-    height: `calc(${scale} * 100px)`,
-    transform: `rotate(${rotation}deg)`,
-  }),
   countText: ({ rotation }) => ({
     fontFamily: 'Caveat Brush',
     fontSize: fontSizing(6),
@@ -54,23 +46,23 @@ const useStyles = makeStyles({
   labelText: { fontWeight: 500 },
 });
 
-const OurStats = () => {
+const OurStats = ({ width }) => {
   // eslint-disable-next-line no-shadow
   const { muiGridBlockContainer, subContainer, labelContainer, labelText } = useStyles();
   return (
-    <Grid className={muiGridBlockContainer} container>
-      <Grid item xs={5}>
+    <Grid className={muiGridBlockContainer} container direction={isWidthDown('sm', width) ? 'column' : 'row'}>
+      <Grid item xs={12} md={5}>
         <Typography variant="h2">Since 2018, Ovio initiated over 500 hours of volunteering.</Typography>
       </Grid>
-      <Grid item xs={6}>
+      <Grid item xs={12} md={6}>
         {stats.map(({ label, count, style }) => (
           <Grid key={label} className={subContainer} container alignItems="center">
             <Grid item xs={3} container justify="center">
-              <Grid className={useStyles(style).countContainer} container alignItems="center" justify="center">
+              <MetricContainer {...style} container alignItems="center" justify="center">
                 <Typography className={useStyles(style).countText} variant="h4" color="textSecondary">
                   {count}
                 </Typography>
-              </Grid>
+              </MetricContainer>
             </Grid>
             <Grid className={labelContainer} item xs={9}>
               <Typography className={labelText} variant="body2">{label}</Typography>
@@ -82,4 +74,8 @@ const OurStats = () => {
   );
 };
 
-export default OurStats;
+OurStats.propTypes = {
+  width: PropTypes.string.isRequired,
+};
+
+export default withWidth()(OurStats);
