@@ -227,5 +227,71 @@
       "title": "",
       "description": ""
     }
+  },
+
+  {
+    "slug": "StudentPage",
+    "path": "/student",
+    "hero": {
+      "title": "Students & Universities",
+      "subtitle": "Develop your technical skills and do good at the same time!",
+      "subSubtitle": "Ovio connects students and faculties to amazing opportunities to give back, in your community and internationally.",
+      "backgroundImage": "images/modelPage/volunteers.hero.jpg"
+    },
+    "block1intro": {
+      "title": "We help your student groups, CS classes, teachers and faculties accelerate tech for good on your campus!",
+      "markImage": "images/modelPage/volunteers.intro.mark.png",
+      "items": [
+        {
+          "title": "Find the right project",
+          "paragraph": "Ovio accumulates a large portfolio of software development projects (250+) to include every type of engineering skills and interest in the social impact sector. We help you find local and international opportunities.",
+          "image": "images/modelPage/socialImpact.intro.1.jpg"
+        },
+        {
+          "title": "Develop your skills",
+          "paragraph": "Volunteer alongside other talented developers from around the world. Develop new skills or improve existing ones while collaborating on an impactful project.",
+          "image": "images/modelPage/volunteers.intro.1.jpg"
+        },
+        {
+          "title": "Showcase your work",
+          "paragraph": "Expose your code and showcase your work to a worldwide community of tech employers. Better your Github profile.",
+          "image": "images/modelPage/socialImpact.intro.2.jpg"
+        }
+      ]
+    },
+    "block2feedback": [
+      {
+        "author": "Sylvia Thornton",
+        "position": "Apple Inc.",
+        "text": "“This is the testimonal text, this is the testimonal text, this is the testimonal text long long long long long version. 1”",
+        "photo": "images/modelPage/volunteers.feedback.sylviaThornton.png"
+      }
+    ],
+    "block3howto": {
+      "title": "Reach out",
+      "subtitle": " ",
+      "markImage": "images/modelPage/volunteers.howto.mark.jpg",
+      "processItems": [
+        {
+          "title": "Projects",
+          "text": "Partner with us to find the right project for your class/group",
+          "image": "images/modelPage/volunteers.howTo.login.png"
+        },
+        {
+          "title": "Mentors",
+          "text": "Partner with us to find mentors",
+          "image": "images/modelPage/volunteers.howTo.fillProfil.png"
+        },
+        {
+          "title": "Program",
+          "text": "Partner with us to manage your program",
+          "image": "images/modelPage/volunteers.howTo.matching.png"
+        }
+      ]
+    },
+    "seo": {
+      "title": "",
+      "description": ""
+    }
   }
 ]
