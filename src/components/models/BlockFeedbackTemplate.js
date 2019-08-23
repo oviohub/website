@@ -17,7 +17,7 @@ const useStyles = makeStyles({
     boxSizing: 'border-box',
     boxShadow: '0px 30px 20px rgba(0, 0, 0, 0.05)',
   },
-  body2: {
+  body1: {
     fontStyle: 'italic',
     marginBottom: spacing(3),
   },
@@ -31,7 +31,7 @@ const useStyles = makeStyles({
 
 const BlockFeedbackTemplate = ({ comments, width }) => {
   // eslint-disable-next-line no-shadow
-  const { muiGridBlockContainer, card, body2, photo, caption } = useStyles();
+  const { muiGridBlockContainer, card, body1, photo, caption } = useStyles();
   let viewsToShow;
   switch (width) {
     case 'xs': case 'sm':
@@ -49,7 +49,7 @@ const BlockFeedbackTemplate = ({ comments, width }) => {
         {comments.map(({ author, text, position, photo: { publicURL: photoUrl } }) => (
           <Grid key={`${author}${text}`} item xs={12} md={6} lg={4}>
             <Grid className={card}>
-              <Typography className={body2} variant="body2">{text}</Typography>
+              <Typography className={body1} variant="body1">{text}</Typography>
               <Grid container alignItems="center">
                 <img className={photo} src={photoUrl} alt={author} />
                 <Grid>

@@ -143,7 +143,7 @@
         },
         {
           "title": "Maintain Sustainable Solutions",
-          "paragraph": "By focusing on open-source, we can transform micro-volunteering into long-term impact. We know it's a challenge to ensure a continuous and sustainable volunteering effort within your organization. With Explore you can access a large pool of talents that will keep your project up to date one task at the time.",
+          "paragraph": "By focusing on open-source, we can transform micro-volunteering into long-term impact. We know it's a challenge to ensure a continuous and sustainable volunteering effort within your organization. Access a large pool of talents that will keep your project up to date one task at the time.",
           "image": "images/modelPage/socialImpact.intro.4.jpg"
         }
       ]
@@ -217,7 +217,7 @@
           "text": "Send us an email and request our consulting services.",
           "button": {
             "text": "Compose an email",
-            "link": "mailto:info@ovio.org"
+            "link": "mailto:hello@ovio.org"
           },
           "image": "images/modelPage/socialImpact.howTo.request.png"
         }
@@ -235,11 +235,11 @@
     "hero": {
       "title": "Students & Universities",
       "subtitle": "Develop your technical skills and do good at the same time!",
-      "subSubtitle": "Ovio connects students and faculties to amazing opportunities to give back, in your community and internationally.",
+      "subSubtitle": "Ovio connects students and faculties to amazing opportunities to give back, in local communities and internationally.",
       "backgroundImage": "images/modelPage/volunteers.hero.jpg"
     },
     "block1intro": {
-      "title": "We help your student groups, CS classes, teachers and faculties accelerate tech for good on your campus!",
+      "title": "We help student groups, CS classes, teachers and faculties accelerate tech for good on campus!",
       "markImage": "images/modelPage/volunteers.intro.mark.png",
       "items": [
         {
@@ -281,13 +281,12 @@
           "title": "Mentors",
           "text": "Partner with us to find mentors",
           "image": "images/modelPage/volunteers.howTo.fillProfil.png"
-        },
-        {
-          "title": "Program",
-          "text": "Partner with us to manage your program",
-          "image": "images/modelPage/volunteers.howTo.matching.png"
         }
-      ]
+      ],
+      "button": {
+        "text": "Contact us",
+        "link": "mailto:hello@ovio.org"
+      }
     },
     "seo": {
       "title": "",

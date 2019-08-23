@@ -16,7 +16,7 @@ const teamMembers = [
   {
     name: 'Tiphaine Boyer',
     position: 'Co-Founder & COO',
-    linkedInUrl: 'https://www.linkedin.com/in/tiphaine-luciani-boyer-07628ab0/',
+    linkedInUrl: 'https://www.linkedin.com/in/tiphaine-lucianiboyer/',
     // eslint-disable-next-line max-len
     aboutMe: 'After receiving a Master of Art in Conflict, Security, and Development from Sussex University, I started my career as a project manager for multiple social impact organizations around the world such as UNHCR. \nWhen I moved to San Francisco, I was shocked by local nonprofits struggling to leverage technology solutions. That is why I decided to co-create Ovio, a tech volunteering platform. I am most passionate about refugee rights and women’s rights. My appetite for social justice oriented my early career towards humanitarian and social activities.',
     photo: photoTiphaine,
@@ -109,7 +109,7 @@ const WhoWeAreBlock = ({ width }) => {
                 </Grid>
               </Grid>
               <Grid className={textContainer}>
-                <Typography variant="body2">
+                <Typography variant="body1">
                   {toFormattedText(aboutMe)}
                 </Typography>
               </Grid>

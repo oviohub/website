@@ -4,7 +4,7 @@ import { Grid, Typography } from '@material-ui/core';
 import withWidth, { isWidthDown } from '@material-ui/core/withWidth';
 import { makeStyles } from '@material-ui/styles';
 
-import { BoldSpan, fontSizing, colors, stylesBase, spacing, MetricContainer } from '../styledComponents';
+import { BoldSpan, colors, stylesBase, spacing } from '../styledComponents';
 import iconProvide from '../../assets/icons/icon.provide.orange.png';
 import iconOffer from '../../assets/icons/icon.offer.orange.png';
 import iconMaintain from '../../assets/icons/icon.maintain.orange.png';
@@ -18,9 +18,7 @@ const objectives = [
       volunteering support to organizations without forcing them to cut into their budget
       {/* eslint-disable-next-line react/jsx-closing-tag-location */}
     </React.Fragment>,
-    metric: '10k',
-    metricDescription: 'Average amount of $ saved per year by organizations compare to outsourcing or hiring talents',
-    markStyle: { scale: 0.55, rotation: 0 },
+    description: '$ worth of tech saved per year by organizations compared to outsourcing or hiring talents',
   },
   {
     iconURL: iconOffer,
@@ -31,23 +29,17 @@ const objectives = [
       beneficent&apos; needs
       {/* eslint-disable-next-line react/jsx-closing-tag-location */}
     </React.Fragment>,
-    metric: '3+',
-    metricDescription: 'Average years of experience of volunteers engage with Ovio',
-    markStyle: { scale: 0.6, rotation: 90 },
+    description: 'Years of experience of volunteers engaging with Ovio',
   },
   {
     iconURL: iconMaintain,
     goal: <React.Fragment>
       <BoldSpan>Maintain</BoldSpan>
       &nbsp;
-      sustainable support that strengthens organizations’
-      <br />
-      resources
+      sustainable support that strengthens organizations’ resources
       {/* eslint-disable-next-line react/jsx-closing-tag-location */}
     </React.Fragment>,
-    metric: 'x2',
-    metricDescription: 'Average retention of volunteers engagement on a project',
-    markStyle: { scale: 0.6, rotation: 0 },
+    description: 'Retention of volunteers engagement on a project',
   },
 ];
 
@@ -83,15 +75,6 @@ const useStyles = makeStyles(theme => ({
     margin: 'auto 0px',
     width: '65px',
   },
-  metricStyle: ({ rotation }) => ({
-    fontFamily: 'Caveat Brush',
-    fontSize: fontSizing(5),
-    fontWeight: 'normal',
-    textAlign: 'center',
-    lineHeight: '24px',
-    transform: `rotate(-${rotation}deg)`,
-    [theme.breakpoints.down('xs')]: { fontSize: fontSizing(4) },
-  }),
   descriptionContainer: {
     paddingLeft: spacing(1),
     [theme.breakpoints.down('xs')]: { paddingLeft: 0 },
@@ -116,18 +99,18 @@ const OurSolution = ({ width }) => {
         most valuable and powerful skills to support the causes they care about. By enabling organizations
         accessing such expensive resources, Ovio empowers them to advance their mission.
       </Typography>
-      <Typography variant="body2">
+      <Typography variant="body1">
         57% of NGOs claim to have staff limitations, which is the first brake to their digital development.
         They mostly lack financial resources to hire top quality engineers or have short-term help from volunteers
         which slows down the completion of complex projects.
       </Typography>
       <Grid>
-        <Typography className={boldText} variant="body2">
+        <Typography className={boldText} variant="body1">
           On the strength of these findings, Ovio gives itself 3 years to evaluate its impact:
         </Typography>
-        {objectives.map(({ iconURL, goal, metric, metricDescription, markStyle }, index) => (
+        {objectives.map(({ iconURL, goal, description }, index) => (
           <Grid
-            key={metricDescription}
+            key={description}
             className={useStyles({ whithoutBorderTop: !index }).subContainer}
             container
             direction={isWidthDown('xs', width) ? 'column' : 'row'}
@@ -137,33 +120,16 @@ const OurSolution = ({ width }) => {
                 <img className={icon} src={iconURL} alt={goal} />
               </Grid>
               <Grid container alignItems="center" item xs={9} sm={8}>
-                <Typography variant="body2">{goal}</Typography>
+                <Typography variant="body1">{goal}</Typography>
               </Grid>
             </Grid>
-            <Grid container item xs={12} sm={6}>
-              <Grid
-                container
-                justify={isWidthDown('xs', width) ? 'flex-start' : 'center'}
-                alignItems="center"
-                item
-                xs={3}
-                sm={4}
-              >
-                <MetricContainer {...markStyle} container alignItems="center" justify="center">
-                  <Typography className={useStyles(markStyle).metricStyle} variant="h4" color="textSecondary">
-                    {metric}
-                  </Typography>
-                </MetricContainer>
-              </Grid>
-              <Grid className={descriptionContainer} container alignItems="center" item xs={9} sm={8}>
-                <Typography variant="body2" color="textSecondary">{metricDescription}</Typography>
+            <Grid container item xs={12} sm={6} justify="flex-end">
+              <Grid className={descriptionContainer} container alignItems="center" item xs={9} sm={12}>
+                <Typography variant="body1" color="textSecondary">{description}</Typography>
               </Grid>
             </Grid>
           </Grid>
         ))}
-        <Grid container justify="flex-end">
-          <Typography variant="caption">* These metrics will be tracked every year</Typography>
-        </Grid>
       </Grid>
     </Grid>
   );

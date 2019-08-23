@@ -18,7 +18,7 @@ const stats = [
     style: { scale: 0.8, rotation: 0 },
   },
   {
-    label: 'Organizations, receive regular volunteering support.',
+    label: 'Organizations receive regular volunteering support.',
     count: '5',
     style: { scale: 0.6, rotation: 0 },
   },
@@ -30,6 +30,7 @@ const useStyles = makeStyles({
     ...muiGridBlockContainer,
     margin: `${spacing(16)} 0px`,
   },
+  blockTitle: { marginTop: '0px' },
   subContainer: {
     marginBottom: spacing(4),
   },
@@ -46,11 +47,13 @@ const useStyles = makeStyles({
 
 const OurStats = ({ width }) => {
   // eslint-disable-next-line no-shadow
-  const { container, subContainer, labelContainer, labelText } = useStyles();
+  const { container, blockTitle, subContainer, labelContainer, labelText } = useStyles();
   return (
     <Grid className={container} container direction={isWidthDown('sm', width) ? 'column' : 'row'}>
       <Grid item xs={12} md={5}>
-        <Typography variant="h2">Since 2018, Ovio initiated over 500 hours of volunteering.</Typography>
+        <Typography className={blockTitle} variant="h2">
+          Since 2018, Ovio initiated over 500 hours of volunteering.
+        </Typography>
       </Grid>
       <Grid item xs={12} md={6}>
         {stats.map(({ label, count, style }) => (
@@ -63,7 +66,7 @@ const OurStats = ({ width }) => {
               </MetricContainer>
             </Grid>
             <Grid className={labelContainer} item xs={9}>
-              <Typography className={labelText} variant="body2">{label}</Typography>
+              <Typography className={labelText} variant="body1">{label}</Typography>
             </Grid>
           </Grid>
         ))}

@@ -20,16 +20,13 @@ const useStyles = makeStyles(theme => ({
     paddingTop: withoutTitle && spacing(20),
     width: withoutTitle && '50%',
   }),
-  blockBody: ({ withMarginBotton, withSubtitle }) => ({
+  blockBody: ({ withMarginBotton, taggedTextVersion }) => ({
     margin: `0px 0px 0px ${spacing(4)}`,
     marginBottom: withMarginBotton ? spacing(4) : '0px',
-    fontSize: withSubtitle && '12px',
+    fontSize: taggedTextVersion && '12px',
   }),
   itemTitle: {
     marginLeft: spacing(4),
-  },
-  itemSubtitle: {
-    margin: `0px 0px ${spacing(2)} ${spacing(4)}`,
   },
   buttonLink: {
     marginLeft: spacing(4),
@@ -49,7 +46,15 @@ const useStyles = makeStyles(theme => ({
   },
 }));
 
-const BlockHowToTemplate = ({ title: blockTitle, subtitle: blockSubtitle, markImage, processItems, width }) => {
+const BlockHowToTemplate = ({
+  title: blockTitle,
+  subtitle: blockSubtitle,
+  taggedTextVersion,
+  markImage,
+  processItems,
+  width,
+  button: blockButton,
+}) => {
   const {
     // eslint-disable-next-line no-shadow
     muiGridBlockContainer,
@@ -59,17 +64,19 @@ const BlockHowToTemplate = ({ title: blockTitle, subtitle: blockSubtitle, markIm
     image,
     icon,
     markImg,
-    itemSubtitle,
   } = useStyles({ withoutTitle: !blockTitle });
+  const { text: blockButtonText, link: blockButtonLink } = blockButton || {};
   return (
     <Grid className={muiGridBlockContainer}>
       <img className={markImg} src={markImage && markImage.publicURL} alt={blockTitle} />
       {blockTitle && <Typography variant="h2">{blockTitle}</Typography>}
-      <Typography variant="subtitle2">{blockSubtitle}</Typography>
+      <Grid item xs={12} md={7}>
+        <Typography variant="subtitle2">{blockSubtitle}</Typography>
+      </Grid>
       <Grid>
-        {processItems.map(({ title, subtitle, text, button, image: { publicURL: imageURL } }) => {
+        {processItems.map(({ title, text, button, image: { publicURL: imageURL } }) => {
           const { link: btnLink, withGitHubIcon, text: btnText } = button || {};
-          const { itemTitle, blockBody } = useStyles({ withMarginBotton: btnLink, withSubtitle: subtitle });
+          const { itemTitle, blockBody } = useStyles({ withMarginBotton: btnLink, taggedTextVersion });
           return (
             <Grid
               className={itemContainer}
@@ -83,16 +90,17 @@ const BlockHowToTemplate = ({ title: blockTitle, subtitle: blockSubtitle, markIm
                 container
                 item
                 direction={isWidthDown('xs', width) ? 'row' : 'column'}
-                md={subtitle ? 6 : 4}
-                sm={subtitle ? 7 : 6}
+                md={taggedTextVersion ? 6 : 4}
+                sm={taggedTextVersion ? 7 : 6}
                 xs={12}
               >
-                <Typography className={itemTitle} component="p" variant="h2" color="textSecondary">
-                  {title}
-                </Typography>
+                {title && (
+                  <Typography className={itemTitle} component="p" variant="h2" color="textSecondary">
+                    {title}
+                  </Typography>
+                )}
                 <Grid container wrap="nowrap" direction="column" item xs={isWidthDown('xs', width) ? 11 : false}>
-                  {subtitle && <Typography className={itemSubtitle} variant="body2">{subtitle}</Typography>}
-                  <Typography className={blockBody} variant="body2">{toFormattedTaggedText(text, '11px')}</Typography>
+                  <Typography className={blockBody} variant="body1">{toFormattedTaggedText(text, '11px')}</Typography>
                   {btnLink && (
                     <a href={btnLink} className={buttonLink} target="_blank" rel="noreferrer noopener">
                       <Button>
@@ -107,6 +115,13 @@ const BlockHowToTemplate = ({ title: blockTitle, subtitle: blockSubtitle, markIm
           );
         })}
       </Grid>
+      {blockButtonText && (
+        <Grid container item xs={6} justify="center">
+          <a href={blockButtonLink} className={buttonLink} target="_blank" rel="noreferrer noopener">
+            <Button>{blockButtonText}</Button>
+          </a>
+        </Grid>
+      )}
     </Grid>
   );
 };
@@ -117,6 +132,7 @@ BlockHowToTemplate.propTypes = {
   markImage: PropTypes.shape({
     publicURL: PropTypes.string.isRequired,
   }).isRequired,
+  taggedTextVersion: PropTypes.bool,
   processItems: PropTypes.arrayOf(PropTypes.shape({
     title: PropTypes.string,
     subtitle: PropTypes.string,
@@ -130,6 +146,10 @@ BlockHowToTemplate.propTypes = {
       link: PropTypes.string.isRequired,
     }),
   })).isRequired,
+  button: PropTypes.shape({
+    text: PropTypes.string.isRequired,
+    link: PropTypes.string.isRequired,
+  }),
   width: PropTypes.string.isRequired,
 };
 

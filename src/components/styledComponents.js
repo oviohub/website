@@ -58,7 +58,7 @@ export const defaultTheme = createMuiTheme({
         margin: spacing(4),
         [theme.breakpoints.down('xs')]: {
           fontSize: fontSizing(7),
-          margin: `${spacing(4)} 0px`,
+          margin: `0px 0px ${spacing(4)}`,
         },
       },
       subtitle1: {
@@ -100,13 +100,13 @@ export const defaultTheme = createMuiTheme({
       body1: {
         color: colors.darkBlue,
         fontFamily: 'Montserrat',
-        fontSize: fontSizing(3),
+        fontSize: fontSizing(2.3), // to be close to 16px
         lineHeight: '26px',
       },
       body2: {
         color: colors.darkBlue,
         fontFamily: 'Montserrat',
-        fontSize: fontSizing(2.3), // to be close to 16px
+        fontSize: fontSizing(3),
         lineHeight: '26px',
       },
       caption: {
@@ -216,6 +216,16 @@ export const stylesBase = {
 };
 
 // Shapes
+export const Arrow = styled('div')({
+  boxSizing: 'border-box',
+  height: '40px',
+  width: '40px',
+  border: `4px solid ${colors.white}ad`,
+  borderWidth: '0px 0px 4px 4px',
+  transform: 'rotate(315deg)',
+  '&:hover': { borderColor: colors.white },
+});
+
 export const ThickLine = styled('div')(({ width, height }) => ({
   width: width || '100%',
   height: height || spacing(1.5),

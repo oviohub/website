@@ -41,8 +41,8 @@ const useStyles = makeStyles(theme => ({
   },
   title1: { marginTop: spacing(-7) },
   cardContainer: ({ isEven }) => ({
-    width: '470px',
-    height: '620px',
+    width: '400px',
+    height: '560px',
     marginRight: isEven ? '0px' : spacing(4),
     boxShadow: '0 20px 30px 0 rgba(0,0,0,0.1)',
     marginTop: spacing(-7),
@@ -57,19 +57,17 @@ const useStyles = makeStyles(theme => ({
     },
   }),
   cardContent: {
-    padding: spacing(7),
+    padding: spacing(5),
     [theme.breakpoints.down('md')]: { padding: spacing(4) },
   },
   cardSubtitle: {
     fontStyle: 'italic',
     lineHeight: '30px',
     letterSpacing: '0.5px',
-    margin: `${spacing(5)} 0px ${spacing(8)}`,
-    minHeight: '70px',
-    [theme.breakpoints.down('md')]: {
-      minHeight: '90px',
-      marginBottom: spacing(3),
-    },
+    margin: `${spacing(5)} 0px ${spacing(4)}`,
+    minHeight: '120px',
+    [theme.breakpoints.down('md')]: { marginBottom: spacing(3) },
+    [theme.breakpoints.down('sm')]: { minHeight: '60px' },
   },
   buttonContainer: {
     marginTop: spacing(10),

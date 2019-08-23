@@ -64,7 +64,7 @@ const useStyles = makeStyles({
     boxSizing: 'border-box',
     boxShadow: '0px 30px 20px rgba(0, 0, 0, 0.05)',
   },
-  body2: {
+  body1: {
     fontStyle: 'italic',
     marginBottom: spacing(3),
   },
@@ -73,7 +73,7 @@ const useStyles = makeStyles({
 
 const WhoTrustedUs = ({ width }) => {
   // eslint-disable-next-line no-shadow
-  const { muiGridBlockContainer, sliderContainer, card, body2, logoImg } = useStyles();
+  const { muiGridBlockContainer, sliderContainer, card, body1, logoImg } = useStyles();
   let viewsToShow;
   switch (width) {
     case 'xs': case 'sm':
@@ -93,7 +93,7 @@ const WhoTrustedUs = ({ width }) => {
           {companies.map(({ text, logo }) => (
             <Grid key={text} item xs={12} md={6} lg={4}>
               <Grid className={card}>
-                <Typography className={body2} variant="body2">{text}</Typography>
+                <Typography className={body1} variant="body1">{text}</Typography>
                 <Grid container alignItems="center" justify="center">
                   <img className={logoImg} src={logo} alt="Company's logo" />
                 </Grid>

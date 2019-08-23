@@ -6,10 +6,10 @@ import Hero from '../components/Hero';
 import LineSeparator from '../components/ui-library/LineSeparator';
 import Footer from '../components/Footer';
 
-import heroImage from '../assets/contactUsPage/hero.jpg';
+import heroImage from '../assets/blogPage/hero.jpg';
 
 const heroContent = {
-  title: 'Coming soon ... 🎨',
+  title: 'Coming soon ...',
   backgroundImage: heroImage,
 };
 
