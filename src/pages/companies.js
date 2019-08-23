@@ -22,23 +22,24 @@ import howToRequest from '../assets/modelPage/companies.howTo.request.png';
 
 const page = {
   hero: {
-    title: 'Tech Employers',
+    title: 'Companies',
     subtitle: 'Smarter Strategy, Smarter Engagement, Smarter Purpose',
-    subSubtitle: `Are you looking for opportunities to mobilize your team around social impact projects in a smart
-      and tailored way?`,
+    // eslint-disable-next-line max-len
+    subSubtitle: 'Are you looking for opportunities to mobilize your team around social impact projects in a smart and tailored way?',
     backgroundImage: heroImage,
   },
 
   block1introFirstPart: {
     items: [
       {
-        title: 'Variety',
+        title: 'Access a variety of volunteering opportunities',
         // eslint-disable-next-line max-len
         paragraph: "Ovio accumulates a large portfolio of software development projects (200+) to include every type of engineering skill set and interest in the social impact sector. \nWe curate and match your employees to opportunities they'll resonate with. Over time, our software gets to know your employees and will continuously improve finding the best match for them.",
         image: { publicURL: introImg1 },
+        button: { text: 'Browse to projects', link: 'https://explore.oviohub.com' },
       },
       {
-        title: 'Scalable',
+        title: 'Scale your skill-based volunteering program to the next level',
         // eslint-disable-next-line max-len
         paragraph: 'Deploy a scalable social impact program for your company. Our software allows you to focus on what matters most: engaging your employees without the burden of creating connections manually. Explore allows you to quickly manage robust global volunteer opportunities all year long and right away.',
         image: { publicURL: introImg2 },
@@ -49,32 +50,31 @@ const page = {
   block1introSecondPart: {
     items: [
       {
-        title: 'Micro-volunteering',
-        paragraph: `Streamline employee engagement programs with a task-based approach. Explore makes skill-based
-          volunteering a frictionless experience and impact reporting easily accessible by automating employee
-          engagement tracking.`,
+        title: 'Leverage micro-volunteering for your employees',
+        // eslint-disable-next-line max-len
+        paragraph: 'Streamline employee engagement programs with a task-based approach. Explore makes skill-based volunteering a frictionless experience and impact reporting easily accessible by automating employee engagement tracking.',
         image: { publicURL: introImg3 },
       },
       {
-        title: 'Rewarding',
-        paragraph: `Sponsor vetted projects on Explore and develop your branding material. By sponsoring projects,
-          you can showcase your philanthropic work, engage your brand and create team building experiences to enhance
-          your company culture.\nExplore rewards your company efforts and facilitate rewarding employees engagement.`,
+        title: 'Create a rewarding and engaging volunteering experience for all',
+        // eslint-disable-next-line max-len
+        paragraph: 'Sponsor vetted projects on Explore and develop your branding material. By sponsoring projects, you can showcase your philanthropic work, engage your brand and create team building experiences to enhance your company culture.\nExplore rewards your company efforts and facilitate rewarding employees engagement.',
         image: { publicURL: introImg4 },
       },
     ],
   },
 
   block3howto: {
+    title: 'Our offer:',
     subtitle: 'All of our corporate partnerships start with a trial phase to assess employee interest and CSR needs.',
     markImage: { publicURL: howToMark },
+    taggedTextVersion: true,
     processItems: [
       {
-        subtitle: 'Our offer:',
         // eslint-disable-next-line max-len
         text: '<tag>Smart matching<tag> of your employees with technical projects\n\n<tag>Kick off hackathon<tag> with a selection of scoped projects for your team\n\n<tag>Ad hoc matching<tag> to build longer relationships with an organization\n\n<tag>Project sponsoring<tag> to concentrate team efforts\n\n<tag>Volunteering tracking<tag> to evaluate engagement',
         image: { publicURL: howToRequest },
-        button: { text: 'Request a demo', link: 'mailto:info@ovio.org' },
+        button: { text: 'Request a demo', link: 'mailto:hello@ovio.org' },
       },
     ],
   },

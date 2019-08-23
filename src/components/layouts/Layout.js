@@ -8,14 +8,25 @@ import './layout.css';
 import SEO from '../Seo';
 import { defaultTheme } from '../styledComponents';
 
-const Layout = ({ routeSlug, children }) => (
-  <ThemeProvider theme={defaultTheme}>
-    <Container>
-      <SEO title={getPageTitle(routeSlug)} />
-      <main>{children}</main>
-    </Container>
-  </ThemeProvider>
-);
+class Layout extends React.Component {
+  componentDidMount() {
+    if (typeof window === 'undefined') return;
+    window.scrollTo(0, 0);
+    window.onbeforeunload = null;
+  }
+
+  render() {
+    const { children, routeSlug } = this.props;
+    return (
+      <ThemeProvider theme={defaultTheme}>
+        <Container>
+          <SEO title={getPageTitle(routeSlug)} />
+          <main>{children}</main>
+        </Container>
+      </ThemeProvider>
+    );
+  }
+}
 
 Layout.propTypes = {
   children: PropTypes.node.isRequired,

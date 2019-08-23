@@ -38,7 +38,7 @@ const BlockStudentBanner = ({ width }) => {
           xs={12}
           md={9}
         >
-          <Typography className={textContainer} variant="body2" color="textSecondary">
+          <Typography className={textContainer} variant="body1" color="textSecondary">
             Are you a student, University, or Academic, looking for projects?
           </Typography>
         </Grid>

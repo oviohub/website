@@ -144,6 +144,10 @@ export const modelPage = graphql`
             link
           }
         }
+        button {
+          text
+          link
+        }
       },
     }
   }

@@ -176,7 +176,7 @@ const useStyles = makeStyles(theme => ({
     marginBottom: spacing(4),
     [theme.breakpoints.down('xs')]: { marginBottom: spacing(2) },
   },
-  body2: {
+  body1: {
     fontSize: '13px',
     lineHeight: 'normal',
     textAlign: 'center',
@@ -208,15 +208,14 @@ const SDGBlock = ({ width }) => {
     cardOnHoverDisplay,
     h4,
     imgComponent,
-    body2,
+    body1,
     markStyle,
   } = useStyles();
   return (
     <Grid className={muiGridBlockContainer} container>
       <img className={`${muiGridBackground} ${markStyle}`} src={markImage} alt="Our values" />
-      <Typography className={subtitle2} variant="subtitle2">
-        Engaging people through skill-based volunteering can take The UN Sustainable Development Goals impact to
-        the next level.
+      <Typography variant="h2">
+        The UN Sustainable Development Goals
       </Typography>
       <Grid container className={cardsContainer} justify={width === 'xs' ? 'center' : 'flex-start'}>
         {sdgs.map(({ title, image, textOnOver, color }) => (
@@ -232,15 +231,19 @@ const SDGBlock = ({ width }) => {
               <img className={imgComponent} src={image} alt={title} />
             </Grid>
             <Grid id="" className={`${cardOnHoverDisplay} onHoverDisplay`}>
-              <Typography className={body2} variant="body2" color="primary">{textOnOver}</Typography>
+              <Typography className={body1} variant="body1" color="primary">{textOnOver}</Typography>
             </Grid>
           </Grid>
         ))}
       </Grid>
-      <Typography variant="body2">
-        Ovio is playing a significant role in the “global partnership for the goals” (n°17) by encouraging the
-        cooperation between companies, citizens and nonprofits for access to technology and innovation and strengthen
-        the capacity of everyone to make a positive impact in the world.
+      <Typography className={subtitle2} variant="subtitle2">
+        Engaging people through skill-based volunteering can take The UN Sustainable Development Goals impact to
+        the next level.
+      </Typography>
+      <Typography variant="body1">
+        Ovio is playing a significant role in the “global partnership for the goals” (n°17) by encouraging
+        cooperation between companies, citizens and social impact organizations, by scaling access to tech innovation
+        by and encouraging everyone to make a positive impact in the world.
       </Typography>
     </Grid>
   );

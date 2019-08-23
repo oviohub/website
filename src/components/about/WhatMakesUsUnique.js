@@ -10,7 +10,7 @@ import image3 from '../../assets/aboutPage/makesUsUnique.block3.jpg';
 
 const cardList = [
   {
-    title: 'Coding',
+    title: 'Software Development',
     subTitle: 'Engage engineers',
     image: image1,
     // eslint-disable-next-line max-len
@@ -130,7 +130,7 @@ const WhatMakesUsUnique = () => {
               <Typography className={cardParagraph} variant="h4">{subTitle}</Typography>
             </Grid>
             <Grid id="onHoverDisplay" className={cardOnHoverDisplay}>
-              <Typography className={cardParagraphOnHover} variant="body2" color="primary">{textOnOver}</Typography>
+              <Typography className={cardParagraphOnHover} variant="body1" color="primary">{textOnOver}</Typography>
             </Grid>
           </Grid>
         ))}

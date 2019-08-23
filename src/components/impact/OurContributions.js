@@ -16,12 +16,12 @@ const contributions = [
   {
     percentage: 12,
     label: 'Good Health and Well-being',
-    color: '#FFA667',
+    color: '#FFD3B3',
   },
   {
     percentage: 10,
     label: 'Quality Education',
-    color: '#FFD3B3',
+    color: '#acdbc2',
   },
   {
     percentage: 10,

@@ -15,27 +15,26 @@ import itemImg4 from '../../assets/aboutPage/ourValuesItem.4.png';
 const items = [
   {
     title: 'Impact-Oriented',
-    content: `We place people before technology and work to maximize social benefit.
-      We consider the impact of our work on communities, other living beings, ecosystems and the world-at-large.`,
+    // eslint-disable-next-line max-len
+    content: 'We place people before technology and work to maximize social benefit. We consider the impact of our work on communities, other living beings, ecosystems and the world.',
     image: itemImg1,
   },
   {
     title: 'Collaboration',
-    content: `We value teamwork and collective actions. Our success is driven by our ability to build
-      connections across the world and between sectors, break silos and foster exchange of competencies.`,
+    // eslint-disable-next-line max-len
+    content: 'We value teamwork and collective actions. Our success is driven by our ability to build connections across the world and between sectors, break silos and foster exchange of competencies.',
     image: itemImg2,
   },
   {
     title: 'Inspire Change',
-    content: `We embrace positive change and continuously work to improve the lives of others whether
-      it’s harnessing market forces for social good, inspiring purposeful goals for people or helping
-      civil agents work together.`,
+    // eslint-disable-next-line max-len
+    content: 'We embrace positive change and continuously work to improve the lives of others whether it’s harnessing market forces for social good, inspiring purposeful goals for people or helping civil agents work together.',
     image: itemImg3,
   },
   {
     title: 'Fun',
-    content: `What is better than having fun while changing the world? We value adventures, challenges,
-      and happiness to solve social challenges.`,
+    // eslint-disable-next-line max-len
+    content: 'What is better than having fun while changing the world? We value adventures, challenges, and happiness to solve social challenges.',
     image: itemImg4,
   },
 ];
@@ -96,7 +95,7 @@ const OurValuesBlock = ({ width }) => {
             </Grid>
             <Grid item xs={10} size="2" className={itemTextContainer}>
               <Typography variant="h4" className={title4}>{title}</Typography>
-              <Typography variant="body2">{content}</Typography>
+              <Typography variant="body1">{content}</Typography>
             </Grid>
           </Grid>
         ))}

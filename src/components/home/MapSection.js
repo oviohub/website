@@ -3,7 +3,7 @@ import { Grid, Typography } from '@material-ui/core';
 import { makeStyles } from '@material-ui/styles';
 
 import { stylesBase } from '../styledComponents';
-import map from '../../assets/homePage/map.png';
+import map from '../../assets/homePage/map.jpg';
 
 const { muiGridBlockContainer } = stylesBase;
 const useStyles = makeStyles(theme => ({

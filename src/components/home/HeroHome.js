@@ -5,16 +5,16 @@ import { Grid, Typography, Button, withWidth } from '@material-ui/core';
 import { makeStyles } from '@material-ui/styles';
 
 import { stylesBase, menuHeightOffset } from '../styledComponents';
+import ScrollArrow from '../ui-library/ScrollArrow';
 import heroImage from '../../assets/homePage/heroImage.jpg';
 import { getPageUrl } from '../../Routes';
 
 const { muiButtonWhiteBackground, muiGridFullScreen } = stylesBase;
-const imageHeight = '680px'; // 680px ==  height of the header image in the design
 const useStyles = makeStyles(theme => ({
   muiButtonWhiteBackground,
   muiGridFullScreen,
   mainContainer: {
-    height: `calc(${imageHeight} - ${menuHeightOffset}px)`,
+    height: `calc(100vh - ${menuHeightOffset}px)`,
   },
   imageContainer: {
     position: 'absolute',
@@ -24,7 +24,7 @@ const useStyles = makeStyles(theme => ({
   },
   image: {
     width: '100%',
-    height: imageHeight,
+    height: '100vh',
     objectFit: 'cover',
     [theme.breakpoints.down('md')]: { objectPosition: 'left' },
   },
@@ -39,7 +39,7 @@ const useStyles = makeStyles(theme => ({
   },
   buttonContainer: {
     margin: '50px 0px 105px',
-    [theme.breakpoints.down('xs')]: { marginBottom: '35px' },
+    [theme.breakpoints.down('xs')]: { margin: '35px 0px' },
   },
 }));
 
@@ -56,6 +56,7 @@ const Hero = ({ width }) => {
     typography,
     buttonContainer,
   } = useStyles();
+  const scrollRef = React.createRef();
 
   return (
     <React.Fragment>
@@ -73,10 +74,10 @@ const Hero = ({ width }) => {
           md={8}
           xs={12}
         >
-          <Typography className={typography} variant="h1">Ovio brings Technology in Service of Humanity</Typography>
+          <Typography className={typography} variant="h1">Connecting Tech Minds and Impact Makers</Typography>
           <Typography className={typography} variant="subtitle1">
-            Technology can, and should, fuel solutions to the greatest
-            challenges of our time and be in service to humanity.
+            We revolutionize pro-bono for the tech industry and bring together social impact organizations, people
+            and companies to make skill-based volunteering easy and rewarding for all.
           </Typography>
           <Grid className={buttonContainer} item>
             <Link to={getPageUrl('AboutPage')} style={{ textDecoration: 'none' }}>
@@ -84,8 +85,9 @@ const Hero = ({ width }) => {
             </Link>
           </Grid>
         </Grid>
+        <ScrollArrow scrollRef={scrollRef} />
       </Grid>
-
+      <div ref={scrollRef} />
     </React.Fragment>
   );
 };
