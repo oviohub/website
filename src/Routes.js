@@ -32,6 +32,11 @@ const routes = {
     component: 'src/pages/impact.js',
     seo: { title: 'Impact', description: '' },
   },
+  BlogPage: {
+    url: '/blog',
+    component: 'src/pages/blog.js',
+    seo: { title: 'Blog', description: '' },
+  },
 };
 
 modelPage.forEach((page) => {

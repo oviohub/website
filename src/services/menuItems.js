@@ -31,7 +31,7 @@ const completeMenu = [
     link: getPageUrl('HomePage'),
     subMenu: [
       // { label: 'Press', link: getPageUrl('HomePage') },
-      { label: 'Blog', link: getPageUrl('HomePage') },
+      { label: 'Blog', link: getPageUrl('BlogPage') },
     ],
   },
   {
@@ -44,7 +44,7 @@ const completeMenu = [
   },
   {
     label: 'Blog',
-    link: getPageUrl('HomePage'),
+    link: getPageUrl('BlogPage'),
   },
 ];
 
