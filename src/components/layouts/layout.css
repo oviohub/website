@@ -3,6 +3,12 @@ body {
   padding: 0px;
 }
 
+/* Class definition */
+
+.onHoverDisplay {
+  display: none;
+}
+
 /* Roboto font */
 @font-face {
   font-family: "Roboto";

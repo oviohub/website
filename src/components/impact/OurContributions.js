@@ -36,7 +36,6 @@ const contributions = [
 const { muiGridBlockContainer } = stylesBase;
 const useStyles = makeStyles({
   muiGridBlockContainer,
-  container: { paddingTop: spacing(10) },
   title2: {
     fontSize: spacing(5),
     margin: `0px 0px 0px ${spacing(2)}`,
@@ -59,9 +58,9 @@ const useStyles = makeStyles({
 
 const OurContributions = () => {
   // eslint-disable-next-line no-shadow
-  const { muiGridBlockContainer, container, title2, caption } = useStyles();
+  const { muiGridBlockContainer, title2, caption } = useStyles();
   return (
-    <Grid className={`${muiGridBlockContainer} ${container}`} container>
+    <Grid className={muiGridBlockContainer} container>
       <Grid item xs={6} container justify="center" alignItems="center">
         <img src={camembert} alt="" />
       </Grid>
