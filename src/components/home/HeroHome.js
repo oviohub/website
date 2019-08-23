@@ -1,10 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { Link } from 'gatsby';
 import { Grid, Typography, Button, withWidth } from '@material-ui/core';
 import { makeStyles } from '@material-ui/styles';
 
 import { stylesBase, menuHeightOffset } from '../styledComponents';
 import heroImage from '../../assets/homePage/heroImage.jpg';
+import { getPageUrl } from '../../Routes';
 
 const { muiButtonWhiteBackground, muiGridFullScreen } = stylesBase;
 const imageHeight = '680px'; // 680px ==  height of the header image in the design
@@ -77,7 +79,9 @@ const Hero = ({ width }) => {
             challenges of our time and be in service to humanity.
           </Typography>
           <Grid className={buttonContainer} item>
-            <Button className={muiButtonWhiteBackground}>Learn More</Button>
+            <Link to={getPageUrl('AboutPage')} style={{ textDecoration: 'none' }}>
+              <Button className={muiButtonWhiteBackground}>Learn More</Button>
+            </Link>
           </Grid>
         </Grid>
       </Grid>

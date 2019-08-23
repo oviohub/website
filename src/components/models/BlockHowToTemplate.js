@@ -25,12 +25,9 @@ const useStyles = makeStyles(theme => ({
     marginBottom: withMarginBotton ? spacing(4) : '0px',
     fontSize: withSubtitle && '12px',
   }),
-  itemTitle: ({ containsText }) => ({
+  itemTitle: {
     marginLeft: spacing(4),
-    [theme.breakpoints.down('xs')]: !containsText && {
-      marginLeft: '0px',
-    },
-  }),
+  },
   itemSubtitle: {
     margin: `0px 0px ${spacing(2)} ${spacing(4)}`,
   },
@@ -70,12 +67,9 @@ const BlockHowToTemplate = ({ title: blockTitle, subtitle: blockSubtitle, markIm
       {blockTitle && <Typography variant="h2">{blockTitle}</Typography>}
       <Typography variant="subtitle2">{blockSubtitle}</Typography>
       <Grid>
-        {processItems.map(({ title, subtitle, text, button, image: { publicURL: imageURL } }, index) => {
+        {processItems.map(({ title, subtitle, text, button, image: { publicURL: imageURL } }) => {
           const { link: btnLink, withGitHubIcon, text: btnText } = button || {};
-          const xs = title ? 11 : 10;
-          const { itemTitle, blockBody } = useStyles({
-            containsText: title, withMarginBotton: btnLink, withSubtitle: subtitle,
-          });
+          const { itemTitle, blockBody } = useStyles({ withMarginBotton: btnLink, withSubtitle: subtitle });
           return (
             <Grid
               className={itemContainer}
@@ -94,14 +88,9 @@ const BlockHowToTemplate = ({ title: blockTitle, subtitle: blockSubtitle, markIm
                 xs={12}
               >
                 <Typography className={itemTitle} component="p" variant="h2" color="textSecondary">
-                  {title || index + 1}
+                  {title}
                 </Typography>
-                <Grid
-                  container
-                  item
-                  alignItems={isWidthDown('xs', width) ? 'center' : 'flex-start'}
-                  xs={isWidthDown('xs', width) ? xs : false}
-                >
+                <Grid container wrap="nowrap" direction="column" item xs={isWidthDown('xs', width) ? 11 : false}>
                   {subtitle && <Typography className={itemSubtitle} variant="body2">{subtitle}</Typography>}
                   <Typography className={blockBody} variant="body2">{toFormattedTaggedText(text, '11px')}</Typography>
                   {btnLink && (

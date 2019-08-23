@@ -18,9 +18,9 @@ const objectives = [
       volunteering support to organizations without forcing them to cut into their budget
       {/* eslint-disable-next-line react/jsx-closing-tag-location */}
     </React.Fragment>,
-    metric: '~ $10k',
-    metricDescription: 'amount of $ organizations are saving using Explore compare to outsourcing or hiring talents',
-    markStyle: { scale: 0.85, rotation: 0 },
+    metric: '10k',
+    metricDescription: 'Average amount of $ saved per year by organizations compare to outsourcing or hiring talents',
+    markStyle: { scale: 0.55, rotation: 0 },
   },
   {
     iconURL: iconOffer,
@@ -31,9 +31,9 @@ const objectives = [
       beneficent&apos; needs
       {/* eslint-disable-next-line react/jsx-closing-tag-location */}
     </React.Fragment>,
-    metric: '~ 5+ years exp',
-    metricDescription: 'quality of the tech through talents years of experience and skills',
-    markStyle: { scale: 0.9, rotation: 90 },
+    metric: '3+',
+    metricDescription: 'Average years of experience of volunteers engage with Ovio',
+    markStyle: { scale: 0.6, rotation: 90 },
   },
   {
     iconURL: iconMaintain,
@@ -45,9 +45,8 @@ const objectives = [
       resources
       {/* eslint-disable-next-line react/jsx-closing-tag-location */}
     </React.Fragment>,
-    metric: '~x2',
-    // eslint-disable-next-line max-len
-    metricDescription: 'sustainability of the support by analyzing the retention of volunteers on Explore and their activity',
+    metric: 'x2',
+    metricDescription: 'Average retention of volunteers engagement on a project',
     markStyle: { scale: 0.6, rotation: 0 },
   },
 ];
@@ -115,12 +114,10 @@ const OurSolution = ({ width }) => {
       <Typography className={title4} variant="h4">
         Our solution redirects talent volunteering towards useful actions. Talented developers can use their
         most valuable and powerful skills to support the causes they care about. By enabling organizations
-        accessing such expensive resources, Ovio empowers them to advance their mission. Being able to
-        measure the scope of our actions sounds essential to improve our user-oriented services and inform
-        stakeholders about our positive changes in the world.
+        accessing such expensive resources, Ovio empowers them to advance their mission.
       </Typography>
       <Typography variant="body2">
-        57% of NGOs claimed to have staff limitations, which was the first brake to their digital development.
+        57% of NGOs claim to have staff limitations, which is the first brake to their digital development.
         They mostly lack financial resources to hire top quality engineers or have short-term help from volunteers
         which slows down the completion of complex projects.
       </Typography>
@@ -152,7 +149,7 @@ const OurSolution = ({ width }) => {
                 xs={3}
                 sm={4}
               >
-                <MetricContainer {...markStyle} container alignItems="center">
+                <MetricContainer {...markStyle} container alignItems="center" justify="center">
                   <Typography className={useStyles(markStyle).metricStyle} variant="h4" color="textSecondary">
                     {metric}
                   </Typography>
@@ -164,6 +161,9 @@ const OurSolution = ({ width }) => {
             </Grid>
           </Grid>
         ))}
+        <Grid container justify="flex-end">
+          <Typography variant="caption">* These metrics will be tracked every year</Typography>
+        </Grid>
       </Grid>
     </Grid>
   );

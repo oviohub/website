@@ -9,27 +9,27 @@ import illustration from '../../assets/impactPage/illustration.jpg';
 
 const contributions = [
   {
-    percentage: 30,
-    label: 'Quality Education',
+    percentage: 15,
+    label: 'Civic Tech',
     color: '#F47820',
   },
   {
-    percentage: 23,
-    label: 'No Poverty',
+    percentage: 12,
+    label: 'Good Health and Well-being',
     color: '#FFA667',
   },
   {
-    percentage: 19,
-    label: 'Zero Hunger',
+    percentage: 10,
+    label: 'Quality Education',
     color: '#FFD3B3',
   },
   {
-    percentage: 18,
-    label: 'Peace Justice and Strong Institutions',
+    percentage: 10,
+    label: 'Humanitarian',
     color: '#919FB3',
   },
   {
-    percentage: 10,
+    percentage: 48,
     label: 'others',
     color: '#2F4058',
   },

@@ -8,22 +8,17 @@ import { spacing, fontSizing, stylesBase, MetricContainer } from '../styledCompo
 
 const stats = [
   {
-    label: 'social impact organizations and',
+    label: 'Social impact organizations and',
     count: '145',
     style: { scale: 0.8, rotation: 90 },
   },
   {
-    label: 'projects are listed on Explore, showcasing',
+    label: 'projects are listed on Explore.',
     count: '250',
     style: { scale: 0.8, rotation: 0 },
   },
   {
-    label: 'contributors.',
-    count: '3,700',
-    style: { scale: 0.9, rotation: 200 },
-  },
-  {
-    label: 'organizations, receive regular volunteering support.',
+    label: 'Organizations, receive regular volunteering support.',
     count: '5',
     style: { scale: 0.6, rotation: 0 },
   },
@@ -31,7 +26,10 @@ const stats = [
 
 const { muiGridBlockContainer } = stylesBase;
 const useStyles = makeStyles({
-  muiGridBlockContainer,
+  container: {
+    ...muiGridBlockContainer,
+    margin: `${spacing(16)} 0px`,
+  },
   subContainer: {
     marginBottom: spacing(4),
   },
@@ -48,9 +46,9 @@ const useStyles = makeStyles({
 
 const OurStats = ({ width }) => {
   // eslint-disable-next-line no-shadow
-  const { muiGridBlockContainer, subContainer, labelContainer, labelText } = useStyles();
+  const { container, subContainer, labelContainer, labelText } = useStyles();
   return (
-    <Grid className={muiGridBlockContainer} container direction={isWidthDown('sm', width) ? 'column' : 'row'}>
+    <Grid className={container} container direction={isWidthDown('sm', width) ? 'column' : 'row'}>
       <Grid item xs={12} md={5}>
         <Typography variant="h2">Since 2018, Ovio initiated over 500 hours of volunteering.</Typography>
       </Grid>

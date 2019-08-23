@@ -11,8 +11,8 @@ import heroImage from '../assets/modelPage/hero.jpg';
 
 const heroContent = {
   title: 'What we Do',
-  subtitle: `Ovio is a software company that revolutionizes pro-bono for the tech industry and brings together social
-    impact organizations, people and companies to make skill-based volunteering easy and rewarding for all.`,
+  // eslint-disable-next-line max-len
+  subtitle: 'Ovio is a software company that revolutionizes pro-bono for the tech industry and brings together social impact organizations, people and companies to make skill-based volunteering easy and rewarding for all.',
   backgroundImage: heroImage,
 };
 

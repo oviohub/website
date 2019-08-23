@@ -5,7 +5,7 @@
     "hero": {
       "title": "Volunteers",
       "subtitle": "More Flexibility, More Gains, More Impact.",
-      "subSubtitle": "Connect to impactful projects changing the world in a myriad of ways. \nUse your technical experience and do good at the same time. You will develop new technical and leadership skills while significantly helping social impact projects.",
+      "subSubtitle": "Connect to impactful projects changing the world in a myriad of ways. \nUse your technical experience and develop new technical and leadership skills while significantly helping social impact projects.",
       "backgroundImage": "images/modelPage/volunteers.hero.jpg"
     },
     "withStudentBanner": true,
@@ -82,24 +82,27 @@
     ],
     "block3howto": {
       "title": "How to sign up?",
-      "subtitle": "Sound like Ovio is a place for you to give back?",
+      "subtitle": "Sounds like Ovio is a place for you to volunteer your skills?",
       "markImage": "images/modelPage/volunteers.howto.mark.jpg",
       "processItems": [
         {
-          "text": "Logging in with GitHub to Explore now and access 200+ open source projects.",
+          "title": "1. Visit",
+          "text": "Visit Explore now and discover 200+ open-source projects",
           "button": {
-            "text": "Log in with GitHub",
-            "withGitHubIcon": true,
-            "link": "https://github.com/"
+            "text": "Explore",
+            "withGitHubIcon": false,
+            "link": "https://explore.oviohub.com/"
           },
           "image": "images/modelPage/volunteers.howTo.login.png"
         },
         {
-          "text": "Fill out your profile to get matched to more projects. ",
+          "title": "2. Log in",
+          "text": "Log in to personalize your experience",
           "image": "images/modelPage/volunteers.howTo.fillProfil.png"
         },
         {
-          "text": "Ovio proactively will be looking for the best opportunities to have an impact with your amazing skills. <tag>mentoring<tag> <tag>project-based<tag> <tag>task-based<tag>",
+          "title": "3. Fill out",
+          "text": "Fill out your profile to get matched to more projects opportunities such as <tag>mentoring<tag> <tag>project-based<tag> <tag>task-based<tag> <tag>...<tag>",
           "image": "images/modelPage/volunteers.howTo.matching.png"
         }
       ]
@@ -116,7 +119,7 @@
     "hero": {
       "title": "Social Impact Organizations",
       "subtitle": "Better Help, Better Cooperation, Better Scales.",
-      "subSubtitle": "Are you leveraging technology and software to maximize your impact on the world? Do you need access to a pool of talented, technically skilled volunteers to develop or scale technology?",
+      "subSubtitle": "Are you a nonprofit, B-corp or other form of social good organization looking to maximize your impact in the world? Do you need access to a pool of talented, technically skilled volunteers to develop technology?",
       "backgroundImage": "images/modelPage/socialImpact.hero.jpg"
     },
     "block1intro": {
@@ -124,8 +127,8 @@
       "isMarkOnLeft": true,
       "items": [
         {
-          "title": "Leverage Technology",
-          "paragraph": "Create maintainable code and lower development costs with our platform. We help you use and develop software more collaboratively, using open-source.",
+          "title": "Leverage open-source technology",
+          "paragraph": "Create maintainable code and lower development cost with Ovio. Working with multiple organizations, we have developed a strong expertise around open-source, and how to leverage it in the social impact sector.",
           "image": "images/modelPage/socialImpact.intro.1.jpg"
         },
         {
@@ -205,7 +208,7 @@
           "text": "Submit your project and get access to a pool of committed volunteers. We match your needs with volunteers’ talents and interests to ensure your project’s viability.",
           "button": {
             "text": "Submit",
-            "link": "https://www.google.com/"
+            "link": "https://airtable.com/shr2rIvDWOiDX9G10"
           },
           "image": "images/modelPage/socialImpact.howTo.submit.png"
         },
@@ -214,7 +217,7 @@
           "text": "Send us an email and request our consulting services.",
           "button": {
             "text": "Compose an email",
-            "link": "https://www.google.com/"
+            "link": "mailto:info@ovio.org"
           },
           "image": "images/modelPage/socialImpact.howTo.request.png"
         }

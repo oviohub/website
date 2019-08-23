@@ -6,7 +6,7 @@ import Hero from '../components/Hero';
 import BlockIntroTemplate from '../components/models/BlockIntroTemplate';
 import MiddleBlock from '../components/companies/MiddleBlock';
 import WhyVolunteering from '../components/companies/WhyVolunteering';
-import WhoTrustedUs from '../components/companies/WhoTrustedUs';
+// import WhoTrustedUs from '../components/companies/WhoTrustedUs';
 import BlockHowToTemplate from '../components/models/BlockHowToTemplate';
 import LineSeparator from '../components/ui-library/LineSeparator';
 import Footer from '../components/Footer';
@@ -33,17 +33,14 @@ const page = {
     items: [
       {
         title: 'Variety',
-        paragraph: `Ovio accumulates a large portfolio of software development projects (200+) to include every type of
-          engineering skill set and interest in the social impact sector. \nWe curate and match your employees to
-          opportunities they'll resonate with. Over time, our software gets to know your employees and will continuously
-          improve finding the best match for.`,
+        // eslint-disable-next-line max-len
+        paragraph: "Ovio accumulates a large portfolio of software development projects (200+) to include every type of engineering skill set and interest in the social impact sector. \nWe curate and match your employees to opportunities they'll resonate with. Over time, our software gets to know your employees and will continuously improve finding the best match for them.",
         image: { publicURL: introImg1 },
       },
       {
         title: 'Scalable',
-        paragraph: `Deploy a scalable social impact program for your company. Our software allows you to focus on what
-          matters most: engaging your employees without the burden of creating connections manually. Explore allows you
-          to quickly manage robust global volunteer opportunities all year long and right away.`,
+        // eslint-disable-next-line max-len
+        paragraph: 'Deploy a scalable social impact program for your company. Our software allows you to focus on what matters most: engaging your employees without the burden of creating connections manually. Explore allows you to quickly manage robust global volunteer opportunities all year long and right away.',
         image: { publicURL: introImg2 },
       },
     ],
@@ -73,12 +70,11 @@ const page = {
     markImage: { publicURL: howToMark },
     processItems: [
       {
-        title: ' ',
         subtitle: 'Our offer:',
         // eslint-disable-next-line max-len
-        text: '<tag>Kick off hackathon<tag> selection of scoped projects for your team\n\n<tag>Ad hoc matching<tag> connect and build relationship with an organization\n\n<tag>Project sponsoring<tag> select a specific organization to concentrate team efforts\n\n<tag>Volunteering tracking<tag> evaluation of employees engagement and impact',
+        text: '<tag>Smart matching<tag> of your employees with technical projects\n\n<tag>Kick off hackathon<tag> with a selection of scoped projects for your team\n\n<tag>Ad hoc matching<tag> to build longer relationships with an organization\n\n<tag>Project sponsoring<tag> to concentrate team efforts\n\n<tag>Volunteering tracking<tag> to evaluate engagement',
         image: { publicURL: howToRequest },
-        button: { text: 'Request a demo', link: 'mailto:info@oviohub.com' },
+        button: { text: 'Request a demo', link: 'mailto:info@ovio.org' },
       },
     ],
   },
@@ -92,7 +88,7 @@ const CompaniesPage = () => (
     <MiddleBlock />
     <BlockIntroTemplate {...page.block1introSecondPart} iconVersion />
     <WhyVolunteering />
-    <WhoTrustedUs comments={page.block2feedback} />
+    {/* <WhoTrustedUs comments={page.block2feedback} /> */}
     <BlockHowToTemplate {...page.block3howto} />
     <LineSeparator />
     <Footer />

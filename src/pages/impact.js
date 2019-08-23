@@ -15,7 +15,7 @@ import heroImage from '../assets/impactPage/hero.jpg';
 const heroContent = {
   title: 'Impact',
   // eslint-disable-next-line max-len
-  subtitle: 'Provide 25% of nonprofits with open-source projects in the US access to top quality tech and sustainable support by 2022',
+  subtitle: 'By 2022, Ovio will ensure that 25% of NPOs with open-source projects in USA get access to volunteer top quality tech and sustainable support.',
   backgroundImage: heroImage,
 };
 

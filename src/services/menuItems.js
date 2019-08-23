@@ -5,7 +5,7 @@ const completeMenu = [
     label: 'About',
     link: getPageUrl('AboutPage'),
     subMenu: [
-      { label: 'Our Story', link: getPageUrl('HomePage') },
+      { label: 'Our Story', link: getPageUrl('AboutPage') },
       { label: 'Our Impact', link: getPageUrl('ImpactPage') },
     ],
   },
@@ -30,7 +30,7 @@ const completeMenu = [
     label: 'Ressources',
     link: getPageUrl('HomePage'),
     subMenu: [
-      { label: 'Press', link: getPageUrl('HomePage') },
+      // { label: 'Press', link: getPageUrl('HomePage') },
       { label: 'Blog', link: getPageUrl('HomePage') },
     ],
   },
@@ -38,7 +38,7 @@ const completeMenu = [
     label: 'Contact',
     link: getPageUrl('ContactUsPage'),
     subMenu: [
-      { label: 'hello@oviohub.com', href: 'mailto:hello@oviohub.com' },
+      { label: 'hello@ovio.org', href: 'mailto:hello@ovio.org' },
       { label: '+1 650 283-9210' },
     ],
   },
@@ -48,6 +48,6 @@ const completeMenu = [
   },
 ];
 
-export const menuItems = completeMenu.filter(item => item.label !== 'Ressources');
+export const menuItems = completeMenu.filter(item => !['Ressources', 'Featured'].includes(item.label));
 
 export const footerMenu = completeMenu.filter(item => !['Featured', 'Impact', 'Blog'].includes(item.label));

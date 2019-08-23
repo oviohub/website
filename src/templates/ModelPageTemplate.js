@@ -6,7 +6,7 @@ import Layout from '../components/layouts/Layout';
 import MenuBar from '../components/MenuBar';
 import Hero from '../components/Hero';
 import BlockIntroTemplate from '../components/models/BlockIntroTemplate';
-import BlockFeedbackTemplate from '../components/models/BlockFeedbackTemplate';
+// import BlockFeedbackTemplate from '../components/models/BlockFeedbackTemplate';
 import BlockStudentBanner from '../components/models/BlockStudentBanner';
 import BlockHowToTemplate from '../components/models/BlockHowToTemplate';
 import LineSeparator from '../components/ui-library/LineSeparator';
@@ -19,7 +19,7 @@ const ModelPageTemplate = ({
       hero: { backgroundImage: { publicURL: backgroundImageURL }, ...hero },
       withStudentBanner,
       block1intro,
-      block2feedback,
+      // block2feedback,
       block3howto,
     },
   },
@@ -28,7 +28,7 @@ const ModelPageTemplate = ({
     <MenuBar />
     <Hero {...hero} backgroundImage={backgroundImageURL} />
     <BlockIntroTemplate {...block1intro} />
-    <BlockFeedbackTemplate comments={block2feedback} />
+    {/* <BlockFeedbackTemplate comments={block2feedback} /> */}
     {withStudentBanner && <BlockStudentBanner />}
     <BlockHowToTemplate {...block3howto} />
     <LineSeparator />
