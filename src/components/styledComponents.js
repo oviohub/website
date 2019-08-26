@@ -152,13 +152,15 @@ export const defaultTheme = createMuiTheme({
         padding: '8px 0px 8px 12px',
       },
     },
+    MuiPaper: {
+      root: {
+        overflow: 'hidden',
+      },
+    },
     MuiMenuItem: {
       root: {
         width: '100%',
-        '&:hover': {
-          backgroundColor: colors.lightOrange,
-          borderRadius: '4px',
-        },
+        '&:hover': { backgroundColor: colors.lightOrange },
       },
     },
   },

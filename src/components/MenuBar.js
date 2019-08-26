@@ -23,7 +23,7 @@ import logoOrange from '../assets/logo/logo.orange.svg';
 import menuIconDarkBlue from '../assets/icons/icon.menu.darkBlue.png';
 import menuIconWhite from '../assets/icons/icon.menu.white.png';
 import { getPageUrl } from '../Routes';
-import { spacing, contentWidthPixels, colors, stylesBase } from './styledComponents';
+import { fontSizing, spacing, contentWidthPixels, colors, stylesBase } from './styledComponents';
 
 const { muiIconLogo } = stylesBase;
 const useStyles = makeStyles(theme => ({
@@ -79,6 +79,13 @@ const useStyles = makeStyles(theme => ({
     },
   }),
   menuItem: { margin: `0px ${spacing(2)}` },
+  subMenuList: { marginLeft: spacing(4) },
+  subMenuItem: {
+    marginRight: spacing(2),
+    fontSize: fontSizing(2),
+    minHeight: '30px',
+  },
+
 }));
 
 const MenuBar = ({ homeVersion }) => {
@@ -93,6 +100,8 @@ const MenuBar = ({ homeVersion }) => {
     links,
     logoCaution,
     menuItem,
+    subMenuList,
+    subMenuItem,
   } = useStyles({ homeVersion });
   const [open, setOpen] = React.useState(false);
   const anchorRef = React.useRef(null);
@@ -130,6 +139,7 @@ const MenuBar = ({ homeVersion }) => {
               (label === 'Model') ? (
                 <DropMenu
                   key={label}
+                  homeVersion={homeVersion}
                   buttonLabel={label}
                   buttonLink={link}
                   color={homeVersion ? 'primary' : 'secondary'}
@@ -164,10 +174,25 @@ const MenuBar = ({ homeVersion }) => {
                   <Paper id="menu-list-grow">
                     <ClickAwayListener onClickAway={handleClose}>
                       <MenuList>
-                        {menuItems.map(({ label, link }) => (
-                          <Link className={links} key={label} to={link}>
-                            <MenuItem className={menuItem}>{label}</MenuItem>
-                          </Link>
+                        {menuItems.map(({ label, link, subMenu }) => (
+                          (label === 'Model') ? (
+                            <React.Fragment key={label}>
+                              <Link className={links} to={link}>
+                                <MenuItem className={menuItem}>{label}</MenuItem>
+                              </Link>
+                              <MenuList className={subMenuList} disablePadding>
+                                {subMenu.map(({ label: subMenuLabel, link: subMenuLink }) => (
+                                  <Link className={links} key={subMenuLabel} to={subMenuLink}>
+                                    <MenuItem className={subMenuItem}>{subMenuLabel}</MenuItem>
+                                  </Link>
+                                ))}
+                              </MenuList>
+                            </React.Fragment>
+                          ) : (
+                            <Link className={links} key={label} to={link}>
+                              <MenuItem className={menuItem}>{label}</MenuItem>
+                            </Link>
+                          )
                         ))}
                       </MenuList>
                     </ClickAwayListener>
