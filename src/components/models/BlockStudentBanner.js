@@ -1,11 +1,10 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import { Link } from 'gatsby';
 
 import { Grid, Typography, Button } from '@material-ui/core';
-import withWidth, { isWidthDown } from '@material-ui/core/withWidth';
+import { isWidthDown } from '@material-ui/core/withWidth';
 import { makeStyles } from '@material-ui/styles';
-import { stylesBase, spacing } from '../styledComponents';
+import { stylesBase, spacing, useWidth } from '../styledComponents';
 import { getPageUrl } from '../../Routes';
 
 const { muiGridBlockContainer, muiGridTagsContainer } = stylesBase;
@@ -24,7 +23,8 @@ const useStyles = makeStyles(theme => ({
   },
 }));
 
-const BlockStudentBanner = ({ width }) => {
+const BlockStudentBanner = () => {
+  const width = useWidth();
   // eslint-disable-next-line no-shadow
   const { muiGridBlockContainer, muiGridTagsContainer, bannerContainer, textContainer } = useStyles();
   return (
@@ -52,8 +52,4 @@ const BlockStudentBanner = ({ width }) => {
   );
 };
 
-BlockStudentBanner.propTypes = {
-  width: PropTypes.string.isRequired,
-};
-
-export default withWidth()(BlockStudentBanner);
+export default BlockStudentBanner;

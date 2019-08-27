@@ -1,10 +1,9 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import { Grid, Typography } from '@material-ui/core';
-import withWidth, { isWidthDown } from '@material-ui/core/withWidth';
+import isWidthDown from '@material-ui/core/withWidth';
 import { makeStyles } from '@material-ui/styles';
 
-import { spacing, stylesBase } from '../styledComponents';
+import { spacing, stylesBase, useWidth } from '../styledComponents';
 
 import orangeMark from '../../assets/aboutPage/ourValues.jpg';
 import itemImg1 from '../../assets/aboutPage/ourValuesItem.1.png';
@@ -58,7 +57,8 @@ const useStyles = makeStyles(theme => ({
   },
 }));
 
-const OurValuesBlock = ({ width }) => {
+const OurValuesBlock = () => {
+  const width = useWidth();
   const {
     // eslint-disable-next-line no-shadow
     muiGridBlockContainer,
@@ -104,8 +104,4 @@ const OurValuesBlock = ({ width }) => {
   );
 };
 
-OurValuesBlock.propTypes = {
-  width: PropTypes.string.isRequired,
-};
-
-export default withWidth()(OurValuesBlock);
+export default OurValuesBlock;

@@ -1,4 +1,4 @@
-import { createMuiTheme, Grid } from '@material-ui/core';
+import { createMuiTheme, Grid, useMediaQuery } from '@material-ui/core';
 import { styled } from '@material-ui/styles';
 import metricMark from '../assets/impactPage/metricMark.svg';
 
@@ -215,6 +215,16 @@ export const stylesBase = {
     borderRadius: '40px',
     boxShadow: 'inset 0 2px 4px 0 rgba(0,0,0,0.1)',
   },
+};
+
+export const useWidth = () => {
+  const keys = [...defaultTheme.breakpoints.keys].reverse();
+  return (
+    keys.reduce((output, key) => {
+      const matches = useMediaQuery(theme.breakpoints.up(key));
+      return !output && matches ? key : output;
+    }, null) || 'xs'
+  );
 };
 
 // Shapes

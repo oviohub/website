@@ -1,10 +1,9 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import { Link } from 'gatsby';
-import { Grid, Typography, Button, withWidth } from '@material-ui/core';
+import { Grid, Typography, Button } from '@material-ui/core';
 import { makeStyles } from '@material-ui/styles';
 
-import { stylesBase, menuHeightOffset } from '../styledComponents';
+import { useWidth, stylesBase, menuHeightOffset } from '../styledComponents';
 import ScrollArrow from '../ui-library/ScrollArrow';
 import heroImage from '../../assets/homePage/heroImage.jpg';
 import { getPageUrl } from '../../Routes';
@@ -43,7 +42,8 @@ const useStyles = makeStyles(theme => ({
   },
 }));
 
-const Hero = ({ width }) => {
+const Hero = () => {
+  const width = useWidth();
   const {
     // eslint-disable-next-line no-shadow
     muiButtonWhiteBackground,
@@ -92,8 +92,4 @@ const Hero = ({ width }) => {
   );
 };
 
-Hero.propTypes = {
-  width: PropTypes.string.isRequired,
-};
-
-export default withWidth()(Hero);
+export default Hero;

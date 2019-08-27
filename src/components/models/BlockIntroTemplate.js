@@ -2,9 +2,9 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import { Grid, Typography, Button } from '@material-ui/core';
-import withWidth, { isWidthDown } from '@material-ui/core/withWidth';
+import { isWidthDown } from '@material-ui/core/withWidth';
 import { makeStyles } from '@material-ui/styles';
-import { contentWidthPixels, fontSizing, spacing, colors, stylesBase } from '../styledComponents';
+import { contentWidthPixels, fontSizing, spacing, colors, stylesBase, useWidth } from '../styledComponents';
 import { toFormattedText } from '../../services/formatting';
 
 const { muiGridBlockContainer, muiGridFullScreenWithBackground } = stylesBase;
@@ -61,8 +61,8 @@ const BlockIntroTemplate = ({
   isMarkOnLeft,
   items,
   iconVersion,
-  width,
 }) => {
+  const width = useWidth();
   const {
     // eslint-disable-next-line no-shadow
     muiGridBlockContainer,
@@ -135,7 +135,6 @@ BlockIntroTemplate.propTypes = {
     }),
   })).isRequired,
   iconVersion: PropTypes.bool,
-  width: PropTypes.string.isRequired,
 };
 
 BlockIntroTemplate.defaultProps = {
@@ -144,4 +143,4 @@ BlockIntroTemplate.defaultProps = {
   iconVersion: false,
 };
 
-export default withWidth()(BlockIntroTemplate);
+export default BlockIntroTemplate;

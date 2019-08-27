@@ -2,9 +2,9 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import { Grid, Typography, Button } from '@material-ui/core';
-import withWidth, { isWidthDown } from '@material-ui/core/withWidth';
+import { isWidthDown } from '@material-ui/core/withWidth';
 import { makeStyles } from '@material-ui/styles';
-import { spacing, stylesBase } from '../styledComponents';
+import { spacing, stylesBase, useWidth } from '../styledComponents';
 import { toFormattedTaggedText } from '../../services/formatting';
 import iconGithub from '../../assets/icons/icon.github.white.svg';
 
@@ -52,9 +52,9 @@ const BlockHowToTemplate = ({
   taggedTextVersion,
   markImage,
   processItems,
-  width,
   button: blockButton,
 }) => {
+  const width = useWidth();
   const {
     // eslint-disable-next-line no-shadow
     muiGridBlockContainer,
@@ -150,7 +150,6 @@ BlockHowToTemplate.propTypes = {
     text: PropTypes.string.isRequired,
     link: PropTypes.string.isRequired,
   }),
-  width: PropTypes.string.isRequired,
 };
 
-export default withWidth()(BlockHowToTemplate);
+export default BlockHowToTemplate;

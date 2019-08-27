@@ -1,10 +1,9 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import { Grid, Typography } from '@material-ui/core';
-import withWidth, { isWidthDown } from '@material-ui/core/withWidth';
+import { isWidthDown } from '@material-ui/core/withWidth';
 import { makeStyles } from '@material-ui/styles';
 
-import { spacing, fontSizing, stylesBase } from '../styledComponents';
+import { spacing, fontSizing, stylesBase, useWidth } from '../styledComponents';
 import illustration from '../../assets/impactPage/illustration.jpg';
 
 const contributions = [
@@ -76,7 +75,8 @@ const useStyles = makeStyles(theme => ({
   }),
 }));
 
-const OurContributions = ({ width }) => {
+const OurContributions = () => {
+  const width = useWidth();
   // eslint-disable-next-line no-shadow
   const { muiGridBlockContainer, illustrationStyle, textsContainer, textContainer, title2, caption } = useStyles();
   return (
@@ -110,8 +110,4 @@ const OurContributions = ({ width }) => {
   );
 };
 
-OurContributions.propTypes = {
-  width: PropTypes.string.isRequired,
-};
-
-export default withWidth()(OurContributions);
+export default OurContributions;

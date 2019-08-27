@@ -1,9 +1,8 @@
 import React from 'react';
-import PropTypes from 'prop-types';
-import { Grid, Typography, withWidth } from '@material-ui/core';
+import { Grid, Typography } from '@material-ui/core';
 import { makeStyles } from '@material-ui/styles';
 
-import { colors, spacing, fontSizing, stylesBase } from '../styledComponents';
+import { colors, spacing, fontSizing, stylesBase, useWidth } from '../styledComponents';
 import { toFormattedText } from '../../services/formatting';
 
 import markImage from '../../assets/impactPage/mark.jpg';
@@ -194,7 +193,8 @@ const useStyles = makeStyles(theme => ({
   },
 }));
 
-const SDGBlock = ({ width }) => {
+const SDGBlock = () => {
+  const width = useWidth();
   const {
     // eslint-disable-next-line no-shadow
     muiGridBlockContainer,
@@ -249,8 +249,4 @@ const SDGBlock = ({ width }) => {
   );
 };
 
-SDGBlock.propTypes = {
-  width: PropTypes.string.isRequired,
-};
-
-export default withWidth()(SDGBlock);
+export default SDGBlock;
