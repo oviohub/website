@@ -20,22 +20,22 @@ const items = [
     image: itemImg1,
   },
   {
-    title: 'Playful Professionalism',
-    content: `What is better than having fun while changing the world? We value adventures, challenges,
-      and happiness to solve social challenges.`,
-    image: itemImg2,
-  },
-  {
     title: 'Collaboration',
     content: `We value teamwork and collective actions. Our success is driven by our ability to build
       connections across the world and between sectors, break silos and foster exchange of competencies.`,
-    image: itemImg3,
+    image: itemImg2,
   },
   {
     title: 'Inspire Change',
     content: `We embrace positive change and continuously work to improve the lives of others whether
       it’s harnessing market forces for social good, inspiring purposeful goals for people or helping
       civil agents work together.`,
+    image: itemImg3,
+  },
+  {
+    title: 'Fun',
+    content: `What is better than having fun while changing the world? We value adventures, challenges,
+      and happiness to solve social challenges.`,
     image: itemImg4,
   },
 ];
@@ -50,6 +50,7 @@ const useStyles = makeStyles(theme => ({
     textAlign: 'center',
     [theme.breakpoints.down('sm')]: { marginBottom: spacing(2) },
   },
+  icon: { width: '80px' },
   itemTextContainer: { marginBottom: spacing(6) },
   title4: { marginBottom: spacing(1) },
   imageComponent: {
@@ -67,6 +68,7 @@ const OurValuesBlock = ({ width }) => {
     container,
     title2,
     itemIconContainer,
+    icon,
     itemTextContainer,
     imageComponent,
     title4,
@@ -90,7 +92,7 @@ const OurValuesBlock = ({ width }) => {
             alignItems={isWidthDown('sm', width) ? 'center' : 'flex-start'}
           >
             <Grid item xs={10} md={2} className={itemIconContainer} container>
-              <img src={image} alt={title} />
+              <img className={icon} src={image} alt={title} />
             </Grid>
             <Grid item xs={10} size="2" className={itemTextContainer}>
               <Typography variant="h4" className={title4}>{title}</Typography>
