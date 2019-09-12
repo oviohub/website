@@ -8,7 +8,7 @@
       "subSubtitle": "Connect to impactful projects changing the world in a myriad of ways. \nUse your technical experience and do good at the same time. You will develop new technical and leadership skills while significantly helping social impact projects.",
       "backgroundImage": "images/modelPage/volunteers.hero.jpg"
     },
-    "withStudentBanner": true, 
+    "withStudentBanner": true,
     "block1intro": {
       "title": "Our software allows you to focus on what's most important: doing good.",
       "markImage": "images/modelPage/volunteers.intro.mark.png",
@@ -99,7 +99,7 @@
           "image": "images/modelPage/volunteers.howTo.fillProfil.png"
         },
         {
-          "text": "Ovio proactively will be looking for the best opportunities to have an impact with your amazing skills. <tag>mentoring<tag> <tag>project-based<tag> <tag>task-based<tag>",
+          "text": "Ovio proactively will be looking for the best opportunities to have an impact with your amazing skills. <Tag>mentoring<Tag> <Tag>project-based<Tag> <Tag>task-based<Tag>",
           "image": "images/modelPage/volunteers.howTo.matching.png"
         }
       ]

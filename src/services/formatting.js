@@ -8,24 +8,24 @@ import { Tag } from '../components/styledComponents';
  * for "Hello world"
  */
 export function toFormattedText(text) {
-  const splitedText = text.split('\n');
-  return splitedText.map((line, index) => (
+  const splitText = text.split('\n');
+  return splitText.map((line, index) => (
     // eslint-disable-next-line react/no-array-index-key
     <span key={`${line}${index}`}>
       {line}
-      {splitedText.length - 1 !== index && <br />}
+      {splitText.length - 1 !== index && <br />}
     </span>
   ));
 }
 
 /*
  * return <Tag>toFormattedText(Hello world)</Tag>
- * for <tag>Hello world<tag>
+ * for <Tag>Hello world<Tag>
  */
 export function toFormattedTaggedText(text) {
-  const splitedText = text.split('<tag>').filter(line => line !== '');
-  const inTextBeginning = text.indexOf('<tag>') ? 1 : 0;
-  return splitedText.map((line, index) => {
+  const splitText = text.split('<Tag>').filter(line => line !== '');
+  const inTextBeginning = text.indexOf('<Tag>') ? 1 : 0;
+  return splitText.map((line, index) => {
     if (index % 2 === inTextBeginning) {
       return (
         // eslint-disable-next-line react/no-array-index-key
