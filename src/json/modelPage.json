@@ -5,7 +5,7 @@
     "hero": {
       "title": "Volunteers",
       "subtitle": "More Flexibility, More Gains, More Impact.",
-      "subSubtitle": "Connect to impactful projects changing the world in a myriad of ways. \nUse your technical experience and do good at the same time. You will develop new technical and leadership skills while significantly helping social impact projects.",
+      "subSubtitle": "Connect to impactful projects changing the world in a myriad of ways. <br />Use your technical experience and do good at the same time. You will develop new technical and leadership skills while significantly helping social impact projects.",
       "backgroundImage": "images/modelPage/volunteers.hero.jpg"
     },
     "withStudentBanner": true,
@@ -15,17 +15,17 @@
       "items": [
         {
           "title": "Ease of Use",
-          "paragraph": "We have designed a seamless approach to make researching and starting projects a straightforward and rewarding experience. \nAs a volunteer, you’re able to give your time and skills on your own schedule.",
+          "paragraph": "We have designed a seamless approach to make researching and starting projects a straightforward and rewarding experience. <br />As a volunteer, you’re able to give your time and skills on your own schedule.",
           "image": "images/modelPage/volunteers.intro.1.jpg"
         },
         {
           "title": "Centralization",
-          "paragraph": "We care about quality over quantity, ensuring you are perfectly matched to projects and social organizations that fits not only your skills but your interests. \nConsider Ovio as a   shop for skill-based volunteering from a 10-minutes code review to long-term involvement.",
+          "paragraph": "We care about quality over quantity, ensuring you are perfectly matched to projects and social organizations that fits not only your skills but your interests. <br />Consider Ovio as a   shop for skill-based volunteering from a 10-minutes code review to long-term involvement.",
           "image": "images/modelPage/volunteers.intro.2.jpg"
         },
         {
           "title": "Personalization",
-          "paragraph": "Over time, our software gets to know you and will continuously improve finding the best match for you. \nYou’ll be able to volunteers alongside other talented developers from around the world.",
+          "paragraph": "Over time, our software gets to know you and will continuously improve finding the best match for you. <br />You’ll be able to volunteers alongside other talented developers from around the world.",
           "image": "images/modelPage/volunteers.intro.3.jpg"
         }
       ]
@@ -99,7 +99,7 @@
           "image": "images/modelPage/volunteers.howTo.fillProfil.png"
         },
         {
-          "text": "Ovio proactively will be looking for the best opportunities to have an impact with your amazing skills. <Tag>mentoring<Tag> <Tag>project-based<Tag> <Tag>task-based<Tag>",
+          "text": "Ovio proactively will be looking for the best opportunities to have an impact with your amazing skills. <Tag>mentoring</Tag> <Tag>project-based</Tag> <Tag>task-based</Tag>",
           "image": "images/modelPage/volunteers.howTo.matching.png"
         }
       ]
@@ -135,7 +135,7 @@
         },
         {
           "title": "Attract volunteers",
-          "paragraph": "Access a pool of talented volunteers and engage them on your project. \nThey are vetted to match your projects and issue areas with their skills and interests.",
+          "paragraph": "Access a pool of talented volunteers and engage them on your project. <br />They are vetted to match your projects and issue areas with their skills and interests.",
           "image": "images/modelPage/socialImpact.intro.3.jpg"
         }
       ]

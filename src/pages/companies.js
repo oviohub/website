@@ -33,17 +33,14 @@ const page = {
     items: [
       {
         title: 'Variety',
-        paragraph: `Ovio accumulates a large portfolio of software development projects (200+) to include every type of
-          engineering skill set and interest in the social impact sector. \nWe curate and match your employees to
-          opportunities they'll resonate with. Over time, our software gets to know your employees and will continuously
-          improve finding the best match for.`,
+        // eslint-disable-next-line max-len
+        paragraph: 'Ovio accumulates a large portfolio of software development projects (200+) to include every type of engineering skill set and interest in the social impact sector. <br />We curate and match your employees to opportunities they\'ll resonate with. Over time, our software gets to know your employees and will continuously improve finding the best match for.',
         image: { publicURL: introImg1 },
       },
       {
         title: 'Scalable',
-        paragraph: `Deploy a scalable social impact program for your company. Our software allows you to focus on what
-          matters most: engaging your employees without the burden of creating connections manually. Explore allows you
-          to quickly manage robust global volunteer opportunities all year long and right away.`,
+        // eslint-disable-next-line max-len
+        paragraph: 'Deploy a scalable social impact program for your company. Our software allows you to focus on what matters most: engaging your employees without the burden of creating connections manually. Explore allows you to quickly manage robust global volunteer opportunities all year long and right away.',
         image: { publicURL: introImg2 },
       },
     ],
@@ -53,16 +50,14 @@ const page = {
     items: [
       {
         title: 'Micro-volunteering',
-        paragraph: `Streamline employee engagement programs with a task-based approach. Explore makes skill-based
-          volunteering a frictionless experience and impact reporting easily accessible by automating employee
-          engagement tracking.`,
+        // eslint-disable-next-line max-len
+        paragraph: 'Streamline employee engagement programs with a task-based approach. Explore makes skill-based volunteering a frictionless experience and impact reporting easily accessible by automating employee engagement tracking.',
         image: { publicURL: introImg3 },
       },
       {
         title: 'Rewarding',
-        paragraph: `Sponsor vetted projects on Explore and develop your branding material. By sponsoring projects,
-          you can showcase your philanthropic work, engage your brand and create team building experiences to enhance
-          your company culture.\nExplore rewards your company efforts and facilitate rewarding employees engagement.`,
+        // eslint-disable-next-line max-len
+        paragraph: 'Sponsor vetted projects on Explore and develop your branding material. By sponsoring projects, you can showcase your philanthropic work, engage your brand and create team building experiences to enhance your company culture.<br />Explore rewards your company efforts and facilitate rewarding employees engagement.',
         image: { publicURL: introImg4 },
       },
     ],

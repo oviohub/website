@@ -10,7 +10,7 @@ import heroImage from '../assets/contactUsPage/hero.jpg';
 
 const heroContent = {
   title: 'Contact us',
-  subtitle: 'info@oviohub.com \n\n+650 283 9210 \n\nSan Francisco, California',
+  subtitle: 'info@oviohub.com <br /><br />+650 283 9210 <br /><br />San Francisco, California',
   backgroundImage: heroImage,
 };
 

@@ -1,11 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-
+import JsxParser from 'react-jsx-parser';
 import { Grid, Typography } from '@material-ui/core';
 import withWidth, { isWidthDown } from '@material-ui/core/withWidth';
 import { makeStyles } from '@material-ui/styles';
 import { contentWidthPixels, fontSizing, spacing, colors, stylesBase } from '../styledComponents';
-import { toFormattedText } from '../../services/formatting';
 
 const { muiGridBlockContainer, muiGridFullScreenWithBackground } = stylesBase;
 const useStyles = makeStyles(theme => ({
@@ -89,7 +88,9 @@ const BlockIntroTemplate = ({
             >
               <Grid className={textContainer} item sm={6} md={5}>
                 <Typography className={title3} variant="h3" color="textSecondary">{itemTitle}</Typography>
-                <Typography variant="body2">{toFormattedText(paragraph)}</Typography>
+                <Typography variant="body2">
+                  <JsxParser renderInWrapper={false} jsx={paragraph} />
+                </Typography>
               </Grid>
               <Grid container item sm={6} md={5} justify="center">
                 <img className={image} src={imageURL} alt={itemTitle} />

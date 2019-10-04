@@ -1,11 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-
+import JsxParser from 'react-jsx-parser';
 import { Grid, Typography, Button } from '@material-ui/core';
 import withWidth, { isWidthDown } from '@material-ui/core/withWidth';
 import { makeStyles } from '@material-ui/styles';
-import { spacing, stylesBase } from '../styledComponents';
-import { toFormattedTaggedText } from '../../services/formatting';
+import { spacing, stylesBase, Tag } from '../styledComponents';
 import iconGithub from '../../assets/icons/icon.github.white.svg';
 
 const { muiGridBlockContainer } = stylesBase;
@@ -96,7 +95,7 @@ const BlockHowToTemplate = ({ title: blockTitle, subtitle, markImage, processIte
                   xs={isWidthDown('xs', width) ? xs : false}
                 >
                   <Typography className={useStyles({ withMarginBotton: btnLink }).blockBody} variant="body2">
-                    {toFormattedTaggedText(text)}
+                    <JsxParser renderInWrapper={false} components={{ Tag }} jsx={text} />
                   </Typography>
                   {btnLink && (
                     <a href={btnLink} className={buttonLink} target="_blank" rel="noreferrer noopener">
