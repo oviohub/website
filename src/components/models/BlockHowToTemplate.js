@@ -4,6 +4,7 @@ import JsxParser from 'react-jsx-parser';
 import { Grid, Typography, Button } from '@material-ui/core';
 import withWidth, { isWidthDown } from '@material-ui/core/withWidth';
 import { makeStyles } from '@material-ui/styles';
+
 import { spacing, stylesBase, Tag } from '../styledComponents';
 import iconGithub from '../../assets/icons/icon.github.white.svg';
 
