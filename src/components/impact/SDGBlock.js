@@ -1,10 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import JsxParser from 'react-jsx-parser';
 import { Grid, Typography, withWidth } from '@material-ui/core';
 import { makeStyles } from '@material-ui/styles';
 
 import { colors, spacing, fontSizing, stylesBase } from '../styledComponents';
-import { toFormattedText } from '../../services/formatting';
 
 import markImage from '../../assets/impactPage/mark.jpg';
 import img1 from '../../assets/impactPage/poverty.png';
@@ -39,63 +39,63 @@ const sdgs = [
     color: '#DDA63A',
   },
   {
-    title: 'Good Health\n& Well-being',
+    title: 'Good Health<br />& Well-being',
     image: img3,
     textOnOver: 'Ensure healthy lives and promote well-being for all at all ages',
     color: '#4C9F38',
   },
   {
-    title: 'Quality\nEducation',
+    title: 'Quality<br />Education',
     image: img4,
     textOnOver: 'Ensure inclusive and equitable quality education and promote lifelong learning opportunities for all',
     color: '#C5192D',
   },
   {
-    title: 'Gender\nEquality',
+    title: 'Gender<br />Equality',
     image: img5,
     textOnOver: 'Achieve gender equality and empower all women and girls',
     color: '#FF3A21',
   },
   {
-    title: 'Clean Water\n& Sanitation',
+    title: 'Clean Water<br />& Sanitation',
     image: img6,
     textOnOver: 'Ensure availability and sustainable management of water and sanitation for all',
     color: '#26BDE2',
   },
   {
-    title: 'Affordable &\nClean Energy',
+    title: 'Affordable &<br />Clean Energy',
     image: img7,
     textOnOver: 'Ensure access to affordable, reliable, sustainable and modern energy for all',
     color: '#FCC30B',
   },
   {
-    title: 'Decent Work &\nEconomic Growth',
+    title: 'Decent Work &<br />Economic Growth',
     image: img8,
     // eslint-disable-next-line max-len
     textOnOver: 'Promote sustained, inclusive and sustainable economic growth, full and productive employment and decent work for all',
     color: '#A21942',
   },
   {
-    title: 'Industry, Innovation\n& Infrastructure',
+    title: 'Industry, Innovation<br />& Infrastructure',
     image: img9,
     // eslint-disable-next-line max-len
     textOnOver: 'Build resilient infrastructure, promote inclusive and sustainable industrialization and foster innovation',
     color: '#FD6925',
   },
   {
-    title: 'Reduced\nInequalities',
+    title: 'Reduced<br />Inequalities',
     image: img10,
     textOnOver: 'Reduce inequality within and among countries',
     color: '#DD1367',
   },
   {
-    title: 'Sustainable Cities\n& Communities',
+    title: 'Sustainable Cities<br />& Communities',
     image: img11,
     textOnOver: 'Make cities and human settlements inclusive, safe, resilient and sustainable',
     color: '#FD9D24',
   },
   {
-    title: 'Responsible\nConsuption &\nProduction',
+    title: 'Responsible<br />Consuption &<br />Production',
     image: img12,
     textOnOver: 'Ensure sustainable consumption and production patterns',
     color: '#BF8B2E',
@@ -107,7 +107,7 @@ const sdgs = [
     color: '#3F7E44',
   },
   {
-    title: 'Life Below\nWater',
+    title: 'Life Below<br />Water',
     image: img14,
     textOnOver: 'Conserve and sustainably use the oceans, seas and marine resources for sustainable development',
     color: '#0A97D9',
@@ -120,14 +120,14 @@ const sdgs = [
     color: '#56C02B',
   },
   {
-    title: 'Peace, Justice &\nStrong Institutions',
+    title: 'Peace, Justice &<br />Strong Institutions',
     image: img16,
     // eslint-disable-next-line max-len
     textOnOver: 'Promote peaceful and inclusive societies for sustainable development, provide access to justice for all and build effective, accountable and inclusive institutions at all levels',
     color: '#00689D',
   },
   {
-    title: 'Partmerships\nFor The Goals',
+    title: 'Partmerships<br />For The Goals',
     image: img17,
     // eslint-disable-next-line max-len
     textOnOver: 'Strengthen the means of implementation and revitalize the global partnership for sustainable development',
@@ -232,7 +232,9 @@ const SDGBlock = ({ width }) => {
               alignItems="center"
               justify="space-between"
             >
-              <Typography className={h4} variant="h4" color="primary">{toFormattedText(title)}</Typography>
+              <Typography className={h4} variant="h4" color="primary">
+                <JsxParser renderInWrapper={false} jsx={title} />
+              </Typography>
               <img className={imgComponent} src={image} alt={title} />
             </Grid>
             <Grid className={`${cardOnHoverDisplay} onHoverDisplay`}>

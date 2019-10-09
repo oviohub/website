@@ -1,10 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-
+import JsxParser from 'react-jsx-parser';
 import { Grid, Typography } from '@material-ui/core';
 import { makeStyles } from '@material-ui/styles';
 import { menuHeightOffset, spacing, stylesBase } from './styledComponents';
-import { toFormattedText } from '../services/formatting';
 
 const { muiGridFullScreen } = stylesBase;
 const useStyles = makeStyles({
@@ -31,10 +30,12 @@ const Hero = ({ title, subtitle, subSubtitle, backgroundImage }) => {
         <Grid className={`${muiGridFullScreen} ${heroContainer}`} container item justify="center" alignItems="center">
           <Grid container item direction="column" justify="center" alignItems="center" xs={10} sm={8}>
             <Typography variant="h1">{title}</Typography>
-            <Typography variant="subtitle1">{toFormattedText(subtitle)}</Typography>
+            <Typography variant="subtitle1">
+              <JsxParser renderInWrapper={false} jsx={subtitle} />
+            </Typography>
             {subSubtitle && (
               <Typography className={subsubtitle1} variant="body2" color="primary">
-                {toFormattedText(subSubtitle)}
+                <JsxParser renderInWrapper={false} jsx={subSubtitle} />
               </Typography>
             )}
           </Grid>
