@@ -1,36 +1,33 @@
 const modelPage = require('./json/modelPage.json');
 
-/* eslint-disable max-len */
-const routes = {
+export const routes = {
+  NotFound: {
+    url: '/404/',
+    component: 'src/pages/404.js',
+  },
   HomePage: {
     url: '/',
     component: 'src/pages/index.js',
-    seo: { title: 'Home', description: '' },
   },
   AboutPage: {
-    url: '/about',
+    url: '/about/',
     component: 'src/pages/about.js',
-    seo: { title: 'About', description: '' },
   },
   ModelPage: {
-    url: '/model',
+    url: '/model/',
     component: 'src/pages/model.js',
-    seo: { title: 'Our Model', description: '' },
   },
   CompaniesPage: {
-    url: '/companies',
+    url: '/companies/',
     component: 'src/pages/companies.js',
-    seo: { title: 'Companies', description: '' },
   },
   ContactUsPage: {
-    url: '/contact-us',
+    url: '/contact-us/',
     component: 'src/pages/contact-us.js',
-    seo: { title: 'Contact us', description: '' },
   },
   ImpactPage: {
-    url: '/impact',
+    url: '/impact/',
     component: 'src/pages/impact.js',
-    seo: { title: 'Impact', description: '' },
   },
 };
 
@@ -41,16 +38,5 @@ modelPage.forEach((page) => {
   };
 });
 
-function getPageUrl(routeId) {
-  return routes[routeId] && routes[routeId].url;
-}
-
-function getPageSeo(routeId) {
-  return routes[routeId] && routes[routeId].seo;
-}
-
-function getPageTitle(routeId) {
-  return routes[routeId] && routes[routeId].seo.title;
-}
-
-module.exports = { routes, getPageUrl, getPageSeo, getPageTitle };
+export const getPageUrl = routeId => routes[routeId] && routes[routeId].url;
+export const getPageSEO = routeId => routes[routeId] && (routes[routeId].seo || {});

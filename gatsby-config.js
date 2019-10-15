@@ -1,8 +1,16 @@
+const activeEnv = process.env.GATSBY_ACTIVE_ENV || process.env.NODE_ENV || 'development';
+
+require('dotenv').config({ path: `.env/env.${activeEnv}` });
+
 module.exports = {
   siteMetadata: {
-    title: 'Ovio',
-    description: 'Accelerate Change',
+    title: 'Ovio | Connecting Tech Minds and Impact Makers',
+    // eslint-disable-next-line max-len
+    description: 'Ovio revolutionizes skill-based volunteering for the tech industry by bringing together social impact organizations, passionate people, and companies to make tangible impact easy and rewarding for all.',
     author: 'Ovio',
+    url: process.env.REACT_WEBSITE_URL || 'https://ovio.org',
+    twitterId: '@OvioHub',
+    lang: 'en',
   },
   plugins: [
     {
@@ -30,6 +38,13 @@ module.exports = {
       resolve: 'gatsby-plugin-material-ui',
       options: {
         stylesProvider: { injectFirst: true },
+      },
+    },
+    {
+      resolve: 'gatsby-plugin-google-analytics',
+      options: {
+        trackingId: process.env.GA_TRACKING_ID,
+        head: true,
       },
     },
   ],

@@ -1,12 +1,19 @@
 body {
   margin: 0px;
   padding: 0px;
+  overflow-x: hidden;
 }
 
 /* Class definition */
 
 .onHoverDisplay {
+  height: 100%;
+  width: 100%;
   display: none;
+}
+.onHoverHide {
+  height: 100%;
+  width: 100%;
 }
 
 /* Roboto font */
