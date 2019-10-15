@@ -1,12 +1,16 @@
 [
   {
     "slug": "VolunteersPage",
-    "path": "/volunteers",
+    "path": "/volunteers/",
     "hero": {
       "title": "Volunteers",
-      "subtitle": "More Flexibility, More Gains, More Impact.",
-      "subSubtitle": "Connect to impactful projects changing the world in a myriad of ways. <br />Use your technical experience and do good at the same time. You will develop new technical and leadership skills while significantly helping social impact projects.",
-      "backgroundImage": "images/modelPage/volunteers.hero.jpg"
+      "subtitle": "More Flexibility. More Gains. More Impact.",
+      "subSubtitle": "Connect to impactful projects changing the world in a myriad of ways. <br />Use your technical experience and develop new technical and leadership skills while significantly helping social impact projects achieve their goals.",
+      "backgroundImage": "images/modelPage/volunteers.hero.jpg",
+      "button": {
+        "text": "Explore Projects",
+        "link": "https://explore.ovio.org"
+      }
     },
     "withStudentBanner": true,
     "block1intro": {
@@ -14,18 +18,18 @@
       "markImage": "images/modelPage/volunteers.intro.mark.png",
       "items": [
         {
-          "title": "Ease of Use",
-          "paragraph": "We have designed a seamless approach to make researching and starting projects a straightforward and rewarding experience. <br />As a volunteer, you’re able to give your time and skills on your own schedule.",
+          "title": "Ease-of-Use",
+          "paragraph": "We have designed a seamless experience to make researching and starting projects a straightforward and rewarding experience. <br />As a volunteer, you’re able to give your time and skills on your own schedule.",
           "image": "images/modelPage/volunteers.intro.1.jpg"
         },
         {
           "title": "Centralization",
-          "paragraph": "We care about quality over quantity, ensuring you are perfectly matched to projects and social organizations that fits not only your skills but your interests. <br />Consider Ovio as a   shop for skill-based volunteering from a 10-minutes code review to long-term involvement.",
+          "paragraph": "We care about quality over quantity, ensuring you are perfectly matched to projects and social organizations that fit not only your skills but your interests. <br />Consider Ovio as a   shop for skill-based volunteering from a 10-minutes code review to long-term involvement.",
           "image": "images/modelPage/volunteers.intro.2.jpg"
         },
         {
           "title": "Personalization",
-          "paragraph": "Over time, our software gets to know you and will continuously improve finding the best match for you. <br />You’ll be able to volunteers alongside other talented developers from around the world.",
+          "paragraph": "Over time, our software gets to know your interests, passions and skills, it will continuously improve finding the best match for you. <br />You’ll be able to volunteer alongside other talented developers from around the world.",
           "image": "images/modelPage/volunteers.intro.3.jpg"
         }
       ]
@@ -82,25 +86,34 @@
     ],
     "block3howto": {
       "title": "How to sign up?",
-      "subtitle": "Sound like Ovio is a place for you to give back?",
+      "subtitle": "Sounds like Ovio is a place for you to volunteer your skills?",
       "markImage": "images/modelPage/volunteers.howto.mark.jpg",
       "processItems": [
         {
-          "text": "Logging in with GitHub to Explore now and access 200+ open source projects.",
-          "button": {
-            "text": "Log in with GitHub",
-            "withGitHubIcon": true,
-            "link": "https://github.com/"
-          },
+          "title": "1. Visit",
+          "text": "Visit <ExternalLink href='https://explore.ovio.org'>Explore</ExternalLink> now and discover 200+ open-source projects",
+          "buttons": [
+            {
+              "text": "Explore Projects",
+              "link": "https://explore.ovio.org"
+            }
+          ],
           "image": "images/modelPage/volunteers.howTo.login.png"
         },
         {
-          "text": "Fill out your profile to get matched to more projects. ",
+          "title": "2. Log in",
+          "text": "Log in to personalize your experience",
           "image": "images/modelPage/volunteers.howTo.fillProfil.png"
         },
         {
-          "text": "Ovio proactively will be looking for the best opportunities to have an impact with your amazing skills. <Tag>mentoring</Tag> <Tag>project-based</Tag> <Tag>task-based</Tag>",
+          "title": "3. Add details",
+          "text": "Fill out your profile to get matched to more project opportunities such as <Tag>mentoring</Tag> <Tag>project-based</Tag> <Tag>task-based</Tag> <Tag>...</Tag>",
           "image": "images/modelPage/volunteers.howTo.matching.png"
+        },
+        {
+          "title": "4. Spread the word",
+          "text": "Share your experience with your community and beyond. Post details of your experience on social medias, talk with your friends, or ask your employer to sponsor your engagement.",
+          "image": "images/modelPage/socialImpact.howTo.submit.png"
         }
       ]
     },
@@ -115,28 +128,37 @@
     "path": "/social-impact/",
     "hero": {
       "title": "Social Impact Organizations",
-      "subtitle": "Better Help, Better Cooperation, Better Scales.",
-      "subSubtitle": "Are you leveraging technology and software to maximize your impact on the world? Do you need access to a pool of talented, technically skilled volunteers to develop or scale technology?",
-      "backgroundImage": "images/modelPage/socialImpact.hero.jpg"
+      "subtitle": "Better Help. Better Cooperation. Bigger Scale.",
+      "subSubtitle": "Are you a nonprofit, B-corp or other form of social good organization looking to maximize your impact in the world? Do you need access to a pool of talented, technically skilled volunteers to develop technology?",
+      "backgroundImage": "images/modelPage/socialImpact.hero.jpg",
+      "button": {
+        "text": "Get in Touch",
+        "link": "mailto:hello@ovio.org"
+      }
     },
     "block1intro": {
       "markImage": "images/modelPage/socialImpact.intro.mark.png",
       "isMarkOnLeft": true,
       "items": [
         {
-          "title": "Leverage Technology",
-          "paragraph": "Create maintainable code and lower development costs with our platform. We help you use and develop software more collaboratively, using open-source.",
+          "title": "Leverage open-source technology",
+          "paragraph": "Create maintainable code and lower development cost with Ovio. Working with multiple organizations, we have developed a strong expertise in open-source and how to leverage it in the social impact sector.",
           "image": "images/modelPage/socialImpact.intro.1.jpg"
         },
         {
           "title": "Showcase your impactful project",
-          "paragraph": "Expose your code and showcase your mission to a world-wide community of do-gooders.",
+          "paragraph": "Let's others know about your great work and showcase your mission to a world-wide community of do-gooders.",
           "image": "images/modelPage/socialImpact.intro.2.jpg"
         },
         {
           "title": "Attract volunteers",
-          "paragraph": "Access a pool of talented volunteers and engage them on your project. <br />They are vetted to match your projects and issue areas with their skills and interests.",
+          "paragraph": "Access a pool of talented volunteers and engage them on your project. <br />All volunteers are vetted to match your projects and issue areas with their skills and interests.",
           "image": "images/modelPage/socialImpact.intro.3.jpg"
+        },
+        {
+          "title": "Maintain Sustainable Solutions",
+          "paragraph": "By focusing on open-source, we can transform micro-volunteering into long-term impact. We know it's a challenge to ensure a continuous and sustainable volunteering effort within your organization. Access a large pool of talents that will keep your project up to date one task at the time.",
+          "image": "images/modelPage/socialImpact.intro.4.jpg"
         }
       ]
     },
@@ -192,28 +214,100 @@
     ],
     "block3howto": {
       "title": "How to apply?",
-      "subtitle": "By focusing on coding, we transform micro-volunteering opportunities into long term impact.",
       "markImage": "images/modelPage/socialImpact.howto.mark.jpg",
       "processItems": [
         {
           "title": "Submit",
           "text": "Submit your project and get access to a pool of committed volunteers. We match your needs with volunteers’ talents and interests to ensure your project’s viability.",
-          "button": {
-            "text": "Submit",
-            "link": "https://www.google.com/"
-          },
+          "buttons": [
+            {
+              "text": "Submit",
+              "link": "https://airtable.com/shr2rIvDWOiDX9G10"
+            }
+          ],
           "image": "images/modelPage/socialImpact.howTo.submit.png"
         },
           {
-          "title": "Or request",
-          "text": "Send us an email and request our consulting services.",
-          "button": {
-            "text": "Compose an email",
-            "link": "https://www.google.com/"
-          },
+          "title": "Request",
+          "text": "Create more maintainable code and foster collaboration around your project while lowering development costs. Done right, open-source brings visibility, transparency and scalability to your project. Transform your solution into an actively collaborative and sustainable solution.",
+          "buttons": [
+            {
+              "text": "Compose an email",
+              "link": "mailto:hello@ovio.org"
+            }
+          ],
           "image": "images/modelPage/socialImpact.howTo.request.png"
         }
       ]
+    },
+    "seo": {
+      "title": "",
+      "description": ""
+    }
+  },
+
+  {
+    "slug": "StudentPage",
+    "path": "/student/",
+    "hero": {
+      "title": "Students & Universities",
+      "subtitle": "Develop your technical skills and do good at the same time!",
+      "subSubtitle": "Ovio connects students and faculties to amazing opportunities to give back, in local communities and internationally.",
+      "backgroundImage": "images/modelPage/volunteers.hero.jpg",
+      "button": {
+        "text": "Contact us",
+        "link": "mailto:hello@ovio.org"
+      }
+    },
+    "block1intro": {
+      "title": "We help student groups, CS classes, teachers and faculties accelerate tech for good on campus!",
+      "markImage": "images/modelPage/volunteers.intro.mark.png",
+      "items": [
+        {
+          "title": "Find the right project",
+          "paragraph": "Ovio accumulates a large portfolio of software development projects (250+) to include every type of engineering skills and interest in the social impact sector. We help you find local and international opportunities.",
+          "image": "images/modelPage/socialImpact.intro.1.jpg"
+        },
+        {
+          "title": "Develop your skills",
+          "paragraph": "Volunteer alongside other talented developers from around the world. Develop new skills or improve existing ones while collaborating on an impactful project.",
+          "image": "images/modelPage/volunteers.intro.1.jpg"
+        },
+        {
+          "title": "Showcase your work",
+          "paragraph": "Expose your code and showcase your work to a worldwide community of tech employers. Better your Github profile.",
+          "image": "images/modelPage/socialImpact.intro.2.jpg"
+        }
+      ]
+    },
+    "block2feedback": [
+      {
+        "author": "Sylvia Thornton",
+        "position": "Apple Inc.",
+        "text": "“This is the testimonal text, this is the testimonal text, this is the testimonal text long long long long long version. 1”",
+        "photo": "images/modelPage/volunteers.feedback.sylviaThornton.png"
+      }
+    ],
+    "block3howto": {
+      "title": "Reach out",
+      "subtitle": " ",
+      "markImage": "images/modelPage/volunteers.howto.mark.jpg",
+      "processItems": [
+        {
+          "title": "Projects",
+          "text": "Partner with us to find the right project for your class/group",
+          "image": "images/modelPage/volunteers.howTo.login.png"
+        },
+        {
+          "title": "Mentors",
+          "text": "Partner with us to find mentors",
+          "image": "images/modelPage/volunteers.howTo.fillProfil.png"
+        }
+      ],
+      "button": {
+        "text": "Contact us",
+        "link": "mailto:hello@ovio.org"
+      }
     },
     "seo": {
       "title": "",

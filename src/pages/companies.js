@@ -6,7 +6,6 @@ import Hero from '../components/Hero';
 import BlockIntroTemplate from '../components/models/BlockIntroTemplate';
 import MiddleBlock from '../components/companies/MiddleBlock';
 import WhyVolunteering from '../components/companies/WhyVolunteering';
-import WhoTrustedUs from '../components/companies/WhoTrustedUs';
 import BlockHowToTemplate from '../components/models/BlockHowToTemplate';
 import LineSeparator from '../components/ui-library/LineSeparator';
 import Footer from '../components/Footer';
@@ -93,7 +92,7 @@ const CompaniesPage = () => (
     <MiddleBlock />
     <BlockIntroTemplate {...page.block1introSecondPart} iconVersion />
     <WhyVolunteering />
-    <WhoTrustedUs comments={page.block2feedback} />
+    {/* <WhoTrustedUs comments={page.block2feedback} /> */}
     <BlockHowToTemplate {...page.block3howto} />
     <LineSeparator />
     <Footer />
