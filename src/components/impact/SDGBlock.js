@@ -140,6 +140,10 @@ const useStyles = makeStyles(theme => ({
   muiGridBlockContainer,
   muiGridBackground,
   muiGridWithOnHoverText,
+  closing: {
+    width: '86%',
+    [theme.breakpoints.down('xs')]: { width: '100%' },
+  },
   subtitle2: {
     marginBottom: spacing(5),
     fontWeight: 'bold',
@@ -159,12 +163,8 @@ const useStyles = makeStyles(theme => ({
       height: '140px',
     },
   },
-  cardOnHoverDisplay: {
-    backgroundColor: colors.orange,
-  },
-  cardOnHoverHide: ({ backgroundColor }) => ({
-    backgroundColor,
-  }),
+  cardOnHoverDisplay: { backgroundColor: colors.orange },
+  cardOnHoverHide: ({ backgroundColor }) => ({ backgroundColor }),
   h4: {
     width: '90%',
     fontSize: fontSizing(2),
@@ -207,6 +207,7 @@ const SDGBlock = ({ width }) => {
     // eslint-disable-next-line no-shadow
     muiGridWithOnHoverText,
     subtitle2,
+    closing,
     cardsContainer,
     cardContainer,
     cardOnHoverDisplay,
@@ -218,9 +219,8 @@ const SDGBlock = ({ width }) => {
   return (
     <Grid className={muiGridBlockContainer} container>
       <img className={`${muiGridBackground} ${markStyle}`} src={markImage} alt="Our values" />
-      <Typography className={subtitle2} variant="subtitle2">
-        Engaging people through skill-based volunteering can take The UN Sustainable Development Goals impact to
-        the next level.
+      <Typography variant="h2">
+        The UN Sustainable Development Goals
       </Typography>
       <Grid container className={cardsContainer} justify={width === 'xs' ? 'center' : 'flex-start'}>
         {sdgs.map(({ title, image, textOnOver, color }) => (
@@ -243,11 +243,25 @@ const SDGBlock = ({ width }) => {
           </Grid>
         ))}
       </Grid>
-      <Typography variant="body2">
-        Ovio is playing a significant role in the “global partnership for the goals” (n°17) by encouraging the
-        cooperation between companies, citizens and nonprofits for access to technology and innovation and strengthen
-        the capacity of everyone to make a positive impact in the world.
-      </Typography>
+      <Grid className={closing}>
+        <Typography className={subtitle2} variant="subtitle2">
+          Engaging people through skill-based volunteering can take&nbsp;
+          <a
+            href="https://sustainabledevelopment.un.org/"
+            style={{ color: 'inherit' }}
+            target="_blank"
+            rel="noreferrer noopener"
+          >
+            The UN Sustainable Development Goals
+          </a>
+          &nbsp;impact to the next level.
+        </Typography>
+        <Typography variant="body1">
+          Ovio is playing a significant role in the “global partnership for the goals” (n°17) by encouraging
+          cooperation between companies, citizens and social impact organizations, by scaling access to tech innovation
+          and by encouraging everyone to make a positive impact on the world.
+        </Typography>
+      </Grid>
     </Grid>
   );
 };

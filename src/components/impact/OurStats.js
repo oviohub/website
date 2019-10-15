@@ -4,34 +4,39 @@ import { Grid, Typography } from '@material-ui/core';
 import withWidth, { isWidthDown } from '@material-ui/core/withWidth';
 import { makeStyles } from '@material-ui/styles';
 
-import { spacing, fontSizing, stylesBase, MetricContainer } from '../styledComponents';
+import { spacing, fontSizing, stylesBase, MetricContainer, ExternalLink } from '../styledComponents';
 
 const stats = [
   {
-    label: 'social impact organizations and',
-    count: '145',
+    label: 'Social Impact Organizations',
+    count: '157',
     style: { scale: 0.8, rotation: 90 },
   },
   {
-    label: 'projects are listed on Explore, showcasing',
-    count: '250',
+    label: (
+      <span>
+        Projects listed on
+        {' '}
+        <ExternalLink href="https://explore.ovio.org">Explore</ExternalLink>
+      </span>
+    ),
+    count: '265',
     style: { scale: 0.8, rotation: 0 },
   },
   {
-    label: 'contributors.',
-    count: '3,700',
-    style: { scale: 0.9, rotation: 200 },
-  },
-  {
-    label: 'organizations, receive regular volunteering support.',
-    count: '5',
-    style: { scale: 0.6, rotation: 0 },
+    label: 'Volunteers joined our tech-for-good movement',
+    count: '200',
+    style: { scale: 0.7, rotation: 200 },
   },
 ];
 
 const { muiGridBlockContainer } = stylesBase;
 const useStyles = makeStyles({
-  muiGridBlockContainer,
+  container: {
+    ...muiGridBlockContainer,
+    margin: `${spacing(16)} 0px`,
+  },
+  blockTitle: { marginTop: '0px' },
   subContainer: {
     marginBottom: spacing(4),
   },
@@ -48,11 +53,13 @@ const useStyles = makeStyles({
 
 const OurStats = ({ width }) => {
   // eslint-disable-next-line no-shadow
-  const { muiGridBlockContainer, subContainer, labelContainer, labelText } = useStyles();
+  const { container, blockTitle, subContainer, labelContainer, labelText } = useStyles();
   return (
-    <Grid className={muiGridBlockContainer} container direction={isWidthDown('sm', width) ? 'column' : 'row'}>
+    <Grid className={container} container direction={isWidthDown('sm', width) ? 'column' : 'row'}>
       <Grid item xs={12} md={5}>
-        <Typography variant="h2">Since 2018, Ovio initiated over 500 hours of volunteering.</Typography>
+        <Typography className={blockTitle} variant="h2">
+          Last year, Ovio initiated 1000+ hours of volunteering.
+        </Typography>
       </Grid>
       <Grid item xs={12} md={6}>
         {stats.map(({ label, count, style }) => (

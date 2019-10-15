@@ -71,10 +71,10 @@ const Hero = ({ width }) => {
           md={8}
           xs={12}
         >
-          <Typography className={typography} variant="h1">Ovio brings Technology in Service of Humanity</Typography>
+          <Typography className={typography} variant="h1">Connecting Tech Minds and Impact Makers</Typography>
           <Typography className={typography} variant="subtitle1">
-            Technology can, and should, fuel solutions to the greatest
-            challenges of our time and be in service to humanity.
+            We revolutionize pro-bono work for the tech industry and bring together social impact organizations,
+            passionate people and companies to make skill-based volunteering easy and rewarding for all.
           </Typography>
           <Grid className={buttonContainer} item>
             <Button className={muiButtonWhiteBackground}>Learn More</Button>

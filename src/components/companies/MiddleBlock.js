@@ -53,9 +53,9 @@ const MiddleBlock = () => {
         </Grid>
         <Grid item xs={9}>
           <Typography className={body2} variant="body2" color="primary">
-          Ovio is the only volunteering platform with a large portfolio of software development projects that can fit
-          every type of engineering skill set and interest in the social impact sector from education to poverty
-          alleviation and beyond.
+            Ovio is the only volunteering platform with a large portfolio of software development projects that can fit
+            every type of engineering skill set and interest in the social impact sector from education to poverty
+            alleviation and beyond.
           </Typography>
         </Grid>
       </Grid>

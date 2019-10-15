@@ -4,33 +4,33 @@ import { Grid, Typography } from '@material-ui/core';
 import withWidth, { isWidthDown } from '@material-ui/core/withWidth';
 import { makeStyles } from '@material-ui/styles';
 
-import { spacing, fontSizing, stylesBase } from '../styledComponents';
+import { spacing, fontSizing, stylesBase, ExternalLink } from '../styledComponents';
 import illustration from '../../assets/impactPage/illustration.jpg';
 
 const contributions = [
   {
-    percentage: 30,
-    label: 'Quality Education',
+    percentage: 15,
+    label: 'Civic Tech',
     color: '#F47820',
   },
   {
-    percentage: 23,
-    label: 'No Poverty',
-    color: '#FFA667',
-  },
-  {
-    percentage: 19,
-    label: 'Zero Hunger',
+    percentage: 12,
+    label: 'Good Health and Well-being',
     color: '#FFD3B3',
   },
   {
-    percentage: 18,
-    label: 'Peace Justice and Strong Institutions',
-    color: '#919FB3',
+    percentage: 10,
+    label: 'Quality Education',
+    color: '#acdbc2',
   },
   {
     percentage: 10,
-    label: 'others',
+    label: 'Humanitarian',
+    color: '#919FB3',
+  },
+  {
+    percentage: 53,
+    label: 'Other',
     color: '#2F4058',
   },
 ];
@@ -103,7 +103,9 @@ const OurContributions = ({ width }) => {
           </Grid>
         ))}
         <Typography className={caption} variant="caption">
-          % calculated from the contribution provided via Explore and other matching
+          % calculated from the contribution provided via
+          {' '}
+          <ExternalLink href="https://explore.ovio.org">Explore</ExternalLink>
         </Typography>
       </Grid>
     </Grid>
