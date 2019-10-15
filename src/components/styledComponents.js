@@ -1,5 +1,5 @@
+import { createMuiTheme, Grid, useMediaQuery } from '@material-ui/core';
 import styledComponent from 'styled-components';
-import { createMuiTheme, Grid } from '@material-ui/core';
 import { styled } from '@material-ui/styles';
 import metricMark from '../assets/impactPage/metricMark.svg';
 
@@ -101,13 +101,13 @@ export const defaultTheme = createMuiTheme({
       body1: {
         color: colors.darkBlue,
         fontFamily: 'Montserrat',
-        fontSize: fontSizing(3),
+        fontSize: fontSizing(2.3), // to be close to 16px
         lineHeight: '26px',
       },
       body2: {
         color: colors.darkBlue,
         fontFamily: 'Montserrat',
-        fontSize: fontSizing(2.3), // to be close to 16px
+        fontSize: fontSizing(3),
         lineHeight: '26px',
       },
       caption: {
@@ -218,6 +218,16 @@ export const stylesBase = {
     borderRadius: '40px',
     boxShadow: 'inset 0 2px 4px 0 rgba(0,0,0,0.1)',
   },
+};
+
+export const useWidth = () => {
+  const keys = [...defaultTheme.breakpoints.keys].reverse();
+  return (
+    keys.reduce((output, key) => {
+      const matches = useMediaQuery(theme.breakpoints.up(key));
+      return !output && matches ? key : output;
+    }, null) || 'xs'
+  );
 };
 
 // Shapes

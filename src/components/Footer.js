@@ -1,12 +1,11 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import { Link } from 'gatsby';
 import { Grid, Typography, Icon } from '@material-ui/core';
-import withWidth, { isWidthDown } from '@material-ui/core/withWidth';
+import { isWidthDown } from '@material-ui/core/withWidth';
 import { makeStyles } from '@material-ui/styles';
 
 import { footerMenu } from '../services/menuItems';
-import { spacing, stylesBase } from './styledComponents';
+import { spacing, stylesBase, useWidth } from './styledComponents';
 import logo from '../assets/logo/logo.orange.svg';
 import iconFacebook from '../assets/icons/icon.facebook.orange.svg';
 import iconLinkedIn from '../assets/icons/icon.linkedin.orange.svg';
@@ -62,7 +61,8 @@ const useStyles = makeStyles(theme => ({
   links: { textDecoration: 'none', marginBottom: spacing(4) },
 }));
 
-const Footer = ({ width }) => {
+const Footer = () => {
+  const width = useWidth();
   const {
     // eslint-disable-next-line no-shadow
     muiGridBlockContainer,
@@ -145,8 +145,4 @@ const Footer = ({ width }) => {
   );
 };
 
-Footer.propTypes = {
-  width: PropTypes.string.isRequired,
-};
-
-export default withWidth()(Footer);
+export default Footer;

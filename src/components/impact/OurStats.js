@@ -1,10 +1,9 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import { Grid, Typography } from '@material-ui/core';
-import withWidth, { isWidthDown } from '@material-ui/core/withWidth';
+import { isWidthDown } from '@material-ui/core/withWidth';
 import { makeStyles } from '@material-ui/styles';
 
-import { spacing, fontSizing, stylesBase, MetricContainer, ExternalLink } from '../styledComponents';
+import { spacing, fontSizing, stylesBase, MetricContainer, useWidth, ExternalLink } from '../styledComponents';
 
 const stats = [
   {
@@ -51,7 +50,8 @@ const useStyles = makeStyles({
   labelText: { fontWeight: 500 },
 });
 
-const OurStats = ({ width }) => {
+const OurStats = () => {
+  const width = useWidth();
   // eslint-disable-next-line no-shadow
   const { container, blockTitle, subContainer, labelContainer, labelText } = useStyles();
   return (
@@ -72,7 +72,7 @@ const OurStats = ({ width }) => {
               </MetricContainer>
             </Grid>
             <Grid className={labelContainer} item xs={9}>
-              <Typography className={labelText} variant="body2">{label}</Typography>
+              <Typography className={labelText} variant="body1">{label}</Typography>
             </Grid>
           </Grid>
         ))}
@@ -81,8 +81,4 @@ const OurStats = ({ width }) => {
   );
 };
 
-OurStats.propTypes = {
-  width: PropTypes.string.isRequired,
-};
-
-export default withWidth()(OurStats);
+export default OurStats;

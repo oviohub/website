@@ -1,11 +1,10 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import { Link } from 'gatsby';
 
 import { Grid, Typography, Button } from '@material-ui/core';
-import withWidth, { isWidthDown } from '@material-ui/core/withWidth';
+import { isWidthDown } from '@material-ui/core/withWidth';
 import { makeStyles } from '@material-ui/styles';
-import { stylesBase, spacing } from '../styledComponents';
+import { stylesBase, spacing, useWidth } from '../styledComponents';
 import { getPageUrl } from '../../Routes';
 
 const { muiGridBlockContainer, muiGridTagsContainer } = stylesBase;
@@ -24,7 +23,8 @@ const useStyles = makeStyles(theme => ({
   },
 }));
 
-const BlockStudentBanner = ({ width }) => {
+const BlockStudentBanner = () => {
+  const width = useWidth();
   // eslint-disable-next-line no-shadow
   const { muiGridBlockContainer, muiGridTagsContainer, bannerContainer, textContainer } = useStyles();
   return (
@@ -38,8 +38,8 @@ const BlockStudentBanner = ({ width }) => {
           xs={12}
           md={9}
         >
-          <Typography className={textContainer} variant="body2" color="textSecondary">
-            Are you a student, University, or Academic, looking for projects?
+          <Typography className={textContainer} variant="body1" color="textSecondary">
+            Are you a student or an academic looking for volunteer projects?
           </Typography>
         </Grid>
         <Grid container justify={isWidthDown('sm', width) ? 'center' : 'flex-end'} item xs={12} md={3}>
@@ -52,8 +52,4 @@ const BlockStudentBanner = ({ width }) => {
   );
 };
 
-BlockStudentBanner.propTypes = {
-  width: PropTypes.string.isRequired,
-};
-
-export default withWidth()(BlockStudentBanner);
+export default BlockStudentBanner;

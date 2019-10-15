@@ -16,7 +16,7 @@ const useStyles = makeStyles(theme => ({
     width: contentWidthPixels,
     zIndex: 1,
   },
-  body2: {
+  body1: {
     fontStyle: 'italic',
     fontWeight: '600',
     fontSize: fontSizing(6),
@@ -42,7 +42,7 @@ const MiddleBlock = () => {
     muiGridFullScreenWithBackground,
     container,
     blockContainer,
-    body2,
+    body1,
     thickLine,
   } = useStyles();
   return (
@@ -52,10 +52,10 @@ const MiddleBlock = () => {
           <div className={thickLine} />
         </Grid>
         <Grid item xs={9}>
-          <Typography className={body2} variant="body2" color="primary">
-            Ovio is the only volunteering platform with a large portfolio of software development projects that can fit
-            every type of engineering skill set and interest in the social impact sector from education to poverty
-            alleviation and beyond.
+          <Typography className={body1} variant="body1" color="primary">
+          Ovio is the only volunteering platform with a large portfolio of software development projects that can fit
+          every type of engineering skill set and interest in the social impact sector from education to poverty
+          alleviation and beyond.
           </Typography>
         </Grid>
       </Grid>

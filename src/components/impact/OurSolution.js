@@ -1,10 +1,9 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import { Grid, Typography } from '@material-ui/core';
-import withWidth, { isWidthDown } from '@material-ui/core/withWidth';
+import { isWidthDown } from '@material-ui/core/withWidth';
 import { makeStyles } from '@material-ui/styles';
 
-import { BoldSpan, colors, stylesBase, spacing } from '../styledComponents';
+import { BoldSpan, colors, stylesBase, spacing, useWidth } from '../styledComponents';
 import iconProvide from '../../assets/icons/icon.provide.orange.png';
 import iconOffer from '../../assets/icons/icon.offer.orange.png';
 import iconMaintain from '../../assets/icons/icon.maintain.orange.png';
@@ -81,7 +80,8 @@ const useStyles = makeStyles(theme => ({
   },
 }));
 
-const OurSolution = ({ width }) => {
+const OurSolution = () => {
+  const width = useWidth();
   const {
     // eslint-disable-next-line no-shadow
     muiGridBlockContainer,
@@ -99,13 +99,13 @@ const OurSolution = ({ width }) => {
         most valuable and powerful skills to support the causes they care about. By enabling organizations to access
         such expensive resources, Ovio empowers them to advance their mission.
       </Typography>
-      <Typography variant="body2">
+      <Typography variant="body1">
         57% of NGOs claim to have staff limitations, which is a major obstacle to their digital development.
         They either lack financial resources to hire top quality engineers or only have help from short-term volunteers
         who lack the bandwidth to see projects through to completion.
       </Typography>
       <Grid>
-        <Typography className={boldText} variant="body2">
+        <Typography className={boldText} variant="body1">
           On the strength of these findings, Ovio has given itself 3 years to generate impact and evaluate it:
         </Typography>
         {objectives.map(({ iconURL, goal, description }, index) => (
@@ -120,7 +120,7 @@ const OurSolution = ({ width }) => {
                 <img className={icon} src={iconURL} alt={goal} />
               </Grid>
               <Grid container alignItems="center" item xs={9} sm={8}>
-                <Typography variant="body2">{goal}</Typography>
+                <Typography variant="body1">{goal}</Typography>
               </Grid>
             </Grid>
             <Grid container item xs={12} sm={6} justify={isWidthDown('xs', width) ? 'flex-end' : 'flex-start'}>
@@ -135,8 +135,4 @@ const OurSolution = ({ width }) => {
   );
 };
 
-OurSolution.propTypes = {
-  width: PropTypes.string.isRequired,
-};
-
-export default withWidth()(OurSolution);
+export default OurSolution;

@@ -32,7 +32,7 @@ const useStyles = makeStyles(theme => ({
     margin: `${spacing(7)} ${spacing(4)}`,
     [theme.breakpoints.down('xs')]: { margin: `${spacing(4)} 0px` },
   },
-  body2: { fontWeight: '500' },
+  body1: { fontWeight: '500' },
   thickLine: {
     width: '13px',
     height: '75px',
@@ -51,7 +51,7 @@ const WhyVolunteering = () => {
     blockContainer,
     reasonsContainer,
     reasonContainer,
-    body2,
+    body1,
     thickLine,
   } = useStyles();
   return (
@@ -65,7 +65,7 @@ const WhyVolunteering = () => {
                 <div className={thickLine} />
               </Grid>
               <Grid item xs={9} container justify="center" alignItems="center">
-                <Typography className={body2} variant="body2">{reason}</Typography>
+                <Typography className={body1} variant="body1">{reason}</Typography>
               </Grid>
             </Grid>
           ))}

@@ -1,9 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Grid } from '@material-ui/core';
-import withWidth, { isWidthDown } from '@material-ui/core/withWidth';
+import { isWidthDown } from '@material-ui/core/withWidth';
 import { makeStyles } from '@material-ui/styles';
-import { spacing, stylesBase, colors } from '../styledComponents';
+import { spacing, stylesBase, colors, useWidth } from '../styledComponents';
 
 const { muiGridBlockContainer } = stylesBase;
 const useStyles = makeStyles(theme => ({
@@ -27,7 +27,8 @@ const useStyles = makeStyles(theme => ({
   }),
 }));
 
-const LineSeparator = ({ withoutMarginTo, width }) => {
+const LineSeparator = ({ withoutMarginTo }) => {
+  const width = useWidth();
   // eslint-disable-next-line no-shadow
   const { muiGridBlockContainer, container, lineContainer, thickLine } = useStyles({
     withoutMarginTo, lineHeight: isWidthDown('sm', width) ? '3px' : '12px',
@@ -43,7 +44,6 @@ const LineSeparator = ({ withoutMarginTo, width }) => {
 
 LineSeparator.propTypes = {
   withoutMarginTo: PropTypes.bool,
-  width: PropTypes.string.isRequired,
 };
 
 LineSeparator.defaultProps = {
@@ -51,4 +51,4 @@ LineSeparator.defaultProps = {
 };
 
 
-export default withWidth()(LineSeparator);
+export default LineSeparator;
