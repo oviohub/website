@@ -48,6 +48,6 @@ const completeMenu = [
   },
 ];
 
-export const menuItems = completeMenu.filter(item => item.label !== 'Ressources');
+export const menuItems = completeMenu.filter(item => !['Resources', 'Featured'].includes(item.label));
 
 export const footerMenu = completeMenu.filter(item => !['Featured', 'Impact', 'Blog'].includes(item.label));
