@@ -15,7 +15,6 @@ const teamMembers = [
     name: 'Tiphaine Boyer',
     position: 'Co-Founder & COO',
     linkedInUrl: 'https://www.linkedin.com/in/tiphaine-lucianiboyer/',
-    // eslint-disable-next-line max-len
     aboutMe: (
       <span>
         After receiving a Master of Arts in Conflict, Security and Development from Sussex University, I started my
