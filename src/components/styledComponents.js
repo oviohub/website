@@ -58,8 +58,9 @@ export const defaultTheme = createMuiTheme({
         textAlign: 'center',
         margin: spacing(4),
         [theme.breakpoints.down('xs')]: {
-          fontSize: fontSizing(7),
-          margin: `${spacing(4)} 0px`,
+          fontSize: fontSizing(6),
+          margin: `0px 0px ${spacing(4)}`,
+          lineHeight: '60px',
         },
       },
       subtitle1: {
@@ -69,6 +70,7 @@ export const defaultTheme = createMuiTheme({
         fontWeight: '500',
         lineHeight: '34px',
         textAlign: 'center',
+        [theme.breakpoints.down('xs')]: { fontSize: fontSizing(2.6) },
       },
       h2: {
         color: colors.darkBlue,
@@ -153,13 +155,15 @@ export const defaultTheme = createMuiTheme({
         padding: '8px 0px 8px 12px',
       },
     },
+    MuiPaper: {
+      root: {
+        overflow: 'hidden',
+      },
+    },
     MuiMenuItem: {
       root: {
         width: '100%',
-        '&:hover': {
-          backgroundColor: colors.lightOrange,
-          borderRadius: '4px',
-        },
+        '&:hover': { backgroundColor: colors.lightOrange },
       },
     },
   },
@@ -176,6 +180,11 @@ export const stylesBase = {
       borderColor: colors.white,
     },
   },
+  muiButtonLarge: {
+    minWidth: '190px',
+    paddingTop: '12px',
+    paddingBottom: '12px',
+  },
   muiGridBlockContainer: {
     margin: `${spacing(12)} 0px`,
     [defaultTheme.breakpoints.down('xs')]: {
@@ -183,11 +192,11 @@ export const stylesBase = {
     },
   },
   muiGridFullScreen: {
-    width: 'calc(100vw - 15px)', // 15px == scrollbar width
+    width: '100vw',
     [defaultTheme.breakpoints.down('md')]: { width: '100vw' },
   },
   muiGridFullScreenWithBackground: {
-    width: 'calc(100vw - 8px)',
+    width: '100vw',
     left: 'calc(-1 * (100vw - 100%) / 2)',
     position: 'relative',
     backgroundSize: 'cover',
@@ -231,6 +240,16 @@ export const useWidth = () => {
 };
 
 // Shapes
+export const Arrow = styled('div')({
+  boxSizing: 'border-box',
+  height: '40px',
+  width: '40px',
+  border: `4px solid ${colors.white}ad`,
+  borderWidth: '0px 0px 4px 4px',
+  transform: 'rotate(315deg)',
+  '&:hover': { borderColor: colors.white },
+});
+
 export const ThickLine = styled('div')(({ width, height }) => ({
   width: width || '100%',
   height: height || spacing(1.5),
@@ -268,7 +287,7 @@ export const Tag = styled('span')({
   borderRadius: '40px',
   whiteSpace: 'nowrap',
   padding: `2px ${spacing(1)}`,
-  fontSize: '75%',
+  fontSize: '11px',
   fontWeight: 600,
   color: colors.orange,
 });

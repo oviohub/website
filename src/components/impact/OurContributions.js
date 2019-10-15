@@ -58,7 +58,7 @@ const useStyles = makeStyles(theme => ({
   caption: {
     fontFamily: 'Montserrat',
     marginLeft: spacing(10),
-    width: '60%',
+    width: '45%',
     fontSize: fontSizing(2),
     lineHeight: '18px',
     [theme.breakpoints.down('sm')]: {

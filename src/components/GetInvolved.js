@@ -1,8 +1,6 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import { Link } from 'gatsby';
 import { Grid, Typography, Button } from '@material-ui/core';
-import withWidth, { isWidthDown } from '@material-ui/core/withWidth';
 import { makeStyles } from '@material-ui/styles';
 
 import { getPageUrl } from '../Routes';
@@ -36,7 +34,7 @@ const cards = [
 ];
 
 const { muiGridBlockContainer } = stylesBase;
-const useStyles = makeStyles({
+const useStyles = makeStyles(theme => ({
   muiGridBlockContainer,
   cardContainer: {
     height: '520px',
@@ -47,23 +45,35 @@ const useStyles = makeStyles({
       border: '1px solid #DCDCDC',
       boxShadow: '0 30px 60px 0 rgba(0,0,0,0.05)',
     },
+    [theme.breakpoints.down('xs')]: { textAlign: 'center' },
+  },
+  cardTextContainer: {
+    textAlign: 'left',
   },
   imgComponent: { marginTop: spacing(2) },
   cardTitle: { margin: `${spacing(4)} 0px ${spacing(2)}` },
   cardParagraph: {
     fontSize: fontSizing(2.3), // to be close to 16px
     marginBottom: spacing(2),
-    minHeight: '130px',
+    minHeight: '150px',
   },
   buttonContainer: {
     position: 'relative',
     bottom: '-4px',
   },
-});
+}));
 
-const GetInvolved = ({ width }) => {
-  // eslint-disable-next-line no-shadow
-  const { muiGridBlockContainer, cardContainer, imgComponent, cardTitle, cardParagraph, buttonContainer } = useStyles();
+const GetInvolved = () => {
+  const {
+    // eslint-disable-next-line no-shadow
+    muiGridBlockContainer,
+    cardContainer,
+    cardTextContainer,
+    imgComponent,
+    cardTitle,
+    cardParagraph,
+    buttonContainer,
+  } = useStyles();
   return (
     <Grid className={muiGridBlockContainer} container>
       <Typography variant="h2">
@@ -71,16 +81,18 @@ const GetInvolved = ({ width }) => {
         <br />
         maximizing your impact?
       </Typography>
-      <Grid container justify={isWidthDown('sm', width) ? 'center' : 'flex-start'}>
+      <Grid container justify="center">
         {cards.map(({ title, image, paragraph, link }) => (
           <Grid className={cardContainer} item key={title}>
             <img className={imgComponent} src={image} alt={title} />
-            <Typography className={cardTitle} variant="h4">{title}</Typography>
-            <Typography className={cardParagraph} variant="body1">{paragraph}</Typography>
-            <Grid className={buttonContainer}>
-              <Link to={link} style={{ textDecoration: 'none' }}>
-                <Button>Learn More</Button>
-              </Link>
+            <Grid className={cardTextContainer}>
+              <Typography className={cardTitle} variant="h4">{title}</Typography>
+              <Typography className={cardParagraph} variant="body2">{paragraph}</Typography>
+              <Grid className={buttonContainer}>
+                <Link to={link} style={{ textDecoration: 'none' }}>
+                  <Button>Learn More</Button>
+                </Link>
+              </Grid>
             </Grid>
           </Grid>
         ))}
@@ -89,8 +101,4 @@ const GetInvolved = ({ width }) => {
   );
 };
 
-GetInvolved.propTypes = {
-  width: PropTypes.string.isRequired,
-};
-
-export default withWidth()(GetInvolved);
+export default GetInvolved;
