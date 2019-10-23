@@ -32,9 +32,10 @@ const cardList = [
   },
 ];
 
-const { muiGridBlockContainer } = stylesBase;
+const { muiGridBlockContainer, muiGridWithOnHoverText } = stylesBase;
 const useStyles = makeStyles(theme => ({
   muiGridBlockContainer,
+  muiGridWithOnHoverText,
   cardsContainer: {
     display: 'flex',
     position: 'relative',
@@ -58,8 +59,6 @@ const useStyles = makeStyles(theme => ({
       height: '280px',
       margin: spacing(2),
     },
-    '&:hover #onHoverDisplay': { display: 'flex' },
-    '&:hover #onHoverHide': { display: 'none' },
   },
   cardOnHoverDisplay: {
     height: '100%',
@@ -102,6 +101,8 @@ const WhatMakesUsUnique = () => {
   const {
     // eslint-disable-next-line no-shadow
     muiGridBlockContainer,
+    // eslint-disable-next-line no-shadow
+    muiGridWithOnHoverText,
     cardsContainer,
     cardContainer,
     cardOnHoverDisplay,
@@ -117,19 +118,18 @@ const WhatMakesUsUnique = () => {
       </Typography>
       <div className={cardsContainer}>
         {cardList.map(({ title, image, subTitle, textOnOver }) => (
-          <Grid key={title} container alignItems="center" className={cardContainer}>
+          <Grid key={title} container alignItems="center" className={`${muiGridWithOnHoverText} ${cardContainer}`}>
             <Grid
-              id="onHoverHide"
               container
               direction="column"
               justify="center"
               alignItems="center"
-              className={useStyles({ backgroundImage: image }).cardOnHoverHide}
+              className={`${useStyles({ backgroundImage: image }).cardOnHoverHide} onHoverHide`}
             >
               <Typography className={cardTitle} variant="h3">{title}</Typography>
               <Typography className={cardParagraph} variant="h4">{subTitle}</Typography>
             </Grid>
-            <Grid id="onHoverDisplay" className={cardOnHoverDisplay}>
+            <Grid className={`${cardOnHoverDisplay} onHoverDisplay`}>
               <Typography className={cardParagraphOnHover} variant="body2" color="primary">{textOnOver}</Typography>
             </Grid>
           </Grid>
