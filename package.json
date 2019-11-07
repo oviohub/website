@@ -11,7 +11,7 @@
     "build": "gatsby build",
     "develop": "gatsby develop -H 0.0.0.0",
     "format": "prettier --write src/**/*.{js,jsx}",
-    "start": "GATSBY_ACTIVE_ENV=development npm run develop",
+    "dev": "GATSBY_ACTIVE_ENV=development npm run develop",
     "serve": "gatsby serve",
     "deploy:prod": "GATSBY_ACTIVE_ENV=production yarn build && firebase deploy -P default",
     "deploy:staging": "GATSBY_ACTIVE_ENV=development yarn build && firebase deploy -P staging",
