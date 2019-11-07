@@ -1,41 +1,48 @@
 import React from 'react';
-import { Grid, Typography } from '@material-ui/core';
+import { pick } from 'lodash';
+import { Grid, Typography, Button } from '@material-ui/core';
 import { makeStyles } from '@material-ui/styles';
 
 import Iframe from '../ui-library/Iframe';
-import { stylesBase, spacing } from '../styledComponents';
+import { ExternalLink, stylesBase, spacing, colors } from '../styledComponents';
 
-const { muiGridBlockContainer } = stylesBase;
 const useStyles = makeStyles(() => ({
-  muiGridBlockContainer,
+  ...pick(stylesBase, ['muiGridBlockContainer', 'muiButtonLarge']),
   iframe: {
     marginTop: spacing(4),
     border: 'none',
     height: '520px',
     width: '100%',
   },
-  spinner: {
-    marginTop: spacing(6),
-    textAlign: 'center',
+  buttonContainer: {
+    marginTop: spacing(7),
   },
 }));
 
 const ExploreProjects = () => {
-  // eslint-disable-next-line no-shadow
-  const { muiGridBlockContainer, iframe } = useStyles();
+  const { muiGridBlockContainer, muiButtonLarge, iframe, buttonContainer } = useStyles();
 
   return (
     <Grid className={muiGridBlockContainer} container direction="column">
       <Typography variant="h2" color="secondary">Open Source for Good</Typography>
       <Typography variant="subtitle2" color="secondary">
-        Discover a selection of open-source projects making a real difference. Through our platform Explore, you can
+        Discover a selection of 300+ open-source projects making a real difference. Through our platform
+        {' '}
+        <ExternalLink href="https://explore.ovio.org" color={colors.orange}>Explore</ExternalLink>
+        , you can
         leverage your skills and help maximize their impact.
       </Typography>
       <Iframe
         src="https://explore.ovio.org/iframe/projects/featured/"
         className={iframe}
+        scrolling="no"
         title="Explore projects slider"
       />
+      <Grid container justify="center" className={buttonContainer}>
+        <ExternalLink href="https://explore.ovio.org" noDecoration>
+          <Button className={muiButtonLarge}>Browse More Projects</Button>
+        </ExternalLink>
+      </Grid>
     </Grid>
   );
 };
