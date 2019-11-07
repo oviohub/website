@@ -205,9 +205,12 @@ export const stylesBase = {
     height: 'inherit',
   },
   muiGridWithOnHoverText: {
-    display: 'flex',
-    '&:hover .onHoverDisplay': { display: 'flex' },
-    '&:hover .onHoverHide': { display: 'none' },
+    '& > .onHoverDisplay, & > .onHoverHide': {
+      height: '100%',
+      width: '100%',
+    },
+    '& > .onHoverHide, &:hover > .onHoverDisplay': { display: 'flex' },
+    '& > .onHoverDisplay, &:hover > .onHoverHide': { display: 'none' },
   },
   muiGridTagsContainer: {
     backgroundColor: colors.lightOrange,
