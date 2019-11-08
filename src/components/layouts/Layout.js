@@ -8,7 +8,7 @@ import SEO from './Seo';
 import { defaultTheme } from '../styledComponents';
 
 const Layout = ({ children, routeSlug }) => {
-  // Makes pages starting on the top (0, 0) when pages are reloaded.
+  // Scrolls back to the top of the page (0, 0) when reloaded.
   useEffect(() => {
     if (typeof window !== 'undefined') {
       window.scrollTo(0, 0);
