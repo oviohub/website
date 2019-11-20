@@ -5,17 +5,17 @@ const completeMenu = [
     label: 'About',
     link: getPageUrl('AboutPage'),
     subMenu: [
-      { label: 'Our Story', link: getPageUrl('HomePage') },
+      { label: 'Our Story', link: getPageUrl('AboutPage') },
       { label: 'Our Impact', link: getPageUrl('ImpactPage') },
     ],
   },
   {
-    label: 'Model',
+    label: 'Get Involved',
     link: getPageUrl('ModelPage'),
     subMenu: [
-      { label: 'Social impact organizations', link: getPageUrl('SocialImpactPage') },
-      { label: 'Companies', link: getPageUrl('CompaniesPage') },
       { label: 'Volunteers', link: getPageUrl('VolunteersPage') },
+      { label: 'Organizations', link: getPageUrl('SocialImpactPage') },
+      { label: 'Companies', link: getPageUrl('CompaniesPage') },
     ],
   },
   {
@@ -27,7 +27,7 @@ const completeMenu = [
     link: getPageUrl('ImpactPage'),
   },
   {
-    label: 'Ressources',
+    label: 'Resources',
     link: getPageUrl('HomePage'),
     subMenu: [
       { label: 'Press', link: getPageUrl('HomePage') },
@@ -38,7 +38,7 @@ const completeMenu = [
     label: 'Contact',
     link: getPageUrl('ContactUsPage'),
     subMenu: [
-      { label: 'hello@oviohub.com', href: 'mailto:hello@oviohub.com' },
+      { label: 'hello@ovio.org', href: 'mailto:hello@ovio.org' },
       { label: '+1 650 283-9210' },
     ],
   },

@@ -127,7 +127,7 @@ const MenuBar = ({ homeVersion }) => {
         <Grid className={leftSubContainer} container item justify="flex-end" xs={6}>
           <Hidden smDown>
             {menuItems.map(({ label, link, subMenu }, index) => (
-              (label === 'Model') ? (
+              (label === 'Get Involved') ? (
                 <DropMenu
                   key={label}
                   buttonLabel={label}

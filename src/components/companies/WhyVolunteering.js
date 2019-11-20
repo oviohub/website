@@ -7,9 +7,10 @@ import { contentWidthPixels, stylesBase, colors, spacing } from '../styledCompon
 import markImage from '../../assets/modelPage/companies.whyVolunteering.mark.jpg';
 
 const reasons = [
-  'It increases employee engagement and retention rates by providing a better working environment;',
-  'It creates experience-based skills development, from leadership management to advanced machine learning;',
-  'It answers the current workforce demand for purpose-driven work (91% of millennials);',
+  'It increases employee engagement and retention rates by providing a better working environment.',
+  // eslint-disable-next-line max-len
+  'It creates opportunities for experience-based skills development, from leadership management to advanced machine learning.',
+  'It answers the current workforce demand for purpose-driven work (91% of millennials).',
   "It expands corporate philanthropy's reach and multiplies impact.",
 ];
 

@@ -10,7 +10,7 @@ import image3 from '../../assets/aboutPage/makesUsUnique.block3.jpg';
 
 const cardList = [
   {
-    title: 'Coding',
+    title: 'Software Development',
     subTitle: 'Engage engineers',
     image: image1,
     // eslint-disable-next-line max-len
@@ -28,7 +28,7 @@ const cardList = [
     subTitle: 'Accelerate change',
     image: image3,
     // eslint-disable-next-line max-len
-    textOnOver: 'Micro-volunteering makes it easy and flexible to do good. We offer our volunteers a variety of tasks that can be done anytime, anywhere, on their own terms.',
+    textOnOver: 'Micro-volunteering makes it easy and flexible to do good. We offer our volunteers a variety of tasks that they can work on anytime, anywhere, on their own terms.',
   },
 ];
 
@@ -114,7 +114,7 @@ const WhatMakesUsUnique = () => {
     <Grid className={muiGridBlockContainer} container>
       <Typography variant="h2">What makes us unique?</Typography>
       <Typography variant="subtitle2">
-        By focusing on coding, we transform micro-volunteering opportunities into long term impact.
+        By focusing on coding, we transform micro-volunteering opportunities into long-term impact.
       </Typography>
       <div className={cardsContainer}>
         {cardList.map(({ title, image, subTitle, textOnOver }) => (

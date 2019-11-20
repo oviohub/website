@@ -1,3 +1,4 @@
+import styledComponent from 'styled-components';
 import { createMuiTheme, Grid } from '@material-ui/core';
 import { styled } from '@material-ui/styles';
 import metricMark from '../assets/impactPage/metricMark.svg';
@@ -261,3 +262,11 @@ export const Tag = styled('span')({
   fontWeight: 600,
   color: colors.orange,
 });
+
+export const ExternalLink = styledComponent.a.attrs({
+  target: '_blank',
+  rel: 'noreferrer noopener',
+})`
+  color: inherit;
+  ${({ noDecoration }) => noDecoration && 'text-decoration: none;'}
+`;
