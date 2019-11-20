@@ -1,10 +1,9 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+import { Grid, Typography } from '@material-ui/core';
 import JsxParser from 'react-jsx-parser';
-import { Grid, Typography, withWidth } from '@material-ui/core';
 import { makeStyles } from '@material-ui/styles';
 
-import { colors, spacing, fontSizing, stylesBase } from '../styledComponents';
+import { colors, spacing, fontSizing, stylesBase, useWidth } from '../styledComponents';
 
 import markImage from '../../assets/impactPage/mark.jpg';
 import img1 from '../../assets/impactPage/poverty.png';
@@ -147,8 +146,6 @@ const useStyles = makeStyles(theme => ({
   subtitle2: {
     marginBottom: spacing(5),
     fontWeight: 'bold',
-    width: '80%',
-    [theme.breakpoints.down('xs')]: { width: '100%' },
   },
   cardsContainer: {
     margin: `0px 0px ${spacing(8)} -${spacing(2)}`,
@@ -180,7 +177,7 @@ const useStyles = makeStyles(theme => ({
     marginBottom: spacing(4),
     [theme.breakpoints.down('xs')]: { marginBottom: spacing(2) },
   },
-  body2: {
+  body1: {
     fontSize: '13px',
     lineHeight: 'normal',
     textAlign: 'center',
@@ -198,7 +195,8 @@ const useStyles = makeStyles(theme => ({
   },
 }));
 
-const SDGBlock = ({ width }) => {
+const SDGBlock = () => {
+  const width = useWidth();
   const {
     // eslint-disable-next-line no-shadow
     muiGridBlockContainer,
@@ -213,7 +211,7 @@ const SDGBlock = ({ width }) => {
     cardOnHoverDisplay,
     h4,
     imgComponent,
-    body2,
+    body1,
     markStyle,
   } = useStyles();
   return (
@@ -238,7 +236,7 @@ const SDGBlock = ({ width }) => {
               <img className={imgComponent} src={image} alt={title} />
             </Grid>
             <Grid className={`${cardOnHoverDisplay} onHoverDisplay`}>
-              <Typography className={body2} variant="body2" color="primary">{textOnOver}</Typography>
+              <Typography className={body1} variant="body1" color="primary">{textOnOver}</Typography>
             </Grid>
           </Grid>
         ))}
@@ -266,8 +264,4 @@ const SDGBlock = ({ width }) => {
   );
 };
 
-SDGBlock.propTypes = {
-  width: PropTypes.string.isRequired,
-};
-
-export default withWidth()(SDGBlock);
+export default SDGBlock;

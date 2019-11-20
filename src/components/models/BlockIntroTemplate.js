@@ -2,9 +2,12 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import JsxParser from 'react-jsx-parser';
 import { Grid, Typography } from '@material-ui/core';
-import withWidth, { isWidthDown } from '@material-ui/core/withWidth';
+import { isWidthDown } from '@material-ui/core/withWidth';
 import { makeStyles } from '@material-ui/styles';
-import { contentWidthPixels, fontSizing, spacing, colors, stylesBase, ExternalLink } from '../styledComponents';
+
+import {
+  contentWidthPixels, fontSizing, spacing, colors, stylesBase, useWidth, ExternalLink,
+} from '../styledComponents';
 
 const { muiGridBlockContainer, muiGridFullScreenWithBackground } = stylesBase;
 const useStyles = makeStyles(theme => ({
@@ -56,8 +59,8 @@ const BlockIntroTemplate = ({
   isMarkOnLeft,
   items,
   iconVersion,
-  width,
 }) => {
+  const width = useWidth();
   const {
     // eslint-disable-next-line no-shadow
     muiGridBlockContainer,
@@ -88,7 +91,7 @@ const BlockIntroTemplate = ({
             >
               <Grid className={textContainer} item sm={6} md={5}>
                 <Typography className={title3} variant="h3" color="textSecondary">{itemTitle}</Typography>
-                <Typography variant="body2">
+                <Typography variant="body1">
                   <JsxParser renderInWrapper={false} components={{ ExternalLink }} jsx={paragraph} />
                 </Typography>
               </Grid>
@@ -117,7 +120,6 @@ BlockIntroTemplate.propTypes = {
     }).isRequired,
   })).isRequired,
   iconVersion: PropTypes.bool,
-  width: PropTypes.string.isRequired,
 };
 
 BlockIntroTemplate.defaultProps = {
@@ -126,4 +128,4 @@ BlockIntroTemplate.defaultProps = {
   iconVersion: false,
 };
 
-export default withWidth()(BlockIntroTemplate);
+export default BlockIntroTemplate;

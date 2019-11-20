@@ -1,10 +1,9 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import { Grid, Typography, Icon } from '@material-ui/core';
-import withWidth, { isWidthDown } from '@material-ui/core/withWidth';
+import { isWidthDown } from '@material-ui/core/withWidth';
 import { makeStyles } from '@material-ui/styles';
 
-import { spacing, fontSizing, stylesBase } from '../styledComponents';
+import { spacing, fontSizing, stylesBase, useWidth } from '../styledComponents';
 
 import linkedinIcon from '../../assets/icons/icon.linkedin.orange.svg';
 import photoTiphaine from '../../assets/aboutPage/photo.tiphaine.jpg';
@@ -103,7 +102,8 @@ const useStyles = makeStyles(theme => ({
   },
 }));
 
-const WhoWeAreBlock = ({ width }) => {
+const WhoWeAreBlock = () => {
+  const width = useWidth();
   const {
     // eslint-disable-next-line no-shadow
     muiGridBlockContainer,
@@ -139,9 +139,7 @@ const WhoWeAreBlock = ({ width }) => {
                 </Grid>
               </Grid>
               <Grid className={textContainer}>
-                <Typography variant="body2">
-                  {aboutMe}
-                </Typography>
+                <Typography variant="body1">{aboutMe}</Typography>
               </Grid>
             </Grid>
           </Grid>
@@ -151,8 +149,4 @@ const WhoWeAreBlock = ({ width }) => {
   );
 };
 
-WhoWeAreBlock.propTypes = {
-  width: PropTypes.string.isRequired,
-};
-
-export default withWidth()(WhoWeAreBlock);
+export default WhoWeAreBlock;

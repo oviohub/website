@@ -130,7 +130,7 @@ const WhatMakesUsUnique = () => {
               <Typography className={cardParagraph} variant="h4">{subTitle}</Typography>
             </Grid>
             <Grid className={`${cardOnHoverDisplay} onHoverDisplay`}>
-              <Typography className={cardParagraphOnHover} variant="body2" color="primary">{textOnOver}</Typography>
+              <Typography className={cardParagraphOnHover} variant="body1" color="primary">{textOnOver}</Typography>
             </Grid>
           </Grid>
         ))}
