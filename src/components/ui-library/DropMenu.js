@@ -1,65 +1,78 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import styled from 'styled-components';
 import { Link } from 'gatsby';
-import { Button, Popper, Grow, Paper, ClickAwayListener, MenuList, MenuItem } from '@material-ui/core';
+import { Button, Paper as MuiPaper, MenuList, MenuItem as MuiMenuItem } from '@material-ui/core';
+import { spacing, colors } from '../styledComponents';
 
-const DropMenu = ({ buttonLabel, buttonLink, color, classes: { links, button }, menuItems }) => {
-  const [open, setOpen] = React.useState(false);
-  const anchorRef = React.useRef(null);
-  const { current } = anchorRef;
+const SubMenuContainer = styled.div`
+  position: absolute;
+  display: none;
+  padding-top: 1px;
+  margin-left: ${spacing(1)};
+  margin-top: -1px;
+`;
 
-  function handleOpen() {
-    setOpen(true);
+const Container = styled.div`
+  --btnColor: ${({ homeversion }) => !homeversion ? colors.darkBlue : colors.white};
+  --btnborderColor: transparent;
+  --btnbackgroundColor: transparent;
+
+  ${SubMenuContainer}:hover, #dropdown-toggle:hover ~ ${SubMenuContainer} { display: block; }
+
+  &:hover {
+    --btnColor: ${({ homeversion }) => homeversion ? colors.darkBlue : colors.white};
+    --btnborderColor: ${({ homeversion }) => homeversion ? colors.white : colors.orange};
+    --btnbackgroundColor: ${({ homeversion }) => homeversion ? colors.white : colors.orange};
   }
 
-  function handleClose({ target }) {
-    if (current && current.contains(target)) {
-      return;
-    }
-    setOpen(false);
+  #button {
+    color: var(--btnColor);
+    border-color: var(--btnborderColor);
+    background-color: var(--btnbackgroundColor);
+    border-bottom-right-radius: 0px;
+    border-bottom-left-radius: 0px;
   }
+`;
 
-  return (
-    <React.Fragment>
-      <Link
-        className={links}
-        to={buttonLink}
-      >
-        <Button
-          className={button}
-          color={color}
-          aria-label="menu"
-          ref={anchorRef}
-          aria-controls="menu-list-grow"
-          aria-haspopup="true"
-          onMouseOver={handleOpen}
-          onFocus={handleOpen}
-        >
-          {buttonLabel}
-        </Button>
-      </Link>
-      <Popper open={open} anchorEl={current} transition disablePortal placement="bottom">
-        {({ TransitionProps }) => (
-          <Grow {...TransitionProps}>
-            <Paper id="menu-list-grow">
-              <ClickAwayListener onClickAway={handleClose}>
-                <MenuList disablePadding>
-                  {menuItems.map(({ label, link }) => (
-                    <Link className={links} key={label} to={link}>
-                      <MenuItem>{label}</MenuItem>
-                    </Link>
-                  ))}
-                </MenuList>
-              </ClickAwayListener>
-            </Paper>
-          </Grow>
-        )}
-      </Popper>
-    </React.Fragment>
-  );
-};
+const Paper = styled(MuiPaper)`
+  border-top-left-radius: 0px;
+  background-color: ${({ homeversion }) => homeversion ? colors.white : colors.orange};
+  color: var(--btnColor);
+`;
+
+const MenuItem = styled(MuiMenuItem)`
+  &:hover {
+    background-color: ${({ homeversion }) => !homeversion && colors.white};
+    color: ${colors.darkBlue};
+  }
+`;
+
+const DropMenu = ({ homeVersion, buttonLabel, buttonLink, color, classes: { links, button }, menuItems }) => (
+  <Container homeversion={homeVersion ? 1 : 0}>
+    <Link
+      id="dropdown-toggle"
+      className={links}
+      to={buttonLink}
+    >
+      <Button id="button" className={button} color={color}>{buttonLabel}</Button>
+    </Link>
+    <SubMenuContainer>
+      <Paper homeversion={homeVersion ? 1 : 0}>
+        <MenuList disablePadding>
+          {menuItems.map(({ label, link }) => (
+            <Link className={links} key={label} to={link}>
+              <MenuItem homeversion={homeVersion ? 1 : 0}>{label}</MenuItem>
+            </Link>
+          ))}
+        </MenuList>
+      </Paper>
+    </SubMenuContainer>
+  </Container>
+);
 
 DropMenu.propTypes = {
+  homeVersion: PropTypes.bool,
   buttonLabel: PropTypes.string.isRequired,
   buttonLink: PropTypes.string.isRequired,
   color: PropTypes.string.isRequired,
