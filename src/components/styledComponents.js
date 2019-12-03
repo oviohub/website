@@ -1,4 +1,5 @@
 import { createMuiTheme, Grid, useMediaQuery } from '@material-ui/core';
+import { red } from '@material-ui/core/colors';
 import styledComponent from 'styled-components';
 import { styled } from '@material-ui/styles';
 import metricMark from '../assets/impactPage/metricMark.svg';
@@ -16,6 +17,7 @@ export const colors = {
   grey: '#D8D8D8',
   lightGrey: '#FAFAFA',
   white: '#FFFFFF',
+  red: red[800],
 };
 
 export const margins = {
@@ -39,7 +41,7 @@ export const defaultTheme = createMuiTheme({
   palette: {
     primary: { main: `${colors.white}` },
     secondary: { main: `${colors.darkBlue}` },
-    error: { main: `${colors.orange}` },
+    error: { main: `${colors.red}` },
     text: {
       primary: colors.darkBlue,
       secondary: colors.orange,

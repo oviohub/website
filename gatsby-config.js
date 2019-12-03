@@ -47,5 +47,11 @@ module.exports = {
         head: true,
       },
     },
+    {
+      resolve: 'gatsby-plugin-env-variables',
+      options: {
+        whitelist: ['GA_TRACKING_ID', 'REACT_WEBSITE_URL', 'SIB_API_KEY', 'SIB_CONTACT_LIST_ID'],
+      },
+    },
   ],
 };
