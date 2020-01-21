@@ -103,7 +103,7 @@ const Footer = () => {
             </a>
           ))}
         </Grid>
-        <Typography variant="caption">© 2019 Ovio Inc - All Rights Reserved</Typography>
+        <Typography variant="caption">© 2020 Ovio Inc - All Rights Reserved</Typography>
       </Grid>
       <Grid
         item
