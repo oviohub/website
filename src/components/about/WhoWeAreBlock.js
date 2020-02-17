@@ -20,6 +20,7 @@ const teamMembers = [
         After receiving a Master of Arts in Conflict, Security and Development from Sussex University, I started my
         career as a project manager for multiple social impact organizations around the world such as United Nations.
         <br />
+        <br />
         When I moved to San Francisco, I was shocked by local nonprofits struggling to leverage technology solutions.
         That is why I decided to co-create Ovio, a tech volunteering platform. I am most passionate about refugee rights
         and women’s rights. My appetite for social justice oriented my career towards humanitarian and

@@ -69,7 +69,6 @@ const useStyles = makeStyles(theme => ({
     [theme.breakpoints.down('md')]: { padding: spacing(4) },
   },
   cardSubtitle: {
-    fontStyle: 'italic',
     lineHeight: '30px',
     letterSpacing: '0.5px',
     margin: `${spacing(5)} 0px ${spacing(4)}`,

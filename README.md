@@ -16,7 +16,7 @@ yarn start
 ```
 The website will be available at <http://localhost:8000/>.
 
-### Deployement
+### Deployment
 
 To generate the `public` folder, run
 

@@ -77,9 +77,7 @@ const GetInvolved = () => {
   return (
     <Grid className={muiGridBlockContainer} container>
       <Typography variant="h2">
-        Interested in
-        <br />
-        maximizing your impact?
+        Interested in maximizing your impact?
       </Typography>
       <Grid container justify="center">
         {cards.map(({ title, image, paragraph, link }) => (

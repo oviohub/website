@@ -54,9 +54,9 @@ export const defaultTheme = createMuiTheme({
       },
       h1: {
         color: colors.white,
-        fontFamily: 'Caveat Brush',
         fontSize: fontSizing(9),
-        lineHeight: '70px',
+        fontWeight: '600',
+        lineHeight: '65px',
         textAlign: 'center',
         margin: spacing(4),
         [theme.breakpoints.down('xs')]: {
@@ -68,7 +68,6 @@ export const defaultTheme = createMuiTheme({
       subtitle1: {
         color: colors.white,
         fontSize: fontSizing(3),
-        fontStyle: 'italic',
         fontWeight: '500',
         lineHeight: '34px',
         textAlign: 'center',
@@ -76,10 +75,10 @@ export const defaultTheme = createMuiTheme({
       },
       h2: {
         color: colors.darkBlue,
-        fontFamily: 'Caveat Brush',
-        fontSize: fontSizing(9),
-        lineHeight: '70px',
-        margin: spacing(4),
+        fontSize: fontSizing(7),
+        fontWeight: '600',
+        lineHeight: '50px',
+        marginBottom: spacing(4),
         [theme.breakpoints.down('xs')]: { margin: `${spacing(4)} 0px` },
       },
       subtitle2: {
@@ -91,8 +90,8 @@ export const defaultTheme = createMuiTheme({
       },
       h3: {
         color: colors.darkBlue,
-        fontFamily: 'Caveat Brush',
-        fontSize: fontSizing(9),
+        fontSize: fontSizing(7),
+        fontWeight: '600',
         lineHeight: '45px',
       },
       h4: {
@@ -127,16 +126,16 @@ export const defaultTheme = createMuiTheme({
         color: colors.white,
         backgroundColor: colors.orange,
         fontFamily: 'Montserrat',
-        fontSize: fontSizing(2),
+        fontSize: fontSizing(2.5),
         fontWeight: '600',
         letterSpacing: '-0.34px',
         lineHeight: '18px',
-        minHeight: '40px',
+        minHeight: '45px',
         minWidth: '152px',
         textAlign: 'center',
         textTransform: 'none',
         border: `2px solid ${colors.orange}`,
-        borderRadius: '20px',
+        borderRadius: '22px',
         '&:hover': {
           color: colors.orange,
           backgroundColor: 'transparent',
