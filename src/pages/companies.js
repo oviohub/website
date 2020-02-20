@@ -3,12 +3,14 @@ import React from 'react';
 import Layout from '../components/layouts/Layout';
 import MenuBar from '../components/MenuBar';
 import Hero from '../components/Hero';
+import Testimonies from '../components/Testimonies';
 import BlockIntroTemplate from '../components/models/BlockIntroTemplate';
 import MiddleBlock from '../components/companies/MiddleBlock';
 import WhyVolunteering from '../components/companies/WhyVolunteering';
 import BlockHowToTemplate from '../components/models/BlockHowToTemplate';
 import LineSeparator from '../components/ui-library/LineSeparator';
 import Footer from '../components/Footer';
+import { companiesTestimony } from '../services/testimonies';
 
 import heroImage from '../assets/modelPage/companies.hero.jpg';
 import introImg1 from '../assets/modelPage/companies.intro.1.png';
@@ -93,6 +95,7 @@ const CompaniesPage = () => (
     <BlockIntroTemplate {...page.block1introSecondPart} iconVersion />
     <WhyVolunteering />
     {/* <WhoTrustedUs comments={page.block2feedback} /> */}
+    <Testimonies title="They trusted us" data={companiesTestimony} />
     <BlockHowToTemplate {...page.block3howto} />
     <LineSeparator />
     <Footer />

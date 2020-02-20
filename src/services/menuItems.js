@@ -30,7 +30,7 @@ const completeMenu = [
     label: 'Resources',
     link: getPageUrl('HomePage'),
     subMenu: [
-      { label: 'Press', link: getPageUrl('HomePage') },
+      // { label: 'Press', link: getPageUrl('HomePage') },
       { label: 'Blog', link: getPageUrl('HomePage') },
     ],
   },

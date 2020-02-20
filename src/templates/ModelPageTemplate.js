@@ -5,11 +5,13 @@ import { graphql } from 'gatsby';
 import Layout from '../components/layouts/Layout';
 import MenuBar from '../components/MenuBar';
 import Hero from '../components/Hero';
+import Testimonies from '../components/Testimonies';
 import BlockIntroTemplate from '../components/models/BlockIntroTemplate';
 import BlockStudentBanner from '../components/models/BlockStudentBanner';
 import BlockHowToTemplate from '../components/models/BlockHowToTemplate';
 import LineSeparator from '../components/ui-library/LineSeparator';
 import Footer from '../components/Footer';
+import { organizationsTestimony } from '../services/testimonies';
 
 const ModelPageTemplate = ({
   data: {
@@ -28,6 +30,7 @@ const ModelPageTemplate = ({
     <Hero {...hero} backgroundImage={backgroundImageURL} />
     <BlockIntroTemplate {...block1intro} />
     {withStudentBanner && <BlockStudentBanner />}
+    {(slug === 'SocialImpactPage') && <Testimonies title="They trusted us" data={organizationsTestimony} />}
     <BlockHowToTemplate {...block3howto} />
     <LineSeparator />
     <Footer />
