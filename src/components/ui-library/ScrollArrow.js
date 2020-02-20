@@ -1,4 +1,5 @@
 import React from 'react';
+import { get } from 'lodash';
 import PropTypes from 'prop-types';
 import styled, { css, keyframes } from 'styled-components';
 import { Grid } from '@material-ui/core';
@@ -6,8 +7,9 @@ import { makeStyles } from '@material-ui/styles';
 import { spacing, Arrow, useWidth } from '../styledComponents';
 
 const getNextBlockMarginTop = factor => parseInt(spacing(factor).replace('px', ''), 10);
-const scrollToRef = (ref, factor) => window.scrollTo({
-  top: ref.current.offsetTop + getNextBlockMarginTop(factor),
+
+export const scrollToRef = (ref, offset = 0) => window.scrollTo({
+  top: get(ref, 'current.offsetTop') + offset,
   behavior: 'smooth',
 });
 
@@ -34,8 +36,10 @@ const useStyles = makeStyles(theme => ({
 const ScrollArrow = ({ scrollRef }) => {
   const width = useWidth();
   const { arrowContainer } = useStyles();
+  const scrollOffset = getNextBlockMarginTop(width === 'xs' ? 8 : 12);
+
   return (
-    <ArrowContainer className={arrowContainer} onClick={() => scrollToRef(scrollRef, width === 'xs' ? 8 : 12)}>
+    <ArrowContainer className={arrowContainer} onClick={() => scrollToRef(scrollRef, scrollOffset)}>
       <Arrow />
     </ArrowContainer>
   );

@@ -29,6 +29,10 @@ export const routes = {
     url: '/impact/',
     component: 'src/pages/impact.js',
   },
+  FoundationPage: {
+    url: '/foundation/',
+    component: 'src/pages/foundation.js',
+  },
 };
 
 modelPage.forEach((page) => {

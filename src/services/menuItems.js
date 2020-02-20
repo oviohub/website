@@ -7,6 +7,7 @@ const completeMenu = [
     subMenu: [
       { label: 'Our Story', link: getPageUrl('AboutPage') },
       { label: 'Our Impact', link: getPageUrl('ImpactPage') },
+      { label: 'Our Foundation', link: getPageUrl('FoundationPage') },
     ],
   },
   {
@@ -27,14 +28,6 @@ const completeMenu = [
     link: getPageUrl('ImpactPage'),
   },
   {
-    label: 'Resources',
-    link: getPageUrl('HomePage'),
-    subMenu: [
-      // { label: 'Press', link: getPageUrl('HomePage') },
-      { label: 'Blog', link: getPageUrl('HomePage') },
-    ],
-  },
-  {
     label: 'Contact',
     link: getPageUrl('ContactUsPage'),
     subMenu: [
@@ -43,11 +36,11 @@ const completeMenu = [
     ],
   },
   {
-    label: 'Blog',
-    link: getPageUrl('HomePage'),
+    label: 'Foundation',
+    link: getPageUrl('FoundationPage'),
   },
 ];
 
-export const menuItems = completeMenu.filter(item => !['Resources', 'Featured'].includes(item.label));
+export const menuItems = completeMenu.filter(item => !['Featured'].includes(item.label));
 
-export const footerMenu = completeMenu.filter(item => !['Featured', 'Impact', 'Blog'].includes(item.label));
+export const footerMenu = completeMenu.filter(item => !['Featured', 'Impact', 'Foundation'].includes(item.label));
