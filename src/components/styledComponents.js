@@ -279,4 +279,5 @@ export const ExternalLink = styledComponent.a.attrs({
 })`
   color: inherit;
   ${({ noDecoration }) => noDecoration && 'text-decoration: none;'}
+  ${({ orange }) => orange && `color: ${colors.orange}`}
 `;

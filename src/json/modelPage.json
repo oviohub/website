@@ -91,7 +91,7 @@
       "processItems": [
         {
           "title": "1. Visit",
-          "text": "Visit <ExternalLink href='https://explore.ovio.org'>Explore</ExternalLink> now and discover 200+ open-source projects",
+          "text": "Visit <ExternalLink noDecoration orange href='https://explore.ovio.org'>Explore</ExternalLink> now and discover 300+ open-source projects",
           "buttons": [
             {
               "text": "Explore Projects",
@@ -218,7 +218,7 @@
       "processItems": [
         {
           "title": "Submit",
-          "text": "Submit your project and get access to a pool of committed volunteers. We match your needs with volunteers’ talents and interests to ensure your project’s viability.",
+          "text": "Submit your project and get access to a pool of committed volunteers. We match your needs with volunteers’ talents and interests to ensure your project’s sustainablity.",
           "buttons": [
             {
               "text": "Submit",
@@ -228,11 +228,11 @@
           "image": "images/modelPage/socialImpact.howTo.submit.png"
         },
           {
-          "title": "Request",
+          "title": "Contact Us",
           "text": "Create more maintainable code and foster collaboration around your project while lowering development costs. Done right, open-source brings visibility, transparency and scalability to your project. Transform your solution into an actively collaborative and sustainable solution.",
           "buttons": [
             {
-              "text": "Compose an email",
+              "text": "Email Us",
               "link": "mailto:hello@ovio.org"
             }
           ],
