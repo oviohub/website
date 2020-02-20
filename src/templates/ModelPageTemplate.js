@@ -6,7 +6,6 @@ import Layout from '../components/layouts/Layout';
 import MenuBar from '../components/MenuBar';
 import Hero from '../components/Hero';
 import BlockIntroTemplate from '../components/models/BlockIntroTemplate';
-import BlockFeedbackTemplate from '../components/models/BlockFeedbackTemplate';
 import BlockStudentBanner from '../components/models/BlockStudentBanner';
 import BlockHowToTemplate from '../components/models/BlockHowToTemplate';
 import LineSeparator from '../components/ui-library/LineSeparator';
@@ -19,7 +18,7 @@ const ModelPageTemplate = ({
       hero: { backgroundImage: { publicURL: backgroundImageURL }, ...hero },
       withStudentBanner,
       block1intro,
-      block2feedback,
+      // block2feedback,
       block3howto,
     },
   },
@@ -28,7 +27,6 @@ const ModelPageTemplate = ({
     <MenuBar />
     <Hero {...hero} backgroundImage={backgroundImageURL} />
     <BlockIntroTemplate {...block1intro} />
-    <BlockFeedbackTemplate comments={block2feedback} />
     {withStudentBanner && <BlockStudentBanner />}
     <BlockHowToTemplate {...block3howto} />
     <LineSeparator />
@@ -48,6 +46,10 @@ ModelPageTemplate.propTypes = {
         backgroundImage: PropTypes.shape({
           publicURL: PropTypes.string.isRequired,
         }).isRequired,
+        button: PropTypes.shape({
+          text: PropTypes.string.isRequired,
+          link: PropTypes.string.isRequired,
+        }),
       }).isRequired,
 
       withStudentBanner: PropTypes.bool,
@@ -78,7 +80,7 @@ ModelPageTemplate.propTypes = {
 
       block3howto: PropTypes.shape({
         title: PropTypes.string.isRequired,
-        subtitle: PropTypes.string.isRequired,
+        subtitle: PropTypes.string,
         markImage: PropTypes.shape({
           publicURL: PropTypes.string.isRequired,
         }).isRequired,
@@ -90,7 +92,6 @@ ModelPageTemplate.propTypes = {
           }).isRequired,
           button: PropTypes.shape({
             text: PropTypes.string.isRequired,
-            withGitHubIcon: PropTypes.bool,
             link: PropTypes.string.isRequired,
           }),
         })).isRequired,
@@ -112,6 +113,10 @@ export const modelPage = graphql`
         subtitle
         subSubtitle
         backgroundImage { publicURL }
+        button {
+          text
+          link
+        }
       }
       withStudentBanner
       block1intro {
@@ -138,11 +143,14 @@ export const modelPage = graphql`
           title
           text
           image { publicURL }
-          button {
+          buttons {
             text
-            withGitHubIcon
             link
           }
+        }
+        button {
+          text
+          link
         }
       },
     }

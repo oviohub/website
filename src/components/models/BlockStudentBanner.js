@@ -43,7 +43,7 @@ const BlockStudentBanner = () => {
           </Typography>
         </Grid>
         <Grid container justify={isWidthDown('sm', width) ? 'center' : 'flex-end'} item xs={12} md={3}>
-          <Link to={getPageUrl('HomePage')} style={{ textDecoration: 'none' }}>
+          <Link to={getPageUrl('StudentPage')} style={{ textDecoration: 'none' }}>
             <Button>Learn more</Button>
           </Link>
         </Grid>
