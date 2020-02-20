@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import JsxParser from 'react-jsx-parser';
-import { Grid, Typography, Button } from '@material-ui/core';
+import { Grid, Typography, Button, withStyles } from '@material-ui/core';
 import { isWidthDown } from '@material-ui/core/withWidth';
 
 import { makeStyles } from '@material-ui/styles';
@@ -31,13 +31,6 @@ const useStyles = makeStyles(theme => ({
   itemTitle: {
     marginLeft: spacing(4),
   },
-  buttonLink: {
-    marginLeft: spacing(4),
-    textDecoration: 'none',
-  },
-  blockButtons: {
-    [theme.breakpoints.down('xs')]: { marginTop: spacing(2) },
-  },
   image: {
     objectFit: 'contain',
     [theme.breakpoints.down('sm')]: { width: '40%' },
@@ -50,6 +43,20 @@ const useStyles = makeStyles(theme => ({
     [theme.breakpoints.down('xs')]: { paddingTop: '80px' },
   },
 }));
+
+const BlockButton = withStyles(theme => ({
+  buttonLink: {
+    marginLeft: spacing(4),
+    textDecoration: 'none',
+  },
+  blockButtons: {
+    [theme.breakpoints.down('xs')]: { marginTop: spacing(2) },
+  },
+}))(({ href, children, classes }) => (
+  <a href={href} className={classes.buttonLink} target="_blank" rel="noreferrer noopener">
+    <Button className={classes.blockButtons}>{children}</Button>
+  </a>
+));
 
 const BlockHowToTemplate = ({
   title: blockTitle,
@@ -66,8 +73,6 @@ const BlockHowToTemplate = ({
     itemContainer,
     textContainer,
     blockBodyContainer,
-    buttonLink,
-    blockButtons,
     image,
     markImg,
   } = useStyles({ withoutTitle: !blockTitle });
@@ -112,9 +117,7 @@ const BlockHowToTemplate = ({
                   </Typography>
                   <Grid>
                     {(buttons || []).map(({ link: btnLink, text: btnText }) => (
-                      <a key={btnLink} href={btnLink} className={buttonLink} target="_blank" rel="noreferrer noopener">
-                        <Button className={blockButtons}>{btnText}</Button>
-                      </a>
+                      <BlockButton key={btnLink} href={btnLink}>{btnText}</BlockButton>
                     ))}
                   </Grid>
                 </Grid>
@@ -125,9 +128,7 @@ const BlockHowToTemplate = ({
       </Grid>
       {blockButtonText && (
         <Grid container item xs={6} justify="center">
-          <a href={blockButtonLink} className={buttonLink} target="_blank" rel="noreferrer noopener">
-            <Button>{blockButtonText}</Button>
-          </a>
+          <BlockButton href={blockButtonLink}>{blockButtonText}</BlockButton>
         </Grid>
       )}
     </Grid>
