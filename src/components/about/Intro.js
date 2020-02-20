@@ -6,6 +6,7 @@ import { makeStyles } from '@material-ui/styles';
 import { getPageUrl } from '../../Routes';
 import { spacing, menuHeightOffset, colors, stylesBase } from '../styledComponents';
 import hero from '../../assets/aboutPage/hero.jpg';
+import heroMobile from '../../assets/aboutPage/hero.mobile.jpg';
 import ourVisionBackground from '../../assets/aboutPage/ourVisionBackground.jpg';
 import ourMissionBackground from '../../assets/aboutPage/ourMissionBackground.jpg';
 
@@ -38,11 +39,18 @@ const useStyles = makeStyles(theme => ({
     backgroundPosition: 'center',
     backgroundRepeat: 'no-repeat',
     backgroundSize: 'cover',
+    [theme.breakpoints.down('xs')]: {
+      height: '330px',
+      backgroundSize: 'contain',
+      backgroundImage: `url(${heroMobile})`,
+      backgroundPositionY: 'top',
+    },
+
   },
   title1: { marginTop: spacing(-7) },
   cardContainer: ({ isEven }) => ({
-    width: '470px',
-    height: '620px',
+    width: '400px',
+    height: '560px',
     marginRight: isEven ? '0px' : spacing(4),
     boxShadow: '0 20px 30px 0 rgba(0,0,0,0.1)',
     marginTop: spacing(-7),
@@ -57,19 +65,17 @@ const useStyles = makeStyles(theme => ({
     },
   }),
   cardContent: {
-    padding: spacing(7),
+    padding: spacing(5),
     [theme.breakpoints.down('md')]: { padding: spacing(4) },
   },
   cardSubtitle: {
     fontStyle: 'italic',
     lineHeight: '30px',
     letterSpacing: '0.5px',
-    margin: `${spacing(5)} 0px ${spacing(8)}`,
-    minHeight: '70px',
-    [theme.breakpoints.down('md')]: {
-      minHeight: '90px',
-      marginBottom: spacing(3),
-    },
+    margin: `${spacing(5)} 0px ${spacing(4)}`,
+    minHeight: '120px',
+    [theme.breakpoints.down('md')]: { marginBottom: spacing(3) },
+    [theme.breakpoints.down('sm')]: { minHeight: '60px' },
   },
   buttonContainer: {
     marginTop: spacing(10),

@@ -1,19 +1,19 @@
 import React from 'react';
 import { Link } from 'gatsby';
-import { Grid, Typography, Button } from '@material-ui/core';
+import { Grid, Typography, Button, Hidden } from '@material-ui/core';
 import { makeStyles } from '@material-ui/styles';
 
 import { useWidth, stylesBase, menuHeightOffset } from '../styledComponents';
+import ScrollArrow from '../ui-library/ScrollArrow';
 import heroImage from '../../assets/homePage/heroImage.jpg';
 import { getPageUrl } from '../../Routes';
 
 const { muiButtonWhiteBackground, muiGridFullScreen } = stylesBase;
-const imageHeight = '680px'; // 680px ==  height of the header image in the design
 const useStyles = makeStyles(theme => ({
   muiButtonWhiteBackground,
   muiGridFullScreen,
   mainContainer: {
-    height: `calc(${imageHeight} - ${menuHeightOffset}px)`,
+    height: `calc(100vh - ${menuHeightOffset}px)`,
   },
   imageContainer: {
     position: 'absolute',
@@ -23,7 +23,7 @@ const useStyles = makeStyles(theme => ({
   },
   image: {
     width: '100%',
-    height: imageHeight,
+    height: '100vh',
     objectFit: 'cover',
     [theme.breakpoints.down('md')]: { objectPosition: 'left' },
   },
@@ -38,12 +38,13 @@ const useStyles = makeStyles(theme => ({
   },
   buttonContainer: {
     margin: '50px 0px 105px',
-    [theme.breakpoints.down('xs')]: { marginBottom: '35px' },
+    [theme.breakpoints.down('xs')]: { margin: '35px 0px' },
   },
 }));
 
 const Hero = () => {
   const width = useWidth();
+  const scrollRef = React.createRef();
   const {
     // eslint-disable-next-line no-shadow
     muiButtonWhiteBackground,
@@ -83,9 +84,12 @@ const Hero = () => {
               <Button className={muiButtonWhiteBackground}>Learn More</Button>
             </Link>
           </Grid>
+          <Hidden xsDown>
+            <ScrollArrow scrollRef={scrollRef} />
+          </Hidden>
         </Grid>
       </Grid>
-
+      <div ref={scrollRef} />
     </React.Fragment>
   );
 };

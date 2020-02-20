@@ -45,6 +45,10 @@ const objectives = [
 const { muiGridBlockContainer } = stylesBase;
 const useStyles = makeStyles(theme => ({
   muiGridBlockContainer,
+  mainContainer: {
+    marginLeft: 'auto',
+    marginRight: 'auto',
+  },
   subContainer: ({ whithoutBorderTop }) => ({
     padding: `${spacing(4)} 0px`,
     borderTop: !whithoutBorderTop && `1px solid ${colors.darkBlue}1a`,
@@ -85,6 +89,7 @@ const OurSolution = () => {
   const {
     // eslint-disable-next-line no-shadow
     muiGridBlockContainer,
+    mainContainer,
     goalContainer,
     title4,
     boldText,
@@ -93,7 +98,7 @@ const OurSolution = () => {
     descriptionContainer,
   } = useStyles();
   return (
-    <Grid className={muiGridBlockContainer} container>
+    <Grid className={`${muiGridBlockContainer} ${mainContainer}`} container item md={10}>
       <Typography className={title4} variant="h4">
         Our solution redirects talent volunteering toward most useful actions. Talented developers can use their
         most valuable and powerful skills to support the causes they care about. By enabling organizations to access

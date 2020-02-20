@@ -48,7 +48,13 @@ const useStyles = makeStyles(theme => ({
     textAlign: 'center',
     [theme.breakpoints.down('sm')]: { marginBottom: spacing(2) },
   },
-  icon: { width: '80px' },
+  icon: {
+    width: '80px',
+    [theme.breakpoints.down('xs')]: {
+      width: '100px',
+      objectFit: 'contain',
+    },
+  },
   itemTextContainer: { marginBottom: spacing(6) },
   title4: { marginBottom: spacing(1) },
   imageComponent: {
