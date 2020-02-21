@@ -34,7 +34,7 @@ export const fontSizes = {
 };
 
 const theme = createMuiTheme();
-export const spacing = factor => `${theme.spacing(factor)}px`;
+export const spacing = (...args) => args.map(arg => `${theme.spacing(arg)}px`).join(' ');
 export const fontSizing = factor => `${factor * 7}px`; // 7px for the smaller font-size in the website
 
 export const defaultTheme = createMuiTheme({

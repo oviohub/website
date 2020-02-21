@@ -1,6 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import JsxParser from 'react-jsx-parser';
+import classNames from 'classnames';
+
 import { Grid, Typography, Button } from '@material-ui/core';
 import { isWidthDown } from '@material-ui/core/withWidth';
 import { makeStyles } from '@material-ui/styles';
@@ -44,7 +46,10 @@ const Hero = ({ title, subtitle, subSubtitle, backgroundImage, button }) => {
     buttonContainer,
     buttonColor,
   } = useStyles({ backgroundImage });
-  const { text: buttonText, link: buttonLink } = button || {};
+
+  const { text: buttonText, link: buttonLink, onClick } = button || {};
+  const buttonClasses = classNames(muiButtonWhiteBackground, buttonColor);
+
   return (
     <Grid className={mainContainer} container justify="center">
       <Grid>
@@ -66,9 +71,15 @@ const Hero = ({ title, subtitle, subSubtitle, backgroundImage, button }) => {
             )}
             {button && (
               <Grid className={buttonContainer}>
-                <ExternalLink href={buttonLink} noDecoration>
-                  <Button className={`${muiButtonWhiteBackground} ${buttonColor}`}>{buttonText}</Button>
-                </ExternalLink>
+                {buttonLink ? (
+                  <ExternalLink href={buttonLink} noDecoration>
+                    <Button className={buttonClasses}>{buttonText}</Button>
+                  </ExternalLink>
+                ) : onClick && (
+                  <Button className={buttonClasses} onClick={onClick}>
+                    {buttonText}
+                  </Button>
+                )}
               </Grid>
             )}
           </Grid>
@@ -85,7 +96,8 @@ Hero.propTypes = {
   backgroundImage: PropTypes.string.isRequired,
   button: PropTypes.shape({
     text: PropTypes.string.isRequired,
-    link: PropTypes.string.isRequired,
+    link: PropTypes.string,
+    onClick: PropTypes.func,
   }),
 };
 
