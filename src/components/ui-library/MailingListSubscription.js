@@ -35,6 +35,10 @@ const useStyles = makeStyles(theme => ({
   inputContainer: {
     width: 350,
 
+    '& input': {
+      textAlign: 'center',
+    },
+
     [theme.breakpoints.down('sm')]: {
       width: '100%',
     },
@@ -101,7 +105,7 @@ const MailingListSubscription = () => {
               className={input}
               value={email}
               onChange={handleChange}
-              placeholder="Your email adress"
+              placeholder="Your email address"
             />
 
             <Button className={muiButtonWhiteBackground} onClick={handleEmailSubmission}>
@@ -121,7 +125,7 @@ const MailingListSubscription = () => {
         <Snackbar
           open={!status}
           onClose={() => setStatus(2)}
-          message="Please check your email adress and try again."
+          message="Please check your email address and try again."
           variant="error"
         />
       </Grid>
