@@ -296,7 +296,7 @@ export const ExternalLink = styledComponent.a.attrs({
   target: '_blank',
   rel: 'noreferrer noopener',
 })`
-  color: inherit;
+  color: ${({ color }) => color || 'inherit'};
   ${({ noDecoration }) => noDecoration && 'text-decoration: none;'}
   ${({ orange }) => orange && `color: ${colors.orange}`}
 `;
