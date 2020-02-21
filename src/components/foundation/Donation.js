@@ -1,13 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { pick } from 'lodash';
-import { Grid, Typography, withStyles } from '@material-ui/core';
+import { Typography, withStyles } from '@material-ui/core';
 
 import Iframe from '../ui-library/Iframe';
 import { stylesBase } from '../styledComponents';
 
 const Donation = ({ classes }) => (
-  <Grid className={classes.muiGridBlockContainer}>
+  <div className={classes.muiGridBlockContainer}>
     <Typography variant="h2" color="secondary" gutterBottom>
       Make a donation
     </Typography>
@@ -29,7 +29,7 @@ const Donation = ({ classes }) => (
         />
       </div>
     </div>
-  </Grid>
+  </div>
 );
 
 Donation.propTypes = {

@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import { Grid, Typography, withStyles } from '@material-ui/core';
 import classNames from 'classnames';
 
-import { spacing, fontSizing, stylesBase } from '../styledComponents';
+import { spacing, stylesBase } from '../styledComponents';
 
 const missions = [
   {
@@ -34,7 +34,7 @@ const missions = [
 ];
 
 const OurMission = ({ classes }) => (
-  <Grid className={classes.muiGridBlockContainer}>
+  <div className={classes.muiGridBlockContainer}>
     <Typography variant="h2" color="secondary" gutterBottom>
       Our Mission
     </Typography>
@@ -55,25 +55,19 @@ const OurMission = ({ classes }) => (
           xs={12}
           md={5}
           lg={4}
-          className={classNames(slug, classes.itemContainer)}
+          className={classes.itemContainer}
         >
-          <Grid className={classNames(slug, classes.titleContainer)}>
-            <Typography className={classes.title}>{title}</Typography>
-          </Grid>
+          <div className={classNames(slug, classes.titleContainer)}>
+            <Typography variant="body2" color="primary">{title}</Typography>
+          </div>
 
-          <Grid
-            container
-            alignItems="center"
-            className={classNames(slug, classes.descriptionContainer)}
-          >
-            <Typography className={classes.description}>
-              {description}
-            </Typography>
-          </Grid>
+          <div className={classNames(slug, classes.descriptionContainer)}>
+            <Typography color="primary">{description}</Typography>
+          </div>
         </Grid>
       ))}
     </Grid>
-  </Grid>
+  </div>
 );
 
 OurMission.propTypes = {
@@ -98,7 +92,7 @@ const styles = theme => ({
   },
 
   titleContainer: {
-    padding: spacing(1, 3),
+    padding: spacing(2, 3),
 
     '&.open_source': {
       backgroundColor: `${theme.palette.secondary.main}D0`,
@@ -109,17 +103,9 @@ const styles = theme => ({
     },
   },
 
-  title: {
-    color: '#FFFFFF',
-    fontSize: fontSizing(4),
-    lineHeight: '45px',
-
-    [theme.breakpoints.down('lg')]: {
-      fontSize: fontSizing(3),
-    },
-  },
-
   descriptionContainer: {
+    display: 'flex',
+    alignItems: 'center',
     padding: spacing(4),
     minHeight: 320,
 
@@ -134,13 +120,6 @@ const styles = theme => ({
     [theme.breakpoints.down('sm')]: {
       minHeight: 'unset',
     },
-  },
-
-  description: {
-    color: '#FFFFFF',
-    margin: spacing(2, 0),
-    fontSize: fontSizing(2),
-    lineHeight: '23px',
   },
 });
 
