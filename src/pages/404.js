@@ -18,7 +18,7 @@ const NotFoundPage = ({ classes: { container, image } }) => (
           Page Not Found
         </Typography>
         <Typography variant="subtitle1" color="secondary">
-          The page you are looking for doesn&apos;t exit or an error occurred!
+          The page you are looking for doesn&apos;t exist or an error occurred!
         </Typography>
       </Grid>
       <Grid item>
