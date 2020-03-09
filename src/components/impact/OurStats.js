@@ -40,7 +40,7 @@ const useStyles = makeStyles({
     marginBottom: spacing(4),
   },
   countText: ({ rotation }) => ({
-    fontFamily: 'Caveat Brush',
+    fontFamily: 'Dosis',
     fontSize: fontSizing(6),
     fontWeight: 'normal',
     lineHeight: '56px',

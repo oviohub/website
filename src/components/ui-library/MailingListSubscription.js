@@ -24,7 +24,7 @@ const useStyles = makeStyles(theme => ({
   },
   title4: {
     fontSize: fontSizing(6),
-    fontFamily: 'Caveat Brush',
+    fontFamily: 'Dosis',
     textAlign: 'center',
     marginBottom: spacing(2),
 

@@ -53,9 +53,8 @@ const useStyles = makeStyles(theme => ({
     textDecoration: 'none',
   },
   logoCaution: {
-    fontSize: '15px',
-    paddingTop: '2px',
-    fontFamily: 'Roboto',
+    fontFamily: 'Dosis',
+    fontSize: '18px',
     lineHeight: '22px',
     marginLeft: spacing(2),
     width: 'fit-content',
