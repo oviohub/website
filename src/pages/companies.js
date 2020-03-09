@@ -95,7 +95,7 @@ const CompaniesPage = () => (
     <BlockIntroTemplate {...page.block1introSecondPart} iconVersion />
     <WhyVolunteering />
     {/* <WhoTrustedUs comments={page.block2feedback} /> */}
-    <Testimonies title="They trusted us" data={companiesTestimony} />
+    <Testimonies title="They trust us" data={companiesTestimony} />
     <BlockHowToTemplate {...page.block3howto} />
     <LineSeparator />
     <Footer />

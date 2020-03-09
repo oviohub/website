@@ -30,7 +30,7 @@ const ModelPageTemplate = ({
     <Hero {...hero} backgroundImage={backgroundImageURL} />
     <BlockIntroTemplate {...block1intro} />
     {withStudentBanner && <BlockStudentBanner />}
-    {(slug === 'SocialImpactPage') && <Testimonies title="They trusted us" data={organizationsTestimony} />}
+    {(slug === 'SocialImpactPage') && <Testimonies title="They trust us" data={organizationsTestimony} />}
     <BlockHowToTemplate {...block3howto} />
     <LineSeparator />
     <Footer />
