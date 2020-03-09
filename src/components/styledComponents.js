@@ -68,7 +68,6 @@ export const defaultTheme = createMuiTheme({
       subtitle1: {
         color: colors.white,
         fontSize: fontSizing(3),
-        fontStyle: 'italic',
         fontWeight: '500',
         lineHeight: '34px',
         textAlign: 'center',
