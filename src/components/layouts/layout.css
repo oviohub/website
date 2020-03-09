@@ -27,7 +27,6 @@ body {
 }
 
 /* Montserrat font */
-
 @font-face {
   font-family: "Montserrat";
   font-display: swap;
@@ -49,11 +48,10 @@ body {
   font-weight: bold;
 }
 
-/* Caveat Brush font */
-
+/* Dosis font */
 @font-face {
-  font-family: "Caveat Brush";
+  font-family: "Dosis";
   font-display: swap;
-  src: url("./fontFamily/CaveatBrush/CaveatBrushRegular.ttf") format("truetype");
+  src: url("./fontFamily/dosis/DosisRegular.ttf") format("truetype");
   font-weight: normal;
 }

@@ -57,7 +57,6 @@ const useStyles = makeStyles(theme => ({
     [theme.breakpoints.down('xs')]: { marginBottom: spacing(3) },
   },
   title4: {
-    fontStyle: 'italic',
     lineHeight: '30px',
     color: colors.orange,
     marginBottom: spacing(4),

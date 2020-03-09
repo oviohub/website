@@ -53,10 +53,11 @@ const useStyles = makeStyles(theme => ({
     textDecoration: 'none',
   },
   logoCaution: {
-    fontFamily: 'Caveat Brush',
-    fontSize: '18px',
-    lineHeight: '22px',
-    marginLeft: spacing(2),
+    fontFamily: 'Dosis',
+    fontSize: '14px',
+    lineHeight: '17px',
+    marginTop: spacing(1),
+    marginLeft: spacing(1),
     width: 'fit-content',
   },
   button: ({ homeVersion, last }) => ({

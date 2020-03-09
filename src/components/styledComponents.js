@@ -54,7 +54,7 @@ export const defaultTheme = createMuiTheme({
       },
       h1: {
         color: colors.white,
-        fontFamily: 'Caveat Brush',
+        fontFamily: 'Dosis',
         fontSize: fontSizing(9),
         lineHeight: '70px',
         textAlign: 'center',
@@ -76,7 +76,7 @@ export const defaultTheme = createMuiTheme({
       },
       h2: {
         color: colors.darkBlue,
-        fontFamily: 'Caveat Brush',
+        fontFamily: 'Dosis',
         fontSize: fontSizing(9),
         lineHeight: '70px',
         margin: spacing(4),
@@ -91,7 +91,7 @@ export const defaultTheme = createMuiTheme({
       },
       h3: {
         color: colors.darkBlue,
-        fontFamily: 'Caveat Brush',
+        fontFamily: 'Dosis',
         fontSize: fontSizing(9),
         lineHeight: '45px',
       },

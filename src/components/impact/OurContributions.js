@@ -89,7 +89,7 @@ const OurContributions = () => {
         <img className={illustrationStyle} src={illustration} alt="" />
       </Grid>
       <Grid className={textsContainer} container alignItems="center" item xs={12} md={7}>
-        <Typography className={title2} variant="h2">SDG contribution:</Typography>
+        <Typography className={title2} variant="h2">SDG Contribution</Typography>
         {contributions.map(({ label, percentage, color }) => (
           <Grid key={label} container className={textContainer}>
             <Grid className={useStyles({ color }).pastilleContainer} />
