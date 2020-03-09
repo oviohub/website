@@ -86,7 +86,7 @@ const WhoTrustedUs = () => {
   }
   return (
     <Grid className={muiGridBlockContainer} container>
-      <Typography variant="h2">They trusted us</Typography>
+      <Typography variant="h2">They trust us</Typography>
       <Grid className={sliderContainer}>
         <Slider viewsToShow={viewsToShow}>
           {companies.map(({ text, logo }) => (
