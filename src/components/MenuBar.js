@@ -54,9 +54,10 @@ const useStyles = makeStyles(theme => ({
   },
   logoCaution: {
     fontFamily: 'Dosis',
-    fontSize: '18px',
-    lineHeight: '22px',
-    marginLeft: spacing(2),
+    fontSize: '14px',
+    lineHeight: '17px',
+    marginTop: spacing(1),
+    marginLeft: spacing(1),
     width: 'fit-content',
   },
   button: ({ homeVersion, last }) => ({
