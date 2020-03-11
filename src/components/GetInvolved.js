@@ -13,22 +13,22 @@ import companiesIcon from '../assets/icons/icon.companies.png';
 const cards = [
   {
     image: volunteersIcon,
-    title: 'Volunteers',
+    title: 'Developers',
     // eslint-disable-next-line max-len
-    paragraph: 'Help change lives! Access to diverse catalog of open-source projects and find opportunities that match your skills and interests.',
+    paragraph: 'Access a catalog of open-source projects and tasks. Find opportunities that matches your skills and interests.',
     link: getPageUrl('VolunteersPage'),
   },
   {
     image: socialImpactIcon,
-    title: 'Social Impact Organizations',
-    paragraph: 'Showcase your tech for good projects, engage highly qualified contributors and accelerate your impact.',
+    title: 'Maintainers',
+    paragraph: 'Make your project more visible and attract contributors',
     link: getPageUrl('SocialImpactPage'),
   },
   {
     image: companiesIcon,
     title: 'Companies',
     // eslint-disable-next-line max-len
-    paragraph: 'Attract and meaningfully engage employees. Use our platform to build a purpose-driven culture and scale your skill-based volunteering program.',
+    paragraph: 'Build your tech credibility and reward your open-source community.',
     link: getPageUrl('CompaniesPage'),
   },
 ];
@@ -77,7 +77,7 @@ const GetInvolved = () => {
   return (
     <Grid className={muiGridBlockContainer} container>
       <Typography variant="h2">
-        Interested in maximizing your impact?
+      Interested in making open-source more accessible?
       </Typography>
       <Grid container justify="center">
         {cards.map(({ title, image, paragraph, link }) => (

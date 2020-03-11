@@ -4,9 +4,9 @@ require('dotenv').config({ path: `.env/env.${activeEnv}` });
 
 module.exports = {
   siteMetadata: {
-    title: 'Ovio | Connecting Tech Minds and Impact Makers',
+    title: 'Ovio | Empowering developers to become active open source contributors',
     // eslint-disable-next-line max-len
-    description: 'Ovio revolutionizes skill-based volunteering for the tech industry by bringing together social impact organizations, passionate people, and companies to make tangible impact easy and rewarding for all.',
+    description: 'We are building a more accessible and inclusive open-source ecosystem, empowering millions of developers to become active contributors.',
     author: 'Ovio',
     url: process.env.REACT_WEBSITE_URL || 'https://ovio.org',
     twitterId: '@OvioHub',
