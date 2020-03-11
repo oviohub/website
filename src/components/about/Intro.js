@@ -17,14 +17,14 @@ const cardList = [
     subTitle: 'We are building the world’s leading tech-for-good movement where every line of code makes a difference.',
     backgroundImage: ourVisionBackground,
     // eslint-disable-next-line max-len
-    paragraph: 'We dream of a world where we improve technology and technology access for social agents by helping organizations to be more collaborative in the creation and scaling of their solutions.',
+    paragraph: 'We dream of a world where technology, technology access, and technology diversity are democratized.',
   },
   {
     title: 'Our Mission',
-    subTitle: 'We are creating a scalable and inclusive tech-for-good ecosystem.',
+    subTitle: 'We are creating a scalable and inclusive open source ecosystem.',
     backgroundImage: ourMissionBackground,
     // eslint-disable-next-line max-len
-    paragraph: 'Ovio is developing the ecosystem for digital collaboration and cooperation toward social impact. Bringing together tech for good solutions and talents, we help do-gooders efficiently turn their world-changing ideas into reality and empower changemakers with resources to implement sustainable tech-solutions.',
+    paragraph: 'We are building a more accessible and inclusive open-source ecosystem, empowering millions of developers to become active contributors.',
   },
 ];
 

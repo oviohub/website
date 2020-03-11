@@ -10,25 +10,25 @@ import image3 from '../../assets/aboutPage/makesUsUnique.block3.jpg';
 
 const cardList = [
   {
-    title: 'Software Development',
+    title: 'People',
     subTitle: 'Engage engineers',
     image: image1,
     // eslint-disable-next-line max-len
-    textOnOver: 'At a time when technology is becoming more prevalent and powerful, it is critical to engage technologists and engineers as a force for good.',
+    textOnOver: 'Wether it’s one or one hundred contributors, open code is created and maintained by people who need to be rewarded for their contributions',
   },
   {
     title: 'Open-source',
     subTitle: 'Foster collaboration',
     image: image2,
     // eslint-disable-next-line max-len
-    textOnOver: 'We focus on developing open-source solutions to foster collaboration, increase transparency and maximize sustainability of the projects.',
+    textOnOver: 'Open-source is part of every company, every technology, and every developers’ carrier. But with less than 2 maintainers and 1 contribution on average per project, we understand there is an urgent need to transition from consumers only to all contributors.',
   },
   {
-    title: 'Micro-volunteering',
-    subTitle: 'Accelerate change',
+    title: 'Task-based',
+    subTitle: 'Scale contribution',
     image: image3,
     // eslint-disable-next-line max-len
-    textOnOver: 'Micro-volunteering makes it easy and flexible to do good. We offer our volunteers a variety of tasks that they can work on anytime, anywhere, on their own terms.',
+    textOnOver: 'By allowing developers to find the right open source technology, project, task, we are transforming how the current OSS ecosystem rules.',
   },
 ];
 
@@ -114,7 +114,7 @@ const WhatMakesUsUnique = () => {
     <Grid className={muiGridBlockContainer} container>
       <Typography variant="h2">What makes us unique?</Typography>
       <Typography variant="subtitle2">
-        By focusing on coding, we transform micro-volunteering opportunities into long-term impact.
+        We believe that the sustainability and reliability of open-source is about people, not code.
       </Typography>
       <div className={cardsContainer}>
         {cardList.map(({ title, image, subTitle, textOnOver }) => (
