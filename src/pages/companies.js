@@ -24,9 +24,9 @@ import howToRequest from '../assets/modelPage/companies.howTo.request.png';
 const page = {
   hero: {
     title: 'Companies',
-    subtitle: 'Open-source community management for developer teams',
+    subtitle: 'Open source community management for developer teams',
     // eslint-disable-next-line max-len
-    subSubtitle: 'The best tech talents value open-source',
+    subSubtitle: 'The best tech talents value open source',
     backgroundImage: heroImage,
     button: { text: 'Get in Touch', link: 'mailto:founders@ovio.org' },
   },
@@ -34,16 +34,16 @@ const page = {
   block1introFirstPart: {
     items: [
       {
-        title: 'Give your employees access to a variety of open-source opportunities',
+        title: 'Give your employees access to a variety of open source opportunities',
         // eslint-disable-next-line max-len
-        paragraph: 'Ovio accumulates a large portfolio of curated open source projects. We curate and match developers to projects and tasks that matches their skills and interests.',
+        paragraph: 'Ovio accumulates a large portfolio of curated open source projects. We match developers to projects and tasks that matches their skills and interests.',
         image: { publicURL: introImg1 },
         button: { text: 'Browse Projects', link: 'https://explore.ovio.org' },
       },
       {
         title: 'Activate the dev community on your open source projects',
         // eslint-disable-next-line max-len
-        paragraph: 'Showcase your open-source projects and build your tech credibility. Ovio lets you grow, manage, and present your open source program to help you attract & hire a more diverse tech team.',
+        paragraph: 'Showcase your open source projects and build your tech credibility. Ovio lets you grow, manage, and present your open source program to help you attract and hire a more diverse tech team.',
         image: { publicURL: introImg2 },
       },
     ],
@@ -60,7 +60,7 @@ const page = {
       {
         title: 'Track you metric and make an impact',
         // eslint-disable-next-line max-len
-        paragraph: 'Engage your team around social impact projects and take your community engagement to the next stage. In addition to your open source efforts, showcase your social impact commitment and build your employer branding',
+        paragraph: 'Engage your team on impactful projects and take your community engagement to the next stage. In addition to your open source efforts, showcase your impact commitment and build your employer branding',
         image: { publicURL: introImg4 },
       },
     ],
@@ -74,7 +74,7 @@ const page = {
     processItems: [
       {
         // eslint-disable-next-line max-len
-        text: '<Tag>Keep Track</Tag> of your contributions and level of influence<br /><br /><Tag>Reward</Tag> external contributors and dedicated employees<br /><br /><Tag>Identify</Tag> project maintainers and increase retention<br /><br /><Tag>Showcase</Tag> your work',
+        text: '<Tag>Keep Track</Tag> of your contributions and level of influence<br /><br /><Tag>Reward</Tag> external contributors and dedicated employees<br /><br /><Tag>Identify</Tag> project maintainers and increase retention<br /><br /><Tag>Showcase</Tag> your work!',
         image: { publicURL: howToRequest },
         buttons: [
           { text: 'Work with us', link: 'https://calendly.com/founders-ovio' },
@@ -90,9 +90,7 @@ const CompaniesPage = () => (
     <MenuBar />
     <Hero {...page.hero} />
     <BlockIntroTemplate {...page.block1introFirstPart} iconVersion />
-    <MiddleBlock />
     <BlockIntroTemplate {...page.block1introSecondPart} iconVersion />
-    <WhyVolunteering />
     {/* <WhoTrustedUs comments={page.block2feedback} /> */}
     <Testimonies title="They trust us" data={companiesTestimony} />
     <BlockHowToTemplate {...page.block3howto} />

@@ -15,7 +15,7 @@ import heroImage from '../assets/impactPage/hero.jpg';
 const heroContent = {
   title: 'Impact',
   // eslint-disable-next-line max-len
-  subtitle: 'By 2022, Ovio will ensure that 25% of Social Impact Organizations with open-source projects in the USA will get access to top quality tech and reliable, consistent support.',
+  subtitle: 'By 2022, Ovio will ensure that 25% of Social Impact Organizations with open source projects in the USA will get access to top quality tech and reliable, consistent support.',
   backgroundImage: heroImage,
 };
 

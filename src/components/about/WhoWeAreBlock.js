@@ -22,7 +22,7 @@ const teamMembers = [
         <br />
         <br />
         When I moved to San Francisco, I was shocked by local nonprofits struggling to leverage technology solutions.
-        That is why I decided to co-create Ovio, a tech volunteering platform. I am most passionate about refugee rights
+        That is why I decided to co-create Ovio. I am most passionate about refugee rights
         and women’s rights. My appetite for social justice oriented my career towards humanitarian and
         social activities.
       </span>

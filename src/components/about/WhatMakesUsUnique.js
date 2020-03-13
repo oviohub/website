@@ -21,14 +21,14 @@ const cardList = [
     subTitle: 'Foster collaboration',
     image: image2,
     // eslint-disable-next-line max-len
-    textOnOver: 'Open-source is part of every company, every technology, and every developers’ carrier. But with less than 2 maintainers and 1 contribution on average per project, we understand there is an urgent need to transition from consumers only to all contributors.',
+    textOnOver: 'Open-source is part of every technology, developer and company. But the system is broken and only a few contribute. There is an urgent need to transition from consumers only to all contributors.',
   },
   {
     title: 'Task-based',
     subTitle: 'Scale contribution',
     image: image3,
     // eslint-disable-next-line max-len
-    textOnOver: 'By allowing developers to find the right open source technology, project, task, we are transforming how the current OSS ecosystem rules.',
+    textOnOver: 'By allowing developers to find the right open source technology, project and task, we are transforming how the current open source ecosystem rules.',
   },
 ];
 
