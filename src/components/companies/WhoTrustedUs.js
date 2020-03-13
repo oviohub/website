@@ -63,7 +63,6 @@ const useStyles = makeStyles({
     boxShadow: '0px 30px 20px rgba(0, 0, 0, 0.05)',
   },
   body1: {
-    fontStyle: 'italic',
     marginBottom: spacing(3),
   },
   logoImg: { marginRight: spacing(2) },
