@@ -5,8 +5,6 @@ import MenuBar from '../components/MenuBar';
 import Hero from '../components/Hero';
 import Testimonies from '../components/Testimonies';
 import BlockIntroTemplate from '../components/models/BlockIntroTemplate';
-import MiddleBlock from '../components/companies/MiddleBlock';
-import WhyVolunteering from '../components/companies/WhyVolunteering';
 import BlockHowToTemplate from '../components/models/BlockHowToTemplate';
 import LineSeparator from '../components/ui-library/LineSeparator';
 import Footer from '../components/Footer';
