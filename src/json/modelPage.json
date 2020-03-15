@@ -4,7 +4,7 @@
     "path": "/volunteers/",
     "hero": {
       "title": "Developers",
-      "subtitle": "Get matched with open-source projects where your skills are most needed.",
+      "subtitle": "Get matched with open source projects where your skills are most needed.",
       "backgroundImage": "images/modelPage/volunteers.hero.jpg",
       "button": {
         "text": "Explore Projects",
@@ -23,7 +23,7 @@
         },
         {
           "title": "Centralization",
-          "paragraph": "We ensure perfect matches with projects that fit not only your skills but your interests and needs too. We selected and categorized the most contributor friendly projects so you no longer have to search for hours for the right opportunity.",
+          "paragraph": "We strive to create a perfect match with projects that fit your skills and interests. We selected and categorized the most contributor friendly projects so you no longer have to search for hours for the right opportunity.",
           "image": "images/modelPage/volunteers.intro.2.jpg"
         },
         {
@@ -139,8 +139,8 @@
       "isMarkOnLeft": true,
       "items": [
         {
-          "title": "Leverage open-source technology",
-          "paragraph": "Create maintainable code and lower development cost with Ovio. Working with multiple organizations, we have developed a strong expertise in open-source and how to leverage it in the social impact sector.",
+          "title": "Leverage open source technology",
+          "paragraph": "Create maintainable code and lower development cost with Ovio. Working with multiple organizations, we have developed a strong expertise in open source and how to leverage it in the social impact sector.",
           "image": "images/modelPage/socialImpact.intro.1.jpg"
         },
         {
@@ -155,7 +155,7 @@
         },
         {
           "title": "Maintain Sustainable Solutions",
-          "paragraph": "By focusing on open-source, we can transform micro-volunteering into long-term impact. We know it's a challenge to ensure a continuous and sustainable volunteering effort within your organization. Access a large pool of talents that will keep your project up to date one task at the time.",
+          "paragraph": "By focusing on open source, we can transform micro-volunteering into long-term impact. We know it's a challenge to ensure a continuous and sustainable volunteering effort within your organization. Access a large pool of talents that will keep your project up to date one task at the time.",
           "image": "images/modelPage/socialImpact.intro.4.jpg"
         }
       ]
@@ -227,7 +227,7 @@
         },
           {
           "title": "Contact Us",
-          "text": "Create more maintainable code and foster collaboration around your project while lowering development costs. Done right, open-source brings visibility, transparency and scalability to your project. Transform your solution into an actively collaborative and sustainable solution.",
+          "text": "Create more maintainable code and foster collaboration around your project while lowering development costs. Done right, open source brings visibility, transparency and scalability to your project. Transform your solution into an actively collaborative and sustainable solution.",
           "buttons": [
             {
               "text": "Email Us",

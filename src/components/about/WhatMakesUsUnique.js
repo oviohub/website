@@ -17,11 +17,11 @@ const cardList = [
     textOnOver: 'Wether it’s one or one hundred contributors, open code is created and maintained by people who need to be rewarded for their contributions',
   },
   {
-    title: 'Open-source',
+    title: 'Open source',
     subTitle: 'Foster collaboration',
     image: image2,
     // eslint-disable-next-line max-len
-    textOnOver: 'Open-source is part of every technology, developer and company. But the system is broken and only a few contribute. There is an urgent need to transition from consumers only to all contributors.',
+    textOnOver: "Open source is part of every technology, developer's carrier and company. But the system is broken and only a few contribute. There is an urgent need to transition from consumers only to all contributors.",
   },
   {
     title: 'Task-based',
@@ -114,7 +114,7 @@ const WhatMakesUsUnique = () => {
     <Grid className={muiGridBlockContainer} container>
       <Typography variant="h2">What makes us unique?</Typography>
       <Typography variant="subtitle2">
-        We believe that the sustainability and reliability of open-source is about people, not code.
+        We believe that open source is about people, not code.
       </Typography>
       <div className={cardsContainer}>
         {cardList.map(({ title, image, subTitle, textOnOver }) => (
