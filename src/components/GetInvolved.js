@@ -77,7 +77,7 @@ const GetInvolved = () => {
   return (
     <Grid className={muiGridBlockContainer} container>
       <Typography variant="h2">
-      Interested in making open-source more accessible?
+        Interested in making open-source more accessible?
       </Typography>
       <Grid container justify="center">
         {cards.map(({ title, image, paragraph, link }) => (

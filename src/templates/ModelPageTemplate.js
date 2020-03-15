@@ -45,7 +45,7 @@ ModelPageTemplate.propTypes = {
       hero: PropTypes.shape({
         title: PropTypes.string.isRequired,
         subtitle: PropTypes.string.isRequired,
-        subSubtitle: PropTypes.string.isRequired,
+        subSubtitle: PropTypes.string,
         backgroundImage: PropTypes.shape({
           publicURL: PropTypes.string.isRequired,
         }).isRequired,

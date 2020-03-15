@@ -1,9 +1,7 @@
 import React from 'react';
-import { Link } from 'gatsby';
-import { Grid, Typography, Hidden, Button } from '@material-ui/core';
+import { Grid, Typography, Hidden } from '@material-ui/core';
 import { makeStyles } from '@material-ui/styles';
 
-import { getPageUrl } from '../../Routes';
 import { spacing, menuHeightOffset, colors, stylesBase } from '../styledComponents';
 import hero from '../../assets/aboutPage/hero.jpg';
 import heroMobile from '../../assets/aboutPage/hero.mobile.jpg';
@@ -76,9 +74,6 @@ const useStyles = makeStyles(theme => ({
     [theme.breakpoints.down('md')]: { marginBottom: spacing(3) },
     [theme.breakpoints.down('sm')]: { minHeight: '60px' },
   },
-  buttonContainer: {
-    marginTop: spacing(10),
-  },
 }));
 
 const Intro = () => {
@@ -92,7 +87,6 @@ const Intro = () => {
     title1,
     cardContent,
     cardSubtitle,
-    buttonContainer,
   } = useStyles();
   return (
     <Grid className={mainContainer} container justify="center">
