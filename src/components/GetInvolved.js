@@ -15,20 +15,20 @@ const cards = [
     image: volunteersIcon,
     title: 'Developers',
     // eslint-disable-next-line max-len
-    paragraph: 'Access a catalog of open-source projects and tasks. Find opportunities that matches your skills and interests.',
+    paragraph: 'Access a catalog of open source projects and tasks. Find opportunities that match your skills and interests.',
     link: getPageUrl('VolunteersPage'),
   },
   {
     image: socialImpactIcon,
     title: 'Maintainers',
-    paragraph: 'Make your project more visible and attract contributors',
+    paragraph: 'Showcase your project and attract contributors',
     link: getPageUrl('SocialImpactPage'),
   },
   {
     image: companiesIcon,
     title: 'Companies',
     // eslint-disable-next-line max-len
-    paragraph: 'Build your tech credibility and reward your open-source community.',
+    paragraph: 'Build your tech credibility and reward your open source community.',
     link: getPageUrl('CompaniesPage'),
   },
 ];
@@ -77,7 +77,7 @@ const GetInvolved = () => {
   return (
     <Grid className={muiGridBlockContainer} container>
       <Typography variant="h2">
-        Interested in making open-source more accessible?
+      Interested in making open source more accessible?
       </Typography>
       <Grid container justify="center">
         {cards.map(({ title, image, paragraph, link }) => (
