@@ -6,7 +6,7 @@ module.exports = {
   siteMetadata: {
     title: 'Ovio | Empowering developers to become active open source contributors',
     // eslint-disable-next-line max-len
-    description: 'We are building a more accessible and inclusive open-source ecosystem, empowering millions of developers to become active contributors.',
+    description: 'We are building a more accessible and inclusive open source ecosystem, empowering millions of developers to become active contributors.',
     author: 'Ovio',
     url: process.env.REACT_WEBSITE_URL || 'https://ovio.org',
     twitterId: '@OvioHub',

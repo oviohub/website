@@ -28,7 +28,7 @@ const cardList = [
     subTitle: 'Scale contribution',
     image: image3,
     // eslint-disable-next-line max-len
-    textOnOver: 'By allowing developers to find the right open source technology, project and task, we are transforming how the current open source ecosystem rules.',
+    textOnOver: 'By making projects and tasks discoverable, we transform developers into active open source contributors',
   },
 ];
 

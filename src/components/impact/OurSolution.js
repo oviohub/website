@@ -99,9 +99,7 @@ const OurSolution = () => {
   return (
     <Grid className={`${muiGridBlockContainer} ${mainContainer}`} container item md={10}>
       <Typography className={title4} variant="h4">
-        Our solution redirects talent volunteering toward most useful actions. Talented developers can use their
-        most valuable and powerful skills to support the causes they care about. By enabling organizations to access
-        such expensive resources, Ovio empowers them to advance their mission.
+      Talented developers can use their most valuable and powerful skills to support the causes they care about.
       </Typography>
       <Typography variant="body1">
         57% of NGOs claim to have staff limitations, which is a major obstacle to their digital development.
@@ -110,7 +108,7 @@ const OurSolution = () => {
       </Typography>
       <Grid>
         <Typography className={boldText} variant="body1">
-          On the strength of these findings, Ovio has given itself 3 years to generate impact and evaluate it:
+          The work of the Ovio foundation aims to:
         </Typography>
         {objectives.map(({ iconURL, goal, description }, index) => (
           <Grid
