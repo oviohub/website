@@ -78,7 +78,7 @@ const BlockHowToTemplate = ({
   } = useStyles({ withoutTitle: !blockTitle });
   const { text: blockButtonText, link: blockButtonLink } = blockButton || {};
   return (
-    <Grid className={muiGridBlockContainer}>
+    <div className={muiGridBlockContainer}>
       <img className={markImg} src={markImage && markImage.publicURL} alt={blockTitle} />
       {blockTitle && <Typography variant="h2">{blockTitle}</Typography>}
       <Grid item xs={12} md={7}>
@@ -131,7 +131,7 @@ const BlockHowToTemplate = ({
           <BlockButton href={blockButtonLink}>{blockButtonText}</BlockButton>
         </Grid>
       )}
-    </Grid>
+    </div>
   );
 };
 

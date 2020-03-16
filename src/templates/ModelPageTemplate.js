@@ -7,18 +7,16 @@ import MenuBar from '../components/MenuBar';
 import Hero from '../components/Hero';
 import Testimonies from '../components/Testimonies';
 import BlockIntroTemplate from '../components/models/BlockIntroTemplate';
-import BlockStudentBanner from '../components/models/BlockStudentBanner';
 import BlockHowToTemplate from '../components/models/BlockHowToTemplate';
 import LineSeparator from '../components/ui-library/LineSeparator';
 import Footer from '../components/Footer';
-import { organizationsTestimony } from '../services/testimonies';
+import { companiesTestimony } from '../services/testimonies';
 
 const ModelPageTemplate = ({
   data: {
     modelPageJson: {
       slug,
       hero: { backgroundImage: { publicURL: backgroundImageURL }, ...hero },
-      withStudentBanner,
       block1intro,
       // block2feedback,
       block3howto,
@@ -29,8 +27,7 @@ const ModelPageTemplate = ({
     <MenuBar />
     <Hero {...hero} backgroundImage={backgroundImageURL} />
     <BlockIntroTemplate {...block1intro} />
-    {withStudentBanner && <BlockStudentBanner />}
-    {(slug === 'SocialImpactPage') && <Testimonies title="They trust us" data={organizationsTestimony} />}
+    {(slug === 'CompaniesPage') && <Testimonies title="They trust us" data={companiesTestimony} />}
     <BlockHowToTemplate {...block3howto} />
     <LineSeparator />
     <Footer />
@@ -54,8 +51,6 @@ ModelPageTemplate.propTypes = {
           link: PropTypes.string.isRequired,
         }),
       }).isRequired,
-
-      withStudentBanner: PropTypes.bool,
 
       block1intro: PropTypes.shape({
         title: PropTypes.string,
@@ -121,7 +116,6 @@ export const modelPage = graphql`
           link
         }
       }
-      withStudentBanner
       block1intro {
         title
         markImage { publicURL }

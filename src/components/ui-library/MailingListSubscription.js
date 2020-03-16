@@ -46,7 +46,6 @@ const useStyles = makeStyles(theme => ({
   input: {
     borderRadius: 20,
     backgroundColor: theme.palette.primary.main,
-    border: '1px solid #ced4da',
     fontSize: fontSizing(2),
     padding: '4px 12px',
     marginBottom: spacing(2),

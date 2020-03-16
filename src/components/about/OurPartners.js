@@ -39,7 +39,7 @@ const OurValuesBlock = () => {
   // eslint-disable-next-line no-shadow
   const { muiGridBlockContainer, partnersContainer, partnerContainer, title4 } = useStyles();
   return (
-    <Grid className={muiGridBlockContainer} container>
+    <div className={muiGridBlockContainer}>
       <Typography variant="h2">Advisors and Supporting Partners</Typography>
       <Typography variant="subtitle2">
         Our advisors and supporting partners help make Ovio strong through content expertise and financial support.
@@ -63,7 +63,7 @@ const OurValuesBlock = () => {
           </a>
         ))}
       </Grid>
-    </Grid>
+    </div>
   );
 };
 

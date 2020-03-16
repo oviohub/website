@@ -60,7 +60,7 @@ const useStyles = makeStyles(theme => ({
 
 const BlockIntroTemplate = ({
   title,
-  markImage: { publicURL: markImageUrl },
+  markImage,
   isMarkOnLeft,
   items,
   iconVersion,
@@ -82,6 +82,8 @@ const BlockIntroTemplate = ({
     markImg,
     buttons,
   } = useStyles({ isMarkOnLeft, iconVersion });
+  const { publicURL: markImageUrl } = markImage;
+
   return (
     <Grid className={`${muiGridFullScreenWithBackground} ${container}`} container justify="center">
       {markImageUrl && <img className={markImg} src={markImageUrl} alt={title} />}

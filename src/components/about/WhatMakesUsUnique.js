@@ -111,7 +111,7 @@ const WhatMakesUsUnique = () => {
     cardParagraphOnHover,
   } = useStyles();
   return (
-    <Grid className={muiGridBlockContainer} container>
+    <div className={muiGridBlockContainer}>
       <Typography variant="h2">What makes us unique?</Typography>
       <Typography variant="subtitle2">
         We believe that open source is about people, not code.
@@ -135,7 +135,7 @@ const WhatMakesUsUnique = () => {
           </Grid>
         ))}
       </div>
-    </Grid>
+    </div>
   );
 };
 

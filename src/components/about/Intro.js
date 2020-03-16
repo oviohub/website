@@ -1,4 +1,5 @@
 import React from 'react';
+import { pick } from 'lodash';
 import { Grid, Typography, Hidden } from '@material-ui/core';
 import { makeStyles } from '@material-ui/styles';
 
@@ -11,25 +12,20 @@ import ourMissionBackground from '../../assets/aboutPage/ourMissionBackground.jp
 const cardList = [
   {
     title: 'Our Vision',
-    // eslint-disable-next-line max-len
-    subTitle: 'We are building a more accessible and inclusive open source ecosystem where every line of code makes a difference.',
     backgroundImage: ourVisionBackground,
     // eslint-disable-next-line max-len
     paragraph: 'We dream of a world where open technology, technology access and technology diversity are democratized.',
   },
   {
     title: 'Our Mission',
-    subTitle: 'We are creating a scalable and inclusive open source ecosystem.',
     backgroundImage: ourMissionBackground,
     // eslint-disable-next-line max-len
     paragraph: 'We are building a more accessible open source ecosystem, empowering millions of developers to become active contributors.',
   },
 ];
 
-const { muiGridBackground, muiGridFullScreen } = stylesBase;
 const useStyles = makeStyles(theme => ({
-  muiGridBackground,
-  muiGridFullScreen,
+  ...pick(stylesBase, ['muiGridBackground', 'muiGridFullScreen']),
   mainContainer: { padding: `${menuHeightOffset}px 0px 0px` },
   headerContainer: {
     height: '360px',
@@ -47,8 +43,8 @@ const useStyles = makeStyles(theme => ({
   },
   title1: { marginTop: spacing(-7) },
   cardContainer: ({ isEven }) => ({
-    width: '400px',
-    height: '560px',
+    width: 400,
+    height: 400,
     marginRight: isEven ? '0px' : spacing(4),
     boxShadow: '0 20px 30px 0 rgba(0,0,0,0.1)',
     marginTop: spacing(-7),
@@ -69,7 +65,7 @@ const useStyles = makeStyles(theme => ({
   cardSubtitle: {
     lineHeight: '30px',
     letterSpacing: '0.5px',
-    margin: `${spacing(5)} 0px ${spacing(4)}`,
+    margin: `${spacing(8)} 0px ${spacing(4)}`,
     minHeight: '120px',
     [theme.breakpoints.down('md')]: { marginBottom: spacing(3) },
     [theme.breakpoints.down('sm')]: { minHeight: '60px' },
@@ -78,9 +74,7 @@ const useStyles = makeStyles(theme => ({
 
 const Intro = () => {
   const {
-    // eslint-disable-next-line no-shadow
     muiGridBackground,
-    // eslint-disable-next-line no-shadow
     muiGridFullScreen,
     mainContainer,
     headerContainer,
@@ -96,18 +90,17 @@ const Intro = () => {
         </Grid>
       </Grid>
       <Grid container justify="center">
-        {cardList.map(({ title, backgroundImage, subTitle, paragraph }, index) => (
-          <Grid className={useStyles({ isEven: index % 2 }).cardContainer} key={title}>
+        {cardList.map(({ title, backgroundImage, paragraph }, index) => (
+          <Grid item className={useStyles({ isEven: index % 2 }).cardContainer} key={title}>
             <Hidden smDown>
-              <img className={muiGridBackground} src={backgroundImage} alt={subTitle} />
+              <img className={muiGridBackground} src={backgroundImage} alt={title} />
             </Hidden>
-            <Grid className={cardContent}>
+            <div className={cardContent}>
               <Typography variant="h3" color={index % 2 ? 'primary' : 'textSecondary'}>{title}</Typography>
-              <Typography variant="h4" className={cardSubtitle} color={index % 2 ? 'secondary' : 'primary'}>
-                {subTitle}
+              <Typography className={cardSubtitle} variant="body1" color={index % 2 ? 'secondary' : 'primary'}>
+                {paragraph}
               </Typography>
-              <Typography variant="body1" color={index % 2 ? 'secondary' : 'primary'}>{paragraph}</Typography>
-            </Grid>
+            </div>
           </Grid>
         ))}
       </Grid>

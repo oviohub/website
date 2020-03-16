@@ -11,9 +11,7 @@
         "link": "https://explore.ovio.org"
       }
     },
-    "withStudentBanner": true,
     "block1intro": {
-      "title": "Our software allows you to focus on what's most important: doing good.",
       "markImage": "images/modelPage/volunteers.intro.mark.png",
       "items": [
         {
@@ -111,7 +109,7 @@
         {
           "title": "4. Spread the word",
           "text": "Share your experience with your community and beyond. Post details of your experience on social medias, talk with your friends...",
-          "image": "images/modelPage/socialImpact.howTo.submit.png"
+          "image": "images/modelPage/volunteers.howTo.submit.png"
         }
       ]
     },
@@ -122,41 +120,39 @@
   },
 
   {
-    "slug": "SocialImpactPage",
-    "path": "/social-impact/",
+    "slug": "CompaniesPage",
+    "path": "/companies/",
     "hero": {
-      "title": "Social Impact Organizations",
-      "subtitle": "Better Help. Better Cooperation. Bigger Scale.",
-      "subSubtitle": "Are you a nonprofit, B-corp or other form of social good organization looking to maximize your impact in the world? Do you need access to a pool of talented, technically skilled volunteers to develop technology?",
-      "backgroundImage": "images/modelPage/socialImpact.hero.jpg",
-      "button": {
-        "text": "Get in Touch",
-        "link": "mailto:hello@ovio.org"
-      }
+      "title": "Companies",
+      "subtitle": "Open source community management for developer teams",
+      "subSubtitle": "The best tech talents value open source",
+      "backgroundImage": "images/modelPage/companies.hero.jpg",
+      "button": { "text": "Explore", "link": "https://explore.ovio.org" }
     },
     "block1intro": {
-      "markImage": "images/modelPage/socialImpact.intro.mark.png",
+      "markImage": "images/modelPage/companies.intro.mark.png",
       "isMarkOnLeft": true,
       "items": [
         {
-          "title": "Leverage open source technology",
-          "paragraph": "Create maintainable code and lower development cost with Ovio. Working with multiple organizations, we have developed a strong expertise in open source and how to leverage it in the social impact sector.",
-          "image": "images/modelPage/socialImpact.intro.1.jpg"
+          "title": "Give your employees access to a variety of open source opportunities",
+          "paragraph": "Ovio accumulates a large portfolio of curated open source projects. We match developers to projects and tasks that matches their skills and interests.",
+          "image": "images/modelPage/companies.intro.1.jpg",
+          "button": { "text": "Browse Projects", "link": "https://explore.ovio.org" }
         },
         {
-          "title": "Showcase your impactful project",
-          "paragraph": "Let's others know about your great work and showcase your mission to a world-wide community of do-gooders.",
-          "image": "images/modelPage/socialImpact.intro.2.jpg"
+          "title": "Activate the dev community on your open source projects",
+          "paragraph": "Showcase your open source projects and build your tech credibility. Ovio lets you grow, manage, and present your open source program to help you attract and hire a more diverse tech team.",
+          "image": "images/modelPage/companies.intro.2.jpg"
         },
         {
-          "title": "Attract volunteers",
-          "paragraph": "Access a pool of talented volunteers and engage them on your project. <br />All volunteers are vetted to match your projects and issue areas with their skills and interests.",
-          "image": "images/modelPage/socialImpact.intro.3.jpg"
+          "title": "Engage your employees on open source projects you use",
+          "paragraph": "Encourage your engineering teams to contribute to open source code and build an open culture. Ovio makes contribution to open projects easy to help you retain and attract tech talents.",
+          "image": "images/modelPage/companies.intro.3.jpg"
         },
         {
-          "title": "Maintain Sustainable Solutions",
-          "paragraph": "By focusing on open source, we can transform micro-volunteering into long-term impact. We know it's a challenge to ensure a continuous and sustainable volunteering effort within your organization. Access a large pool of talents that will keep your project up to date one task at the time.",
-          "image": "images/modelPage/socialImpact.intro.4.jpg"
+          "title": "Track you metric and make an impact",
+          "paragraph": "Engage your team on impactful projects and take your community engagement to the next stage. In addition to your open source efforts, showcase your impact commitment and build your employer branding",
+          "image": "images/modelPage/companies.intro.4.jpg"
         }
       ]
     },
@@ -166,81 +162,22 @@
         "position": "Apple Inc.",
         "text": "“This is the testimonal text, this is the testimonal text, this is the testimonal text long long long long long version. 1”",
         "photo": "images/modelPage/volunteers.feedback.sylviaThornton.png"
-      },
-      {
-        "author": "Harriett Burke",
-        "position": "Apple Inc.",
-        "text": "“This is the testimonal text, this is the testimonal text, this is the testimonal text long long long long long version. 2”",
-        "photo": "images/modelPage/volunteers.feedback.harriettBurke.png"
-      },
-      {
-        "author": "Effie Hudson",
-        "position": "Apple Inc.",
-        "text": "“This is the testimonal text, this is the testimonal text, this is the testimonal text long long long long long version. 3”",
-        "photo": "images/modelPage/volunteers.feedback.effieHudson.png"
-      },
-      {
-        "author": "Harriett Burke",
-        "position": "Apple Inc.",
-        "text": "“This is the testimonal text, this is the testimonal text, this is the testimonal text long long long long long version. 4”",
-        "photo": "images/modelPage/volunteers.feedback.harriettBurke.png"
-      },
-      {
-        "author": "Effie Hudson",
-        "position": "Apple Inc.",
-        "text": "“This is the testimonal text, this is the testimonal text, this is the testimonal text long long long long long version. 5”",
-        "photo": "images/modelPage/volunteers.feedback.effieHudson.png"
-      },
-      {
-        "author": "Sylvia Thornton",
-        "position": "Apple Inc.",
-        "text": "“This is the testimonal text, this is the testimonal text, this is the testimonal text long long long long long version. 6”",
-        "photo": "images/modelPage/volunteers.feedback.sylviaThornton.png"
-      },
-      {
-        "author": "Effie Hudson",
-        "position": "Apple Inc.",
-        "text": "“This is the testimonal text, this is the testimonal text, this is the testimonal text long long long long long version. 7”",
-        "photo": "images/modelPage/volunteers.feedback.effieHudson.png"
-      },
-      {
-        "author": "Sylvia Thornton",
-        "position": "Apple Inc.",
-        "text": "“This is the testimonal text, this is the testimonal text, this is the testimonal text long long long long long version. 8”",
-        "photo": "images/modelPage/volunteers.feedback.sylviaThornton.png"
       }
     ],
     "block3howto": {
-      "title": "How to apply?",
-      "markImage": "images/modelPage/socialImpact.howto.mark.jpg",
+      "title": "Get in Touch",
+      "markImage": "images/modelPage/companies.howTo.mark.jpg",
+      "taggedTextVersion": true,
       "processItems": [
         {
-          "title": "Submit",
-          "text": "Submit your project and get access to a pool of committed volunteers. We match your needs with volunteers’ talents and interests to ensure your project’s sustainablity.",
+          "text": "<Tag>Keep Track</Tag> of your contributions and level of influence<br /><br /><Tag>Reward</Tag> external contributors and dedicated employees<br /><br /><Tag>Identify</Tag> project maintainers and increase retention<br /><br /><Tag>Showcase</Tag> your work!",
+          "image": "images/modelPage/companies.howTo.request.png",
           "buttons": [
-            {
-              "text": "Submit",
-              "link": "https://airtable.com/shr2rIvDWOiDX9G10"
-            }
-          ],
-          "image": "images/modelPage/socialImpact.howTo.submit.png"
-        },
-          {
-          "title": "Contact Us",
-          "text": "Create more maintainable code and foster collaboration around your project while lowering development costs. Done right, open source brings visibility, transparency and scalability to your project. Transform your solution into an actively collaborative and sustainable solution.",
-          "buttons": [
-            {
-              "text": "Email Us",
-              "link": "mailto:hello@ovio.org"
-            }
-          ],
-          "image": "images/modelPage/socialImpact.howTo.request.png"
+            { "text": "Work with us", "link": "https://calendly.com/founders-ovio" },
+            { "text": "Get in Touch", "link": "mailto:founders@ovio.org" }
+          ]
         }
       ]
-    },
-    "seo": {
-      "title": "",
-      "description": ""
     }
   },
 
@@ -264,7 +201,7 @@
         {
           "title": "Find the right project",
           "paragraph": "Ovio accumulates a large portfolio of software development projects (250+) to include every type of engineering skills and interest in the social impact sector. We help you find local and international opportunities.",
-          "image": "images/modelPage/socialImpact.intro.1.jpg"
+          "image": "images/modelPage/student.intro.1.jpg"
         },
         {
           "title": "Develop your skills",
@@ -274,7 +211,7 @@
         {
           "title": "Showcase your work",
           "paragraph": "Expose your code and showcase your work to a worldwide community of tech employers. Better your Github profile.",
-          "image": "images/modelPage/socialImpact.intro.2.jpg"
+          "image": "images/modelPage/student.intro.2.jpg"
         }
       ]
     },

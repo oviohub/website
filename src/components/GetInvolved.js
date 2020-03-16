@@ -22,7 +22,7 @@ const cards = [
     image: socialImpactIcon,
     title: 'Maintainers',
     paragraph: 'Showcase your project and attract contributors',
-    link: getPageUrl('SocialImpactPage'),
+    link: getPageUrl('FoundationPage', '#reachOut'),
   },
   {
     image: companiesIcon,
@@ -40,7 +40,7 @@ const useStyles = makeStyles(theme => ({
     height: '520px',
     width: '330px',
     padding: spacing(3),
-    marginRight: spacing(2),
+    border: '1px solid transparent',
     '&:hover': {
       border: '1px solid #DCDCDC',
       boxShadow: '0 30px 60px 0 rgba(0,0,0,0.05)',
@@ -75,27 +75,27 @@ const GetInvolved = () => {
     buttonContainer,
   } = useStyles();
   return (
-    <Grid className={muiGridBlockContainer} container>
+    <div className={muiGridBlockContainer}>
       <Typography variant="h2">
-      Interested in making open source more accessible?
+        Interested in making open source more accessible?
       </Typography>
-      <Grid container justify="center">
+      <Grid container justify="space-around">
         {cards.map(({ title, image, paragraph, link }) => (
           <Grid className={cardContainer} item key={title}>
             <img className={imgComponent} src={image} alt={title} />
-            <Grid className={cardTextContainer}>
+            <div className={cardTextContainer}>
               <Typography className={cardTitle} variant="h4">{title}</Typography>
               <Typography className={cardParagraph} variant="body2">{paragraph}</Typography>
-              <Grid className={buttonContainer}>
+              <div className={buttonContainer}>
                 <Link to={link} style={{ textDecoration: 'none' }}>
                   <Button>Learn More</Button>
                 </Link>
-              </Grid>
-            </Grid>
+              </div>
+            </div>
           </Grid>
         ))}
       </Grid>
-    </Grid>
+    </div>
   );
 };
 

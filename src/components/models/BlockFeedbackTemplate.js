@@ -43,7 +43,7 @@ const BlockFeedbackTemplate = ({ comments }) => {
       viewsToShow = 3;
   }
   return (
-    <Grid className={muiGridBlockContainer} container>
+    <div className={muiGridBlockContainer}>
       <Slider viewsToShow={viewsToShow}>
         {comments.map(({ author, text, position, photo: { publicURL: photoUrl } }) => (
           <Grid key={`${author}${text}`} item xs={12} md={6} lg={4}>
@@ -60,7 +60,7 @@ const BlockFeedbackTemplate = ({ comments }) => {
           </Grid>
         ))}
       </Slider>
-    </Grid>
+    </div>
   );
 };
 

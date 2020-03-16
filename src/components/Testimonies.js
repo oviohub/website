@@ -59,7 +59,7 @@ const Testimonies = ({ title, data, width }) => {
   }
 
   return (
-    <Grid className={muiGridBlockContainer} container>
+    <div className={muiGridBlockContainer}>
       <Typography className={title2} variant="h2">{title}</Typography>
       <Grid
         className={cardsContainer}
@@ -79,7 +79,7 @@ const Testimonies = ({ title, data, width }) => {
           ))}
         </Slider>
       </Grid>
-    </Grid>
+    </div>
   );
 };
 

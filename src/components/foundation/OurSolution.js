@@ -11,33 +11,33 @@ import iconMaintain from '../../assets/icons/icon.maintain.orange.png';
 const objectives = [
   {
     iconURL: iconProvide,
-    goal: <React.Fragment>
+    goal: <>
       <BoldSpan>Provide</BoldSpan>
       &nbsp;
       volunteering support to organizations without forcing them to cut into their budgets
       {/* eslint-disable-next-line react/jsx-closing-tag-location */}
-    </React.Fragment>,
+    </>,
     description: '$ worth of tech saved per year by organizations compared to outsourcing or hiring talents',
   },
   {
     iconURL: iconOffer,
-    goal: <React.Fragment>
+    goal: <>
       <BoldSpan>Offer</BoldSpan>
       &nbsp;
       a top-quality tech that allows organizations to develop great products and services that fits their
       benficiaries&apos; needs
       {/* eslint-disable-next-line react/jsx-closing-tag-location */}
-    </React.Fragment>,
+    </>,
     description: 'Years of experience of volunteers engaging with Ovio',
   },
   {
     iconURL: iconMaintain,
-    goal: <React.Fragment>
+    goal: <>
       <BoldSpan>Maintain</BoldSpan>
       &nbsp;
       for years to come sustainable support that strengthens organizations’ resources
       {/* eslint-disable-next-line react/jsx-closing-tag-location */}
-    </React.Fragment>,
+    </>,
     description: 'Retention of volunteers engagement on a project',
   },
 ];
@@ -99,7 +99,7 @@ const OurSolution = () => {
   return (
     <Grid className={`${muiGridBlockContainer} ${mainContainer}`} container item md={10}>
       <Typography className={title4} variant="h4">
-      Talented developers can use their most valuable and powerful skills to support the causes they care about.
+        Talented developers can use their most valuable and powerful skills to support the causes they care about.
       </Typography>
       <Typography variant="body1">
         57% of NGOs claim to have staff limitations, which is a major obstacle to their digital development.
