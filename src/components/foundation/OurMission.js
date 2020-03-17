@@ -11,7 +11,7 @@ const missions = [
     slug: 'open_source',
     title: (
       <>
-        Open-source
+        Open source
         <br />
         for social impact
       </>

@@ -10,25 +10,25 @@ import image3 from '../../assets/aboutPage/makesUsUnique.block3.jpg';
 
 const cardList = [
   {
-    title: 'Software Development',
+    title: 'People',
     subTitle: 'Engage engineers',
     image: image1,
     // eslint-disable-next-line max-len
-    textOnOver: 'At a time when technology is becoming more prevalent and powerful, it is critical to engage technologists and engineers as a force for good.',
+    textOnOver: 'Wether it’s one or one hundred contributors, open code is created and maintained by people who need to be rewarded for their contributions',
   },
   {
-    title: 'Open-source',
+    title: 'Open source',
     subTitle: 'Foster collaboration',
     image: image2,
     // eslint-disable-next-line max-len
-    textOnOver: 'We focus on developing open-source solutions to foster collaboration, increase transparency and maximize sustainability of the projects.',
+    textOnOver: "Open source is part of every technology, developer's carrier and company. But the system is broken and only a few contribute. There is an urgent need to transition from consumers only to all contributors.",
   },
   {
-    title: 'Micro-volunteering',
-    subTitle: 'Accelerate change',
+    title: 'Task-based',
+    subTitle: 'Scale contribution',
     image: image3,
     // eslint-disable-next-line max-len
-    textOnOver: 'Micro-volunteering makes it easy and flexible to do good. We offer our volunteers a variety of tasks that they can work on anytime, anywhere, on their own terms.',
+    textOnOver: 'By making projects and tasks discoverable, we transform developers into active open source contributors',
   },
 ];
 
@@ -114,7 +114,7 @@ const WhatMakesUsUnique = () => {
     <Grid className={muiGridBlockContainer} container>
       <Typography variant="h2">What makes us unique?</Typography>
       <Typography variant="subtitle2">
-        By focusing on coding, we transform micro-volunteering opportunities into long-term impact.
+        We believe that open source is about people, not code.
       </Typography>
       <div className={cardsContainer}>
         {cardList.map(({ title, image, subTitle, textOnOver }) => (

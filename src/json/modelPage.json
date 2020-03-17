@@ -3,9 +3,8 @@
     "slug": "VolunteersPage",
     "path": "/volunteers/",
     "hero": {
-      "title": "Volunteers",
-      "subtitle": "More Flexibility. More Gains. More Impact.",
-      "subSubtitle": "Connect to impactful projects changing the world in a myriad of ways. <br />Use your technical experience and develop new technical and leadership skills while significantly helping social impact projects achieve their goals.",
+      "title": "Developers",
+      "subtitle": "Get matched with open source projects where your skills are most needed.",
       "backgroundImage": "images/modelPage/volunteers.hero.jpg",
       "button": {
         "text": "Explore Projects",
@@ -18,18 +17,18 @@
       "markImage": "images/modelPage/volunteers.intro.mark.png",
       "items": [
         {
-          "title": "Ease-of-Use",
-          "paragraph": "We have designed a seamless experience to make researching and starting projects a straightforward and rewarding experience. <br />As a volunteer, you’re able to give your time and skills on your own schedule.",
+          "title": "Accessibility",
+          "paragraph": "We have designed a seamless experience to make researching and contributing to open source software a straightforward and rewarding experience.",
           "image": "images/modelPage/volunteers.intro.1.jpg"
         },
         {
           "title": "Centralization",
-          "paragraph": "We care about quality over quantity, ensuring you are perfectly matched to projects and social organizations that fit not only your skills but your interests. <br />Consider Ovio as a   shop for skill-based volunteering from a 10-minutes code review to long-term involvement.",
+          "paragraph": "We strive to create a perfect match with projects that fit your skills and interests. We selected and categorized the most contributor friendly projects so you no longer have to search for hours for the right opportunity.",
           "image": "images/modelPage/volunteers.intro.2.jpg"
         },
         {
           "title": "Personalization",
-          "paragraph": "Over time, our software gets to know your interests, passions and skills, it will continuously improve finding the best match for you. <br />You’ll be able to volunteer alongside other talented developers from around the world.",
+          "paragraph": "We help you take control of your open source profile and display the contributions and sucesses you are most pround of.",
           "image": "images/modelPage/volunteers.intro.3.jpg"
         }
       ]
@@ -86,12 +85,11 @@
     ],
     "block3howto": {
       "title": "How to sign up?",
-      "subtitle": "Sounds like Ovio is a place for you to volunteer your skills?",
       "markImage": "images/modelPage/volunteers.howto.mark.jpg",
       "processItems": [
         {
           "title": "1. Visit",
-          "text": "Visit <ExternalLink noDecoration orange href='https://explore.ovio.org'>Explore</ExternalLink> now and discover 300+ open-source projects",
+          "text": "Visit <ExternalLink noDecoration orange href='https://explore.ovio.org'>Explore</ExternalLink> and discover our curated list of open source projects",
           "buttons": [
             {
               "text": "Explore Projects",
@@ -107,12 +105,12 @@
         },
         {
           "title": "3. Add details",
-          "text": "Fill out your profile to get matched to more project opportunities such as <Tag>mentoring</Tag> <Tag>project-based</Tag> <Tag>task-based</Tag> <Tag>...</Tag>",
+          "text": "Fill out your profile to get matched to more project and task opportunities.",
           "image": "images/modelPage/volunteers.howTo.matching.png"
         },
         {
           "title": "4. Spread the word",
-          "text": "Share your experience with your community and beyond. Post details of your experience on social medias, talk with your friends, or ask your employer to sponsor your engagement.",
+          "text": "Share your experience with your community and beyond. Post details of your experience on social medias, talk with your friends...",
           "image": "images/modelPage/socialImpact.howTo.submit.png"
         }
       ]
@@ -141,8 +139,8 @@
       "isMarkOnLeft": true,
       "items": [
         {
-          "title": "Leverage open-source technology",
-          "paragraph": "Create maintainable code and lower development cost with Ovio. Working with multiple organizations, we have developed a strong expertise in open-source and how to leverage it in the social impact sector.",
+          "title": "Leverage open source technology",
+          "paragraph": "Create maintainable code and lower development cost with Ovio. Working with multiple organizations, we have developed a strong expertise in open source and how to leverage it in the social impact sector.",
           "image": "images/modelPage/socialImpact.intro.1.jpg"
         },
         {
@@ -157,7 +155,7 @@
         },
         {
           "title": "Maintain Sustainable Solutions",
-          "paragraph": "By focusing on open-source, we can transform micro-volunteering into long-term impact. We know it's a challenge to ensure a continuous and sustainable volunteering effort within your organization. Access a large pool of talents that will keep your project up to date one task at the time.",
+          "paragraph": "By focusing on open source, we can transform micro-volunteering into long-term impact. We know it's a challenge to ensure a continuous and sustainable volunteering effort within your organization. Access a large pool of talents that will keep your project up to date one task at the time.",
           "image": "images/modelPage/socialImpact.intro.4.jpg"
         }
       ]
@@ -229,7 +227,7 @@
         },
           {
           "title": "Contact Us",
-          "text": "Create more maintainable code and foster collaboration around your project while lowering development costs. Done right, open-source brings visibility, transparency and scalability to your project. Transform your solution into an actively collaborative and sustainable solution.",
+          "text": "Create more maintainable code and foster collaboration around your project while lowering development costs. Done right, open source brings visibility, transparency and scalability to your project. Transform your solution into an actively collaborative and sustainable solution.",
           "buttons": [
             {
               "text": "Email Us",

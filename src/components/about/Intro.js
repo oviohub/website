@@ -1,9 +1,7 @@
 import React from 'react';
-import { Link } from 'gatsby';
-import { Grid, Typography, Hidden, Button } from '@material-ui/core';
+import { Grid, Typography, Hidden } from '@material-ui/core';
 import { makeStyles } from '@material-ui/styles';
 
-import { getPageUrl } from '../../Routes';
 import { spacing, menuHeightOffset, colors, stylesBase } from '../styledComponents';
 import hero from '../../assets/aboutPage/hero.jpg';
 import heroMobile from '../../assets/aboutPage/hero.mobile.jpg';
@@ -14,17 +12,17 @@ const cardList = [
   {
     title: 'Our Vision',
     // eslint-disable-next-line max-len
-    subTitle: 'We are building the world’s leading tech-for-good movement where every line of code makes a difference.',
+    subTitle: 'We are building a more accessible and inclusive open source ecosystem where every line of code makes a difference.',
     backgroundImage: ourVisionBackground,
     // eslint-disable-next-line max-len
-    paragraph: 'We dream of a world where we improve technology and technology access for social agents by helping organizations to be more collaborative in the creation and scaling of their solutions.',
+    paragraph: 'We dream of a world where open technology, technology access and technology diversity are democratized.',
   },
   {
     title: 'Our Mission',
-    subTitle: 'We are creating a scalable and inclusive tech-for-good ecosystem.',
+    subTitle: 'We are creating a scalable and inclusive open source ecosystem.',
     backgroundImage: ourMissionBackground,
     // eslint-disable-next-line max-len
-    paragraph: 'Ovio is developing the ecosystem for digital collaboration and cooperation toward social impact. Bringing together tech for good solutions and talents, we help do-gooders efficiently turn their world-changing ideas into reality and empower changemakers with resources to implement sustainable tech-solutions.',
+    paragraph: 'We are building a more accessible open source ecosystem, empowering millions of developers to become active contributors.',
   },
 ];
 
@@ -76,9 +74,6 @@ const useStyles = makeStyles(theme => ({
     [theme.breakpoints.down('md')]: { marginBottom: spacing(3) },
     [theme.breakpoints.down('sm')]: { minHeight: '60px' },
   },
-  buttonContainer: {
-    marginTop: spacing(10),
-  },
 }));
 
 const Intro = () => {
@@ -92,7 +87,6 @@ const Intro = () => {
     title1,
     cardContent,
     cardSubtitle,
-    buttonContainer,
   } = useStyles();
   return (
     <Grid className={mainContainer} container justify="center">
@@ -116,11 +110,6 @@ const Intro = () => {
             </Grid>
           </Grid>
         ))}
-      </Grid>
-      <Grid className={buttonContainer}>
-        <Link to={getPageUrl('ImpactPage')} style={{ textDecoration: 'none' }}>
-          <Button>Learn more about our impact</Button>
-        </Link>
       </Grid>
     </Grid>
   );
