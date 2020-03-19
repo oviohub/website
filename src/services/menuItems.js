@@ -15,7 +15,7 @@ const completeMenu = [
     link: getPageUrl('ModelPage'),
     subMenu: [
       { label: 'Developers', link: getPageUrl('VolunteersPage') },
-      { label: 'Maintainers', link: getPageUrl('SocialImpactPage') },
+      { label: 'Maintainers', link: getPageUrl('FoundationPage', '#reachOut') },
       { label: 'Companies', link: getPageUrl('CompaniesPage') },
     ],
   },
