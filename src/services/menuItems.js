@@ -6,7 +6,7 @@ const completeMenu = [
     link: getPageUrl('AboutPage'),
     subMenu: [
       { label: 'Our Story', link: getPageUrl('AboutPage') },
-      { label: 'Our Impact', link: getPageUrl('ImpactPage') },
+      { label: 'Our Impact', link: getPageUrl('FoundationPage', '#impact') },
       { label: 'Our Foundation', link: getPageUrl('FoundationPage') },
     ],
   },
@@ -15,7 +15,7 @@ const completeMenu = [
     link: getPageUrl('ModelPage'),
     subMenu: [
       { label: 'Volunteers', link: getPageUrl('VolunteersPage') },
-      { label: 'Organizations', link: getPageUrl('SocialImpactPage') },
+      { label: 'Organizations', link: getPageUrl('FoundationPage', '#reachOut') },
       { label: 'Companies', link: getPageUrl('CompaniesPage') },
     ],
   },
@@ -25,7 +25,7 @@ const completeMenu = [
   },
   {
     label: 'Impact',
-    link: getPageUrl('ImpactPage'),
+    link: getPageUrl('FoundationPage', '#impact'),
   },
   {
     label: 'Contact',

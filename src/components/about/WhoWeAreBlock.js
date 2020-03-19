@@ -116,7 +116,7 @@ const WhoWeAreBlock = () => {
     icon,
   } = useStyles();
   return (
-    <Grid className={muiGridBlockContainer} container>
+    <div className={muiGridBlockContainer}>
       <Typography variant="h2">Who we are</Typography>
       <Grid
         container
@@ -145,7 +145,7 @@ const WhoWeAreBlock = () => {
           </Grid>
         ))}
       </Grid>
-    </Grid>
+    </div>
   );
 };
 

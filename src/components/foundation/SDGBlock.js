@@ -2,6 +2,7 @@ import React from 'react';
 import { Grid, Typography } from '@material-ui/core';
 import JsxParser from 'react-jsx-parser';
 import { makeStyles } from '@material-ui/styles';
+import { pick } from 'lodash';
 
 import { colors, spacing, fontSizing, stylesBase, useWidth } from '../styledComponents';
 
@@ -134,21 +135,10 @@ const sdgs = [
   },
 ];
 
-const { muiGridBlockContainer, muiGridBackground, muiGridWithOnHoverText } = stylesBase;
 const useStyles = makeStyles(theme => ({
-  muiGridBlockContainer,
-  muiGridBackground,
-  muiGridWithOnHoverText,
-  closing: {
-    width: '86%',
-    [theme.breakpoints.down('xs')]: { width: '100%' },
-  },
-  subtitle2: {
-    marginBottom: spacing(5),
-    fontWeight: 'bold',
-  },
+  ...pick(stylesBase, ['muiGridBlockContainer', 'muiGridBackground', 'muiGridWithOnHoverText']),
   cardsContainer: {
-    margin: `0px 0px ${spacing(8)} -${spacing(2)}`,
+    margin: spacing(2, 0, 8, -2),
   },
   cardContainer: {
     width: '170px',
@@ -192,20 +182,16 @@ const useStyles = makeStyles(theme => ({
     width: 'auto',
     left: '0px',
     marginTop: '-350px',
+    opacity: 0.5,
   },
 }));
 
 const SDGBlock = () => {
   const width = useWidth();
   const {
-    // eslint-disable-next-line no-shadow
     muiGridBlockContainer,
-    // eslint-disable-next-line no-shadow
     muiGridBackground,
-    // eslint-disable-next-line no-shadow
     muiGridWithOnHoverText,
-    subtitle2,
-    closing,
     cardsContainer,
     cardContainer,
     cardOnHoverDisplay,
@@ -215,10 +201,15 @@ const SDGBlock = () => {
     markStyle,
   } = useStyles();
   return (
-    <Grid className={muiGridBlockContainer} container>
+    <div className={muiGridBlockContainer}>
       <img className={`${muiGridBackground} ${markStyle}`} src={markImage} alt="Our values" />
       <Typography variant="h2">
         The UN Sustainable Development Goals
+      </Typography>
+      <Typography variant="body1">
+        Ovio is playing a significant role in the “global partnership for the goals” (n°17) by
+        encouraging cooperation, by scaling access to tech innovation and by encouraging everyone
+        to make a positive impact on the world.
       </Typography>
       <Grid container className={cardsContainer} justify={width === 'xs' ? 'center' : 'flex-start'}>
         {sdgs.map(({ title, image, textOnOver, color }) => (
@@ -241,26 +232,7 @@ const SDGBlock = () => {
           </Grid>
         ))}
       </Grid>
-      <Grid className={closing}>
-        <Typography className={subtitle2} variant="subtitle2">
-          Engaging people through skill-based volunteering can take&nbsp;
-          <a
-            href="https://sustainabledevelopment.un.org/"
-            style={{ color: 'inherit' }}
-            target="_blank"
-            rel="noreferrer noopener"
-          >
-            The UN Sustainable Development Goals
-          </a>
-          &nbsp;impact to the next level.
-        </Typography>
-        <Typography variant="body1">
-          Ovio is playing a significant role in the “global partnership for the goals” (n°17) by encouraging
-          cooperation between companies, citizens and social impact organizations, by scaling access to tech innovation
-          and by encouraging everyone to make a positive impact on the world.
-        </Typography>
-      </Grid>
-    </Grid>
+    </div>
   );
 };
 

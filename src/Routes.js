@@ -17,17 +17,9 @@ export const routes = {
     url: '/model/',
     component: 'src/pages/model.js',
   },
-  CompaniesPage: {
-    url: '/companies/',
-    component: 'src/pages/companies.js',
-  },
   ContactUsPage: {
     url: '/contact-us/',
     component: 'src/pages/contact-us.js',
-  },
-  ImpactPage: {
-    url: '/impact/',
-    component: 'src/pages/impact.js',
   },
   FoundationPage: {
     url: '/foundation/',
@@ -42,5 +34,5 @@ modelPage.forEach((page) => {
   };
 });
 
-export const getPageUrl = routeId => routes[routeId] && routes[routeId].url;
+export const getPageUrl = (routeId, append = '') => routes[routeId] && `${routes[routeId].url}${append}`;
 export const getPageSEO = routeId => routes[routeId] && (routes[routeId].seo || {});

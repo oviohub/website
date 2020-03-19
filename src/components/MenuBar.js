@@ -3,7 +3,6 @@ import PropTypes from 'prop-types';
 import { Link } from 'gatsby';
 import {
   Grid,
-  Typography,
   Button,
   Popper,
   Grow,
@@ -52,14 +51,6 @@ const useStyles = makeStyles(theme => ({
     color: 'inherit',
     textDecoration: 'none',
   },
-  logoCaution: {
-    fontFamily: 'Dosis',
-    fontSize: '14px',
-    lineHeight: '17px',
-    marginTop: spacing(1),
-    marginLeft: spacing(1),
-    width: 'fit-content',
-  },
   button: ({ homeVersion, last }) => ({
     backgroundColor: 'transparent',
     fontFamily: 'Roboto',
@@ -99,7 +90,6 @@ const MenuBar = ({ homeVersion }) => {
     leftSubContainer,
     button,
     links,
-    logoCaution,
     menuItem,
     subMenuList,
     subMenuItem,
@@ -123,14 +113,7 @@ const MenuBar = ({ homeVersion }) => {
       <Grid container item className={gridFixedWidth}>
         <Grid className={rightSubContainer} item xs={6} container alignItems="center">
           <Link className={links} to={getPageUrl('HomePage')}>
-            <Grid container alignItems="flex-start" justify="center">
-              <img className={muiIconLogo} src={homeVersion ? logoWhite : logoOrange} alt="Ovio" />
-              <Hidden smDown>
-                <Typography className={logoCaution} color={homeVersion ? 'primary' : 'textSecondary'}>
-                  Online Volunteering in the Open
-                </Typography>
-              </Hidden>
-            </Grid>
+            <img className={muiIconLogo} src={homeVersion ? logoWhite : logoOrange} alt="Ovio" />
           </Link>
         </Grid>
 

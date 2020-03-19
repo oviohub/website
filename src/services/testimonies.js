@@ -10,6 +10,7 @@ import redcross from '../assets/logo/organizations/redcross.jpg';
 import replate from '../assets/logo/organizations/replate.png';
 import unicef from '../assets/logo/organizations/unicef.png';
 import wfp from '../assets/logo/organizations/wfp.jpg';
+import okta from '../assets/logo/organizations/okta.png';
 
 export const companiesTestimony = [
   {
@@ -24,12 +25,12 @@ export const companiesTestimony = [
     order: 3,
     link: 'https://www.optimizely.com',
   },
-  // {
-  //   name: 'Salesforce',
-  //   logo: salesforce,
-  //   order: 1,
-  //   link: 'https://www.salesforce.org/',
-  // },
+  {
+    name: 'Okta',
+    logo: okta,
+    order: 1,
+    link: 'https://www.okta.com/',
+  },
 ];
 
 export const organizationsTestimony = [
