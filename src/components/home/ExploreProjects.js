@@ -25,9 +25,7 @@ const ExploreProjects = () => {
   return (
     <Grid className={muiGridBlockContainer} container direction="column">
       <Typography variant="h2" color="secondary">Open Source for All</Typography>
-      <Typography variant="subtitle2" color="secondary">
-        Discover a selection of 500+ open-source projects and start contributing to great repos now!
-      </Typography>
+      <Typography variant="subtitle2" color="secondary">Start contributing to great repos now! </Typography>
       <Iframe
         src="https://explore.ovio.org/iframe/projects/featured/"
         className={iframe}

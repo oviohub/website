@@ -29,7 +29,7 @@ const missions = [
       </>
     ),
     // eslint-disable-next-line max-len
-    description: 'For social impact organization of all sizes, harnessing technology effectively can be a daunting task. Ovio engineers help make the right decisions early on and ensure the sustainability of their projects. We help build collaborative solutions to scale impact and attract talented volunteers.',
+    description: 'For social impact organizations of all sizes, harnessing technology effectively can be a daunting task. Ovio engineers help make the right decisions early on and ensure the sustainability of their projects. We help build collaborative solutions to scale impact and attract talented volunteers.',
   },
 ];
 

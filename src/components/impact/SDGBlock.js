@@ -255,9 +255,9 @@ const SDGBlock = () => {
           &nbsp;impact to the next level.
         </Typography>
         <Typography variant="body1">
-          Ovio is playing a significant role in the “global partnership for the goals” (n°17) by encouraging
-          cooperation between companies, citizens and social impact organizations, by scaling access to tech innovation
-          and by encouraging everyone to make a positive impact on the world.
+          The UN has developed a framework of 17 goals to help build a better and more sustainable future for the world.
+          At Ovio, we want to make sure that technology is helping to advance these goals, so we allow developers to find 
+          projects aimed at the SDGs they care about.
         </Typography>
       </Grid>
     </Grid>

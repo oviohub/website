@@ -12,17 +12,17 @@ const cardList = [
   {
     title: 'Our Vision',
     // eslint-disable-next-line max-len
-    subTitle: 'We are building a more accessible and inclusive open source ecosystem where every line of code makes a difference.',
+    subTitle: '',
     backgroundImage: ourVisionBackground,
     // eslint-disable-next-line max-len
-    paragraph: 'We dream of a world where open technology, technology access and technology diversity are democratized.',
+    paragraph: 'We are building a more accessible and inclusive open source ecosystem where every line of code makes a difference.',
   },
   {
     title: 'Our Mission',
-    subTitle: 'We are creating a scalable and inclusive open source ecosystem.',
+    subTitle: '',
     backgroundImage: ourMissionBackground,
     // eslint-disable-next-line max-len
-    paragraph: 'We are building a more accessible open source ecosystem, empowering millions of developers to become active contributors.',
+    paragraph: 'Ovio empowers millions of developers to become active open source contributors. We want to make sure that every developer can contribute with their skillsto meaningful opportunities',
   },
 ];
 

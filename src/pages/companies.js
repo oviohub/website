@@ -24,7 +24,7 @@ const page = {
     title: 'Companies',
     subtitle: 'Open source community management for developer teams',
     // eslint-disable-next-line max-len
-    subSubtitle: 'The best tech talents value open source',
+    subSubtitle: 'The best tech talent value open source',
     backgroundImage: heroImage,
     button: { text: 'Get in Touch', link: 'mailto:founders@ovio.org' },
   },
@@ -34,7 +34,7 @@ const page = {
       {
         title: 'Give your employees access to a variety of open source opportunities',
         // eslint-disable-next-line max-len
-        paragraph: 'Ovio accumulates a large portfolio of curated open source projects. We match developers to projects and tasks that matches their skills and interests.',
+        paragraph: 'Ovio accumulates a large portfolio of curated open source projects. We match developers to projects and tasks best suited to their skills and interests.',
         image: { publicURL: introImg1 },
         button: { text: 'Browse Projects', link: 'https://explore.ovio.org' },
       },
@@ -52,13 +52,13 @@ const page = {
       {
         title: 'Engage your employees on open source projects you use',
         // eslint-disable-next-line max-len
-        paragraph: 'Encourage your engineering teams to contribute to open source code and build an open culture. Ovio makes contribution to open projects easy to help you retain and attract tech talents.',
+        paragraph: 'Encourage your engineering teams to contribute to open source code and build an open culture. Ovio makes contribution to open projects easy to help you retain and attract tech talent.',
         image: { publicURL: introImg3 },
       },
       {
         title: 'Track you metric and make an impact',
         // eslint-disable-next-line max-len
-        paragraph: 'Engage your team on impactful projects and take your community engagement to the next stage. In addition to your open source efforts, showcase your impact commitment and build your employer branding',
+        paragraph: 'Engage your team on impactful projects and take your community engagement to the next level. Build your brand and show case your commitment to social impact by using Ovio to track and highlight your open source efforts.',
         image: { publicURL: introImg4 },
       },
     ],

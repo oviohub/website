@@ -21,14 +21,14 @@ const cardList = [
     subTitle: 'Foster collaboration',
     image: image2,
     // eslint-disable-next-line max-len
-    textOnOver: "Open source is part of every technology, developer's carrier and company. But the system is broken and only a few contribute. There is an urgent need to transition from consumers only to all contributors.",
+    textOnOver: "Open source is part of every technology, developer's career and company. But the system is broken and only a few contribute. There is a urgent need to transition from consumers of open source to contributors.",
   },
   {
     title: 'Task-based',
     subTitle: 'Scale contribution',
     image: image3,
     // eslint-disable-next-line max-len
-    textOnOver: 'By making projects and tasks discoverable, we transform developers into active open source contributors',
+    textOnOver: 'Ovio curates opportunities by project and by task to make it easy to find a way to contribute that matches your interests, skills, and desired level of commitment.',
   },
 ];
 
