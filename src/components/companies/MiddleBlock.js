@@ -17,7 +17,6 @@ const useStyles = makeStyles(theme => ({
     zIndex: 1,
   },
   body1: {
-    fontStyle: 'italic',
     fontWeight: '600',
     fontSize: fontSizing(6),
     lineHeight: '56px',
@@ -53,9 +52,10 @@ const MiddleBlock = () => {
         </Grid>
         <Grid item xs={9}>
           <Typography className={body1} variant="body1" color="primary">
-          Ovio is the only volunteering platform with a large portfolio of software development projects that can fit
-          every type of engineering skill set and interest in the social impact sector from education to poverty
-          alleviation and beyond.
+            Ovio is the only volunteering platform with a large portfolio of software
+            development projects that can fit every type of engineering skill set and
+            interest in the social impact sector from education to poverty
+            alleviation and beyond.
           </Typography>
         </Grid>
       </Grid>

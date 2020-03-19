@@ -24,7 +24,7 @@ const page = {
     title: 'Companies',
     subtitle: 'Open source community management for developer teams',
     // eslint-disable-next-line max-len
-    subSubtitle: 'The best tech talent value open source',
+    subSubtitle: 'The best tech talent values open source',
     backgroundImage: heroImage,
     button: { text: 'Get in Touch', link: 'mailto:founders@ovio.org' },
   },
