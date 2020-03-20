@@ -6,7 +6,6 @@ const completeMenu = [
     link: getPageUrl('AboutPage'),
     subMenu: [
       { label: 'Our Story', link: getPageUrl('AboutPage') },
-      { label: 'Our Impact', link: getPageUrl('FoundationPage', '#impact') },
       { label: 'Our Foundation', link: getPageUrl('FoundationPage') },
     ],
   },

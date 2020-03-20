@@ -1,7 +1,7 @@
 [
   {
     "slug": "VolunteersPage",
-    "path": "/volunteers/",
+    "path": "/developers/",
     "hero": {
       "title": "Developers",
       "subtitle": "Get matched with open source projects where your skills are most needed.",
