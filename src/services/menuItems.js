@@ -15,17 +15,13 @@ const completeMenu = [
     link: getPageUrl('ModelPage'),
     subMenu: [
       { label: 'Developers', link: getPageUrl('VolunteersPage') },
-      { label: 'Maintainers', link: getPageUrl('FoundationPage', '#reachOut') },
+      // { label: 'Maintainers', link: getPageUrl('FoundationPage', '#reachOut') },
       { label: 'Companies', link: getPageUrl('CompaniesPage') },
     ],
   },
   {
     label: 'Featured',
     link: getPageUrl('HomePage'),
-  },
-  {
-    label: 'Impact',
-    link: getPageUrl('FoundationPage', '#impact'),
   },
   {
     label: 'Contact',

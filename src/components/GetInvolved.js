@@ -18,12 +18,12 @@ const cards = [
     paragraph: 'Access a catalog of open source projects and tasks. Find opportunities that match your skills and interests.',
     link: getPageUrl('VolunteersPage'),
   },
-  {
-    image: socialImpactIcon,
-    title: 'Maintainers',
-    paragraph: 'Showcase your project and attract contributors',
-    link: getPageUrl('FoundationPage', '#reachOut'),
-  },
+  // {
+  //   image: socialImpactIcon,
+  //   title: 'Maintainers',
+  //   paragraph: 'Showcase your project and attract contributors',
+  //   link: getPageUrl('FoundationPage', '#reachOut'),
+  // },
   {
     image: companiesIcon,
     title: 'Companies',
