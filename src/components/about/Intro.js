@@ -20,7 +20,7 @@ const cardList = [
     title: 'Our Mission',
     backgroundImage: ourMissionBackground,
     // eslint-disable-next-line max-len
-    paragraph: 'Ovio empowers millions of developers to become active open source contributors. We want to make sure that every developer can contribute with their skillsto meaningful opportunities',
+    paragraph: 'Ovio empowers millions of developers to become active open source contributors. We want to make sure that every developer can contribute with their skills to meaningful opportunities',
   },
 ];
 
