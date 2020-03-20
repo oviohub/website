@@ -93,7 +93,7 @@ const MailingListSubscription = () => {
       <Grid container justify="center" alignItems="center" className={mainContainer}>
 
         <Grid item xs={10} md={7}>
-          <Typography variant="h4" color="primary" className={title4}>Stay in touch with Ovio</Typography>
+          <Typography variant="h4" color="primary" className={title4}>Stay in touch</Typography>
           <Typography variant="subtitle1">Subscribe to our mailing list.</Typography>
         </Grid>
 
