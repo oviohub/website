@@ -76,7 +76,7 @@ const Hero = () => {
         >
           <Typography className={typography} variant="h1">Empowering developers to become active open source contributors</Typography>
           <Typography className={typography} variant="subtitle1">
-          Join the community of open source contributors on our Explore platform and find the perfect open source project for you.
+          Join the community on our Explore platform and find the perfect open source project for you.
           </Typography>
           <Grid className={buttonContainer} item>
             <Link to={getPageUrl('AboutPage')} style={{ textDecoration: 'none' }}>

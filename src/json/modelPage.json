@@ -16,7 +16,7 @@
       "items": [
         {
           "title": "Accessibility",
-          "paragraph": "We have designed a seamless experience to make researching and contributing to open source software a straightforward and rewarding experience.",
+          "paragraph": "We have designed a seamless experience to make researching and contributing to open source software straightforward and rewarding.",
           "image": "images/modelPage/volunteers.intro.1.jpg"
         },
         {
@@ -26,7 +26,7 @@
         },
         {
           "title": "Personalization",
-          "paragraph": "We help you take control of your open source profile and display the contributions and sucesses you are most pround of.",
+          "paragraph": "We help you take control of your open source profile and display the contributions and successes you are most proud of.",
           "image": "images/modelPage/volunteers.intro.3.jpg"
         }
       ]
@@ -108,7 +108,7 @@
         },
         {
           "title": "4. Spread the word",
-          "text": "Share your experience with your community and beyond. Post details of your experience on social medias, talk with your friends...",
+          "text": "Post details of your contributions on social media, encourage your friends and coworkers to contribute and help OSS communities thrive!",
           "image": "images/modelPage/volunteers.howTo.submit.png"
         }
       ]
@@ -125,7 +125,7 @@
     "hero": {
       "title": "Companies",
       "subtitle": "Open source community management for developer teams",
-      "subSubtitle": "The best tech talents value open source",
+      "subSubtitle": "The best talent in tech values open source.",
       "backgroundImage": "images/modelPage/companies.hero.jpg",
       "button": { "text": "Explore", "link": "https://explore.ovio.org" }
     },
@@ -146,12 +146,12 @@
         },
         {
           "title": "Engage your employees on open source projects you use",
-          "paragraph": "Encourage your engineering teams to contribute to open source code and build an open culture. Ovio makes contribution to open projects easy to help you retain and attract tech talents.",
+          "paragraph": "Encourage your engineering teams to contribute to open source code and build an open culture. Ovio makes contribution to open projects easy to help you retain and attract tech talent.",
           "image": "images/modelPage/companies.intro.3.jpg"
         },
         {
-          "title": "Track you metric and make an impact",
-          "paragraph": "Engage your team on impactful projects and take your community engagement to the next stage. In addition to your open source efforts, showcase your impact commitment and build your employer branding",
+          "title": "Track you metrics and make an impact",
+          "paragraph": "Engage your team on impactful projects and take your community engagement to the next level. Build your brand and show case your commitment to social impact by using Ovio to track and highlight your open source efforts.",
           "image": "images/modelPage/companies.intro.4.jpg"
         }
       ]

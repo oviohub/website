@@ -58,7 +58,7 @@ const useStyles = makeStyles(theme => ({
     minHeight: '150px',
   },
   buttonContainer: {
-    position: 'relative',
+    textAlign: 'center',
     bottom: '-4px',
   },
 }));
