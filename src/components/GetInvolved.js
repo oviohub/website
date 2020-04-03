@@ -7,7 +7,7 @@ import { getPageUrl } from '../Routes';
 import { spacing, fontSizing, stylesBase } from './styledComponents';
 
 import volunteersIcon from '../assets/icons/icon.volunteers.png';
-import socialImpactIcon from '../assets/icons/icon.socialImpact.png';
+// import socialImpactIcon from '../assets/icons/icon.socialImpact.png';
 import companiesIcon from '../assets/icons/icon.companies.png';
 
 const cards = [
@@ -16,7 +16,7 @@ const cards = [
     title: 'Developers',
     // eslint-disable-next-line max-len
     paragraph: 'Access a catalog of open source projects and tasks. Find opportunities that match your skills and interests.',
-    link: getPageUrl('VolunteersPage'),
+    link: getPageUrl('DevelopersPage'),
   },
   // {
   //   image: socialImpactIcon,

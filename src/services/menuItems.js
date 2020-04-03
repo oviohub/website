@@ -11,9 +11,8 @@ const completeMenu = [
   },
   {
     label: 'Get Involved',
-    link: getPageUrl('ModelPage'),
     subMenu: [
-      { label: 'Developers', link: getPageUrl('VolunteersPage') },
+      { label: 'Developers', link: getPageUrl('DevelopersPage') },
       // { label: 'Maintainers', link: getPageUrl('FoundationPage', '#reachOut') },
       { label: 'Companies', link: getPageUrl('CompaniesPage') },
     ],
