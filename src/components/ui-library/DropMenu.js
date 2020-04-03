@@ -1,7 +1,7 @@
-import React from 'react';
+import React, { createElement } from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
-import { Link } from 'gatsby';
+import { Link as GatsbyLink } from 'gatsby';
 import { Button, Paper as MuiPaper, MenuList, MenuItem as MuiMenuItem } from '@material-ui/core';
 import { spacing, colors } from '../styledComponents';
 
@@ -48,28 +48,34 @@ const MenuItem = styled(MuiMenuItem)`
   }
 `;
 
-const DropMenu = ({ homeVersion, buttonLabel, buttonLink, color, classes: { links, button }, menuItems }) => (
-  <Container homeversion={homeVersion ? 1 : 0}>
-    <Link
-      id="dropdown-toggle"
-      className={links}
-      to={buttonLink}
-    >
-      <Button id="button" className={button} color={color}>{buttonLabel}</Button>
-    </Link>
-    <SubMenuContainer>
-      <Paper homeversion={homeVersion ? 1 : 0}>
-        <MenuList disablePadding>
-          {menuItems.map(({ label, link }) => (
-            <Link className={links} key={label} to={link}>
-              <MenuItem homeversion={homeVersion ? 1 : 0}>{label}</MenuItem>
-            </Link>
-          ))}
-        </MenuList>
-      </Paper>
-    </SubMenuContainer>
-  </Container>
-);
+const DropMenu = ({ homeVersion, buttonLabel, buttonLink, color, classes: { links, button }, menuItems }) => {
+  const Link = buttonLink
+    ? GatsbyLink
+    : ({ children, ...props }) => createElement('span', props, children);
+
+  return (
+    <Container homeversion={homeVersion ? 1 : 0}>
+      <Link
+        id="dropdown-toggle"
+        className={links}
+        to={buttonLink}
+      >
+        <Button id="button" className={button} color={color}>{buttonLabel}</Button>
+      </Link>
+      <SubMenuContainer>
+        <Paper homeversion={homeVersion ? 1 : 0}>
+          <MenuList disablePadding>
+            {menuItems.map(({ label, link }) => (
+              <GatsbyLink className={links} key={label} to={link}>
+                <MenuItem homeversion={homeVersion ? 1 : 0}>{label}</MenuItem>
+              </GatsbyLink>
+            ))}
+          </MenuList>
+        </Paper>
+      </SubMenuContainer>
+    </Container>
+  );
+};
 
 DropMenu.propTypes = {
   homeVersion: PropTypes.bool,

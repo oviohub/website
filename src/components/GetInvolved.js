@@ -7,7 +7,7 @@ import { getPageUrl } from '../Routes';
 import { spacing, fontSizing, stylesBase } from './styledComponents';
 
 import volunteersIcon from '../assets/icons/icon.volunteers.png';
-import socialImpactIcon from '../assets/icons/icon.socialImpact.png';
+// import socialImpactIcon from '../assets/icons/icon.socialImpact.png';
 import companiesIcon from '../assets/icons/icon.companies.png';
 
 const cards = [
