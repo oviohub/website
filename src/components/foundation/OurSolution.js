@@ -17,7 +17,7 @@ const objectives = [
       volunteering support to organizations without forcing them to cut into their budgets
       {/* eslint-disable-next-line react/jsx-closing-tag-location */}
     </>,
-    description: '$ worth of tech saved per year by organizations compared to outsourcing or hiring ',
+    description: '$ worth of tech saved per year by organizations compared to outsourcing or hiring',
   },
   {
     iconURL: iconOffer,
