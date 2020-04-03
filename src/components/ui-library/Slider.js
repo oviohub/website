@@ -114,7 +114,7 @@ class Slider extends React.Component {
             {visibleChildren}
           </Grid>
         )}
-        <Grid className={controllers} container justify="center">{Dots}</Grid>
+        { Dots.length > 1 ? <Grid className={controllers} container justify="center">{Dots}</Grid> : null}
       </Grid>
     );
   }

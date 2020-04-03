@@ -17,15 +17,15 @@ const objectives = [
       volunteering support to organizations without forcing them to cut into their budgets
       {/* eslint-disable-next-line react/jsx-closing-tag-location */}
     </>,
-    description: '$ worth of tech saved per year by organizations compared to outsourcing or hiring talents',
+    description: '$ worth of tech saved per year by organizations compared to outsourcing or hiring',
   },
   {
     iconURL: iconOffer,
     goal: <>
       <BoldSpan>Offer</BoldSpan>
       &nbsp;
-      a top-quality tech that allows organizations to develop great products and services that fits their
-      benficiaries&apos; needs
+      a top-quality tech that allows organizations to develop great products and services that fits your
+      beneficiaries&apos; needs
       {/* eslint-disable-next-line react/jsx-closing-tag-location */}
     </>,
     description: 'Years of experience of volunteers engaging with Ovio',
@@ -35,7 +35,7 @@ const objectives = [
     goal: <>
       <BoldSpan>Maintain</BoldSpan>
       &nbsp;
-      for years to come sustainable support that strengthens organizations’ resources
+      sustainable support that strengthens organizations’ resources for years to come 
       {/* eslint-disable-next-line react/jsx-closing-tag-location */}
     </>,
     description: 'Retention of volunteers engagement on a project',
