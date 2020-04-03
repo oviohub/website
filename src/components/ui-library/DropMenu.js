@@ -74,7 +74,7 @@ const DropMenu = ({ homeVersion, buttonLabel, buttonLink, color, classes: { link
 DropMenu.propTypes = {
   homeVersion: PropTypes.bool,
   buttonLabel: PropTypes.string.isRequired,
-  buttonLink: PropTypes.string.isRequired,
+  buttonLink: PropTypes.string,
   color: PropTypes.string.isRequired,
   classes: PropTypes.shape({
     links: PropTypes.string.isRequired,

@@ -16,7 +16,7 @@ const cards = [
     title: 'Developers',
     // eslint-disable-next-line max-len
     paragraph: 'Access a catalog of open source projects and tasks. Find opportunities that match your skills and interests.',
-    link: getPageUrl('VolunteersPage'),
+    link: getPageUrl('DevelopersPage'),
   },
   // {
   //   image: socialImpactIcon,

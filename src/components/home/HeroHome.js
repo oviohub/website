@@ -79,7 +79,7 @@ const Hero = () => {
           Join the community on our Explore platform and find the perfect open source project for you.
           </Typography>
           <Grid className={buttonContainer} item>
-            <Link to={getPageUrl('VolunteersPage')} style={{ textDecoration: 'none' }}>
+            <Link to={getPageUrl('DevelopersPage')} style={{ textDecoration: 'none' }}>
               <Button className={muiButtonWhiteBackground}>Developers</Button>
             </Link>
             <Link to={getPageUrl('CompaniessPage')} style={{ padding: 16, textDecoration: 'none' }}>
