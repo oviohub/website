@@ -14,7 +14,7 @@ const cardList = [
     subTitle: 'Engage engineers',
     image: image1,
     // eslint-disable-next-line max-len
-    textOnOver: 'Wether it’s one or one hundred contributors, open code is created and maintained by people who need to be rewarded for their contributions',
+    textOnOver: 'Whether it’s one or one hundred contributors, open code is created and maintained by people who need to be rewarded for their contributions',
   },
   {
     title: 'Open source',
