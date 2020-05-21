@@ -5,10 +5,16 @@ import { Grid, Typography, Button, withStyles } from '@material-ui/core';
 import { isWidthDown } from '@material-ui/core/withWidth';
 
 import { makeStyles } from '@material-ui/styles';
-import { spacing, stylesBase, useWidth, ExternalLink, Tag } from '../styledComponents';
+import {
+  spacing,
+  stylesBase,
+  useWidth,
+  ExternalLink,
+  Tag,
+} from '../styledComponents';
 
 const { muiGridBlockContainer } = stylesBase;
-const useStyles = makeStyles(theme => ({
+const useStyles = makeStyles((theme) => ({
   muiGridBlockContainer,
   itemContainer: { margin: `${spacing(10)} 0px ${spacing(10)}` },
   textContainer: {
@@ -23,9 +29,9 @@ const useStyles = makeStyles(theme => ({
     width: '85%',
     [theme.breakpoints.down('xs')]: { width: '100%' },
   },
-  blockBody: ({ withMarginBotton, taggedTextVersion }) => ({
+  blockBody: ({ withMarginBottom, taggedTextVersion }) => ({
     margin: `0px 0px 0px ${spacing(4)}`,
-    marginBottom: withMarginBotton ? spacing(4) : '0px',
+    marginBottom: withMarginBottom ? spacing(4) : '0px',
     fontSize: taggedTextVersion && '12px',
   }),
   itemTitle: {
@@ -44,7 +50,7 @@ const useStyles = makeStyles(theme => ({
   },
 }));
 
-const BlockButton = withStyles(theme => ({
+const BlockButton = withStyles((theme) => ({
   buttonLink: {
     marginLeft: spacing(4),
     textDecoration: 'none',
@@ -53,7 +59,12 @@ const BlockButton = withStyles(theme => ({
     [theme.breakpoints.down('xs')]: { marginTop: spacing(2) },
   },
 }))(({ href, children, classes }) => (
-  <a href={href} className={classes.buttonLink} target="_blank" rel="noreferrer noopener">
+  <a
+    href={href}
+    className={classes.buttonLink}
+    target="_blank"
+    rel="noreferrer noopener"
+  >
     <Button className={classes.blockButtons}>{children}</Button>
   </a>
 ));
@@ -79,14 +90,19 @@ const BlockHowToTemplate = ({
   const { text: blockButtonText, link: blockButtonLink } = blockButton || {};
   return (
     <div className={muiGridBlockContainer}>
-      <img className={markImg} src={markImage && markImage.publicURL} alt={blockTitle} />
+      <img className={markImg} src={markImage} alt={blockTitle} />
       {blockTitle && <Typography variant="h2">{blockTitle}</Typography>}
       <Grid item xs={12} md={7}>
-        {blockSubtitle && <Typography variant="subtitle2">{blockSubtitle}</Typography>}
+        {blockSubtitle && (
+          <Typography variant="subtitle2">{blockSubtitle}</Typography>
+        )}
       </Grid>
       <Grid>
-        {processItems.map(({ title, text, buttons, image: { publicURL: imageURL } }) => {
-          const { itemTitle, blockBody } = useStyles({ withMarginBotton: !!buttons, taggedTextVersion });
+        {processItems.map(({ title, text, buttons, image: imageURL }) => {
+          const { itemTitle, blockBody } = useStyles({
+            withMarginBottom: !!buttons,
+            taggedTextVersion,
+          });
           return (
             <Grid
               className={itemContainer}
@@ -106,18 +122,34 @@ const BlockHowToTemplate = ({
               >
                 <Grid>
                   {title && (
-                    <Typography className={itemTitle} component="p" variant="h2" color="textSecondary">
+                    <Typography
+                      className={itemTitle}
+                      component="p"
+                      variant="h2"
+                      color="textSecondary"
+                    >
                       {title}
                     </Typography>
                   )}
                 </Grid>
-                <Grid container wrap="nowrap" direction="column" className={blockBodyContainer}>
+                <Grid
+                  container
+                  wrap="nowrap"
+                  direction="column"
+                  className={blockBodyContainer}
+                >
                   <Typography className={blockBody} variant="body1">
-                    <JsxParser renderInWrapper={false} components={{ ExternalLink, Tag }} jsx={text} />
+                    <JsxParser
+                      renderInWrapper={false}
+                      components={{ ExternalLink, Tag }}
+                      jsx={text}
+                    />
                   </Typography>
                   <Grid>
                     {(buttons || []).map(({ link: btnLink, text: btnText }) => (
-                      <BlockButton key={btnLink} href={btnLink}>{btnText}</BlockButton>
+                      <BlockButton key={btnLink} href={btnLink}>
+                        {btnText}
+                      </BlockButton>
                     ))}
                   </Grid>
                 </Grid>
@@ -138,22 +170,22 @@ const BlockHowToTemplate = ({
 BlockHowToTemplate.propTypes = {
   title: PropTypes.string,
   subtitle: PropTypes.string,
-  markImage: PropTypes.shape({
-    publicURL: PropTypes.string.isRequired,
-  }).isRequired,
+  markImage: PropTypes.string.isRequired,
   taggedTextVersion: PropTypes.bool,
-  processItems: PropTypes.arrayOf(PropTypes.shape({
-    title: PropTypes.string,
-    subtitle: PropTypes.string,
-    text: PropTypes.string.isRequired,
-    image: PropTypes.shape({
-      publicURL: PropTypes.string.isRequired,
-    }).isRequired,
-    buttons: PropTypes.arrayOf(PropTypes.shape({
+  processItems: PropTypes.arrayOf(
+    PropTypes.shape({
+      title: PropTypes.string,
+      subtitle: PropTypes.string,
       text: PropTypes.string.isRequired,
-      link: PropTypes.string.isRequired,
-    })),
-  })).isRequired,
+      image: PropTypes.string.isRequired,
+      buttons: PropTypes.arrayOf(
+        PropTypes.shape({
+          text: PropTypes.string.isRequired,
+          link: PropTypes.string.isRequired,
+        }),
+      ),
+    }),
+  ).isRequired,
   button: PropTypes.shape({
     text: PropTypes.string.isRequired,
     link: PropTypes.string.isRequired,

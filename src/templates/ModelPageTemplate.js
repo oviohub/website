@@ -16,7 +16,10 @@ const ModelPageTemplate = ({
   data: {
     modelPageJson: {
       slug,
-      hero: { backgroundImage: { publicURL: backgroundImageURL }, ...hero },
+      hero: {
+        backgroundImage: { publicURL: backgroundImageURL },
+        ...hero
+      },
       block1intro,
       // block2feedback,
       block3howto,
@@ -27,7 +30,9 @@ const ModelPageTemplate = ({
     <MenuBar />
     <Hero {...hero} backgroundImage={backgroundImageURL} />
     <BlockIntroTemplate {...block1intro} />
-    {(slug === 'CompaniesPage') && <Testimonies title="They trust us" data={companiesTestimony} />}
+    {slug === 'CompaniesPage' && (
+      <Testimonies title="They trust us" data={companiesTestimony} />
+    )}
     <BlockHowToTemplate {...block3howto} />
     <LineSeparator />
     <Footer />
@@ -57,24 +62,27 @@ ModelPageTemplate.propTypes = {
         markImage: PropTypes.shape({
           publicURL: PropTypes.string.isRequired,
         }).isRequired,
-        isMarkOnLeft: PropTypes.bool,
-        items: PropTypes.arrayOf(PropTypes.shape({
-          title: PropTypes.string.isRequired,
-          paragraph: PropTypes.string.isRequired,
-          image: PropTypes.shape({
-            publicURL: PropTypes.string.isRequired,
-          }).isRequired,
-        })).isRequired,
+        items: PropTypes.arrayOf(
+          PropTypes.shape({
+            title: PropTypes.string.isRequired,
+            paragraph: PropTypes.string.isRequired,
+            image: PropTypes.shape({
+              publicURL: PropTypes.string.isRequired,
+            }).isRequired,
+          }),
+        ).isRequired,
       }).isRequired,
 
-      block2feedback: PropTypes.arrayOf(PropTypes.shape({
-        author: PropTypes.string.isRequired,
-        position: PropTypes.string.isRequired,
-        text: PropTypes.string.isRequired,
-        photo: PropTypes.shape({
-          publicURL: PropTypes.string.isRequired,
-        }).isRequired,
-      })).isRequired,
+      block2feedback: PropTypes.arrayOf(
+        PropTypes.shape({
+          author: PropTypes.string.isRequired,
+          position: PropTypes.string.isRequired,
+          text: PropTypes.string.isRequired,
+          photo: PropTypes.shape({
+            publicURL: PropTypes.string.isRequired,
+          }).isRequired,
+        }),
+      ).isRequired,
 
       block3howto: PropTypes.shape({
         title: PropTypes.string.isRequired,
@@ -82,19 +90,20 @@ ModelPageTemplate.propTypes = {
         markImage: PropTypes.shape({
           publicURL: PropTypes.string.isRequired,
         }).isRequired,
-        processItems: PropTypes.arrayOf(PropTypes.shape({
-          title: PropTypes.string,
-          text: PropTypes.string.isRequired,
-          image: PropTypes.shape({
-            publicURL: PropTypes.string.isRequired,
-          }).isRequired,
-          button: PropTypes.shape({
+        processItems: PropTypes.arrayOf(
+          PropTypes.shape({
+            title: PropTypes.string,
             text: PropTypes.string.isRequired,
-            link: PropTypes.string.isRequired,
+            image: PropTypes.shape({
+              publicURL: PropTypes.string.isRequired,
+            }).isRequired,
+            button: PropTypes.shape({
+              text: PropTypes.string.isRequired,
+              link: PropTypes.string.isRequired,
+            }),
           }),
-        })).isRequired,
+        ).isRequired,
       }).isRequired,
-
     }).isRequired,
   }).isRequired,
 };
@@ -110,7 +119,9 @@ export const modelPage = graphql`
         title
         subtitle
         subSubtitle
-        backgroundImage { publicURL }
+        backgroundImage {
+          publicURL
+        }
         button {
           text
           link
@@ -118,28 +129,37 @@ export const modelPage = graphql`
       }
       block1intro {
         title
-        markImage { publicURL }
-        isMarkOnLeft
+        markImage {
+          publicURL
+        }
         items {
           title
           paragraph
-          image { publicURL }
+          image {
+            publicURL
+          }
         }
-      },
+      }
       block2feedback {
         author
         position
         text
-        photo { publicURL }
-      },
+        photo {
+          publicURL
+        }
+      }
       block3howto {
         title
         subtitle
-        markImage { publicURL }
+        markImage {
+          publicURL
+        }
         processItems {
           title
           text
-          image { publicURL }
+          image {
+            publicURL
+          }
           buttons {
             text
             link
@@ -149,7 +169,7 @@ export const modelPage = graphql`
           text
           link
         }
-      },
+      }
     }
   }
 `;

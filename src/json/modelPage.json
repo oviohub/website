@@ -120,68 +120,6 @@
   },
 
   {
-    "slug": "CompaniesPage",
-    "path": "/companies/",
-    "hero": {
-      "title": "Companies",
-      "subtitle": "Open source community management for developer teams",
-      "subSubtitle": "The best talent in tech values open source.",
-      "backgroundImage": "images/modelPage/companies.hero.jpg",
-      "button": { "text": "Explore", "link": "https://explore.ovio.org" }
-    },
-    "block1intro": {
-      "markImage": "images/modelPage/companies.intro.mark.png",
-      "isMarkOnLeft": true,
-      "items": [
-        {
-          "title": "Give your employees access to a variety of open source opportunities",
-          "paragraph": "Ovio accumulates a large portfolio of curated open source projects. We match developers to projects and tasks that matches their skills and interests.",
-          "image": "images/modelPage/companies.intro.1.jpg",
-          "button": { "text": "Browse Projects", "link": "https://explore.ovio.org" }
-        },
-        {
-          "title": "Activate the dev community on your open source projects",
-          "paragraph": "Showcase your open source projects and build your tech credibility. Ovio lets you grow, manage, and present your open source program to help you attract and hire a more diverse tech team.",
-          "image": "images/modelPage/companies.intro.2.jpg"
-        },
-        {
-          "title": "Engage your employees on open source projects you use",
-          "paragraph": "Encourage your engineering teams to contribute to open source code and build an open culture. Ovio makes contribution to open projects easy to help you retain and attract tech talent.",
-          "image": "images/modelPage/companies.intro.3.jpg"
-        },
-        {
-          "title": "Track you metrics and make an impact",
-          "paragraph": "Engage your team on impactful projects and take your community engagement to the next level. Build your brand and show case your commitment to social impact by using Ovio to track and highlight your open source efforts.",
-          "image": "images/modelPage/companies.intro.4.jpg"
-        }
-      ]
-    },
-    "block2feedback": [
-      {
-        "author": "Sylvia Thornton",
-        "position": "Apple Inc.",
-        "text": "“This is the testimonal text, this is the testimonal text, this is the testimonal text long long long long long version. 1”",
-        "photo": "images/modelPage/volunteers.feedback.sylviaThornton.png"
-      }
-    ],
-    "block3howto": {
-      "title": "Get in Touch",
-      "markImage": "images/modelPage/companies.howTo.mark.jpg",
-      "taggedTextVersion": true,
-      "processItems": [
-        {
-          "text": "<Tag>Keep Track</Tag> of your contributions and level of influence<br /><br /><Tag>Reward</Tag> external contributors and dedicated employees<br /><br /><Tag>Identify</Tag> project maintainers and increase retention<br /><br /><Tag>Showcase</Tag> your work!",
-          "image": "images/modelPage/companies.howTo.request.png",
-          "buttons": [
-            { "text": "Work with us", "link": "https://calendly.com/founders-ovio" },
-            { "text": "Get in Touch", "link": "mailto:founders@ovio.org" }
-          ]
-        }
-      ]
-    }
-  },
-
-  {
     "slug": "StudentPage",
     "path": "/student/",
     "hero": {

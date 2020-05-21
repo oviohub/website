@@ -25,6 +25,10 @@ export const routes = {
     url: '/foundation/',
     component: 'src/pages/foundation.js',
   },
+  CompaniesPage: {
+    url: '/companies/',
+    component: 'src/pages/companies.js',
+  },
 };
 
 modelPage.forEach((page) => {
@@ -34,5 +38,7 @@ modelPage.forEach((page) => {
   };
 });
 
-export const getPageUrl = (routeId, append = '') => routes[routeId] && `${routes[routeId].url}${append}`;
-export const getPageSEO = routeId => routes[routeId] && (routes[routeId].seo || {});
+export const getPageUrl = (routeId, append = '') =>
+  routes[routeId] && `${routes[routeId].url}${append}`;
+export const getPageSEO = (routeId) =>
+  routes[routeId] && (routes[routeId].seo || {});
