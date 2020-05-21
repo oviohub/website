@@ -6,35 +6,40 @@ import { makeStyles } from '@material-ui/styles';
 import { spacing, stylesBase, useWidth } from '../styledComponents';
 
 import orangeMark from '../../assets/aboutPage/ourValues.jpg';
-import itemImg1 from '../../assets/aboutPage/ourValuesItem.1.png';
-import itemImg2 from '../../assets/aboutPage/ourValuesItem.2.png';
-import itemImg3 from '../../assets/aboutPage/ourValuesItem.3.png';
-import itemImg4 from '../../assets/aboutPage/ourValuesItem.4.png';
+
+import collaborationIcon from '../../assets/aboutPage/collaborationIcon.svg';
+import diversityIcon from '../../assets/aboutPage/diversityIcon.svg';
+import impactIcon from '../../assets/aboutPage/impactIcon.svg';
+import trustIcon from '../../assets/aboutPage/trustIcon.svg';
 
 const items = [
   {
-    title: 'Impact-Oriented',
-    // eslint-disable-next-line max-len
-    content: 'We place people before technology and work to maximize social benefit. We consider the impact of our work on communities, other living beings, ecosystems and the world.',
-    image: itemImg1,
-  },
-  {
     title: 'Collaboration',
-    // eslint-disable-next-line max-len
-    content: 'We value teamwork and collective actions. Our success is driven by our ability to build connections across the world and between sectors, break silos and foster exchange of competencies.',
-    image: itemImg2,
+    content:
+      // eslint-disable-next-line max-len
+      'Building connections across the world and between sectors. Breaking silos. Fostering the exchange of competencies. This is what gets us up in the morning.',
+    image: collaborationIcon,
   },
   {
-    title: 'Inspire Change',
-    // eslint-disable-next-line max-len
-    content: 'We embrace positive change and continuously work to improve the lives of others whether it’s harnessing market forces for social good, inspiring purposeful goals for people or helping civil agents work together.',
-    image: itemImg3,
+    title: 'Diversity and Inclusion',
+    content:
+      // eslint-disable-next-line max-len
+      'We believe that diversity benefits us all, rather than takes away. We want to do our utmost to ensure that everyone can play their part.',
+    image: diversityIcon,
   },
   {
-    title: 'Fun',
-    // eslint-disable-next-line max-len
-    content: 'What is better than having fun while changing the world? We value adventures, challenges and happiness to solve social challenges.',
-    image: itemImg4,
+    title: 'Impact',
+    content:
+      // eslint-disable-next-line max-len
+      'We embrace positive change and work towards impacts, whether it’s through harnessing market forces for social good or helping individuals find their purpose and collaborate.',
+    image: impactIcon,
+  },
+  {
+    title: 'Trust',
+    content:
+      // eslint-disable-next-line max-len
+      'Constructive action is grounded in candid communication. Building trust allows us to serve the common good.',
+    image: trustIcon,
   },
 ];
 
@@ -85,8 +90,14 @@ const OurValuesBlock = () => {
       direction={isWidthDown('sm', width) ? 'column' : 'row'}
     >
       <Grid item xs={12} md={5}>
-        <img className={`${muiGridBackground} ${imageComponent}`} src={orangeMark} alt="Our values" />
-        <Typography variant="h2" className={title2}>Our Values</Typography>
+        <img
+          className={`${muiGridBackground} ${imageComponent}`}
+          src={orangeMark}
+          alt="Our values"
+        />
+        <Typography variant="h2" className={title2}>
+          Our Values
+        </Typography>
       </Grid>
       <Grid item xs={12} md={7}>
         {items.map(({ title, image, content }) => (
@@ -100,7 +111,9 @@ const OurValuesBlock = () => {
               <img className={icon} src={image} alt={title} />
             </Grid>
             <Grid item xs={10} size="2" className={itemTextContainer}>
-              <Typography variant="h4" className={title4}>{title}</Typography>
+              <Typography variant="h4" className={title4}>
+                {title}
+              </Typography>
               <Typography variant="body1">{content}</Typography>
             </Grid>
           </Grid>
