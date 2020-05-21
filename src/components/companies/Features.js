@@ -45,7 +45,7 @@ const useStyles = makeStyles(() => ({
   }),
 }));
 
-const WhatMakesUsUnique = () => {
+const Features = () => {
   const { muiGridBlockContainer, muiGridWithOnHoverText } = useStyles();
 
   return (
@@ -100,4 +100,4 @@ const WhatMakesUsUnique = () => {
   );
 };
 
-export default WhatMakesUsUnique;
+export default Features;

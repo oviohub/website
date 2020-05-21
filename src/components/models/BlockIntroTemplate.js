@@ -139,13 +139,17 @@ const BlockIntroTemplate = ({
                     >
                       {itemTitle}
                     </Typography>
-                    <Typography variant="body1">
-                      <JsxParser
-                        renderInWrapper={false}
-                        components={{ ExternalLink }}
-                        jsx={paragraph}
-                      />
-                    </Typography>
+
+                    {paragraph && (
+                      <Typography variant="body1">
+                        <JsxParser
+                          renderInWrapper={false}
+                          components={{ ExternalLink }}
+                          jsx={paragraph}
+                        />
+                      </Typography>
+                    )}
+
                     {btnText && (
                       <Grid container justify="center">
                         <a
@@ -179,7 +183,7 @@ BlockIntroTemplate.propTypes = {
   items: PropTypes.arrayOf(
     PropTypes.shape({
       title: PropTypes.string.isRequired,
-      paragraph: PropTypes.string.isRequired,
+      paragraph: PropTypes.string,
       image: PropTypes.string.isRequired,
       button: PropTypes.shape({
         text: PropTypes.string.isRequired,
