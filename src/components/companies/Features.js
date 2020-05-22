@@ -29,7 +29,7 @@ const cardList = [
   {
     title: 'Issue Search',
     image: featureImage4,
-    textOnOver: 'highlight your priorities ',
+    textOnOver: 'Highlight your priorities ',
   },
 ];
 
