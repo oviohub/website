@@ -28,8 +28,13 @@ import howToRequest from '../assets/companiesPage/companies.howTo.request.png';
 const pageInfo = {
   hero: {
     title: 'Companies',
-    subtitle:
-      'Open source management booster for <br /> contributing companies',
+    subtitle: (
+      <>
+        Open source management booster for
+        <br />
+        contributing companies
+      </>
+    ),
     backgroundImage,
     button: { text: 'Explore', link: 'https://explore.ovio.org' },
   },
@@ -74,30 +79,21 @@ const pageInfo = {
       },
     ],
   },
-  block2feedback: [
-    {
-      author: 'Sylvia Thornton',
-      position: 'Apple Inc.',
-      text:
-        // eslint-disable-next-line max-len
-        '“This is the testimonial text, this is the testimonial text, this is the testimonial text long long long long long version. 1”',
-    },
-  ],
   howTo: {
-    title: 'Get in Touch',
+    sectionTitle: 'Get in Touch',
     markImage: howToMark,
-    processItems: [
+    items: [
       {
-        text:
+        content:
           // eslint-disable-next-line max-len
           'Realizing their success as open source consumers, companies are getting more involved as collaborators and contributors. Our work is intended to meet new workforce demands caused by this shift. Request a demo and learn more!',
         image: howToRequest,
         buttons: [
           {
             text: 'Work with us',
-            link: 'https://calendly.com/founders-ovio',
+            href: 'https://calendly.com/founders-ovio',
           },
-          { text: 'Get in Touch', link: 'mailto:founders@ovio.org' },
+          { text: 'Get in Touch', href: 'mailto:founders@ovio.org' },
         ],
       },
     ],

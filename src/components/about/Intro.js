@@ -69,8 +69,8 @@ const Intro = () => {
               <Box
                 className={useStyles({ image }).background}
                 boxShadow={3}
-                width={isDownSm ? '90%' : 400}
-                height={isDownSm ? 'auto' : 400}
+                width={isDownSm ? '90%' : 420}
+                height={isDownSm ? 'auto' : 420}
                 mx="auto"
                 zIndex="tooltip"
                 mt={isDownSm ? 6 : -7}

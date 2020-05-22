@@ -1,23 +1,20 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import JsxParser from 'react-jsx-parser';
 import classNames from 'classnames';
 import { pick } from 'lodash';
 
 import { Grid, Typography, Button } from '@material-ui/core';
-import { isWidthDown } from '@material-ui/core/withWidth';
 import { makeStyles } from '@material-ui/styles';
 
 import {
   menuHeightOffset,
   spacing,
   stylesBase,
-  useWidth,
   colors,
   ExternalLink,
 } from './styledComponents';
 
-const useStyles = makeStyles(theme => ({
+const useStyles = makeStyles((theme) => ({
   ...pick(stylesBase, ['muiGridFullScreen', 'muiButtonWhiteBackground']),
 
   mainContainer: { paddingTop: `${menuHeightOffset}px` },
@@ -52,7 +49,6 @@ const useStyles = makeStyles(theme => ({
 }));
 
 const Hero = ({ title, subtitle, subSubtitle, backgroundImage, button }) => {
-  const width = useWidth();
   const {
     // eslint-disable-next-line no-shadow
     muiGridFullScreen,
@@ -90,9 +86,7 @@ const Hero = ({ title, subtitle, subSubtitle, backgroundImage, button }) => {
           >
             <Typography variant="h1">{title}</Typography>
             {subtitle && (
-              <Typography variant="subtitle1">
-                <JsxParser renderInWrapper={false} jsx={subtitle} />
-              </Typography>
+              <Typography variant="subtitle1">{subtitle}</Typography>
             )}
             {subSubtitle && (
               <Typography
@@ -100,14 +94,7 @@ const Hero = ({ title, subtitle, subSubtitle, backgroundImage, button }) => {
                 variant="body1"
                 color="primary"
               >
-                <JsxParser
-                  renderInWrapper={false}
-                  jsx={
-                    isWidthDown('md', width)
-                      ? subSubtitle.replace(/<br \/>/g, '')
-                      : subSubtitle
-                  }
-                />
+                {subSubtitle}
               </Typography>
             )}
             {button && (
@@ -132,10 +119,11 @@ const Hero = ({ title, subtitle, subSubtitle, backgroundImage, button }) => {
   );
 };
 
+const textPropType = PropTypes.oneOfType([PropTypes.string, PropTypes.element]);
 Hero.propTypes = {
-  title: PropTypes.string.isRequired,
-  subtitle: PropTypes.string,
-  subSubtitle: PropTypes.string,
+  title: textPropType.isRequired,
+  subtitle: textPropType,
+  subSubtitle: textPropType,
   backgroundImage: PropTypes.string.isRequired,
   button: PropTypes.shape({
     text: PropTypes.string.isRequired,

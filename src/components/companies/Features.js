@@ -59,7 +59,6 @@ const Features = () => {
               key={title}
               container
               direction="column"
-              wrap="no-wrap"
               spacing={2}
               item
               xs={6}

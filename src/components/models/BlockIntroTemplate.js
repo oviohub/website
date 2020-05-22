@@ -1,6 +1,5 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import JsxParser from 'react-jsx-parser';
 import { Grid, Typography, Button } from '@material-ui/core';
 import { isWidthDown } from '@material-ui/core/withWidth';
 import { makeStyles } from '@material-ui/styles';
@@ -13,7 +12,6 @@ import {
   colors,
   stylesBase,
   useWidth,
-  ExternalLink,
 } from '../styledComponents';
 
 const useStyles = makeStyles((theme) => ({
@@ -141,13 +139,7 @@ const BlockIntroTemplate = ({
                     </Typography>
 
                     {paragraph && (
-                      <Typography variant="body1">
-                        <JsxParser
-                          renderInWrapper={false}
-                          components={{ ExternalLink }}
-                          jsx={paragraph}
-                        />
-                      </Typography>
+                      <Typography variant="body1">{paragraph}</Typography>
                     )}
 
                     {btnText && (

@@ -1,4 +1,5 @@
 import React from 'react';
+import { Typography } from '@material-ui/core';
 
 import Layout from '../components/layouts/Layout';
 import MenuBar from '../components/MenuBar';
@@ -9,6 +10,7 @@ import BlockHowToTemplate from '../components/models/BlockHowToTemplate';
 import TextColumnSection from '../components/models/TextColumnSection';
 import LineSeparator from '../components/ui-library/LineSeparator';
 import Footer from '../components/Footer';
+import { ExternalLink } from '../components/styledComponents';
 
 import backgroundImage from '../assets/developersPage/developers.hero.jpg';
 import introMark from '../assets/developersPage/developers.intro.mark.png';
@@ -23,6 +25,12 @@ import howToMatching from '../assets/developersPage/developers.howTo.matching.pn
 import howToSubmit from '../assets/developersPage/developers.howTo.submit.png';
 import contributeImg1 from '../assets/developersPage/contribute.1.svg';
 import contributeImg2 from '../assets/developersPage/contribute.2.svg';
+
+const introItemTitleProps = {
+  color: 'textSecondary',
+  variant: 'h3',
+  component: 'span',
+};
 
 const pageInfo = {
   hero: {
@@ -57,36 +65,44 @@ const pageInfo = {
     ],
   },
   howTo: {
-    title: 'Get started in minutes',
+    sectionTitle: 'Get started in minutes',
     markImage: howToMark,
-    processItems: [
+    items: [
       {
-        title: '1. Visit',
-        text:
-          // eslint-disable-next-line max-len
-          "Visit <ExternalLink noDecoration orange href='https://explore.ovio.org'>Explore</ExternalLink> and discover our curated list of open source projects",
+        title: <Typography {...introItemTitleProps}>1. Visit</Typography>,
+        content: (
+          <>
+            Visit{' '}
+            <ExternalLink noDecoration orange href="https://explore.ovio.org">
+              Explore
+            </ExternalLink>{' '}
+            and discover our curated list of open source projects
+          </>
+        ),
         buttons: [
           {
             text: 'Explore Projects',
-            link: 'https://explore.ovio.org',
+            href: 'https://explore.ovio.org',
           },
         ],
         image: howToLogin,
       },
       {
-        title: '2. Log in',
-        text: 'Log in to personalize your experience',
+        title: <Typography {...introItemTitleProps}>2. Log in</Typography>,
+        content: 'Log in to personalize your experience',
         image: howToFillProfile,
       },
       {
-        title: '3. Add details',
-        text:
+        title: <Typography {...introItemTitleProps}>3. Add details</Typography>,
+        content:
           'Fill out your profile to get matched to more project and task opportunities.',
         image: howToMatching,
       },
       {
-        title: '4. Spread the word',
-        text:
+        title: (
+          <Typography {...introItemTitleProps}>4. Spread the word</Typography>
+        ),
+        content:
           // eslint-disable-next-line max-len
           'Post details of your contributions on social media, encourage your friends and coworkers to contribute and help OSS communities thrive!',
         image: howToSubmit,
@@ -130,7 +146,7 @@ const Developers = () => (
   <Layout routeSlug="DevelopersPage">
     <MenuBar />
     <Hero {...hero} />
-    <TextColumnSection sectionTitle="Features" list={contribute} />
+    <TextColumnSection sectionTitle="Features" items={contribute} />
     <BlockIntroTemplate {...intro} />
     <Testimonials />
     <BlockHowToTemplate {...howTo} />

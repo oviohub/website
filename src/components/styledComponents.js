@@ -33,8 +33,9 @@ export const fontSizes = {
 };
 
 const theme = createMuiTheme();
-export const spacing = (...args) => args.map(arg => `${theme.spacing(arg)}px`).join(' ');
-export const fontSizing = factor => `${factor * 7}px`; // 7px for the smaller font-size in the website
+export const spacing = (...args) =>
+  args.map((arg) => `${theme.spacing(arg)}px`).join(' ');
+export const fontSizing = (factor) => `${factor * 7}px`; // 7px for the smaller font-size in the website
 
 export const defaultTheme = createMuiTheme({
   palette: {
@@ -91,7 +92,6 @@ export const defaultTheme = createMuiTheme({
         color: colors.darkBlue,
         fontFamily: 'Dosis',
         fontSize: fontSizing(9),
-        lineHeight: '45px',
       },
       h4: {
         color: colors.darkBlue,
