@@ -12,12 +12,16 @@ const press = [
   {
     title: 'Forbes',
     image: forbes,
-    link: 'https://www.TO-UPDATE.com',
+    link:
+      // eslint-disable-next-line max-len
+      'https://www.forbes.com/sites/charlestowersclark/2020/05/01/why-digital-collaboration-is-a-silver-lining-of-self-isolation/#7b9a391b41cb',
   },
   {
     title: 'Fast company',
     image: fastCompany,
-    link: 'https://www.TO-UPDATE.com',
+    link:
+      // eslint-disable-next-line max-len
+      'https://www.fastcompany.com/90492106/world-changing-ideas-awards-2020-developing-world-technology-finalists-and-honorable-mentions',
   },
 ];
 
