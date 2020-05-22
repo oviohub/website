@@ -19,8 +19,8 @@ import iconMaintain from '../assets/icons/icon.maintain.orange.png';
 import iconOffer from '../assets/icons/icon.offer.orange.png';
 import testimonials1 from '../assets/foundationPage/testimonials.1.svg';
 import testimonials2 from '../assets/foundationPage/testimonials.2.svg';
-import request from '../assets/foundationPage/socialImpact.howTo.request.png';
-import mark from '../assets/foundationPage/socialImpact.howTo.mark.jpg';
+import request from '../assets/foundationPage/howTo.request.png';
+import mark from '../assets/foundationPage/howTo.mark.jpg';
 
 const heroContent = (scrollRef) => ({
   title: 'Ovio Foundation',
