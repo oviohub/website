@@ -146,7 +146,7 @@ const Developers = () => (
   <Layout routeSlug="DevelopersPage">
     <MenuBar />
     <Hero {...hero} />
-    <TextColumnSection sectionTitle="Features" items={contribute} />
+    <TextColumnSection sectionTitle="Contribute" items={contribute} />
     <BlockIntroTemplate {...intro} />
     <Testimonials />
     <BlockHowToTemplate {...howTo} />

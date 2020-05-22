@@ -8,7 +8,6 @@ import BlockHowToTemplate from '../components/models/BlockHowToTemplate';
 import TextColumnSection from '../components/models/TextColumnSection';
 import LineSeparator from '../components/ui-library/LineSeparator';
 import Footer from '../components/Footer';
-import { getPageUrl } from '../Routes';
 import { scrollToRef } from '../components/ui-library/ScrollArrow';
 import { BoldSpan } from '../components/styledComponents';
 import { useBaseClasses } from '../hooks/styles';
@@ -57,7 +56,6 @@ const howTo = {
         {
           text: 'Email Us',
           href: 'mailto:hello@ovio.org',
-          key: 'uniq-key-reach-out',
         },
       ],
       image: request,
@@ -76,8 +74,8 @@ const howTo = {
       ),
       buttons: [
         {
-          text: 'Email Us',
-          href: 'mailto:hello@ovio.org',
+          text: 'Donate',
+          href: 'https://www.flipcause.com/secure/cause_pdetails/NzAwMzE=',
         },
       ],
       key: 'uniq-key-oss',
@@ -168,17 +166,17 @@ const FoundationPage = ({ classes }) => {
 
       <div id="impact" />
       <TextColumnSection
-        sectionTitle="We support a more diverse open source ecosystem."
+        sectionTitle="We help nonprofits build and scale open source software solutions."
         // eslint-disable-next-line max-len
-        sectionSubTitle="Ovio works with the next generation to bring more diversity and inclusivity into open source. We empower students from underrepresented backgrounds to improve their skills, build their portfolios and connect with mentors from the tech world. And we help nonprofits increase inclusivity in their open source management. "
+        sectionSubTitle="Conserve resources by working with top quality volunteer developers, make the right technical decisions early on, and ensure the sustainability of your project by working with the Ovio Foundation."
         items={nonprofitsServices}
         classes={classes}
       />
 
       <TextColumnSection
-        sectionTitle="We help nonprofits build and scale open source software solutions."
+        sectionTitle="We support a more diverse open source ecosystem."
         // eslint-disable-next-line max-len
-        sectionSubTitle="Conserve resources by working with top quality volunteer developers, make the right technical decisions early on, and ensure the sustainability of your project by working with the Ovio Foundation."
+        sectionSubTitle="Ovio works with the next generation to bring more diversity and inclusivity into open source. We empower students from underrepresented backgrounds to improve their skills, build their portfolios and connect with mentors from the tech world. And we help nonprofits increase inclusivity in their open source management."
         items={ossEcosystem}
         classes={classes}
       />

@@ -13,9 +13,12 @@ const buttons = [
 
 const ExploreProjects = ({ classes }) => (
   <Grid className={classes.muiGridBlockContainer} container direction="column">
-    <Typography variant="h2" color="secondary">Open Source for All</Typography>
+    <Typography variant="h2" color="secondary">
+      Open Source for All
+    </Typography>
     <Typography variant="subtitle2" color="secondary">
-      Discover a selection of 500+ open-source projects and start contributing to great repos now!
+      Discover a selection of 300+ open-source projects and start contributing
+      to great repos now!
     </Typography>
 
     <div className={classes.buttonsContainer}>
