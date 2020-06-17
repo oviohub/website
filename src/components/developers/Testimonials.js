@@ -3,13 +3,12 @@ import { Box, Typography, withStyles } from '@material-ui/core';
 import { pick } from 'lodash';
 
 import { stylesBase, BoldSpan } from '../styledComponents';
-import { useWidthDown } from '../../hooks/width';
 
 const Testimonials = ({ classes }) => (
   <div className={classes.muiGridBlockContainer}>
     <Typography variant="h2">Testimonials</Typography>
 
-    <Box m="auto" width={useWidthDown('sm') ? '90%' : '70%'}>
+    <Box m="auto" width={{ xs: '90%', md: '70%' }}>
       <Typography variant="body2">
         “Thank you so much for connecting me with this resource. I wouldn&apos;t
         have stuck with it to find this if Ovio weren&apos;t so engaged with
