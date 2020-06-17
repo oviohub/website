@@ -1,12 +1,12 @@
 import React from 'react';
-import { Grid, Typography } from '@material-ui/core';
-import { isWidthDown } from '@material-ui/core/withWidth';
-import { makeStyles } from '@material-ui/styles';
+import { Grid, Typography, withStyles, Box } from '@material-ui/core';
+import { pick } from 'lodash';
+import classNames from 'classnames';
 
-import { spacing, stylesBase, useWidth } from '../styledComponents';
+import { stylesBase } from '../styledComponents';
+import { useWidthDown } from '../../hooks/width';
 
 import orangeMark from '../../assets/aboutPage/ourValues.jpg';
-
 import collaborationIcon from '../../assets/aboutPage/collaborationIcon.svg';
 import diversityIcon from '../../assets/aboutPage/diversityIcon.svg';
 import impactIcon from '../../assets/aboutPage/impactIcon.svg';
@@ -43,78 +43,55 @@ const items = [
   },
 ];
 
-const { muiGridBlockContainer, muiGridBackground } = stylesBase;
-const useStyles = makeStyles(theme => ({
-  muiGridBlockContainer,
-  muiGridBackground,
-  container: { paddingTop: spacing(6) },
-  title2: { marginTop: '0px' },
-  itemIconContainer: {
-    textAlign: 'center',
-    [theme.breakpoints.down('sm')]: { marginBottom: spacing(2) },
-  },
-  icon: {
-    width: '80px',
-    [theme.breakpoints.down('xs')]: {
-      width: '100px',
-      objectFit: 'contain',
-    },
-  },
-  itemTextContainer: { marginBottom: spacing(6) },
-  title4: { marginBottom: spacing(1) },
-  imageComponent: {
-    left: '0px',
-    marginTop: '-130px',
-  },
-}));
+const OurValuesBlock = ({ classes }) => {
+  const isDownSm = useWidthDown('sm');
+  const direction = isDownSm ? 'column' : 'row';
 
-const OurValuesBlock = () => {
-  const width = useWidth();
-  const {
-    // eslint-disable-next-line no-shadow
-    muiGridBlockContainer,
-    // eslint-disable-next-line no-shadow
-    muiGridBackground,
-    container,
-    title2,
-    itemIconContainer,
-    icon,
-    itemTextContainer,
-    imageComponent,
-    title4,
-  } = useStyles();
   return (
     <Grid
-      className={`${muiGridBlockContainer} ${container}`}
+      className={classNames(classes.muiGridBlockContainer, classes.container)}
       container
-      direction={isWidthDown('sm', width) ? 'column' : 'row'}
+      direction={direction}
     >
       <Grid item xs={12} md={5}>
         <img
-          className={`${muiGridBackground} ${imageComponent}`}
+          className={classNames(
+            classes.muiGridBackground,
+            classes.imageComponent,
+          )}
           src={orangeMark}
           alt="Our values"
         />
-        <Typography variant="h2" className={title2}>
+        <Typography variant="h2" className={classes.title2}>
           Our Values
         </Typography>
       </Grid>
+
       <Grid item xs={12} md={7}>
         {items.map(({ title, image, content }) => (
           <Grid
             key={title}
             container
-            direction={isWidthDown('sm', width) ? 'column' : 'row'}
-            alignItems={isWidthDown('sm', width) ? 'center' : 'flex-start'}
+            direction={direction}
+            alignItems={isDownSm ? 'center' : 'flex-start'}
           >
-            <Grid item xs={10} md={2} className={itemIconContainer} container>
-              <img className={icon} src={image} alt={title} />
+            <Grid
+              item
+              xs={10}
+              md={2}
+              className={classes.itemIconContainer}
+              container
+            >
+              <img className={classes.icon} src={image} alt={title} />
             </Grid>
-            <Grid item xs={10} size="2" className={itemTextContainer}>
-              <Typography variant="h4" className={title4}>
-                {title}
-              </Typography>
-              <Typography variant="body1">{content}</Typography>
+
+            <Grid item xs={10}>
+              <Box mb={6}>
+                <Typography variant="h4" className={classes.title4}>
+                  {title}
+                </Typography>
+                <Typography variant="body1">{content}</Typography>
+              </Box>
             </Grid>
           </Grid>
         ))}
@@ -123,4 +100,42 @@ const OurValuesBlock = () => {
   );
 };
 
-export default OurValuesBlock;
+const styles = (theme) => ({
+  ...pick(stylesBase, ['muiGridBlockContainer', 'muiGridBackground']),
+
+  container: {
+    paddingTop: theme.spacing(6),
+  },
+
+  title2: {
+    marginTop: 0,
+  },
+
+  itemIconContainer: {
+    textAlign: 'center',
+
+    [theme.breakpoints.down('sm')]: {
+      marginBottom: theme.spacing(2),
+    },
+  },
+
+  icon: {
+    width: '80px',
+
+    [theme.breakpoints.down('xs')]: {
+      width: '100px',
+      objectFit: 'contain',
+    },
+  },
+
+  title4: {
+    marginBottom: theme.spacing(1),
+  },
+
+  imageComponent: {
+    left: '0px',
+    marginTop: '-130px',
+  },
+});
+
+export default withStyles(styles)(OurValuesBlock);

@@ -21,7 +21,7 @@ export function useWidth() {
     {},
   );
 
-  return sizes.find(size => widthStatus[size]);
+  return sizes.find((size) => widthStatus[size]);
 }
 
 export function useWidthUp(breakpoint) {

@@ -10,14 +10,24 @@ import heroMobile from '../../assets/aboutPage/hero.mobile.jpg';
 import ourVisionBackground from '../../assets/aboutPage/ourVisionBackground.jpg';
 import ourMissionBackground from '../../assets/aboutPage/ourMissionBackground.jpg';
 
-const useStyles = makeStyles({
-  background: {
+const useStyles = makeStyles((theme) => ({
+  card: {
     backgroundImage: ({ image }) => `url(${image})`,
     backgroundRepeat: 'no-repeat',
     backgroundSize: 'cover',
     backgroundPosition: 'center',
+    boxShadow: theme.shadows[3],
+    width: 420,
+    height: 420,
+    margin: theme.spacing(-7, 'auto', 0),
+
+    [theme.breakpoints.down('sm')]: {
+      width: '90%',
+      height: 'auto',
+      marginTop: theme.spacing(6),
+    },
   },
-});
+}));
 
 const cardList = [
   {
@@ -31,7 +41,6 @@ const cardList = [
     title: 'Our Mission',
     image: ourMissionBackground,
     paragraph: (
-      // eslint-disable-next-line max-len
       <span>
         Empower developers to contribute to open-source and collaborate at
         scale.
@@ -62,35 +71,25 @@ const Intro = () => {
         subtitle="Ovio matches developers with the right project, the right task, and the right community, so that everyone feels empowered to become an active open source contributor."
         backgroundImage={bgImage}
       />
-      <Grid container justify="center">
-        <Grid container justify="center" spacing={isDownSm ? 2 : 4}>
-          {cardList.map(({ title, image, paragraph }, index) => (
+      <Grid container justify="center" spacing={isDownSm ? 2 : 4}>
+        {cardList.map(({ title, image, paragraph }, index) => {
+          const classes = useStyles({ image });
+          const titleColor = index % 2 ? 'primary' : 'textSecondary';
+          const bodyColor = index % 2 ? 'secondary' : 'primary';
+
+          return (
             <Grid key={title} item>
-              <Box
-                className={useStyles({ image }).background}
-                boxShadow={3}
-                width={isDownSm ? '90%' : 420}
-                height={isDownSm ? 'auto' : 420}
-                mx="auto"
-                zIndex="tooltip"
-                mt={isDownSm ? 6 : -7}
-              >
+              <Box className={classes.card}>
                 <Box p={5}>
                   <Grid container spacing={3}>
                     <Grid item>
-                      <Typography
-                        variant="h3"
-                        color={index % 2 ? 'primary' : 'textSecondary'}
-                      >
+                      <Typography variant="h3" color={titleColor}>
                         {title}
                       </Typography>
                     </Grid>
 
                     <Grid item>
-                      <Typography
-                        variant="body1"
-                        color={index % 2 ? 'secondary' : 'primary'}
-                      >
+                      <Typography variant="body1" color={bodyColor}>
                         {paragraph}
                       </Typography>
                     </Grid>
@@ -98,8 +97,8 @@ const Intro = () => {
                 </Box>
               </Box>
             </Grid>
-          ))}
-        </Grid>
+          );
+        })}
       </Grid>
     </>
   );
