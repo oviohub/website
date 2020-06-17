@@ -33,7 +33,7 @@ const Testimonials = ({ classes }) => (
 );
 
 const styles = () => ({
-  ...pick(stylesBase, ['muiGridBlockContainer', 'muiGridWithOnHoverText']),
+  ...pick(stylesBase, ['muiGridBlockContainer']),
 });
 
 export default withStyles(styles)(Testimonials);

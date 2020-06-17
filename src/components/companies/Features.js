@@ -1,7 +1,8 @@
 import React from 'react';
 import { Grid, Typography, Box } from '@material-ui/core';
-import { makeStyles } from '@material-ui/styles';
+import { withStyles } from '@material-ui/styles';
 import { pick } from 'lodash';
+import classNames from 'classnames';
 
 import { stylesBase } from '../styledComponents';
 
@@ -33,70 +34,65 @@ const cardList = [
   },
 ];
 
-const useStyles = makeStyles(() => ({
+const Features = ({ classes }) => (
+  <div className={classes.muiGridBlockContainer}>
+    <Typography variant="h2">Features</Typography>
+
+    <Grid container spacing={4} justify="center">
+      {cardList.map(({ title, image, textOnOver }) => (
+        <Grid key={title} container spacing={2} item xs={12} sm={8} md={6}>
+          <Grid item xs={12}>
+            <Typography align="center" variant="h4">
+              {title}
+            </Typography>
+          </Grid>
+
+          <Grid
+            item
+            className={classNames(
+              classes.muiGridWithOnHoverText,
+              classes.cardContent,
+            )}
+            component={Box}
+            flexGrow={1}
+            height={1}
+          >
+            <div className="onHoverHide">
+              <img src={image} alt={title} className={classes.image} />
+            </div>
+
+            <Box
+              justifyContent="center"
+              alignItems="center"
+              bgcolor="text.secondary"
+              className="onHoverDisplay"
+            >
+              <Typography variant="body1" color="primary">
+                {textOnOver}
+              </Typography>
+            </Box>
+          </Grid>
+        </Grid>
+      ))}
+    </Grid>
+  </div>
+);
+
+const styles = (theme) => ({
   ...pick(stylesBase, ['muiGridBlockContainer', 'muiGridWithOnHoverText']),
 
-  cardOnHoverHide: ({ backgroundImage }) => ({
-    backgroundImage: `url(${backgroundImage})`,
-    backgroundRepeat: 'no-repeat',
-    backgroundSize: 'cover',
-    height: '100%',
+  cardContent: {
+    height: 450,
+
+    [theme.breakpoints.down('xs')]: {
+      height: 250,
+    },
+  },
+
+  image: {
     width: '100%',
-  }),
-}));
+    objectFit: 'contain',
+  },
+});
 
-const Features = () => {
-  const { muiGridBlockContainer, muiGridWithOnHoverText } = useStyles();
-
-  return (
-    <div className={muiGridBlockContainer}>
-      <Typography variant="h2">Features</Typography>
-
-      <Box m="auto" width="70%">
-        <Grid container spacing={4} justify="center">
-          {cardList.map(({ title, image, textOnOver }) => (
-            <Grid
-              key={title}
-              container
-              direction="column"
-              spacing={2}
-              item
-              xs={6}
-            >
-              <Grid item>
-                <Typography align="center" variant="h4">
-                  {title}
-                </Typography>
-              </Grid>
-
-              <Grid
-                item
-                className={muiGridWithOnHoverText}
-                component={Box}
-                flexGrow={1}
-              >
-                <Box className="onHoverHide">
-                  <Box component="img" width="100%" src={image} alt={title} />
-                </Box>
-
-                <Box
-                  display="flex"
-                  justifyContent="center"
-                  alignItems="center"
-                  bgcolor="text.secondary"
-                  className="onHoverDisplay"
-                >
-                  <Typography variant="body1" color="primary">
-                    {textOnOver}
-                  </Typography>
-                </Box>
-              </Grid>
-            </Grid>
-          ))}
-        </Grid>
-      </Box>
-    </div>
-  );
-};
-
-export default Features;
+export default withStyles(styles)(Features);
