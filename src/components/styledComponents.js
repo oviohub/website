@@ -79,7 +79,15 @@ export const defaultTheme = createMuiTheme({
         fontSize: fontSizing(9),
         lineHeight: '70px',
         margin: spacing(4),
-        [theme.breakpoints.down('xs')]: { margin: `${spacing(4)} 0px` },
+        textTransform: 'lowercase',
+
+        '&::first-letter': {
+          textTransform: 'uppercase',
+        },
+
+        [theme.breakpoints.down('xs')]: {
+          margin: theme.spacing(4, 0),
+        },
       },
       subtitle2: {
         color: colors.darkBlue,
@@ -132,7 +140,7 @@ export const defaultTheme = createMuiTheme({
         minHeight: '40px',
         minWidth: '152px',
         textAlign: 'center',
-        textTransform: 'none',
+        textTransform: 'capitalize',
         border: `2px solid ${colors.orange}`,
         borderRadius: '20px',
         '&:hover': {

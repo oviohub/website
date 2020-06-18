@@ -2,7 +2,7 @@ import React from 'react';
 import { Typography, Box, withStyles } from '@material-ui/core';
 import { pick } from 'lodash';
 
-import { stylesBase } from '../styledComponents';
+import { stylesBase, ExternalLink } from '../styledComponents';
 import ourStory from '../../assets/aboutPage/ourStory.jpg';
 
 const OurStory = ({ classes }) => (
@@ -11,7 +11,10 @@ const OurStory = ({ classes }) => (
     <Typography variant="body2">
       Why did we create Ovio? We saw open source software as a path to create
       positive impact. To do so, our plan was simple: we’d find and showcase
-      impact-oriented projects in line with the UN Sustainable Development Goals
+      impact-oriented projects in line with the{' '}
+      <ExternalLink href="https://www.un.org/sustainabledevelopment/sustainable-development-goals/">
+        UN Sustainable Development Goals
+      </ExternalLink>{' '}
       and make them more accessible to every developer.
       <br />
       <br />

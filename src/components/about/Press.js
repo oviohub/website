@@ -14,7 +14,7 @@ const press = [
     image: forbes,
     link:
       // eslint-disable-next-line max-len
-      'https://www.forbes.com/sites/charlestowersclark/2020/05/01/why-digital-collaboration-is-a-silver-lining-of-self-isolation/#7b9a391b41cb',
+      'https://www.forbes.com/sites/charlestowersclark/2020/05/01/why-digital-collaboration-is-a-silver-lining-of-self-isolation',
   },
   {
     title: 'Fast company',
