@@ -36,7 +36,7 @@ const ExploreProjects = ({ classes }) => (
     </div>
 
     <Iframe
-      src="https://explore.ovio.org/iframe/projects/featured/"
+      src="https://explore.ovio.org/collection/featured/projects/iframe/"
       className={classes.iframe}
       scrolling="no"
       title="Explore projects slider"
