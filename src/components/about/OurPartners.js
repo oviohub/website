@@ -1,7 +1,7 @@
 import React from 'react';
 import { Grid, Typography } from '@material-ui/core';
 import { makeStyles } from '@material-ui/styles';
-
+import { pick } from 'lodash';
 import { spacing, stylesBase } from '../styledComponents';
 
 import theRefinersLogo from '../../assets/aboutPage/logo.theRefiners.jpg';
@@ -21,9 +21,9 @@ const partners = [
   },
 ];
 
-const { muiGridBlockContainer } = stylesBase;
-const useStyles = makeStyles(theme => ({
-  muiGridBlockContainer,
+const useStyles = makeStyles((theme) => ({
+  ...pick(stylesBase, ['muiGridBlockContainer']),
+
   partnersContainer: {
     textAlign: 'center',
     marginTop: spacing(10),
@@ -35,14 +35,19 @@ const useStyles = makeStyles(theme => ({
   title4: { margin: `${spacing(2)} 0px` },
 }));
 
-const OurValuesBlock = () => {
-  // eslint-disable-next-line no-shadow
-  const { muiGridBlockContainer, partnersContainer, partnerContainer, title4 } = useStyles();
+const OurPartners = () => {
+  const {
+    muiGridBlockContainer,
+    partnersContainer,
+    partnerContainer,
+    title4,
+  } = useStyles();
   return (
     <div className={muiGridBlockContainer}>
-      <Typography variant="h2">Advisors and Supporting Partners</Typography>
+      <Typography variant="h2">They support Ovio</Typography>
       <Typography variant="subtitle2">
-        Our advisors and supporting partners help make Ovio strong through content expertise and financial support.
+        Our advisors and supporting partners help make Ovio strong through
+        content expertise and financial support.
       </Typography>
       <Grid className={partnersContainer} container justify="center">
         {partners.map(({ link, image, title, subTitle }) => (
@@ -55,10 +60,12 @@ const OurValuesBlock = () => {
           >
             <Grid className={partnerContainer} item>
               <img src={image} alt={title} />
-              <Typography variant="h4" className={title4}>{title}</Typography>
-              {subTitle
-                && <Typography variant="caption">{subTitle}</Typography>
-              }
+              <Typography variant="h4" className={title4}>
+                {title}
+              </Typography>
+              {subTitle && (
+                <Typography variant="caption">{subTitle}</Typography>
+              )}
             </Grid>
           </a>
         ))}
@@ -67,4 +74,4 @@ const OurValuesBlock = () => {
   );
 };
 
-export default OurValuesBlock;
+export default OurPartners;

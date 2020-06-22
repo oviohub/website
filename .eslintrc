@@ -31,9 +31,7 @@
     }
   },
 
-  "plugins": [
-    "react"
-  ],
+  "plugins": ["react"],
 
   "settings": {
     "import/core-modules": ["react", "config"]
@@ -41,7 +39,7 @@
 
   "rules": {
     "func-names": 0,
-    "indent": [2, 2, {"SwitchCase": 1}],
+    "indent": [2, 2, { "SwitchCase": 1 }],
     "max-len": ["error", 120],
     "no-confusing-arrow": 0,
     "no-param-reassign": 0,
@@ -54,8 +52,16 @@
     "no-unused-vars": ["error", { "argsIgnorePattern": "^_" }],
     "jsx-a11y/no-static-element-interactions": 0,
     "import/prefer-default-export": 0,
-    "object-curly-newline": ["error", {"ObjectPattern": { "multiline": true }}],
+    "object-curly-newline": [
+      "error",
+      { "ObjectPattern": { "multiline": true } }
+    ],
     "react/require-default-props": [0],
-    "react/forbid-prop-types": [0]
+    "react/forbid-prop-types": [0],
+    "arrow-parens": ["error", "always"],
+    "react/prop-types": [
+      "error",
+      { "ignore": ["children", "classes", "theme"] }
+    ]
   }
 }

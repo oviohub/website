@@ -1,163 +1,70 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import JsxParser from 'react-jsx-parser';
-import { Grid, Typography, Button, withStyles } from '@material-ui/core';
-import { isWidthDown } from '@material-ui/core/withWidth';
+import { pick } from 'lodash';
+import { Typography, withStyles } from '@material-ui/core';
 
-import { makeStyles } from '@material-ui/styles';
-import { spacing, stylesBase, useWidth, ExternalLink, Tag } from '../styledComponents';
-
-const { muiGridBlockContainer } = stylesBase;
-const useStyles = makeStyles(theme => ({
-  muiGridBlockContainer,
-  itemContainer: { margin: `${spacing(10)} 0px ${spacing(10)}` },
-  textContainer: {
-    marginLeft: spacing(4),
-    [theme.breakpoints.down('sm')]: { marginLeft: '0px' },
-  },
-  subtitle2: ({ withoutTitle }) => ({
-    paddingTop: withoutTitle && spacing(20),
-    width: withoutTitle && '50%',
-  }),
-  blockBodyContainer: {
-    width: '85%',
-    [theme.breakpoints.down('xs')]: { width: '100%' },
-  },
-  blockBody: ({ withMarginBotton, taggedTextVersion }) => ({
-    margin: `0px 0px 0px ${spacing(4)}`,
-    marginBottom: withMarginBotton ? spacing(4) : '0px',
-    fontSize: taggedTextVersion && '12px',
-  }),
-  itemTitle: {
-    marginLeft: spacing(4),
-  },
-  image: {
-    objectFit: 'contain',
-    [theme.breakpoints.down('sm')]: { width: '40%' },
-    [theme.breakpoints.down('xs')]: { width: '260px' },
-  },
-  markImg: {
-    position: 'absolute',
-    left: '0px',
-    zIndex: -1,
-    [theme.breakpoints.down('xs')]: { paddingTop: '80px' },
-  },
-}));
-
-const BlockButton = withStyles(theme => ({
-  buttonLink: {
-    marginLeft: spacing(4),
-    textDecoration: 'none',
-  },
-  blockButtons: {
-    [theme.breakpoints.down('xs')]: { marginTop: spacing(2) },
-  },
-}))(({ href, children, classes }) => (
-  <a href={href} className={classes.buttonLink} target="_blank" rel="noreferrer noopener">
-    <Button className={classes.blockButtons}>{children}</Button>
-  </a>
-));
+import TextColumns, { textColumnsPropTypes } from './TextColumns';
+import { stylesBase } from '../styledComponents';
+import { useWidthDown } from '../../hooks/width';
 
 const BlockHowToTemplate = ({
-  title: blockTitle,
-  subtitle: blockSubtitle,
-  taggedTextVersion,
+  sectionTitle,
+  sectionSubtitle,
   markImage,
-  processItems,
-  button: blockButton,
+  items,
+  classes,
 }) => {
-  const width = useWidth();
-  const {
-    // eslint-disable-next-line no-shadow
-    muiGridBlockContainer,
-    itemContainer,
-    textContainer,
-    blockBodyContainer,
-    image,
-    markImg,
-  } = useStyles({ withoutTitle: !blockTitle });
-  const { text: blockButtonText, link: blockButtonLink } = blockButton || {};
+  const isDownXs = useWidthDown('xs');
+
   return (
-    <div className={muiGridBlockContainer}>
-      <img className={markImg} src={markImage && markImage.publicURL} alt={blockTitle} />
-      {blockTitle && <Typography variant="h2">{blockTitle}</Typography>}
-      <Grid item xs={12} md={7}>
-        {blockSubtitle && <Typography variant="subtitle2">{blockSubtitle}</Typography>}
-      </Grid>
-      <Grid>
-        {processItems.map(({ title, text, buttons, image: { publicURL: imageURL } }) => {
-          const { itemTitle, blockBody } = useStyles({ withMarginBotton: !!buttons, taggedTextVersion });
-          return (
-            <Grid
-              className={itemContainer}
-              key={text}
-              container
-              direction={isWidthDown('xs', width) ? 'column' : 'row'}
-            >
-              <img className={image} src={imageURL} alt={text} />
-              <Grid
-                className={textContainer}
-                container
-                item
-                direction={isWidthDown('xs', width) ? 'row' : 'column'}
-                md={taggedTextVersion ? 6 : 5}
-                sm={taggedTextVersion ? 7 : 6}
-                xs={12}
-              >
-                <Grid>
-                  {title && (
-                    <Typography className={itemTitle} component="p" variant="h2" color="textSecondary">
-                      {title}
-                    </Typography>
-                  )}
-                </Grid>
-                <Grid container wrap="nowrap" direction="column" className={blockBodyContainer}>
-                  <Typography className={blockBody} variant="body1">
-                    <JsxParser renderInWrapper={false} components={{ ExternalLink, Tag }} jsx={text} />
-                  </Typography>
-                  <Grid>
-                    {(buttons || []).map(({ link: btnLink, text: btnText }) => (
-                      <BlockButton key={btnLink} href={btnLink}>{btnText}</BlockButton>
-                    ))}
-                  </Grid>
-                </Grid>
-              </Grid>
-            </Grid>
-          );
-        })}
-      </Grid>
-      {blockButtonText && (
-        <Grid container item xs={6} justify="center">
-          <BlockButton href={blockButtonLink}>{blockButtonText}</BlockButton>
-        </Grid>
+    <div className={classes.muiGridBlockContainer}>
+      <img className={classes.markImg} src={markImage} alt={sectionTitle} />
+
+      {sectionTitle && <Typography variant="h2">{sectionTitle}</Typography>}
+
+      {sectionSubtitle && (
+        <Typography variant="subtitle2">{sectionSubtitle}</Typography>
       )}
+
+      <TextColumns
+        items={items}
+        classes={pick(classes, 'image')}
+        imageGridSize={isDownXs ? 10 : 4}
+        textGridSize={isDownXs ? 10 : 6}
+      />
     </div>
   );
 };
 
+const textPropType = PropTypes.oneOfType([PropTypes.string, PropTypes.element]);
+
 BlockHowToTemplate.propTypes = {
-  title: PropTypes.string,
-  subtitle: PropTypes.string,
-  markImage: PropTypes.shape({
-    publicURL: PropTypes.string.isRequired,
-  }).isRequired,
-  taggedTextVersion: PropTypes.bool,
-  processItems: PropTypes.arrayOf(PropTypes.shape({
-    title: PropTypes.string,
-    subtitle: PropTypes.string,
-    text: PropTypes.string.isRequired,
-    image: PropTypes.shape({
-      publicURL: PropTypes.string.isRequired,
-    }).isRequired,
-    buttons: PropTypes.arrayOf(PropTypes.shape({
-      text: PropTypes.string.isRequired,
-      link: PropTypes.string.isRequired,
-    })),
-  })).isRequired,
-  button: PropTypes.shape({
-    text: PropTypes.string.isRequired,
-    link: PropTypes.string.isRequired,
-  }),
+  sectionTitle: textPropType,
+  sectionSubtitle: textPropType,
+  markImage: PropTypes.string.isRequired,
+  ...textColumnsPropTypes,
 };
 
-export default BlockHowToTemplate;
+const styles = (theme) => ({
+  ...pick(stylesBase, 'muiGridBlockContainer'),
+
+  image: {
+    width: 300,
+
+    [theme.breakpoints.down('xs')]: {
+      width: 200,
+    },
+  },
+
+  markImg: {
+    position: 'absolute',
+    left: '0px',
+    zIndex: -1,
+
+    [theme.breakpoints.down('xs')]: {
+      paddingTop: '80px',
+    },
+  },
+});
+
+export default withStyles(styles)(BlockHowToTemplate);

@@ -1,26 +1,21 @@
-const activeEnv = process.env.GATSBY_ACTIVE_ENV || process.env.NODE_ENV || 'production';
+const activeEnv =
+  process.env.GATSBY_ACTIVE_ENV || process.env.NODE_ENV || 'production';
 
 require('dotenv').config({ path: `.env/env.${activeEnv}` });
 
 module.exports = {
   siteMetadata: {
-    title: 'Ovio | Empowering developers to become active open source contributors',
+    title:
+      'Ovio | Empowering developers to become active open source contributors',
     // eslint-disable-next-line max-len
-    description: 'We are building a more accessible and inclusive open source ecosystem, empowering millions of developers to become active contributors.',
+    description:
+      'We are building a more accessible and inclusive open source ecosystem, empowering millions of developers to become active contributors.',
     author: 'Ovio',
     url: process.env.REACT_WEBSITE_URL || 'https://ovio.org',
     twitterId: '@OvioHub',
     lang: 'en',
   },
   plugins: [
-    {
-      resolve: 'gatsby-source-filesystem',
-      options: {
-        path: `${__dirname}/src/json`,
-        name: 'json-pages',
-      },
-    },
-    'gatsby-transformer-json',
     'gatsby-plugin-react-helmet',
     {
       resolve: 'gatsby-plugin-manifest',
@@ -50,7 +45,12 @@ module.exports = {
     {
       resolve: 'gatsby-plugin-env-variables',
       options: {
-        whitelist: ['GA_TRACKING_ID', 'REACT_WEBSITE_URL', 'SIB_API_KEY', 'SIB_CONTACT_LIST_ID'],
+        whitelist: [
+          'GA_TRACKING_ID',
+          'REACT_WEBSITE_URL',
+          'SIB_API_KEY',
+          'SIB_CONTACT_LIST_ID',
+        ],
       },
     },
   ],

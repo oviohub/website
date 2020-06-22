@@ -1,98 +1,88 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import JsxParser from 'react-jsx-parser';
 import classNames from 'classnames';
+import { pick } from 'lodash';
 
-import { Grid, Typography, Button } from '@material-ui/core';
-import { isWidthDown } from '@material-ui/core/withWidth';
-import { makeStyles } from '@material-ui/styles';
+import { Grid, Typography, Button, Box, withStyles } from '@material-ui/core';
 
-import { menuHeightOffset, spacing, stylesBase, useWidth, colors, ExternalLink } from './styledComponents';
+import {
+  menuHeightOffset,
+  stylesBase,
+  colors,
+  ExternalLink,
+} from './styledComponents';
 
-const { muiGridFullScreen, muiButtonWhiteBackground } = stylesBase;
-const useStyles = makeStyles(theme => ({
-  muiGridFullScreen,
-  muiButtonWhiteBackground,
-  mainContainer: { paddingTop: `${menuHeightOffset}px` },
-  heroContainer: ({ backgroundImage }) => ({
-    height: '500px', // hero height
-    backgroundImage: `url(${backgroundImage})`,
-    backgroundSize: 'cover',
-    backgroundPosition: 'center',
-  }),
-  subSubtitle1: {
-    marginTop: spacing(3),
-    textAlign: 'center',
-  },
-  buttonContainer: {
-    marginTop: spacing(6),
-    [theme.breakpoints.down('md')]: { marginTop: spacing(3) },
-  },
-  buttonColor: {
-    color: colors.darkBlue,
-  },
-}));
-
-const Hero = ({ title, subtitle, subSubtitle, backgroundImage, button }) => {
-  const width = useWidth();
-  const {
-    // eslint-disable-next-line no-shadow
-    muiGridFullScreen,
-    // eslint-disable-next-line no-shadow
-    muiButtonWhiteBackground,
-    mainContainer,
-    heroContainer,
-    subSubtitle1,
-    buttonContainer,
-    buttonColor,
-  } = useStyles({ backgroundImage });
-
+const Hero = ({
+  classes,
+  title,
+  subtitle,
+  subSubtitle,
+  backgroundImage,
+  button,
+}) => {
   const { text: buttonText, link: buttonLink, onClick } = button || {};
-  const buttonClasses = classNames(muiButtonWhiteBackground, buttonColor);
 
   return (
-    <Grid className={mainContainer} container justify="center">
-      <Grid>
-        <Grid className={`${muiGridFullScreen} ${heroContainer}`} container item justify="center" alignItems="center">
-          <Grid container item direction="column" justify="center" alignItems="center" xs={10} sm={8} md={6}>
-            <Typography variant="h1">{title}</Typography>
-            {subtitle && (
-              <Typography variant="subtitle1">
-                <JsxParser renderInWrapper={false} jsx={subtitle} />
+    <div className={classes.container}>
+      <div
+        className={classNames(
+          classes.muiGridFullScreen,
+          classes.imageContainer,
+        )}
+      >
+        <img className={classes.image} src={backgroundImage} alt="Ovio" />
+      </div>
+
+      <Grid container justify="center" alignItems="center">
+        <Grid item xs={10} sm={8} md={6} className={classes.textContainer}>
+          <Typography variant="h1">{title}</Typography>
+          {subtitle && <Typography variant="subtitle1">{subtitle}</Typography>}
+          {subSubtitle && (
+            <Box mt={3}>
+              <Typography align="center" variant="body1" color="primary">
+                {subSubtitle}
               </Typography>
-            )}
-            {subSubtitle && (
-              <Typography className={subSubtitle1} variant="body1" color="primary">
-                <JsxParser
-                  renderInWrapper={false}
-                  jsx={isWidthDown('md', width) ? subSubtitle.replace(/<br \/>/g, '') : subSubtitle}
-                />
-              </Typography>
-            )}
-            {button && (
-              <Grid className={buttonContainer}>
-                {buttonLink ? (
-                  <ExternalLink href={buttonLink} noDecoration>
-                    <Button className={buttonClasses}>{buttonText}</Button>
-                  </ExternalLink>
-                ) : onClick && (
-                  <Button className={buttonClasses} onClick={onClick}>
+            </Box>
+          )}
+          {button && (
+            <Box mt={{ xs: 3, lg: 6 }}>
+              {buttonLink ? (
+                <ExternalLink href={buttonLink} noDecoration>
+                  <Button
+                    className={classNames(
+                      classes.muiButtonWhiteBackground,
+                      classes.buttonColor,
+                    )}
+                  >
                     {buttonText}
                   </Button>
-                )}
-              </Grid>
-            )}
-          </Grid>
+                </ExternalLink>
+              ) : (
+                onClick && (
+                  <Button
+                    className={classNames(
+                      classes.muiButtonWhiteBackground,
+                      classes.buttonColor,
+                    )}
+                    onClick={onClick}
+                  >
+                    {buttonText}
+                  </Button>
+                )
+              )}
+            </Box>
+          )}
         </Grid>
       </Grid>
-    </Grid>
+    </div>
   );
 };
 
+const textPropType = PropTypes.oneOfType([PropTypes.string, PropTypes.element]);
 Hero.propTypes = {
-  title: PropTypes.string.isRequired,
-  subtitle: PropTypes.string,
-  subSubtitle: PropTypes.string,
+  title: textPropType.isRequired,
+  subtitle: textPropType,
+  subSubtitle: textPropType,
   backgroundImage: PropTypes.string.isRequired,
   button: PropTypes.shape({
     text: PropTypes.string.isRequired,
@@ -101,4 +91,46 @@ Hero.propTypes = {
   }),
 };
 
-export default Hero;
+const styles = (theme) => ({
+  ...pick(stylesBase, ['muiGridFullScreen', 'muiButtonWhiteBackground']),
+
+  container: {
+    display: 'flex',
+    paddingTop: `${menuHeightOffset}px`,
+    height: 500,
+
+    [theme.breakpoints.down('sm')]: {
+      height: 300,
+    },
+  },
+
+  imageContainer: {
+    position: 'absolute',
+    height: 500,
+    top: menuHeightOffset,
+    left: 0,
+    zIndex: '-1',
+
+    [theme.breakpoints.down('sm')]: {
+      height: 300,
+    },
+  },
+
+  image: {
+    width: '100%',
+    height: '100%',
+    objectFit: 'cover',
+  },
+
+  textContainer: {
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'center',
+  },
+
+  buttonColor: {
+    color: colors.darkBlue,
+  },
+});
+
+export default withStyles(styles)(Hero);

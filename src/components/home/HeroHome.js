@@ -1,10 +1,15 @@
-import React from 'react';
+import React, { createRef } from 'react';
 import { Link } from 'gatsby';
 import { pick } from 'lodash';
 import { Grid, Typography, Button, Hidden } from '@material-ui/core';
 import { makeStyles } from '@material-ui/styles';
 
-import { useWidth, stylesBase, menuHeightOffset } from '../styledComponents';
+import {
+  useWidth,
+  stylesBase,
+  menuHeightOffset,
+  ExternalLink,
+} from '../styledComponents';
 import ScrollArrow from '../ui-library/ScrollArrow';
 import heroImage from '../../assets/homePage/heroImage.jpg';
 import { getPageUrl } from '../../Routes';
@@ -20,7 +25,7 @@ const buttons = [
   },
 ];
 
-const useStyles = makeStyles(theme => ({
+const useStyles = makeStyles((theme) => ({
   ...pick(stylesBase, ['muiButtonWhiteBackground', 'muiGridFullScreen']),
   mainContainer: {
     height: `calc(100vh - ${menuHeightOffset}px)`,
@@ -54,7 +59,7 @@ const useStyles = makeStyles(theme => ({
 
 const Hero = () => {
   const width = useWidth();
-  const scrollRef = React.createRef();
+  const scrollRef = createRef();
   const {
     muiButtonWhiteBackground,
     muiGridFullScreen,
@@ -67,7 +72,7 @@ const Hero = () => {
   } = useStyles();
 
   return (
-    <React.Fragment>
+    <>
       <Grid container className={mainContainer}>
         <Grid className={`${muiGridFullScreen} ${imageContainer}`}>
           <img className={image} src={heroImage} alt="Ovio" />
@@ -86,7 +91,11 @@ const Hero = () => {
             Empowering developers to become active open source contributors
           </Typography>
           <Typography className={typography} variant="subtitle1">
-            Join the community on our Explore platform and find the perfect open source project for you.
+            Join the community on our{' '}
+            <ExternalLink href="https://explore.ovio.org/">
+              Explore
+            </ExternalLink>{' '}
+            platform and find the perfect open source project for you.
           </Typography>
           <Grid container item spacing={2} className={buttonContainer}>
             {buttons.map(({ text, path }) => (
@@ -103,7 +112,7 @@ const Hero = () => {
         </Grid>
       </Grid>
       <div ref={scrollRef} />
-    </React.Fragment>
+    </>
   );
 };
 

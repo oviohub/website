@@ -12,6 +12,20 @@ import unicef from '../assets/logo/organizations/unicef.png';
 import wfp from '../assets/logo/organizations/wfp.jpg';
 import okta from '../assets/logo/organizations/okta.png';
 
+export const wfpDescription = {
+  name: 'WFP',
+  logo: wfp,
+  order: 1,
+  link: 'https://www.wfp.org',
+};
+
+export const cmsDescription = {
+  name: 'Centers for Medicare and Medicaid Services',
+  logo: cms,
+  order: 3,
+  link: 'https://www.cms.gov',
+};
+
 export const companiesTestimony = [
   {
     name: 'Amazon web services',
@@ -52,18 +66,8 @@ export const organizationsTestimony = [
     order: 1,
     link: 'https://www.unicef.org/innovation/',
   },
-  {
-    name: 'WFP',
-    logo: wfp,
-    order: 1,
-    link: 'https://www.wfp.org',
-  },
-  {
-    name: 'Centers for Medicare and Medicaid Services',
-    logo: cms,
-    order: 3,
-    link: 'https://www.cms.gov',
-  },
+  wfpDescription,
+  cmsDescription,
   {
     name: 'Connect Our Kids',
     logo: connectOurKids,
@@ -84,7 +88,8 @@ export const organizationsTestimony = [
   },
 ];
 
-export const testimonies = companiesTestimony.concat(organizationsTestimony)
+export const testimonies = companiesTestimony
+  .concat(organizationsTestimony)
   .sort(({ order: aOrder }, { order: bOrder }) => {
     if (aOrder > bOrder) return 1;
     return -1;

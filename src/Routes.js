@@ -1,5 +1,3 @@
-const modelPage = require('./json/modelPage.json');
-
 export const routes = {
   NotFound: {
     url: '/404/',
@@ -25,14 +23,17 @@ export const routes = {
     url: '/foundation/',
     component: 'src/pages/foundation.js',
   },
+  CompaniesPage: {
+    url: '/companies/',
+    component: 'src/pages/companies.js',
+  },
+  DevelopersPage: {
+    url: '/developers/',
+    component: 'src/pages/developers.js',
+  },
 };
 
-modelPage.forEach((page) => {
-  routes[page.slug] = {
-    url: page.path,
-    seo: page.seo,
-  };
-});
-
-export const getPageUrl = (routeId, append = '') => routes[routeId] && `${routes[routeId].url}${append}`;
-export const getPageSEO = routeId => routes[routeId] && (routes[routeId].seo || {});
+export const getPageUrl = (routeId, append = '') =>
+  routes[routeId] && `${routes[routeId].url}${append}`;
+export const getPageSEO = (routeId) =>
+  routes[routeId] && (routes[routeId].seo || {});
