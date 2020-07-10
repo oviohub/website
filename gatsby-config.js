@@ -53,5 +53,6 @@ module.exports = {
         ],
       },
     },
+    'gatsby-plugin-meta-redirect',
   ],
 };
